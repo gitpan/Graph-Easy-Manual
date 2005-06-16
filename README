@@ -1,0 +1,28 @@
+Graph-Easy-Manual
+=================
+
+This module provides you with a Pod2HTML converter and a manual for
+Graph::Easy.
+
+Please see the file INSTALL on how to install this module and create
+the HTML version of the manual.
+
+You can also view the manual online at:
+
+	http://bloodgate.com/perl/graph/manual/
+
+Many more examples and documentation, especially on integrating this into
+a Mediawiki installation, can be found at:
+
+	http://bloodgate.com/perl/graph/
+
+Have fun!
+
+AUTHOR
+======
+
+Copyright (C) 2004 - 2005 by Tels http://bloodgate.com/
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms of the GPL version 2.
+

@@ -1,0 +1,11 @@
+--- #YAML:1.0
+name: Graph-Easy-Manual
+version: 0.19
+version_from: ''
+license: gpl
+distribution_type: module
+generated_by: Graph-Easy-Manual version 0.19
+installdirs: site
+requires:
+  Graph::Easy: 0.19
+  Pod::Simple: 3.02

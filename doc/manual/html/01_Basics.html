@@ -1,0 +1,765 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+ <title>Graph::Easy manual - Chapter 1 - Basics </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta name="MSSmartTagsPreventParsing" content="TRUE">
+ <meta http-equiv="imagetoolbar" content="no">
+ <link rel="stylesheet" type="text/css" href="base.css">
+ <style type='text/css'><!--
+table.graph .edge {
+  background: inherit;
+  border: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  letter-spacing: -0.36em;
+  line-height: 0.7em;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-right: 0.5em;
+  text-align: center;
+  width: 1.8em;
+}
+table.graph {
+  background: inherit;
+  border: none;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph .group {
+  background: #a0d0ff;
+  border: none;
+  padding: 0.2em;
+}
+table.graph .node {
+  background: #ffdead;
+  border: 1px solid black;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph .node-anon { display: none; }
+table.graph td[class|="group"] { padding: 0.2em; }
+table.graph td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph1 .edge {
+  background: inherit;
+  border: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  letter-spacing: -0.36em;
+  line-height: 0.7em;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-right: 0.5em;
+  text-align: center;
+  width: 1.8em;
+}
+table.graph1 {
+  background: inherit;
+  border: none;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph1 .group {
+  background: #a0d0ff;
+  border: none;
+  padding: 0.2em;
+}
+table.graph1 .node {
+  background: #ffdead;
+  border: 1px solid black;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph .node-anon { display: none; }
+table.graph1 td[class|="group"] { padding: 0.2em; }
+table.graph1 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph2 .edge {
+  background: inherit;
+  border: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  letter-spacing: -0.36em;
+  line-height: 0.7em;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-right: 0.5em;
+  text-align: center;
+  width: 1.8em;
+}
+table.graph2 {
+  background: inherit;
+  border: none;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph2 .group {
+  background: #a0d0ff;
+  border: none;
+  padding: 0.2em;
+}
+table.graph2 .node {
+  background: #ffdead;
+  border: 1px solid black;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph .node-anon { display: none; }
+table.graph2 td[class|="group"] { padding: 0.2em; }
+table.graph2 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph3 .edge {
+  background: inherit;
+  border: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  letter-spacing: -0.36em;
+  line-height: 0.7em;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-right: 0.5em;
+  text-align: center;
+  width: 1.8em;
+}
+table.graph3 {
+  background: inherit;
+  border: none;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph3 .group {
+  background: #a0d0ff;
+  border: none;
+  padding: 0.2em;
+}
+table.graph3 .node {
+  background: #ffdead;
+  border: 1px solid black;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph .node-anon { display: none; }
+table.graph3 td[class|="group"] { padding: 0.2em; }
+table.graph3 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph5 .edge {
+  background: inherit;
+  border: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  letter-spacing: -0.36em;
+  line-height: 0.7em;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-right: 0.5em;
+  text-align: center;
+  width: 1.8em;
+}
+table.graph5 {
+  background: inherit;
+  border: none;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph5 .group {
+  background: #a0d0ff;
+  border: none;
+  padding: 0.2em;
+}
+table.graph5 .node {
+  background: #ffdead;
+  border: 1px solid black;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph .node-anon { display: none; }
+table.graph5 td[class|="group"] { padding: 0.2em; }
+table.graph5 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph6 .edge, table.graph6 .edgev, table.graph6 .edgel {
+  background: inherit;
+  border: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  letter-spacing: -0.36em;
+  line-height: 0.7em;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-right: 0.5em;
+  text-align: center;
+  width: 1.8em;
+}
+table.graph6 {
+  background: inherit;
+  border: none;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph6 .group {
+  background: #a0d0ff;
+  border: none;
+  padding: 0.2em;
+}
+table.graph6 .node {
+  background: #ffdead;
+  border: 1px solid black;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph .node-anon { display: none; }
+table.graph6 td[class|="group"] { padding: 0.2em; }
+table.graph6 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph6 .edgev {
+  text-align: left;
+}
+table.graph6 .edgel {
+  width: auto;
+}
+table.graph6 .label, table.graph6 .line {
+  padding: 0em;
+  margin: 0em;
+  position: relative;
+  top: -0.2em;
+}
+table.graph6 .label, table.graph6 .labelv { 
+  font-size: 0.7em;
+  letter-spacing: 0em;
+}
+table.graph6 .labelv {
+  position: relative;
+  top: -1.5em;
+  left: 0.5em;
+}
+table.graph7 .edge, table.graph7 .edgev, table.graph7 .edgel {
+  background: inherit;
+  border: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  letter-spacing: -0.36em;
+  line-height: 0.7em;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-right: 0.5em;
+  text-align: center;
+  width: 1.8em;
+}
+table.graph7 {
+  background: inherit;
+  border: none;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph7 .group {
+  background: #a0d0ff;
+  border: none;
+  padding: 0.2em;
+}
+table.graph7 .node {
+  background: #ffdead;
+  border: 1px solid black;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph .node-anon { display: none; }
+table.graph7 td[class|="group"] { padding: 0.2em; }
+table.graph7 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph7 .edgev {
+  text-align: left;
+}
+table.graph7 .edgel {
+  width: auto;
+}
+table.graph7 .label, table.graph7 .line {
+  padding: 0em;
+  margin: 0em;
+  position: relative;
+  top: -0.2em;
+}
+table.graph7 .label, table.graph7 .labelv { 
+  font-size: 0.7em;
+  letter-spacing: 0em;
+}
+table.graph7 .labelv {
+  position: relative;
+  top: -1.5em;
+  left: 0.5em;
+}
+table.graph8 .edge {
+  background: inherit;
+  border: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  letter-spacing: -0.36em;
+  line-height: 0.7em;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-right: 0.5em;
+  text-align: center;
+  width: 1.8em;
+}
+table.graph8 {
+  background: white;
+  border: none;
+  color: green;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph8 .group {
+  background: #a0d0ff;
+  border: none;
+  padding: 0.2em;
+}
+table.graph8 .node {
+  background: #ffdead;
+  border: 1px solid black;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph .node-anon { display: none; }
+table.graph8 td[class|="group"] { padding: 0.2em; }
+table.graph8 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph9 .edge {
+  background: inherit;
+  border: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  letter-spacing: -0.36em;
+  line-height: 0.7em;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-right: 0.5em;
+  text-align: center;
+  width: 1.8em;
+}
+table.graph9 {
+  background: inherit;
+  border: none;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph9 .group {
+  background: #a0d0ff;
+  border: none;
+  padding: 0.2em;
+}
+table.graph9 .node {
+  background: #ffdead;
+  border: 1px solid black;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph .node-anon { display: none; }
+table.graph9 td[class|="group"] { padding: 0.2em; }
+table.graph9 td {
+  padding: 2px;
+  background: inherit;
+  }
+ --> </style>
+</head>
+<body bgcolor=white text=black>
+<!--
+  generated by Graph::Easy::Pod2HTML v0.02,
+  using Pod::Simple::PullParser v2.02,
+  under Perl v5.008006 at Sun Jun 12 10:35:19 2005 GMT.
+
+ If you want to change this HTML document, you probably shouldn't do that
+   by changing it directly.  Instead, see about changing the calling options
+   to Graph::Easy::Pod2HTML, and/or subclassing Graph::Easy::Pod2HTML,
+   then reconverting this document from the Pod source.
+   When in doubt, email the author of Graph::Easy::Pod2HTML for advice.
+   See 'perldoc Graph::Easy::Pod2HTML' for more info.
+
+-->
+
+<a name="___top"></a>
+
+  
+
+
+<h1>Graph::Easy manual - Chapter 1 - Basics</a></h2>
+
+<div class='text'>
+
+
+<p>This chapter of the Graph::Easy manual covers the basic syntax and elements of the graph description language.</p>
+</div>
+
+<h2>Nodes</a></h2>
+
+<div class='text'>
+
+
+
+<p>A node is enclosed in square brackets,
+<code lang='und' xml:lang='und'>[ ]</code>.
+The text between the brackets will be the unique name of the node and is also what will usually displayed:</p>
+<pre style='float: left;' class='graph'>
+  [ Bonn ]
+  [ Berlin ]
+</pre>
+
+<table class="graph" cellpadding=4px cellspacing=0>
+ <tr>
+  <td colspan=2></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node'>Bonn</td>
+ </tr>
+ <tr>
+  <td colspan=2></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node'>Berlin</td>
+ </tr>
+ <tr><td colspan=4></td></tr>
+</table>
+
+
+<div class='clear'></div>
+<pre style='float: left;' class='graph'>
+  [  Bonn and   Berlin  ]
+  [  Bonn
+    and
+    Berlin  ]
+  [Bonn and Berlin]
+</pre>
+
+<table class="graph1" cellpadding=4px cellspacing=0>
+ <tr>
+  <td colspan=2></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node'>Bonn and Berlin</td>
+ </tr>
+ <tr><td colspan=4></td></tr>
+</table>
+
+
+<div class='clear'></div>
+
+
+<p>Note that spaces at the front and end,
+as well as double spaces are stripped out.
+Thus the following are all equivalent and the resulting graph will only have one node:</p>
+
+<pre style='float: left;' class='graph'>
+  [  Bonn\n and\n Berlin ]
+</pre>
+
+<table class="graph2" cellpadding=4px cellspacing=0>
+ <tr>
+  <td colspan=2></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node'>Bonn<br /> and<br /> Berlin</td>
+ </tr>
+ <tr><td colspan=4></td></tr>
+</table>
+
+
+<div class='clear'></div>
+
+<p>You can embed linebreaks into the node text by using <code lang='und' xml:lang='und'>\n</code>:</p>
+
+
+<p>See also the section on <a href="http://search.cpan.org/perldoc?Escaping" class="podlinkpod"
+>Escaping</a>.</p>
+</div>
+
+<h2>Escaping</a></h2>
+
+<div class='text'>
+
+
+<p>When describing graphs,
+a few characters are used to start/end special features.
+These markers,
+like <code lang='und' xml:lang='und'>&#60;[</code>&#62;,
+<code lang='und' xml:lang='und'>&#60;]</code>&#62; or <code lang='und' xml:lang='und'>&#60;#</code>&#62;,
+cannot appear in names,
+labels,
+texts etc,
+without being escaped.
+The escape character is <code lang='und' xml:lang='und'>&#60;\</code>&#62; (backslash).
+Here is an example:</p>
+<pre style='float: left;' class='graph'>
+  [ \[ Bonn\n and\n Berlin are \#0 (really!) \] ]
+</pre>
+
+<table class="graph3" cellpadding=4px cellspacing=0>
+ <tr><td colspan=3></td></tr>
+</table>
+
+
+<div class='clear'></div>
+
+</div>
+
+<h2>Definitions and Comments</a></h2>
+
+<div class='text'>
+
+
+<p>Comments in the source start with a <code lang='und' xml:lang='und'>#</code> and always comment out anything to the end of the line:</p>
+Error: '  graph    {    background: #deadff; # another comment    }  [ Bonn ]' not recognized by parser.<pre style='float: left;' class='graph'>
+  [ Bonn ] -> [ Berlin ]
+</pre>
+
+<table class="graph5" cellpadding=4px cellspacing=0>
+ <tr>
+  <td colspan=6></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node'>Bonn</td>
+  <td></td>
+  <td class='edge'>------&gt;</td>
+  <td></td>
+  <td class='node'>Berlin</td>
+ </tr>
+ <tr><td colspan=8></td></tr>
+</table>
+
+
+<div class='clear'></div>
+
+
+<p>Note that the color definition does not start a comment,
+this is a special case that should be automatically handled right by the parser.</p>
+
+<p>If you want to embed a literal <code lang='und' xml:lang='und'>#</code> into a node name,
+use <code lang='und' xml:lang='und'>\#</code>.</p>
+</div>
+
+<h2>Edges</a></h2>
+
+<div class='text'>
+
+
+<p><i>Edges</i> connect nodes with each other.</p>
+
+
+<h3>Styles and labels</a></h3>
+<pre style='float: left;' class='graph'>
+  [ Bonn ] --> [ Berlin ]
+  [ A ] ==> [ B ]
+  [ B ] ..> [ C ]
+  [ B ] - > [ D ]
+  [ F ] -This is a label-> [ E ]
+</pre>
+
+<table class="graph6" cellpadding=4px cellspacing=0>
+ <tr>
+  <td colspan=6></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node'>Bonn</td>
+  <td></td>
+  <td class='edge'>------&gt;</td>
+  <td></td>
+  <td class='node'>Berlin</td>
+ </tr>
+ <tr>
+  <td colspan=10></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node'>A</td>
+  <td></td>
+  <td class='edge'>======&gt;</td>
+  <td></td>
+  <td class='node'>B</td>
+  <td></td>
+  <td class='edge'>- - - &gt;</td>
+  <td></td>
+  <td class='node'>D</td>
+ </tr>
+ <tr>
+  <td colspan=6></td>
+ </tr>
+ <tr>
+  <td colspan=5></td>
+  <td class='edge'>|<br />|<br />v</td>
+ </tr>
+ <tr>
+  <td colspan=6></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node'>F</td>
+  <td colspan=3></td>
+  <td class='node'>C</td>
+ </tr>
+ <tr>
+  <td colspan=2></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='edgev'>|<br>|<br>v<span class='labelv'>This is a label</span>
+</td>
+ </tr>
+ <tr>
+  <td colspan=2></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node'>E</td>
+ </tr>
+ <tr><td colspan=12></td></tr>
+</table>
+
+
+<div class='clear'></div>
+<pre style='float: left;' class='graph'>
+  [ F ] =This is a label=> [ E ]
+</pre>
+
+<table class="graph7" cellpadding=4px cellspacing=0>
+ <tr>
+  <td colspan=6></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node'>F</td>
+  <td></td>
+  <td class='edgel'><span class='label'>This is a label</span><br><span class='line'>==============================&gt;</span>
+</td>
+  <td></td>
+  <td class='node'>E</td>
+ </tr>
+ <tr><td colspan=8></td></tr>
+</table>
+
+
+<div class='clear'></div>
+
+
+<p>You can also combine different styles and labels:</p>
+
+</div>
+
+<h2>Attributes</a></h2>
+
+<div class='text'>
+
+<pre style='float: left;' class='graph'>
+  graph { background: white; color: green; }
+
+  [ Bonn ] { color: red; }
+  -> { color: blue; }
+  [ Berlin ]
+</pre>
+
+<table class="graph8" cellpadding=4px cellspacing=0>
+ <tr>
+  <td colspan=6></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node' style="color: red">Bonn</td>
+  <td></td>
+  <td class='edge' style="color: blue">------&gt;</td>
+  <td></td>
+  <td class='node'>Berlin</td>
+ </tr>
+ <tr><td colspan=8></td></tr>
+</table>
+
+
+<div class='clear'></div>
+
+<p>Attributes can appear either as global class definitions,
+or specifically on Nodes (and <a href="http://search.cpan.org/perldoc?Edges" class="podlinkpod"
+>Edges</a>):</p>
+
+
+<p>If you want two nodes with the same text,
+or name a node different from what text is displayed,
+you need to use a node label:</p>
+</div>
+
+<h2>Two nodes with the same text</a></h2>
+
+<div class='text'>
+
+<pre style='float: left;' class='graph'>
+  [ Bonn ]
+  -> [ Berlin ]
+  -> [ Bonn1 ] { label: Bonn; }
+</pre>
+
+<table class="graph9" cellpadding=4px cellspacing=0>
+ <tr>
+  <td colspan=10></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class='node'>Bonn</td>
+  <td></td>
+  <td class='edge'>------&gt;</td>
+  <td></td>
+  <td class='node'>Berlin</td>
+  <td></td>
+  <td class='edge'>------&gt;</td>
+  <td></td>
+  <td class='node'>Bonn</td>
+ </tr>
+ <tr><td colspan=12></td></tr>
+</table>
+
+
+<div class='clear'></div>
+
+
+  </div>
+
+  <div class="footer">
+  Generated at Sun Jun 12 12:35:19 2005 by Graph::Easy::Pod2HTML v0.02
+  </div>
+
+  </div> <!-- end right side -->
+  <!-- end doc -->
+</body></html>

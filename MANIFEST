@@ -1,0 +1,23 @@
+CHANGES
+INSTALL
+Makefile.PL
+MANIFEST
+LICENSE
+README
+SIGNATURE
+TODO
+doc/manual/00_Overview.pod
+doc/manual/01_Basics.pod
+doc/manual/index.pod
+doc/manual/html/00_Overview.html
+doc/manual/html/01_Basics.html
+doc/manual/html/index.html
+doc/manual/html/base.css
+doc/README
+doc/gen_manual
+doc/base.css
+examples/pod2html		convert pod to HTML (with graphs!)
+t/pod2html.t
+lib/Graph/Easy/Pod2HTML.pm	pod => html with "=for graph" sections
+lib/Graph/Easy/Manual.pm
+META.yml			Module meta-data
