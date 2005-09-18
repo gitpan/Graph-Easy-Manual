@@ -1,11 +1,9 @@
 Graph-Easy-Manual
 =================
 
-This module provides you with a Pod2HTML converter and a manual for
-Graph::Easy.
-
-Please see the file INSTALL on how to install this module and create
-the HTML version of the manual.
+This module provides you with a comprehensive HTML manual for Graph::Easy.
+There is no need to install this package, just read the HTML files in
+C<doc/manual/>.
 
 You can also view the manual online at:
 

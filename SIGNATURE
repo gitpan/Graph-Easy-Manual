@@ -13,36 +13,53 @@ not run its Makefile.PL or Build.PL.
 
 -----BEGIN PGP SIGNED MESSAGE-----
 
-SHA1 199e164aa5f0971afae1f2a0c9fc3e64f4ec497c CHANGES
-SHA1 15446904bd208cd107f99f400eee5816a1fa2d79 INSTALL
+SHA1 099cabfe32b04d0c038f862c60b15ac8a960987d CHANGES
+SHA1 6d72d79fc06eb02d20d1521e1ebb55bcc9992dbe INSTALL
 SHA1 02154445bc9831e791c35050f1a018ed99030016 LICENSE
-SHA1 a5d9f925f22b046705defe0742396c17f59ead74 MANIFEST
-SHA1 36b3b39efd12bbd354ac966d9ea0b7321fc5f3d9 META.yml
-SHA1 e5161424f3349e422cf6f746f4349b45e9706ac5 Makefile.PL
-SHA1 49206ab0d7ab0ade38a8ccc1ca961cc6e52064a5 README
-SHA1 05cdd45c93260782ba86ff94b20c5f5adc40acb9 TODO
-SHA1 70dae972145f1e6773ff687be7c2d92877832c14 doc/README
-SHA1 48aad4628702e699f0842d560166a68f6e33fcaa doc/base.css
-SHA1 c31935dc1988c09662b15574ca3070326960c017 doc/gen_manual
-SHA1 172b31310fdb7ebe95e705ddffd8f6ea30da2bff doc/manual/00_Overview.pod
-SHA1 05b128da6010220557dc64fd0972507a7da5b7b5 doc/manual/01_Basics.pod
-SHA1 da39a3ee5e6b4b0d3255bfef95601890afd80709 doc/manual/html/00_Overview.html
-SHA1 3da08ce800dac474297eec98a55695e61927acd8 doc/manual/html/01_Basics.html
-SHA1 48aad4628702e699f0842d560166a68f6e33fcaa doc/manual/html/base.css
-SHA1 e7efb32082622ab2f0d048bfa960f08e536f3f94 doc/manual/html/index.html
-SHA1 8ff29d57adbaf83af7f05084ea54f84e48812b4b doc/manual/index.pod
-SHA1 b646b9f4f0e6bca8515d814c2ca5d9c7f0410b41 examples/pod2html
-SHA1 17b62755d9eac8fe9ae3240d109c1d2ca543f79e lib/Graph/Easy/Manual.pm
-SHA1 7947385a220dbc9d3c5666d121f050a1482e47c3 lib/Graph/Easy/Pod2HTML.pm
-SHA1 140859a1c9610a0f0b93a229b9a32938d2a29f68 t/pod2html.t
+SHA1 838447c45ce161158c52acef9f0b765e83116e67 MANIFEST
+SHA1 de7e10ba0385713993d338e3317c172c5b397445 META.yml
+SHA1 0024695e51c9b1663fadd2ab6a72ff3b4ef60fe1 Makefile.PL
+SHA1 fff5ddc08f34a7e15a9428d2bb2e87e640d9aee0 README
+SHA1 33908ba89e37dd0dc06709d2b285f8cebac978b9 TODO
+SHA1 9062daf33789d2647ed21e853fa6fd09801a4b1d doc/README
+SHA1 3f1d53e539e70df13821f4207a2c3f20b17ed44f doc/att_edges.tpl
+SHA1 9a956a6295f62c19923da488ff3b7fb88636253f doc/att_graphs.tpl
+SHA1 354c30025fad7a67959b1f96cbf73ce7cdbb756b doc/att_groups.tpl
+SHA1 6ccb0fef81b23556a13f0930ff660c3485e7cddf doc/att_nodes.tpl
+SHA1 fe00568877fbc03c0abdc75561b2eed944e56268 doc/attributes.tpl
+SHA1 8a90704a6b5eaa972b0b34743a953b14e7452b25 doc/base.css
+SHA1 969a71f3d806e50cc029551b320e1ac0d5d8acb6 doc/gen_manual
+SHA1 6890cc5d37ddd36b2f8de904b231b484f2003136 doc/manual/a-star.html
+SHA1 92f51a9561312d097779c56230d3991bf058e4e3 doc/manual/bench/serie.pl
+SHA1 294339263980d8a836bebbe0a024264587cfb6b9 doc/manual/benchmark.html
+SHA1 c331bef0c2a39c25783385bcf1ef24e38eb3db11 doc/manual/hinting.html
+SHA1 3297eb77a08577ae3b56dd7361b9dcca661ff283 doc/manual/img/dataflow.png
+SHA1 1762fafab7827e95ede835026dbadfcdfc96075d doc/manual/img/example1.png
+SHA1 127bd16422474c26c84c0033b60d9062c8d49e25 doc/manual/img/example2.png
+SHA1 49dbbb9e781ac500f16ab7b6d21114f46d41da60 doc/manual/img/example3.png
+SHA1 453135e6310c8112cfde7c392c7f0673fe4c6701 doc/manual/img/example4.png
+SHA1 d78185a1cef02a0b87034aef07f0491b2c1ca7c7 doc/manual/img/example5.png
+SHA1 fecc6a1ad3d3a387636709fd3448cfdb8f7e32fd doc/manual/img/example6.png
+SHA1 4b9e29b25989d40ac5832c4d08488c9f14b285ff doc/manual/img/example7.png
+SHA1 4b9e29b25989d40ac5832c4d08488c9f14b285ff doc/manual/img/example8.png
+SHA1 23783801f976cebe5ba655583e44a555a6d2fb2a doc/manual/index.html
+SHA1 a6092e6026596c75bcd3c15a63e36ef71d707db3 doc/manual/layouter.html
+SHA1 c04b2a2d2864df527969734a50dd3c6ee5f9295e doc/manual/manual.css
+SHA1 a6c81e0da8b2129603efa4f8771c2fc964783e36 doc/manual/output.html
+SHA1 7a6f6924689f60d371db123925f81b48d28d847b doc/manual/overview.html
+SHA1 d4478ad139aa7fd8b802d2dbd8b53820af6a941e doc/manual/syntax.html
+SHA1 9881eda433021afbece6a494855d13f76000b0a7 doc/manual/test.svg
+SHA1 07fba9f6b249bd4c02712ac7391477fdc5814ffa lib/Graph/Easy/Manual.pm
+SHA1 9aabf388bdd70ef0a5eab3bf302530dca452d722 t/pod.t
+SHA1 fde74ebae5c163f515362b9d4c5dde21051a48a5 t/pod_cov.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.2.4 (GNU/Linux)
 
-iQEVAwUBQq3ET3cLPEOTuEwVAQF5cgf/VA3obhspynXJPmRFX+pGWYhE3uF8GVEy
-9CQEAsvx2BeUMq7NdbpxJqRniE0Kk8ErcTsDoCJg6BcKJoeg5FpE38J8ZW+Ph2Nq
-jFI//cwNUIJ9QUdsj2SWKyg2xHZQCXgnzau/qkQpexHz0RCAXx5nzw+k4gQT+43x
-jlZmBGsirx2Ejsst0DtoLVznaKfW5dqznbBkpZO+TSoWQf26QT1s7Fif/HZQRE9S
-3Dj4ORe4nVkcVHJhYbE0CGccoOEzVOdLcRavxPhAoWfreTQXJSEDfiHsHRK1DqQX
-O1rdTX2ZPMDSTwRJclIW9e/d7Voro6VL4t95Wlm3jA2toXzgEPOjqw==
-=CHMJ
+iQEVAwUBQy2wq3cLPEOTuEwVAQFXNQf/SXTpzpyQ6IwCNqWkqVq28lNhwf13j5q7
+qdAwPk5VUxL7p0bQogkPjj6JQ1LKGY+FDBm3+BkiVeLSyCSXRsV6bWFW8MM++IZb
+tDSF1OzSBYyeuJ9PvaOKnlizBHM9O4mVNHspuXToi84f3f17haCsG0nvVuFj5Bn/
+JfliFCH1OYAkqcsjbXaZtM26quHHXta793MAIlmN1EH7a3kuuNC2WoqtlhFtk9XY
+UrxVwAb4APsD1pkLgcupYWDsRTMjtjqCR/6qAFmY52NtjoraithXccprVYoRy0l1
+da74sAHnOzzng6W+gMve7lph3CS38TSMQg/0w4jfCE9p9vpLX1ZlaA==
+=klg4
 -----END PGP SIGNATURE-----

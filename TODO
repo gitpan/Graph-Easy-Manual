@@ -1,4 +1,3 @@
 
-* The subclassing of Pod::Simple::HTML still doesn't work properly,
-  the graphs are not output at the right time and thus appear a few
-  paragraphs to soon or too late, depending on whatever...
+* Write a working POD2HTML converter (Pod::Simple::HTML still doesn't work
+  properly),

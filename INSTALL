@@ -1,46 +1,15 @@
 
 =pod
 
-=for graph [ Pod ] -Pod2HTML-> [ HTML ]
-
 =head1 Graph-Easy::Manual
 
-This module provides you with a Pod2HTML converter and a manual for
-Graph::Easy.
-
-To install this module type the following:
-
-Untar the package:
-
-	tar -xzf Graph-Easy-Manual-0.19.tar.gz
-
-Change into the directory:
-
-	chdir Graph-Easy-Manual-0.19/
-
-Verify the package:
-
-	cpansign --verify
-
-If the package fails to verify, do NOT run Makefile.pl nor install it and
-notify me immidiately. YOUR SYSTEM MIGHT GET COMPROMISED! 
-
-When the package verified okay, then proceed:
-
-        perl Makefile.PL
-
-If you get warnings about missing or outdated modules, then
-upgrade/install these first. Then run the testsuite:
-
-        make test
-
-If all tests pass, install the package:
-
-        sudo make install
+This module provides you with a comprehensive HTML manual for Graph::Easy.
+There is no need to install this package, just read the HTML files in
+C<doc/manual/>.
 
 =head1 DOCUMENTATION
 
-To create the HTML version of the manual, do the following:
+To re-create the HTML version of the manual, do the following:
 
 	cd doc
 	./gen_manual

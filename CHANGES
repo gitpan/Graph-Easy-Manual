@@ -1,5 +1,13 @@
 Revision history for Graph::Easy::Manual:
 
+2005-09-18 v0.20 Tels 2 tests - Doc, doc, doc, document the code...
+  * removed the POD-bases manual, and added the plain HTML
+  * doc/gen_manual creates only the attributes pages
+  * add POD tests via Test::POD (t/pod.t)
+  * add POD coverage tests via Test::POD::Coverage (t/pod_cov.t)
+  * build/gen_manual: sort example colors by brightness
+  * build/gen_manual: create output path if it doesn't exist yet
+
 2005-06-13 v0.19 Tels 10 tests - Doc, doc, doc, document the code...
   * Split up from Graph::Easy to avoid dependency on Pod::Simple
   * fix doc/gen_manual to include correct links in index

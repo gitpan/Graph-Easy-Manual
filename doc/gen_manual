@@ -1,112 +1,202 @@
 #!/usr/bin/perl -w
 
-# Create the HTML version of the manual from POD files in manual/
+# Usage:
 
-print "gen_manual v0.02 (c) by Tels 2005. Part of Graph::Easy.\n\n";
+#  build/gen_manual >attributes.html
 
 use strict;
+use Carp;
+use Time::HiRes qw/time/;
 use File::Spec;
-use File::Copy;
-use Getopt::Long;
 
-my $time = time;
-
-my $output = File::Spec->catdir(qw/manual html/);
-my $backlink;
-my $options = scalar @ARGV;
-my $version;
- 
-my $rc = GetOptions (
-	"backlink" => \$backlink,
-	"output=s"   => \$output,
-	"version"   => \$version,
-	);
-
-if (!$rc || $options == 0 || $version)
+BEGIN
   {
-  print "\n  Generate Graph::Easy manual in HTML. Usage:\n\n";
-  print "   ./gen_manual [--output=path] [--backlink]\n\n";
-  exit unless $rc;
-  exit if $version;
+  $|++;
+  chdir 'doc' if -d 'doc';
+  use lib 'lib', '../lib';
   }
 
-my $menulink = '';
-$menulink = "--menulink='Back|index.html|Back to the table of contents'" if $backlink;
+my $path = shift || 'manual';
 
-print "Arguments look good, generating manual.\n";
+use Graph::Easy 0.28;
+use Graph::Easy::Parser;
 
-print " Preparing output path $output...";
+my $start = time();
 
-if (!-d $output)
+my $tpl = read_file('attributes.tpl');
+
+# make copy of entries to preserve ARRAY refs
+
+my $e = Graph::Easy->_attribute_entries();
+my $entries = {};
+for my $k (keys %$e)
   {
-  mkdir $output or die ("Cannot create output path '$output': $!");
-  }
-# copy the css file
-my $updir = File::Spec->updir();
-
-copy (
-  'base.css',
-  File::Spec->catfile($output, 'base.css')
-  );
-
-print "done.\n";
-
-my @files = glob ('manual/*.pod');
-
-print "Creating the individual chapters:\n";
-my $cmd = File::Spec->catfile($updir, qw/examples pod2html/);
-
-foreach my $in (sort @files)
-  {
-  my ($volume,$directories,$file) = File::Spec->splitpath($in);
-
-  $file =~ s/.pod/.html/;
-  my $out = File::Spec->catfile($output, $file);
-
-  # no backlinks for the index
-  my $menu = $menulink;
-  $menu = "--menulink='Main|../index.html|Back to the main graph page'" if $file =~ /^index/ && $backlink;
-
-  my $format = 'src,html'; $format = 'html' if $file =~ /^index/;
-
-  print "  $file ($menu --outputformat=$format)\n";
-  `$cmd $in $menu --outputformat=$format >$out`;
+  for my $k1 (keys %{$e->{$k}})
+    {
+    $entries->{$k}->{$k1} = [ @{$e->{$k}->{$k1}} ];
+    }
   }
 
-#############################################################################
-# create the index
+my $parser = Graph::Easy::Parser->new();
 
-print " Done.\nInserting the index into index.html...";
+my $example_graph_id = '';
 
-my $idx_file = File::Spec->catfile($output, 'index.html');
-
-# read in index.html, then write it back
-open FILE, "$idx_file" or die ("Cannot read '$idx_file': $!");
-local $/ = undef;		# slurp
-my $index_tpl = <FILE>;
-close FILE;
-
-my $idx = "<ul>\n";
-
-foreach my $in (sort @files)
+for my $class (qw/node edge graph group/)
   {
-  my ($volume,$directories,$file) = File::Spec->splitpath($in);
+  my $css = '';
+  my $start_time = time();
+  my $cur_tpl = read_file('att_' . $class . 's.tpl');
 
-  my $name = $file; $name =~ s/\.pod//; $name =~ s/^\d+_//;
-  next if $name =~ /^index/;
+  my $txt = '';
 
-  $file =~ s/.pod/.html/;
- 
-  $idx .= "<li><a href='$file'>$name</a>\n";
+  my $idx = "<ul>\n  <li>";
+
+  my $todo = { };
+  for my $entry (keys %{$entries->{all}})
+    {
+    $todo->{$entry} = $entries->{all}->{$entry};
+    }
+  for my $entry (keys %{$entries->{$class}})
+    {
+    $todo->{$entry} = $entries->{$class}->{$entry};
+    }
+  
+  my $file = 'att_' . $class . 's.html';
+  my $last = '';
+  for my $entry (sort keys %$todo)
+    {
+    if ($last ne '' && $last ne substr($entry,0,1))
+      {
+      $idx .= "\n  <li>";
+      }
+    $last = substr($entry,0,1);
+    $idx .= "<a href=\"$file#${class}_$entry\">$entry</a>, ";
+    
+    $txt .= "<a name=\"${class}_$entry\">\n<h4>$entry</h4></a>\n\n";
+
+    $txt .= "<div class=\"entry\">\n\n";
+    
+    my $e = $todo->{$entry};
+
+    my $des = $e->[0]; $des =~ s/L<([^>]+)>/<a href="#${class}_$1">$1<\/a>/g;
+
+    $des =~ s/(section about )(.*?)( for ref)/my $l = $2; $l =~ tr!A-Za-z0-9!_!c; "$1<a href=\"attributes.html#$l\">$2<\/a>$3";/eg;
+
+    if (ref($e->[1]) eq 'ARRAY')
+      {
+      # list of words
+      $des .= "One of: <code>" . join ("</code>, <code>", @{$e->[1]}) . "</code>.\n";
+      } 
+
+    $txt .= "<p>\n$des<br>\n";
+    $txt .= "<b>Defaults to:</b> <code>$e->[2]</code>";
+
+    if (defined $e->[5])
+      {
+      $txt .= "<br>\n<b>Example graph:</b>\n</p>\n";
+      $txt .= '<pre class="graphtext">' . $e->[5] . "\n</pre>\n\n";
+
+      $txt .= '<div class="clear"></div>';
+
+      my $graph = $parser->from_text($e->[5]);
+
+      confess ($parser->error()) if $parser->error();
+     
+      $graph->id($example_graph_id);
+
+      $css .= $graph->css();
+      $txt .= '<div style="margin-left: 1em;">' . $graph->as_html() . '</div>';
+
+      $txt .= '<div class="clear"></div>';
+      $example_graph_id ||= 0; $example_graph_id++;
+      }
+    else
+      {
+      $txt .= "<br>\n<b>Example value:</b> <code>$e->[3]</code></p>\n";
+      }
+    $txt .= "\n</div>\n\n";
+    }
+
+  $idx =~ s/<li>\z//; $idx .= "\n</ul>\n";
+
+  $cur_tpl =~ s/##$class##/$idx$txt/;
+
+  $cur_tpl =~ s/##css##/$css/;
+  $cur_tpl =~ s/##time##/ scalar localtime(); /eg;
+
+  my $took = sprintf("%0.4fs", time() - $start_time);
+  $cur_tpl =~ s/##took##/$took/g;
+
+  write_file(File::Spec->catfile($path,$file),$cur_tpl);
+
+  # insert the index
+  $tpl =~ s/##$class##/$idx/;
   }
-$idx .= "</ul>";
 
-$index_tpl =~ s/##indextable##/$idx/;
+my $colors = Graph::Easy->color_names();
 
-# write out index.pod
-open FILE, ">$idx_file" or die ("Cannot write '$idx_file': $!");
-print $idx_file;
-print FILE $index_tpl;
-close FILE;
+my $list = "<table>\n<tr>\n"; my $o = 0;
+for my $clr (sort {
+  my $ac = $a; $ac =~ /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/;
+  $ac = hex($1) * 256 * 256 + hex($2) * 256 + hex($3); 
+  my $bc = $b; $bc =~ /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/;
+  $bc = hex($1) * 256 * 256 + hex($2) * 256 + hex($3); 
+  $ac <=> $bc;
+  } keys %$colors)
+  {
+  my $c = $colors->{$clr};
+  $list .= "<td class='clrn'>$c:</td><td class='clre' style='background: $clr' title='$c ($clr)'>&nbsp;</td>\n";
+  if ($o++ > 1)
+    { 
+    $o = 0;
+    $list .= "</tr><tr>\n";
+    }
+  }
 
-print "\nAll done, took " . (time - $time) . " seconds. Enjoy!\n\n";
+$list =~ s/<tr>\n\z//;		# remove last <tr>
+$list .= "</table>\n";
+
+$tpl =~ s/##colors##/$list/;
+
+$tpl =~ s/##time##/ scalar localtime(); /eg;
+
+my $took = sprintf("%0.4fs", time() - $start);
+$tpl =~ s/##took##/$took/g;
+
+write_file(File::Spec->catfile($path,'attributes.html'),$tpl);
+
+sub read_file
+  {
+  my $f = shift;
+
+  open FILE, "$f" or die ("Cannot read '$f': $!");
+  local $/ = undef;
+  my $input = <FILE>;
+  close FILE;
+  $input;
+  }
+
+sub write_file
+  {
+  my ($file,$txt) = @_;
+
+  # create the directory unless it already exists
+  my ($vol,$dir,$f) = File::Spec->splitpath($file);
+  my @dirs = File::Spec->splitdir($dir);
+
+  my $comb = '';
+  foreach my $d (@dirs)
+    {
+    $comb = File::Spec->catdir($comb,$d);
+    if (!-d $comb)
+      {
+      die ("Couldn't create dir $comb: $!") unless mkdir $comb, 0750;
+      }
+    }
+
+  print "Writing $file...\n";
+  open FILE, ">$file" or die ("Cannot write '$file': $!");
+  print FILE $txt;
+  close FILE;
+  }
+

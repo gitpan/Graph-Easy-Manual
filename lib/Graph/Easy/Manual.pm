@@ -8,14 +8,14 @@ package Graph::Easy::Manual;
 use strict;
 
 use vars qw/$VERSION/;
-$VERSION = '0.19';
+$VERSION = '0.20';
 
 1;
 __END__
 
 =head1 NAME
 
-Graph::Easy::Manual - Manual incl. Pod2HTML converter for Graph::Easy
+Graph::Easy::Manual - HTML manual for Graph::Easy
 
 =head1 SYNOPSIS
 
@@ -26,13 +26,12 @@ Graph::Easy::Manual - Manual incl. Pod2HTML converter for Graph::Easy
 
 =head1 DESCRIPTION
 
-A C<Graph::Easy::Manual> provides a Pod2HTML converter and a manual
-for Graph::Easy. This package does not contain any code except the
-POD converter.
+A C<Graph::Easy::Manual> provides a comprehensive HTML manual
+for Graph::Easy.
 
 =head1 SEE ALSO
 
-L<Graph::Easy::Pod2HTML>.
+L<Graph::Easy>.
 
 =head1 AUTHOR
 

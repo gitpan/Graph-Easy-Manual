@@ -31,10 +31,10 @@ sub MY::metafile {
 
 WriteMakefile(
     NAME		=> 'Graph::Easy::Manual',
-    VERSION		=> '0.19',
+    VERSION_FROM	=> 'lib/Graph/Easy/Manual.pm',
     PREREQ_PM		=> {
-	Graph::Easy => 0.19,
-	Pod::Simple => 3.02,
+	Graph::Easy => 0.28,
+	File::Spec => 3.01,
 	},
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
 	(ABSTRACT_FROM	=> 'lib/Graph/Easy/Manual.pm', # retrieve abstract from module

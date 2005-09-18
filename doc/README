@@ -1,12 +1,13 @@
-The subdirectory manual/ contains the manual in POD format. You can use
-the script gen_manual to create a HTML version of it:
+The subdirectory manual/ contains the manual as HTML files and templates.
+
+You can use the script gen_manual to create the full HTML version:
 
 	./gen_manual
 
-The manual will then be under 'manual/html/'. Or view the manual online at:
+The manual will then be under 'manual/'. Or view the manual online at:
 
 	http://bloodgate.com/perl/graph/manual/
 
 Enjoy!
 
-Tels 2005-05-24
+Tels

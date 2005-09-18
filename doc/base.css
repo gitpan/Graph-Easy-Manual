@@ -9,7 +9,7 @@ h1
   }
 h2 
   {
-  border: 1px solid grey;
+  border: 1px solid gray;
   border-bottom: none;
   padding: 0.2em;
   padding-left: 0.5em;
@@ -19,7 +19,7 @@ h2
   }
 div.h3 
   {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid gray;
   padding: 0.2em;
   padding-left: 0.1em;
   margin-top: 0em;
@@ -62,7 +62,7 @@ h2.mint
 div.footer
   {
   background: #f0f0f0;
-  border: 1px solid grey;
+  border: 1px solid gray;
   padding: 0.6em;
   padding-left: 1.6em;
   font-size: small;
@@ -74,7 +74,7 @@ p.hr
   {
   padding-top: 0.3em;
   border: none;
-  border-top: 1px solid grey;
+  border-top: 1px solid gray;
   }
 div.right
   {
@@ -82,13 +82,13 @@ div.right
   }
 div.text 
   {
-  border: 1px solid grey;
+  border: 1px solid gray;
   padding: 0.5em;
   padding-left: 1.5em;
   background: #e8e8e8;
   font-size: 0.9em;
   }
-div.clear
+.clear
   {
   clear: both;
   }
@@ -126,7 +126,7 @@ a.menu
   text-decoration: none;
   margin-bottom: 0.3em;
   }
-a.menuext
+a.menuext, a.menucur, a.menuadd, a.menuind, a.menucin
   {
   background: #e09070;
   color: #ffffff;
@@ -135,10 +135,25 @@ a.menuext
   text-decoration: none;
   margin-bottom: 0.4em;
   }
-p.menu, p.menuext
+a.menuind, a.menucin
+  {
+  color: black;
+  background: #e0e0ff;
+  margin-left: 0.1em;
+  }
+a.menucur, a.menucin
+  {
+  background: #e0e0e0;
+  color: black;
+  }
+a.menuadd
+  {
+  background: #b06000;
+  }
+p.menu, p.menuext, p.menucur, p.menuadd, p.menuind, p.menuinc, p.menucin
   {
   background: #e08080;
-  border: 1px solid grey;
+  border: 1px solid gray;
   padding: 0.2em;
   padding-right: 0em;
   margin: 0em;
@@ -146,11 +161,25 @@ p.menu, p.menuext
   min-width: 6em;
   font-size: 0.8em;
   }
+p.menuind, p.menuinc, p.menucin
+  {
+  color: black;
+  background: #e0e0ff;
+  margin-left: 1em;
+  }
 p.menuext
   {
   background: #e09070;
   }
-a.menu:hover, a.menuext:hover
+p.menucur, p.menuinc, p.menucin
+  {
+  background: #e0e0e0;
+  }
+p.menuadd
+  {
+  background: #b06000;
+  }
+a.menu:hover, a.menuext:hover, a.menuinc:hover, a.menucin:hover
   {
   color: black;
   border: none;
@@ -158,13 +187,32 @@ a.menu:hover, a.menuext:hover
   text-decoration: none;
   margin-bottom: 0.5em;
   }
+a.menuinc:hover, a.menucin:hover, a.menucur:hover, a.menuind:hover
+  {
+  color: #e0b090;
+  }
+p, li
+  {
+  max-width: 50em;
+  }
+p {
+  padding-bottom: 0em;
+  margin-bottom: 0.4em;
+  margin-top: 0.4em;
+  }
 img
   {
-  border: 1px solid grey;
+  border: 1px solid gray;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
   }
 ul
   {
   list-style: square;
+  }
+li
+  {
+  font-size: 0.9em;
   }
 code
   {
@@ -181,4 +229,4 @@ pre
   margin-bottom: 2.5em;
   border: 1px solid black;
   max-width: 40em;
-  }
+  }  

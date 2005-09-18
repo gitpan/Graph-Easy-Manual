@@ -1,0 +1,672 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+ <title>Graph::Easy - Manual - Syntax</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta name="MSSmartTagsPreventParsing" content="TRUE">
+ <meta http-equiv="imagetoolbar" content="no">
+ <link rel="stylesheet" type="text/css" href="../base.css">
+ <link rel="stylesheet" type="text/css" href="manual.css">
+ <!-- compliance patch for microsoft browsers -->
+ <!--[if lt IE 7]><script src="/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
+</head>
+<body bgcolor=white text=black>
+
+<a name="top"></a>
+
+<div class="menu">
+
+  <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
+  <p style="height: 0.2em">&nbsp;</p>
+  <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
+  <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
+  <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
+  <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
+  <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
+  <p class="menucur"><a class="menucur" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
+    <p class="menuind"><a class="menuind" href="#nodes" title="Nodes">Nodes</a></p>
+    <p class="menuind"><a class="menuind" href="#attributes" title="Attributes">Attributes</a></p>
+    <p class="menuind"><a class="menuind" href="#edges" title="Nodes">Edges</a></p>
+    <p class="menuind"><a class="menuind" href="#advanced" title="Advanced syntax for special effects">Advanced</a></p>
+  <p class="menuext"><a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
+
+</div>
+
+<div class="right">
+
+<h1>Graph::Easy - Manual</h1>
+
+<h2>Syntax</h2>
+
+<div class="text">
+
+<p>
+If you haven't done so, please read the <a href="overview.html">Overview</a> first.
+</p>
+
+<p>
+This chapter describes the syntax of the text format that is parsed by
+<code>Graph::Easy::Parser</code> into a Graph::Easy object.
+
+<h3>General rules</h3>
+
+<a name="comments">
+<h4>Comments</h4>
+</a>
+
+<p>
+Comments start with a <code>#</code> character and run til the end of the line.
+<br>
+Certain things are except from this rule, like color values like
+<code>#ff00aa</code> inside attributes, where the '#' will not start a comment.
+</p>
+
+<p>
+To make sure that you comments are parsed correctly, always put a space
+as the first character after the hatch (entire lines consisting only
+of the '#' character are ok, though):
+</p>
+
+<pre>
+############################
+# This is a good comment.
+
+#############################
+#This is bad.
+</pre>
+
+<a name="whitespace">
+<h4>Whitespace</h4>
+</a>
+
+<p>
+Whitespace does generally not matter, e.g. multiple spaces are collapsed
+together to one, and linebreaks are ignored. Whitespace at the front and
+end of label texts is removed, likewise. Thus the following two are
+equivalent:
+</p>
+
+<pre>
+[A]->[B][C]->[D]
+</pre>
+
+<pre>
+[ A ] -> [ B ]
+[ C ] -> [ D ]
+</pre>
+
+<p>
+When writing graph text, you are encouraged to use whitespace and linebreaks
+for clarity, like in the second example above.
+</p>
+
+<p>
+To insert a line break into a node or edge label, use literally <code>\n</code>:
+</p>
+
+<pre>
+[ My\n long\n node\n name ] -- A\n long\n label --> [ B ]
+</pre>
+
+<pre class="graph">
++------+          +---+
+| My   |  A       |   |
+| long |  long    | B |
+| node |  label   |   |
+| name | -------> |   |
++------+          +---+
+</pre>
+
+<div class="clear"></div>
+
+<a name="nodes">
+<h4>Nodes</h4>
+</a>
+
+<p>
+Nodes are written (or "quoted", if you wish) with enclosing square brackets:
+</p>
+
+<pre>
+[ Single node ]
+[ Node A ] --> [ Node B ]
+</pre>
+
+<p>
+You can also have a list of nodes by seperating them with a comma:
+</p>
+
+<pre>
+[ A ], [ B ], [ C ] --> [ D ]
+</pre>
+
+<p>
+Node lists currently only work on the left side of an expression.
+</p>
+
+<p>
+In addition, you can chain nodes together like this:
+</p>
+
+<pre>
+[ A ] -> [ B ] -> [ C ]
+ -> [ D ]
+ -> [ E ]
+</pre>
+
+<p>
+You can also create invisible, anonymous nodes with <code>[ ]</code>. These nodes
+are called anonymous, because you do not know their name and thus cannot refer
+to them again:
+</p>
+
+<pre>
+[ ] -> [ Karlsruhe ] -> [ ] -> [ Plauen ]
+</pre>
+
+<p>
+That would be rendered like:
+</p>
+
+<pre class="ascii">
+        +-----------+             +--------+
+    --> | Karlsruhe | -->     --> | Plauen |
+        +-----------+             +--------+
+</pre>
+
+<p>
+If you merely want an invisible node, use <code>shape: invisible;</code>:
+</p>
+
+<pre>
+[ You don't see me! ] { shape: invisible; } -> [ Bischofswerda ]
+-> [ You don't see me! ]
+</pre>
+
+<pre class="ascii">
+  +---------------------+
+  v                     |
++---------------+
+| Bischofswerda | -->
++---------------+
+</pre>
+
+<a name="attributes">
+<h4>Attributes</h4>
+</a>
+
+<p>
+Attributes are enclosed in <code>{ }</code>,
+are in the format <code>attributename: attributevalue;</code>
+and follow immidiately the object for that they apply.
+</p>
+
+<pre>
+graph { background: white; }	# for the graph itself
+node { background: white; }	# for all nodes
+edge { style: bold; }		# for all edges
+node.city { background: red; }	# for all nodes with class "city"
+
+[ Bonn ] { class: city; }	# for the node "Bonn"
+
+[ Bonn ] --> { style: dotted; }	# for the edge "Bonn" to "Berlin"
+[ Berlin ] { color: green; }	# for the node "Berlin"
+
+[ ABC ] { border: bold; color: white; }
+[ DEF ]
+  {
+    border: bold; 
+    color: white; 
+  }
+</pre>
+
+<p>
+For a complete listing of possible attributes see the appropriate
+<a href="attributes.html">chapter</a>.
+</p>
+
+<a name="edges">
+<h4>Edges</h4>
+</a>
+
+<p>
+The edges between the nodes can have the following styles:
+</p>
+
+<pre>
+        ->              solid
+        =>              double
+        .>              dotted
+        ~>              wave
+
+        - >             dashed
+        .->             dot-dash
+        ..->            dot-dot-dash
+        = >             double-dash
+</pre>
+
+<p>
+There is also the style "bold". Unlike the others, this can only be
+set via the (optional) edge attributes:
+</p>
+
+<pre>
+        [ A ] --> { style: bold; } [ B ]
+</pre>
+
+<p>
+You can repeat each of the style-patterns as much as you like:
+</p>
+
+<pre>
+        --->
+        ==>
+        =>
+        ~~~~~>
+        ..-..-..->
+</pre>
+
+<p>
+Note that in patterns longer than one character, the entire
+pattern must be repeated e.g. all characters of the pattern must be
+present. Thus:
+</p>
+
+<pre>
+        ..-..-..->      # valid dot-dot-dash
+        ..-..-..>       # invalid!
+
+        .-.-.->         # valid dot-dash
+        .-.->           # invalid!
+</pre>
+
+<p>
+In additon to the styles, the following two directions are possible:
+</p>
+
+<pre>
+         --             edge without arrow heads
+         -->            arrow at target node (end point)
+        <-->            arrow on both the source and target node
+                        (end and start point)
+</pre>
+
+<p>
+Of course you can combine all directions with all styles. However,
+note that edges without arrows cannot use the shortcuts for styles:
+</p>
+
+<pre>
+        ---             # valid
+        .-.-            # valid
+        .-              # invalid!
+        -               # invalid!
+        ~               # invalid!
+</pre>
+
+<p>
+Just remember to use at least two repetitions of the full pattern
+for arrow-less edges.
+</p>
+
+<p>
+You can also give edges a label, either by inlining it into the style,
+or by setting it via the attributes:
+</p>
+
+<pre>
+        [ AB ] --> { style: bold; label: foo; } [ ABC ]
+</pre>
+
+<pre>
+        -- foo -->
+        ... baz ...>
+
+        -- solid -->
+        == double ==>
+        .. dotted ..>
+        ~~ wave ~~>
+
+        -  dashed - >
+        =  double-dash = >
+        .- dot-dash .->
+        ..- dot-dot-dash ..->
+</pre>
+
+<p>
+Note that the two patterns on the left and right of the label must be
+the same, and that there is a <b>mandatory space</b> between the left pattern and the
+label, as well as the label and the right pattern.
+</p>
+
+<p>
+You may use inline labels only with edges that have at least one arrow.
+Thus:
+</p>
+
+<pre>
+        <-- label -->   # valid
+        -- label -->    # valid
+
+        -- label --     # invalid!
+</pre>
+
+<p>
+To use a label with an edge without arrow heads, use the attributes:
+</p>
+
+<pre>
+        [ AB ] -- { label: edgelabel; } [ CD ]
+</pre>
+
+<p>
+For a complete listing of possible attributes see the appropriate
+<a href="attributes.html">chapter</a>.
+</p>
+
+<a name="advanced">
+<h3>Advanced Layouts</h3>
+</a>
+
+<h4>Classes</h4>
+
+<p>
+Each part of a graph is a (primary) class and you can assign it
+attributes:
+</p>
+
+<pre>
+graph { color: red; }
+edge { color: blue; }
+node { color: green; }
+group { color: brown; }
+</pre>
+
+<p>
+All objects in a graph automatically belong to their primary class,
+e.g. nodes are in the class "node". Except <code>graph</code>, all primary
+classes can have subclasses:
+</p>
+
+<pre>
+edge { color: blue; }
+edge.train { color: darkblue; }
+node { color: green; }
+node.cities { color: darkgreen; }
+group { color: brown; }
+group.cities { color: darkbrown; }
+</pre>
+
+<h4>Groups</h4>
+
+<p>
+You can group nodes together by using braces:
+</p>
+
+<pre>
+( German Cities
+  [ Berlin ] -> [ Potsdam ]
+) { 
+  background: lightbrown;
+  }
+</pre>
+
+<p>
+Putting nodes into a group gives the layouter the hint that these
+nodes are related and should be laid out closely together.
+</p>
+
+<p>
+This is especially powerfull in combintation with the <code>nodeclass</code>
+attribute:
+</p>
+
+<pre>
+node.cities { color: blue; }
+
+( German Cities
+  [ Berlin ] -> [ Potsdam ]
+) { 
+  background: lightbrown;
+  nodeclass: cities;
+  }
+</pre>
+
+<p>
+In this example, all nodes in the group will automatically be put into the
+class <code>node.cities</code>.
+</p>
+
+<h4>Relative placement (via auto-split)</h4>
+
+<p>
+You can cluster nodes together by placing them relatively to each other.
+<br>
+Perhaps the easiest way to achive the placement is to use the
+<i>auto-split</i> feature:
+</p>
+
+<ul>
+  <li>a <code>|</code> (vertical bar) in the node name will split the node
+      into two parts, and place them next to each other, horizontally
+  <li>likewise, <code>||</code> (two vertical bars) in the node name will split the node
+      into two parts, but place the second part at the start of a new row
+</ul>
+
+<p>
+Here is a few examples to make this clear:
+</p>
+
+<pre class="graphtext">
+[ A | B | C ]
+</pre>
+
+<pre class="graph">
++---+---+---+
+| A | B | C |
++---+---+---+
+</pre>
+
+
+<pre class="graphtext">
+[ A | B || C ]
+</pre>
+
+<pre class="graph">
++---+---+
+| A | B |
++---+---+
+| C |
++---+
+</pre>
+
+<div class="clear"></div>
+
+<pre class="graphtext">
+[ A | B ||
+  C | D | E ||
+  F ]
+</pre>
+
+<pre class="graph">
++---+---+
+| A | B |
++---+---+---+
+| C | D | E |
++---+---+---+
+| F |
++---+
+</pre>
+
+<div class="clear"></div>
+
+<ul>
+  <li>If a part between two <code>|</code> consists of exactly one space, an
+      invisible cell will be generated, e.g. one without borders and background
+  <li>If a part between two <code>|</code> consists of more than one space, an empty
+      cell (e.g. with borders and background) will be generated
+</ul>
+
+<pre class="graphtext">
+[ A | | B || C | | D |   | E ]
+</pre>
+
+<pre class="graph">
++---+   +---+
+| A |   | B |
++---+   +---+---+---+
+| C |   | D |   | E |
++---+   +---+---+---+
+
+</pre>
+
+<div class="clear"></div>
+
+<h4>Relative placement - manually</h4>
+
+<p>
+Another way is to specify an <code>origin</code> and <code>offset</code>
+for a node, placing it relatively to another node:
+</p>
+
+<pre class="graphtext">
+[ Left ] -> [ Right ] { origin: Left; offset: 2,1; }
+</pre>
+
+<pre class="graph">
++------+
+| Left |
++------+
+  |
+  |              +-------+
+  +------------> | Right |
+                 +-------+      
+</pre>
+
+<div class="clear"></div>
+
+<p>
+The offset should not be <code>0,0</code>. Also, be carefull to node place nodes
+inside each other, especially when using multicelled nodes as explained below.
+</p>
+
+<p>
+You can set an origin for each node, even if this node has an origin itself.
+The only exception is that you may not create loops like in the following:
+</p>
+
+<pre class="graphtext">
+[ A ] { origin: B; offset: 1,1; }
+[ B ] { origin: A; offset: 1,1; }	# invalid!
+
+[ C ] { origin: E; offset: 1,1; }
+[ D ] { origin: C; offset: 1,1; }
+[ E ] { origin: C; offset: 1,1; }	# invalid!
+</pre>
+
+<div class="clear"></div>
+
+<p>
+Here is an example, using a chain of origins:
+</p>
+
+<pre class="graphtext">
+[ A ] { origin: B; offset: 2,1; }
+
+-> [ B ] { origin: C; offset: 1,1; }
+-> [ C ] { origin: D; offset: 1,1; }
+-> [ D ]
+-> [ E ]
+</pre>
+
+<pre class="graph">
++---+     +---+
+| D | --> | E |
++---+     +---+
+  ^  +---+
+  +--| C |
+     +---+
+       ^  +---+
+       +--| B |
+          +---+
+            ^       +---+
+            +------ | A |
+                    +---+
+</pre>
+
+<div class="clear"></div>
+
+<p>
+
+<h4>Multi-celled nodes</h4>
+
+<p>
+You can specify the size of a node in rows and columns by using either the
+<code>rows</code>, <code>columns</code> or <code>size</code> attribute:
+</p>
+
+<pre class="graphtext">
+[ A ] { size: 2,2; }
+-> [ B ] { rows: 2; }
+-> [ C ] { columns: 3; }
+</pre>
+
+<div class="clear"></div>
+
+<p>
+Here is an example that demonstrates this:
+</p>
+
+<pre class="graphtext">
+[ A ] { size: 2,2; }
+-> [ B ] { rows: 2; }
+-> [ C ] { columns: 3; }
+
+[ A ] -> [ B ]
+ -> [ C ]
+ -> [ D ]
+
+[ D ] -> [ C ]
+[ B ] -> [ C ]
+
+[ A ] -> [ F ]
+[ A ] -> [ G ]
+</pre>
+
+<pre class="graph">
+
+       +---------+
+       |         v
+     +---+     +-------------+     +---+
+     |   | --> |      C      | --> | D |
+     | B |     +-------------+     +---+
+     |   |       ^         ^         |
+  +->|   | ------+         +---------+
+  |  +---+
+  |    ^
+  |    |
+  |    |
+  |  +--------+     +---+
+  +--|        | --> | F |
+     |   A    |     +---+
+     |        |     |   |
+     |        | --> | G |
+     +--------+     +---+
+</pre>
+
+<div class="clear"></div>
+
+</div><div class="text next">
+
+Please continue with the chapter about the <a href="attributes.html">attributes</a>.
+
+</div>
+
+<div class="footer">
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-09-13</span>
+</div>
+
+</div> <!-- end of right cell -->
+
+</body>
+</html>

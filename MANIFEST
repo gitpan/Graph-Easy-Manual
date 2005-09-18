@@ -6,18 +6,36 @@ LICENSE
 README
 SIGNATURE
 TODO
-doc/manual/00_Overview.pod
-doc/manual/01_Basics.pod
-doc/manual/index.pod
-doc/manual/html/00_Overview.html
-doc/manual/html/01_Basics.html
-doc/manual/html/index.html
-doc/manual/html/base.css
+doc/manual/manual.css
+doc/manual/a-star.html
+doc/manual/bench/serie.pl
+doc/manual/benchmark.html
+doc/manual/hinting.html
+doc/manual/index.html
+doc/manual/layouter.html
+doc/manual/manual.css
+doc/manual/output.html
+doc/manual/overview.html
+doc/manual/syntax.html
+doc/manual/test.svg
+doc/manual/img/dataflow.png
+doc/manual/img/example1.png
+doc/manual/img/example2.png
+doc/manual/img/example3.png
+doc/manual/img/example4.png
+doc/manual/img/example5.png
+doc/manual/img/example6.png
+doc/manual/img/example7.png
+doc/manual/img/example8.png
 doc/README
-doc/gen_manual
+doc/attributes.tpl
+doc/att_edges.tpl
+doc/att_nodes.tpl
+doc/att_groups.tpl
+doc/att_graphs.tpl
 doc/base.css
-examples/pod2html		convert pod to HTML (with graphs!)
-t/pod2html.t
-lib/Graph/Easy/Pod2HTML.pm	pod => html with "=for graph" sections
+doc/gen_manual
+t/pod.t
+t/pod_cov.t
 lib/Graph/Easy/Manual.pm
 META.yml			Module meta-data
