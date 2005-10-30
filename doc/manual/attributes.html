@@ -1,0 +1,446 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+ <title>Graph::Easy - Manual - Attributes</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+ <meta name="MSSmartTagsPreventParsing" content="TRUE">
+ <meta http-equiv="imagetoolbar" content="no">
+ <link rel="stylesheet" type="text/css" href="../base.css">
+ <link rel="stylesheet" type="text/css" href="manual.css">
+ <!-- compliance patch for microsoft browsers -->
+ <!--[if lt IE 7]><script src="/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
+ <style type="text/css">
+   <!-- 
+    h4 { margin-bottom: 0em; padding-left: 1em; }
+   -->
+ </style>
+</head>
+<body bgcolor=white text=black>
+
+<a name="top"></a>
+
+<div class="menu">
+
+  <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
+  <p style="height: 0.2em">&nbsp;</p>
+  <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
+  <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
+  <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
+  <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
+  <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
+  <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
+  <p class="menucur"><a class="menucur" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
+  <p class="menuind"><a class="menuind" href="att_graphs.html" title="Graph attributes">Graphs</a></p>
+  <p class="menuind"><a class="menuind" href="att_nodes.html" title="Node attributes">Nodes</a></p>
+  <p class="menuind"><a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a></p>
+  <p class="menuind"><a class="menuind" href="att_groups.html" title="Group attributes">Groups</a></p>
+  <p class="menuind"><a class="menuind" href="#class_names" title="Classes and their names">Classes</a></p>
+  <p class="menuind"><a class="menuind" href="#links" title="Links and URLs">Links</a></p>
+  <p class="menuind"><a class="menuind" href="#color_names_and_values" title="Color names and values">Colors</a></p>
+
+</div>
+
+<div class="right">
+
+<h1>Graph::Easy - Manual</h1>
+
+<h2>Attributes</h2>
+
+<div class="text">
+
+<p>
+If you haven't done so, please read the <a href="overview.html">Overview</a> first.
+</p>
+
+<p>
+This chapter describes all the possible attributes for graphs, nodes and edges.
+It is generated automatically from the definitions in <code>Graph::Easy::Attributes</code>.
+</p>
+
+<a name="Graphs">
+<h3>Graphs</h3>
+</a>
+
+<ul>
+  <li><a href="att_graphs.html#graph_autolink">autolink</a>, <a href="att_graphs.html#graph_autotitle">autotitle</a>, 
+  <li><a href="att_graphs.html#graph_background">background</a>, <a href="att_graphs.html#graph_border">border</a>, <a href="att_graphs.html#graph_border-color">border-color</a>, <a href="att_graphs.html#graph_border-style">border-style</a>, <a href="att_graphs.html#graph_border-width">border-width</a>, 
+  <li><a href="att_graphs.html#graph_class">class</a>, <a href="att_graphs.html#graph_color">color</a>, 
+  <li><a href="att_graphs.html#graph_fill">fill</a>, <a href="att_graphs.html#graph_flow">flow</a>, <a href="att_graphs.html#graph_font-size">font-size</a>, 
+  <li><a href="att_graphs.html#graph_gid">gid</a>, 
+  <li><a href="att_graphs.html#graph_label">label</a>, <a href="att_graphs.html#graph_label-pos">label-pos</a>, <a href="att_graphs.html#graph_link">link</a>, <a href="att_graphs.html#graph_linkbase">linkbase</a>, 
+  <li><a href="att_graphs.html#graph_output">output</a>, 
+  <li><a href="att_graphs.html#graph_text-style">text-style</a>, <a href="att_graphs.html#graph_title">title</a>, 
+</ul>
+
+
+<a name="Nodes">
+<h3>Nodes</h3>
+</a>
+
+<ul>
+  <li><a href="att_nodes.html#node_autolink">autolink</a>, <a href="att_nodes.html#node_autotitle">autotitle</a>, 
+  <li><a href="att_nodes.html#node_background">background</a>, <a href="att_nodes.html#node_border">border</a>, <a href="att_nodes.html#node_border-color">border-color</a>, <a href="att_nodes.html#node_border-style">border-style</a>, <a href="att_nodes.html#node_border-width">border-width</a>, 
+  <li><a href="att_nodes.html#node_class">class</a>, <a href="att_nodes.html#node_color">color</a>, <a href="att_nodes.html#node_columns">columns</a>, 
+  <li><a href="att_nodes.html#node_fill">fill</a>, <a href="att_nodes.html#node_flow">flow</a>, <a href="att_nodes.html#node_font-size">font-size</a>, 
+  <li><a href="att_nodes.html#node_label">label</a>, <a href="att_nodes.html#node_link">link</a>, <a href="att_nodes.html#node_linkbase">linkbase</a>, 
+  <li><a href="att_nodes.html#node_offset">offset</a>, <a href="att_nodes.html#node_origin">origin</a>, 
+  <li><a href="att_nodes.html#node_point-style">point-style</a>, 
+  <li><a href="att_nodes.html#node_rows">rows</a>, 
+  <li><a href="att_nodes.html#node_shape">shape</a>, <a href="att_nodes.html#node_size">size</a>, 
+  <li><a href="att_nodes.html#node_text-style">text-style</a>, <a href="att_nodes.html#node_title">title</a>, 
+</ul>
+
+
+<a name="Edges">
+<h3>Edges</h3>
+</a>
+
+<ul>
+  <li><a href="att_edges.html#edge_arrow-style">arrow-style</a>, <a href="att_edges.html#edge_autolink">autolink</a>, <a href="att_edges.html#edge_autotitle">autotitle</a>, 
+  <li><a href="att_edges.html#edge_background">background</a>, <a href="att_edges.html#edge_border">border</a>, <a href="att_edges.html#edge_border-color">border-color</a>, <a href="att_edges.html#edge_border-style">border-style</a>, <a href="att_edges.html#edge_border-width">border-width</a>, 
+  <li><a href="att_edges.html#edge_class">class</a>, <a href="att_edges.html#edge_color">color</a>, 
+  <li><a href="att_edges.html#edge_fill">fill</a>, <a href="att_edges.html#edge_font-size">font-size</a>, 
+  <li><a href="att_edges.html#edge_label">label</a>, <a href="att_edges.html#edge_label-color">label-color</a>, <a href="att_edges.html#edge_link">link</a>, <a href="att_edges.html#edge_linkbase">linkbase</a>, 
+  <li><a href="att_edges.html#edge_style">style</a>, 
+  <li><a href="att_edges.html#edge_text-style">text-style</a>, <a href="att_edges.html#edge_title">title</a>, 
+</ul>
+
+
+<a name="Groups">
+<h3>Groups</h3>
+</a>
+
+<ul>
+  <li><a href="att_groups.html#group_autolink">autolink</a>, <a href="att_groups.html#group_autotitle">autotitle</a>, 
+  <li><a href="att_groups.html#group_background">background</a>, <a href="att_groups.html#group_border">border</a>, <a href="att_groups.html#group_border-color">border-color</a>, <a href="att_groups.html#group_border-style">border-style</a>, <a href="att_groups.html#group_border-width">border-width</a>, 
+  <li><a href="att_groups.html#group_class">class</a>, <a href="att_groups.html#group_color">color</a>, 
+  <li><a href="att_groups.html#group_edgeclass">edgeclass</a>, 
+  <li><a href="att_groups.html#group_fill">fill</a>, <a href="att_groups.html#group_font-size">font-size</a>, 
+  <li><a href="att_groups.html#group_label">label</a>, <a href="att_groups.html#group_link">link</a>, <a href="att_groups.html#group_linkbase">linkbase</a>, 
+  <li><a href="att_groups.html#group_nodeclass">nodeclass</a>, 
+  <li><a href="att_groups.html#group_text-style">text-style</a>, <a href="att_groups.html#group_title">title</a>, 
+</ul>
+
+
+<hr>
+
+<a name="class_names">
+<h3>Class names</h3>
+</a>
+
+<p>
+Each of the primary classes <code>node</code>, <code>edge</code> and <code>group</code>
+can have an arbitrary number of sub-classes.
+</p>
+
+<p>
+Subclass names are restricted to <code>[a-z]</code> (lower ASCII letters A to Z) and the <code>_</code>
+(underscore). Each subclass can have its own set of attributes.
+<br>
+Objects with their <code>class</code>-attributea set will use the attributes from the appropriate
+subclass.
+If an attribute was not defined there, they will inherit the attribute from their primary
+class. In the following example the left node will have green text, the right one
+will have red text. Both nodes will have a beige interieur: 
+</p>
+
+<pre class="graphtext">
+node { color: green; fill: beige; }
+node.cities { color: red; }
+
+[ Green ] --> [ Red ] { class: cities; }
+</pre>
+
+<img src="img/example5.png" border=0 title="Example of classes" style="float: left; margin-left: 1em;">
+
+<div class="clear"></div>
+
+<a name="links">
+<h3>Links and URLs</h3>
+</a>
+
+<p>
+Links are constructed from two parts, by concating the <code>linkbase</code> attribute and
+the <code>link</code> attribute:
+</p>
+
+<pre class="graphtext">
+node { linkbase: http://www.bloodgate.com/perl/; }
+
+[ Graph ] { link: graph/; }
+ --> [ Manual ] { link: graph/manual/; }
+</pre>
+
+<map id="NAME" name="NAME">
+<area shape="rect" href="http://www.bloodgate.com/perl/graph/" title="Graph" alt="Graph" coords="17,7,89,54" />
+<area shape="rect" href="http://www.bloodgate.com/perl/graph/manual/" title="Manual" alt="Manual" coords="137,7,209,54" />
+</map>
+
+<img USEMAP="#NAME" src="img/example6.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
+
+<p class="clear">
+<code>linkbase</code> is ignored unless you also have <code>link</code> or <code>autolink</code>.
+You can use <code>autolink</code> to automatically set the link attribute to the
+name, label, or titel of the object:
+</p>
+
+<pre class="graphtext">
+node { linkbase: http://www.bloodgate.com/perl/; autolink: name; }
+
+[ graph ] --> [ graph/manual ]
+</pre>
+
+<map id="NAME2" name="NAME2">
+<area shape="rect" href="http://www.bloodgate.com/perl/graph" title="graph" alt="graph" coords="17,7,89,54" />
+<area shape="rect" href="http://www.bloodgate.com/perl/graph/manual" title="graph/manual" alt="graph/manual" coords="137,7,244,54" />
+</map>
+
+<img USEMAP="#NAME2" src="img/example7.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
+
+<p class="clear">
+Note that <code>link</code> has precedence over <code>autolink</code>, the latter
+will not override a <code>link</code> attribute on the object itself.
+<br>
+Also, <code>linnkbase</code> is only prepended for relativ links, e.g. ones that do not
+start with <code>/[a-z]{3,4}://</code>. In the following example the first node
+will not have the name autolinked, and the second node will ignore the linkbase:
+</p>
+
+<pre class="graphtext">
+node { linkbase: http://www.bloodgate.com/perl/; autolink: name; }
+
+[ graph ] { link: index.html; } 
+  --> [ graph/manual ] { link: http://bloodgate.com; }
+</pre>
+
+<map id="GRAPH_0" name="GRAPH_0">
+<area shape="rect" href="http://www.bloodgate.com/perl/index.html" title="graph" alt="graph" coords="17,7,89,54" />
+<area shape="rect" href="http://bloodgate.com" title="graph/manual" alt="graph/manual" coords="137,7,244,54" />
+</map>
+
+<img USEMAP="#GRAPH_0" src="img/example8.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
+
+<div class="clear"></div>
+
+<a name="color_names_and_values">
+<h3>Color Names and Values</h3>
+</a>
+
+<p>
+Here is a list of the color names recognized by Graph::Easy and their
+corrosponding color values. Note that this list is exactly the same as
+the <a href="http://www.w3.org/TR/SVG/types.html#ColorKeywords">one published</a> by
+<a href="">W3C</a>. So do not blame me for silly things
+like <font style="color: white; background: darkseagreen">darkseagreen</font>
+being lighter than <font style="color: white; background: seagreen">seagreen</font>...
+</p>
+
+<p>&nbsp;</p>
+
+<table>
+<tr>
+<td class='clrn'>black:</td><td class='clre' style='background: #000000' title='black (#000000)'>&nbsp;</td>
+<td class='clrn'>navy:</td><td class='clre' style='background: #000080' title='navy (#000080)'>&nbsp;</td>
+<td class='clrn'>darkblue:</td><td class='clre' style='background: #00008b' title='darkblue (#00008b)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>mediumblue:</td><td class='clre' style='background: #0000cd' title='mediumblue (#0000cd)'>&nbsp;</td>
+<td class='clrn'>blue:</td><td class='clre' style='background: #0000ff' title='blue (#0000ff)'>&nbsp;</td>
+<td class='clrn'>darkgreen:</td><td class='clre' style='background: #006400' title='darkgreen (#006400)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>green:</td><td class='clre' style='background: #008000' title='green (#008000)'>&nbsp;</td>
+<td class='clrn'>teal:</td><td class='clre' style='background: #008080' title='teal (#008080)'>&nbsp;</td>
+<td class='clrn'>darkcyan:</td><td class='clre' style='background: #008b8b' title='darkcyan (#008b8b)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>deepskyblue:</td><td class='clre' style='background: #00bfff' title='deepskyblue (#00bfff)'>&nbsp;</td>
+<td class='clrn'>darkturquoise:</td><td class='clre' style='background: #00ced1' title='darkturquoise (#00ced1)'>&nbsp;</td>
+<td class='clrn'>mediumspringgreen:</td><td class='clre' style='background: #00fa9a' title='mediumspringgreen (#00fa9a)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>lime:</td><td class='clre' style='background: #00ff00' title='lime (#00ff00)'>&nbsp;</td>
+<td class='clrn'>springgreen:</td><td class='clre' style='background: #00ff7f' title='springgreen (#00ff7f)'>&nbsp;</td>
+<td class='clrn'>aqua:</td><td class='clre' style='background: #00ffff' title='aqua (#00ffff)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>midnightblue:</td><td class='clre' style='background: #191970' title='midnightblue (#191970)'>&nbsp;</td>
+<td class='clrn'>dodgerblue:</td><td class='clre' style='background: #1e90ff' title='dodgerblue (#1e90ff)'>&nbsp;</td>
+<td class='clrn'>lightseagreen:</td><td class='clre' style='background: #20b2aa' title='lightseagreen (#20b2aa)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>forestgreen:</td><td class='clre' style='background: #228b22' title='forestgreen (#228b22)'>&nbsp;</td>
+<td class='clrn'>seagreen:</td><td class='clre' style='background: #2e8b57' title='seagreen (#2e8b57)'>&nbsp;</td>
+<td class='clrn'>darkslategrey:</td><td class='clre' style='background: #2f4f4f' title='darkslategrey (#2f4f4f)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>limegreen:</td><td class='clre' style='background: #32cd32' title='limegreen (#32cd32)'>&nbsp;</td>
+<td class='clrn'>mediumseagreen:</td><td class='clre' style='background: #3cb371' title='mediumseagreen (#3cb371)'>&nbsp;</td>
+<td class='clrn'>turquoise:</td><td class='clre' style='background: #40e0d0' title='turquoise (#40e0d0)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>royalblue:</td><td class='clre' style='background: #4169e1' title='royalblue (#4169e1)'>&nbsp;</td>
+<td class='clrn'>steelblue:</td><td class='clre' style='background: #4682b4' title='steelblue (#4682b4)'>&nbsp;</td>
+<td class='clrn'>darkslateblue:</td><td class='clre' style='background: #483d8b' title='darkslateblue (#483d8b)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>mediumturquoise:</td><td class='clre' style='background: #48d1cc' title='mediumturquoise (#48d1cc)'>&nbsp;</td>
+<td class='clrn'>indigo:</td><td class='clre' style='background: #4b0082' title='indigo (#4b0082)'>&nbsp;</td>
+<td class='clrn'>darkolivegreen:</td><td class='clre' style='background: #556b2f' title='darkolivegreen (#556b2f)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>cadetblue:</td><td class='clre' style='background: #5f9ea0' title='cadetblue (#5f9ea0)'>&nbsp;</td>
+<td class='clrn'>cornflowerblue:</td><td class='clre' style='background: #6495ed' title='cornflowerblue (#6495ed)'>&nbsp;</td>
+<td class='clrn'>mediumaquamarine:</td><td class='clre' style='background: #66cdaa' title='mediumaquamarine (#66cdaa)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>dimgray:</td><td class='clre' style='background: #696969' title='dimgray (#696969)'>&nbsp;</td>
+<td class='clrn'>slateblue:</td><td class='clre' style='background: #6a5acd' title='slateblue (#6a5acd)'>&nbsp;</td>
+<td class='clrn'>olivedrab:</td><td class='clre' style='background: #6b8e23' title='olivedrab (#6b8e23)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>slategray:</td><td class='clre' style='background: #708090' title='slategray (#708090)'>&nbsp;</td>
+<td class='clrn'>lightslategrey:</td><td class='clre' style='background: #778899' title='lightslategrey (#778899)'>&nbsp;</td>
+<td class='clrn'>mediumslateblue:</td><td class='clre' style='background: #7b68ee' title='mediumslateblue (#7b68ee)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>lawngreen:</td><td class='clre' style='background: #7cfc00' title='lawngreen (#7cfc00)'>&nbsp;</td>
+<td class='clrn'>chartreuse:</td><td class='clre' style='background: #7fff00' title='chartreuse (#7fff00)'>&nbsp;</td>
+<td class='clrn'>aquamarine:</td><td class='clre' style='background: #7fffd4' title='aquamarine (#7fffd4)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>maroon:</td><td class='clre' style='background: #800000' title='maroon (#800000)'>&nbsp;</td>
+<td class='clrn'>purple:</td><td class='clre' style='background: #800080' title='purple (#800080)'>&nbsp;</td>
+<td class='clrn'>olive:</td><td class='clre' style='background: #808000' title='olive (#808000)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>grey:</td><td class='clre' style='background: #808080' title='grey (#808080)'>&nbsp;</td>
+<td class='clrn'>skyblue:</td><td class='clre' style='background: #87ceeb' title='skyblue (#87ceeb)'>&nbsp;</td>
+<td class='clrn'>lightskyblue:</td><td class='clre' style='background: #87cefa' title='lightskyblue (#87cefa)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>blueviolet:</td><td class='clre' style='background: #8a2be2' title='blueviolet (#8a2be2)'>&nbsp;</td>
+<td class='clrn'>darkred:</td><td class='clre' style='background: #8b0000' title='darkred (#8b0000)'>&nbsp;</td>
+<td class='clrn'>darkmagenta:</td><td class='clre' style='background: #8b008b' title='darkmagenta (#8b008b)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>saddlebrown:</td><td class='clre' style='background: #8b4513' title='saddlebrown (#8b4513)'>&nbsp;</td>
+<td class='clrn'>darkseagreen:</td><td class='clre' style='background: #8fbc8f' title='darkseagreen (#8fbc8f)'>&nbsp;</td>
+<td class='clrn'>lightgreen:</td><td class='clre' style='background: #90ee90' title='lightgreen (#90ee90)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>mediumpurple:</td><td class='clre' style='background: #9370db' title='mediumpurple (#9370db)'>&nbsp;</td>
+<td class='clrn'>darkviolet:</td><td class='clre' style='background: #9400d3' title='darkviolet (#9400d3)'>&nbsp;</td>
+<td class='clrn'>palegreen:</td><td class='clre' style='background: #98fb98' title='palegreen (#98fb98)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>darkorchid:</td><td class='clre' style='background: #9932cc' title='darkorchid (#9932cc)'>&nbsp;</td>
+<td class='clrn'>yellowgreen:</td><td class='clre' style='background: #9acd32' title='yellowgreen (#9acd32)'>&nbsp;</td>
+<td class='clrn'>sienna:</td><td class='clre' style='background: #a0522d' title='sienna (#a0522d)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>brown:</td><td class='clre' style='background: #a52a2a' title='brown (#a52a2a)'>&nbsp;</td>
+<td class='clrn'>darkgrey:</td><td class='clre' style='background: #a9a9a9' title='darkgrey (#a9a9a9)'>&nbsp;</td>
+<td class='clrn'>lightblue:</td><td class='clre' style='background: #add8e6' title='lightblue (#add8e6)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>greenyellow:</td><td class='clre' style='background: #adff2f' title='greenyellow (#adff2f)'>&nbsp;</td>
+<td class='clrn'>paleturquoise:</td><td class='clre' style='background: #afeeee' title='paleturquoise (#afeeee)'>&nbsp;</td>
+<td class='clrn'>lightsteelblue:</td><td class='clre' style='background: #b0c4de' title='lightsteelblue (#b0c4de)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>powderblue:</td><td class='clre' style='background: #b0e0e6' title='powderblue (#b0e0e6)'>&nbsp;</td>
+<td class='clrn'>firebrick:</td><td class='clre' style='background: #b22222' title='firebrick (#b22222)'>&nbsp;</td>
+<td class='clrn'>darkgoldenrod:</td><td class='clre' style='background: #b8860b' title='darkgoldenrod (#b8860b)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>mediumorchid:</td><td class='clre' style='background: #ba55d3' title='mediumorchid (#ba55d3)'>&nbsp;</td>
+<td class='clrn'>rosybrown:</td><td class='clre' style='background: #bc8f8f' title='rosybrown (#bc8f8f)'>&nbsp;</td>
+<td class='clrn'>darkkhaki:</td><td class='clre' style='background: #bdb76b' title='darkkhaki (#bdb76b)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>silver:</td><td class='clre' style='background: #c0c0c0' title='silver (#c0c0c0)'>&nbsp;</td>
+<td class='clrn'>mediumvioletred:</td><td class='clre' style='background: #c71585' title='mediumvioletred (#c71585)'>&nbsp;</td>
+<td class='clrn'>indianred:</td><td class='clre' style='background: #cd5c5c' title='indianred (#cd5c5c)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>peru:</td><td class='clre' style='background: #cd853f' title='peru (#cd853f)'>&nbsp;</td>
+<td class='clrn'>chocolate:</td><td class='clre' style='background: #d2691e' title='chocolate (#d2691e)'>&nbsp;</td>
+<td class='clrn'>tan:</td><td class='clre' style='background: #d2b48c' title='tan (#d2b48c)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>lightgray:</td><td class='clre' style='background: #d3d3d3' title='lightgray (#d3d3d3)'>&nbsp;</td>
+<td class='clrn'>thistle:</td><td class='clre' style='background: #d8bfd8' title='thistle (#d8bfd8)'>&nbsp;</td>
+<td class='clrn'>orchid:</td><td class='clre' style='background: #da70d6' title='orchid (#da70d6)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>goldenrod:</td><td class='clre' style='background: #daa520' title='goldenrod (#daa520)'>&nbsp;</td>
+<td class='clrn'>palevioletred:</td><td class='clre' style='background: #db7093' title='palevioletred (#db7093)'>&nbsp;</td>
+<td class='clrn'>crimson:</td><td class='clre' style='background: #dc143c' title='crimson (#dc143c)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>gainsboro:</td><td class='clre' style='background: #dcdcdc' title='gainsboro (#dcdcdc)'>&nbsp;</td>
+<td class='clrn'>plum:</td><td class='clre' style='background: #dda0dd' title='plum (#dda0dd)'>&nbsp;</td>
+<td class='clrn'>burlywood:</td><td class='clre' style='background: #deb887' title='burlywood (#deb887)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>lightcyan:</td><td class='clre' style='background: #e0ffff' title='lightcyan (#e0ffff)'>&nbsp;</td>
+<td class='clrn'>lavender:</td><td class='clre' style='background: #e6e6fa' title='lavender (#e6e6fa)'>&nbsp;</td>
+<td class='clrn'>darksalmon:</td><td class='clre' style='background: #e9967a' title='darksalmon (#e9967a)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>violet:</td><td class='clre' style='background: #ee82ee' title='violet (#ee82ee)'>&nbsp;</td>
+<td class='clrn'>palegoldenrod:</td><td class='clre' style='background: #eee8aa' title='palegoldenrod (#eee8aa)'>&nbsp;</td>
+<td class='clrn'>lightcoral:</td><td class='clre' style='background: #f08080' title='lightcoral (#f08080)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>khaki:</td><td class='clre' style='background: #f0e68c' title='khaki (#f0e68c)'>&nbsp;</td>
+<td class='clrn'>aliceblue:</td><td class='clre' style='background: #f0f8ff' title='aliceblue (#f0f8ff)'>&nbsp;</td>
+<td class='clrn'>honeydew:</td><td class='clre' style='background: #f0fff0' title='honeydew (#f0fff0)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>azure:</td><td class='clre' style='background: #f0ffff' title='azure (#f0ffff)'>&nbsp;</td>
+<td class='clrn'>sandybrown:</td><td class='clre' style='background: #f4a460' title='sandybrown (#f4a460)'>&nbsp;</td>
+<td class='clrn'>wheat:</td><td class='clre' style='background: #f5deb3' title='wheat (#f5deb3)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>beige:</td><td class='clre' style='background: #f5f5dc' title='beige (#f5f5dc)'>&nbsp;</td>
+<td class='clrn'>whitesmoke:</td><td class='clre' style='background: #f5f5f5' title='whitesmoke (#f5f5f5)'>&nbsp;</td>
+<td class='clrn'>mintcream:</td><td class='clre' style='background: #f5fffa' title='mintcream (#f5fffa)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>ghostwhite:</td><td class='clre' style='background: #f8f8ff' title='ghostwhite (#f8f8ff)'>&nbsp;</td>
+<td class='clrn'>salmon:</td><td class='clre' style='background: #fa8072' title='salmon (#fa8072)'>&nbsp;</td>
+<td class='clrn'>antiquewhite:</td><td class='clre' style='background: #faebd7' title='antiquewhite (#faebd7)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>linen:</td><td class='clre' style='background: #faf0e6' title='linen (#faf0e6)'>&nbsp;</td>
+<td class='clrn'>lightgoldenrodyellow:</td><td class='clre' style='background: #fafad2' title='lightgoldenrodyellow (#fafad2)'>&nbsp;</td>
+<td class='clrn'>oldlace:</td><td class='clre' style='background: #fdf5e6' title='oldlace (#fdf5e6)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>red:</td><td class='clre' style='background: #ff0000' title='red (#ff0000)'>&nbsp;</td>
+<td class='clrn'>magenta:</td><td class='clre' style='background: #ff00ff' title='magenta (#ff00ff)'>&nbsp;</td>
+<td class='clrn'>deeppink:</td><td class='clre' style='background: #ff1493' title='deeppink (#ff1493)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>orangered:</td><td class='clre' style='background: #ff4500' title='orangered (#ff4500)'>&nbsp;</td>
+<td class='clrn'>tomato:</td><td class='clre' style='background: #ff6347' title='tomato (#ff6347)'>&nbsp;</td>
+<td class='clrn'>hotpink:</td><td class='clre' style='background: #ff69b4' title='hotpink (#ff69b4)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>coral:</td><td class='clre' style='background: #ff7f50' title='coral (#ff7f50)'>&nbsp;</td>
+<td class='clrn'>darkorange:</td><td class='clre' style='background: #ff8c00' title='darkorange (#ff8c00)'>&nbsp;</td>
+<td class='clrn'>lightsalmon:</td><td class='clre' style='background: #ffa07a' title='lightsalmon (#ffa07a)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>orange:</td><td class='clre' style='background: #ffa500' title='orange (#ffa500)'>&nbsp;</td>
+<td class='clrn'>lightpink:</td><td class='clre' style='background: #ffb6c1' title='lightpink (#ffb6c1)'>&nbsp;</td>
+<td class='clrn'>pink:</td><td class='clre' style='background: #ffc0cb' title='pink (#ffc0cb)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>gold:</td><td class='clre' style='background: #ffd700' title='gold (#ffd700)'>&nbsp;</td>
+<td class='clrn'>peachpuff:</td><td class='clre' style='background: #ffdab9' title='peachpuff (#ffdab9)'>&nbsp;</td>
+<td class='clrn'>navajowhite:</td><td class='clre' style='background: #ffdead' title='navajowhite (#ffdead)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>moccasin:</td><td class='clre' style='background: #ffe4b5' title='moccasin (#ffe4b5)'>&nbsp;</td>
+<td class='clrn'>bisque:</td><td class='clre' style='background: #ffe4c4' title='bisque (#ffe4c4)'>&nbsp;</td>
+<td class='clrn'>mistyrose:</td><td class='clre' style='background: #ffe4e1' title='mistyrose (#ffe4e1)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>blanchedalmond:</td><td class='clre' style='background: #ffebcd' title='blanchedalmond (#ffebcd)'>&nbsp;</td>
+<td class='clrn'>papayawhip:</td><td class='clre' style='background: #ffefd5' title='papayawhip (#ffefd5)'>&nbsp;</td>
+<td class='clrn'>lavenderblush:</td><td class='clre' style='background: #fff0f5' title='lavenderblush (#fff0f5)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>seashell:</td><td class='clre' style='background: #fff5ee' title='seashell (#fff5ee)'>&nbsp;</td>
+<td class='clrn'>cornsilk:</td><td class='clre' style='background: #fff8dc' title='cornsilk (#fff8dc)'>&nbsp;</td>
+<td class='clrn'>lemonchiffon:</td><td class='clre' style='background: #fffacd' title='lemonchiffon (#fffacd)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>floralwhite:</td><td class='clre' style='background: #fffaf0' title='floralwhite (#fffaf0)'>&nbsp;</td>
+<td class='clrn'>snow:</td><td class='clre' style='background: #fffafa' title='snow (#fffafa)'>&nbsp;</td>
+<td class='clrn'>yellow:</td><td class='clre' style='background: #ffff00' title='yellow (#ffff00)'>&nbsp;</td>
+</tr><tr>
+<td class='clrn'>lightyellow:</td><td class='clre' style='background: #ffffe0' title='lightyellow (#ffffe0)'>&nbsp;</td>
+<td class='clrn'>ivory:</td><td class='clre' style='background: #fffff0' title='ivory (#fffff0)'>&nbsp;</td>
+<td class='clrn'>white:</td><td class='clre' style='background: #ffffff' title='white (#ffffff)'>&nbsp;</td>
+</tr></table>
+
+
+<p>
+For all other colors you can use one of the following notations:
+</p>
+
+<ul>
+  <li>Hex: <code>#ff0080</code>
+  <li>RGB: <code>rgb(255,0,128)</code>
+</ul>
+
+</div>
+
+<div class="footer">
+Page created automatically at <span class="date">Sun Oct 30 21:02:33 2005</span> in 0.1863s. Contact: <a href="/mail.html">Tels</a>.
+</div>
+
+</div> <!-- end of right cell -->
+
+</body>
+</html>

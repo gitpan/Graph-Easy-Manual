@@ -8,6 +8,11 @@ SIGNATURE
 TODO
 doc/manual/manual.css
 doc/manual/a-star.html
+doc/manual/attributes.html
+doc/manual/att_graphs.html
+doc/manual/att_nodes.html
+doc/manual/att_groups.html
+doc/manual/att_edges.html
 doc/manual/bench/serie.pl
 doc/manual/benchmark.html
 doc/manual/hinting.html

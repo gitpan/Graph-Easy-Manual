@@ -18,7 +18,7 @@ BEGIN
 
 my $path = shift || 'manual';
 
-use Graph::Easy 0.28;
+use Graph::Easy 0.31;
 use Graph::Easy::Parser;
 
 my $start = time();
@@ -100,7 +100,7 @@ for my $class (qw/node edge graph group/)
 
       my $graph = $parser->from_text($e->[5]);
 
-      confess ($parser->error()) if $parser->error();
+      confess ($parser->error(). "\n Input:\n" . $e->[5]) if $parser->error();
      
       $graph->id($example_graph_id);
 

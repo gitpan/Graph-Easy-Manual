@@ -1,0 +1,1050 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+ <title>Graph::Easy - Manual - Attributes for edges</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+ <meta name="MSSmartTagsPreventParsing" content="TRUE">
+ <meta http-equiv="imagetoolbar" content="no">
+ <link rel="stylesheet" type="text/css" href="../base.css">
+ <link rel="stylesheet" type="text/css" href="manual.css">
+ <!-- compliance patch for microsoft browsers -->
+ <!--[if lt IE 7]><script src="/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
+ <style type="text/css">
+   <!-- 
+    h4 { margin-bottom: 0em; padding-left: 1em; }
+    table.graph6 .edge {
+  background: inherit;
+  border-style: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+}
+table.graph6 {
+  background: inherit;
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph6 .node {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background: white;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph6 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph6 .va {
+  vertical-align: bottom;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph6 .ve {
+  width: 0em;
+  }
+table.graph6 .lh, table.graph6 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph6 .eb {
+  height: 1em;
+  line-height: 0.5em;
+  }
+table.graph6 .el {
+  width: 0.5em;
+  }
+table.graph6 .v, table.graph6 .hat, table.graph6 .he {
+  text-align: left;
+  height: 0.5em;
+  line-height: 0.6em;
+  }
+table.graph6 .hat {
+  padding-top: 0.5em;
+  line-height: 0.2em;
+  }
+table.graph7 .edge {
+  background: inherit;
+  border-style: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+}
+table.graph7 {
+  background: inherit;
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph7 .node {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background: white;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph7 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph7 .va {
+  vertical-align: bottom;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph7 .ve {
+  width: 0em;
+  }
+table.graph7 .lh, table.graph7 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph7 .eb {
+  height: 1em;
+  line-height: 0.5em;
+  }
+table.graph7 .el {
+  width: 0.5em;
+  }
+table.graph7 .v, table.graph7 .hat, table.graph7 .he {
+  text-align: left;
+  height: 0.5em;
+  line-height: 0.6em;
+  }
+table.graph7 .hat {
+  padding-top: 0.5em;
+  line-height: 0.2em;
+  }
+table.graph8 .edge {
+  background: inherit;
+  border-style: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+}
+table.graph8 {
+  background: inherit;
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph8 .node {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background: white;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph8 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph8 .va {
+  vertical-align: bottom;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph8 .ve {
+  width: 0em;
+  }
+table.graph8 .lh, table.graph8 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph8 .eb {
+  height: 1em;
+  line-height: 0.5em;
+  }
+table.graph8 .el {
+  width: 0.5em;
+  }
+table.graph8 .v, table.graph8 .hat, table.graph8 .he {
+  text-align: left;
+  height: 0.5em;
+  line-height: 0.6em;
+  }
+table.graph8 .hat {
+  padding-top: 0.5em;
+  line-height: 0.2em;
+  }
+table.graph9 .edge {
+  background: inherit;
+  border-style: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+}
+table.graph9 {
+  background: inherit;
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph9 .node {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background: white;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph9 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph9 .va {
+  vertical-align: bottom;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph9 .ve {
+  width: 0em;
+  }
+table.graph9 .lh, table.graph9 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph9 .eb {
+  height: 1em;
+  line-height: 0.5em;
+  }
+table.graph9 .el {
+  width: 0.5em;
+  }
+table.graph9 .v, table.graph9 .hat, table.graph9 .he {
+  text-align: left;
+  height: 0.5em;
+  line-height: 0.6em;
+  }
+table.graph9 .hat {
+  padding-top: 0.5em;
+  line-height: 0.2em;
+  }
+table.graph10 .edge {
+  background: inherit;
+  border-style: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+}
+table.graph10 {
+  background: inherit;
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph10 .node {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background: white;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph10 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph10 .va {
+  vertical-align: bottom;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph10 .ve {
+  width: 0em;
+  }
+table.graph10 .lh, table.graph10 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph10 .eb {
+  height: 1em;
+  line-height: 0.5em;
+  }
+table.graph10 .el {
+  width: 0.5em;
+  }
+table.graph10 .v, table.graph10 .hat, table.graph10 .he {
+  text-align: left;
+  height: 0.5em;
+  line-height: 0.6em;
+  }
+table.graph10 .hat {
+  padding-top: 0.5em;
+  line-height: 0.2em;
+  }
+table.graph11 .edge {
+  background: inherit;
+  border-style: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+}
+table.graph11 {
+  background: inherit;
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph11 .node {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background: white;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph11 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph11 .va {
+  vertical-align: bottom;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph11 .ve {
+  width: 0em;
+  }
+table.graph11 .lh, table.graph11 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph11 .eb {
+  height: 1em;
+  line-height: 0.5em;
+  }
+table.graph11 .el {
+  width: 0.5em;
+  }
+table.graph11 .v, table.graph11 .hat, table.graph11 .he {
+  text-align: left;
+  height: 0.5em;
+  line-height: 0.6em;
+  }
+table.graph11 .hat {
+  padding-top: 0.5em;
+  line-height: 0.2em;
+  }
+table.graph12 .edge {
+  background: inherit;
+  border-style: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+}
+table.graph12 {
+  background: inherit;
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph12 .node {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background: white;
+  font-size: 1.1em;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph12 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph12 .va {
+  vertical-align: bottom;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph12 .ve {
+  width: 0em;
+  }
+table.graph12 .lh, table.graph12 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph12 .eb {
+  height: 1em;
+  line-height: 0.5em;
+  }
+table.graph12 .el {
+  width: 0.5em;
+  }
+table.graph12 .v, table.graph12 .hat, table.graph12 .he {
+  text-align: left;
+  height: 0.5em;
+  line-height: 0.6em;
+  }
+table.graph12 .hat {
+  padding-top: 0.5em;
+  line-height: 0.2em;
+  }
+table.graph13 .edge {
+  background: inherit;
+  border-style: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+}
+table.graph13 {
+  background: inherit;
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph13 .node {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background: #ffd080;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph13 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph13 .va {
+  vertical-align: bottom;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph13 .ve {
+  width: 0em;
+  }
+table.graph13 .lh, table.graph13 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph13 .eb {
+  height: 1em;
+  line-height: 0.5em;
+  }
+table.graph13 .el {
+  width: 0.5em;
+  }
+table.graph13 .v, table.graph13 .hat, table.graph13 .he {
+  text-align: left;
+  height: 0.5em;
+  line-height: 0.6em;
+  }
+table.graph13 .hat {
+  padding-top: 0.5em;
+  line-height: 0.2em;
+  }
+
+   -->
+ </style>
+</head>
+<body bgcolor=white text=black>
+
+<a name="top"></a>
+
+<div class="menu">
+
+  <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
+  <p style="height: 0.2em">&nbsp;</p>
+  <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
+  <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
+  <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
+  <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
+  <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
+  <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
+  <p class="menucur"><a class="menucur" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
+  <p class="menuind"><a class="menuind" href="att_graphs.html" title="Graph attributes">Graphs</a></p>
+  <p class="menuind"><a class="menuind" href="att_nodes.html" title="Node attributes">Nodes</a></p>
+  <p class="menucin"><a class="menucin" href="#Edges" title="Edge attributes">Edges</a></p>
+  <p class="menuind"><a class="menuind" href="att_groups.html" title="Group attributes">Groups</a></p>
+  <p class="menuind"><a class="menuind" href="attributes.html#class_names" title="Classes and their names">Classes</a></p>
+  <p class="menuind"><a class="menuind" href="attributes.html#links" title="Links and URLs">Links</a></p>
+  <p class="menuind"><a class="menuind" href="attributes.html#color_names_and_values" title="Color names and values">Colors</a></p>
+
+</div>
+
+<div class="right">
+
+<h1>Graph::Easy - Manual</h1>
+
+<h2>Attributes</h2>
+
+<div class="text">
+
+<p>
+If you haven't done so, please read the <a href="overview.html">Overview</a> first.
+</p>
+
+<p>
+This chapter describes all the possible attributes for edges.
+<br>
+It is generated automatically from the definitions in <code>Graph::Easy::Attributes</code>.
+</p>
+
+<a name="Edges">
+<h3>Edges</h3>
+</a>
+
+<ul>
+  <li><a href="att_edges.html#edge_arrow-style">arrow-style</a>, <a href="att_edges.html#edge_autolink">autolink</a>, <a href="att_edges.html#edge_autotitle">autotitle</a>, 
+  <li><a href="att_edges.html#edge_background">background</a>, <a href="att_edges.html#edge_border">border</a>, <a href="att_edges.html#edge_border-color">border-color</a>, <a href="att_edges.html#edge_border-style">border-style</a>, <a href="att_edges.html#edge_border-width">border-width</a>, 
+  <li><a href="att_edges.html#edge_class">class</a>, <a href="att_edges.html#edge_color">color</a>, 
+  <li><a href="att_edges.html#edge_fill">fill</a>, <a href="att_edges.html#edge_font-size">font-size</a>, 
+  <li><a href="att_edges.html#edge_label">label</a>, <a href="att_edges.html#edge_label-color">label-color</a>, <a href="att_edges.html#edge_link">link</a>, <a href="att_edges.html#edge_linkbase">linkbase</a>, 
+  <li><a href="att_edges.html#edge_style">style</a>, 
+  <li><a href="att_edges.html#edge_text-style">text-style</a>, <a href="att_edges.html#edge_title">title</a>, 
+</ul>
+<a name="edge_arrow-style">
+<h4>arrow-style</h4></a>
+
+<div class="entry">
+
+<p>
+The style of the arrow. Open arrows are vee-shaped and the bit inside the arrow has the color of the <a href="#edge_background">background</a>. Closed arrows are triangle shaped, with a background-color fill. Filled arrows are closed, too, but use the <a href="#edge_fill">fill</a> color for the inside. An arrow-style of none creates undirected edges just like "[A] -- [B]" would do.One of: <code>none</code>, <code>open</code>, <code>closed</code>, <code>filled</code>.
+<br>
+<b>Defaults to:</b> <code>open</code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">[ A ] -- open --> [ B ]
+ -- closed --> { arrow-style: closed; } [ C ]
+ -- filled --> { arrow-style: filled; } [ D ]
+ -- filled --> { arrow-style: filled; fill: lime; } [ E ]
+ -- none --> { arrow-style: none; } [ F ]
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph6" cellpadding=0 cellspacing=0>
+<tr>
+ <td colspan=4 rowspan=4 class='node'>A</td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">open</td>
+
+ <td rowspan=4 class="edge va" >&gt;</td>
+ <td colspan=4 rowspan=4 class='node'>B</td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">closed</td>
+
+ <td rowspan=4 class="edge va" >&gt;</td>
+ <td colspan=4 rowspan=4 class='node'>C</td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">filled</td>
+
+ <td rowspan=4 class="edge va" >&gt;</td>
+ <td colspan=4 rowspan=4 class='node'>D</td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">filled</td>
+
+ <td rowspan=4 class="edge va" >&gt;</td>
+ <td colspan=4 rowspan=4 class='node'>E</td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">none</td>
+
+ <td rowspan=4 class="edge va" >&gt;</td>
+ <td colspan=4 rowspan=4 class='node'>F</td>
+</tr>
+
+<tr></tr>
+
+<tr>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+</tr>
+
+</table>
+</div><div class="clear"></div>
+</div>
+
+<a name="edge_autolink">
+<h4>autolink</h4></a>
+
+<div class="entry">
+
+<p>
+If set to something else than 'none', will use the appropriate attribute to automatically generate the <a href="#edge_link">link</a>. This attribute is inherited by nodes, edges and groups.One of: <code>label</code>, <code>title</code>, <code>name</code>, <code>none</code>.
+<br>
+<b>Defaults to:</b> <code>none</code><br>
+<b>Example value:</b> <code>title</code></p>
+
+</div>
+
+<a name="edge_autotitle">
+<h4>autotitle</h4></a>
+
+<div class="entry">
+
+<p>
+If set to something else than 'none', will use the appropriate attribute to automatically generate the <a href="#edge_title">title</a>. This attribute is inherited by nodes, edges and groups.One of: <code>label</code>, <code>name</code>, <code>none</code>.
+<br>
+<b>Defaults to:</b> <code>none</code><br>
+<b>Example value:</b> <code>label</code></p>
+
+</div>
+
+<a name="edge_background">
+<h4>background</h4></a>
+
+<div class="entry">
+
+<p>
+The background color, e.g. the color outside the shape. See the section about <a href="attributes.html#color_names_and_values">color names and values</a> for reference.<br>
+<b>Defaults to:</b> <code>"white" for the graph, "inherit" for edges, and undef and nodes</code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">[ Crimson ] { shape: circle; background: crimson; }
+ -- Aqua Marine --> { background: #7fffd4; }
+ [ Misty Rose ] { fill: rgb(255,228,221); }
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph7" cellpadding=0 cellspacing=0>
+<tr>
+ <td colspan=4 rowspan=4 class='node' style="-moz-border-radius: 100%; border-radius: 100%; height: 4.9em; width: 4.9em">Crimson</td>
+ <td rowspan=4 class="edge ve" style=" background: #7fffd4;"></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black; background: #7fffd4;">Aqua Marine</td>
+
+ <td rowspan=4 class="edge va" style=" background: #7fffd4;">&gt;</td>
+ <td colspan=4 rowspan=4 class='node' style="background: #ffe4dd">Misty Rose</td>
+</tr>
+
+<tr></tr>
+
+<tr>
+ <td colspan=2 rowspan=2 class="edge eb" style=" background: #7fffd4;">&nbsp;</td>
+</tr>
+
+</table>
+</div><div class="clear"></div>
+</div>
+
+<a name="edge_border">
+<h4>border</h4></a>
+
+<div class="entry">
+
+<p>
+The border. Can be any combination of <a href="#edge_border-style">border-style</a>, <a href="#edge_border-color">border-color</a> and <a href="#edge_border-width">border-width</a>.<br>
+<b>Defaults to:</b> <code>1px solid black</code><br>
+<b>Example value:</b> <code>dotted red</code></p>
+
+</div>
+
+<a name="edge_border-color">
+<h4>border-color</h4></a>
+
+<div class="entry">
+
+<p>
+The color of the <a href="#edge_border">border</a>. See the section about <a href="attributes.html#color_names_and_values">color names and values</a> for reference.<br>
+<b>Defaults to:</b> <code>black</code><br>
+<b>Example value:</b> <code>rgb(255,255,0)</code></p>
+
+</div>
+
+<a name="edge_border-style">
+<h4>border-style</h4></a>
+
+<div class="entry">
+
+<p>
+The style of the <a href="#edge_border">border</a>.One of: <code>none</code>, <code>solid</code>, <code>dotted</code>, <code>dashed</code>, <code>dot-dash</code>, <code>dot-dot-dash</code>, <code>bold</code>, <code>double-dash</code>, <code>double</code>, <code>wave</code>.
+<br>
+<b>Defaults to:</b> <code>solid</code><br>
+<b>Example value:</b> <code>dotted</code></p>
+
+</div>
+
+<a name="edge_border-width">
+<h4>border-width</h4></a>
+
+<div class="entry">
+
+<p>
+The width of the <a href="#edge_border">border</a>.<br>
+<b>Defaults to:</b> <code>1px</code><br>
+<b>Example value:</b> <code>2px</code></p>
+
+</div>
+
+<a name="edge_class">
+<h4>class</h4></a>
+
+<div class="entry">
+
+<p>
+The subclass. See the section about <a href="attributes.html#class_names">class names</a> for reference.<br>
+<b>Defaults to:</b> <code></code><br>
+<b>Example value:</b> <code>mynodeclass</code></p>
+
+</div>
+
+<a name="edge_color">
+<h4>color</h4></a>
+
+<div class="entry">
+
+<p>
+The foreground/text color. See the section about <a href="attributes.html#color_names_and_values">color names and values</a> for reference.<br>
+<b>Defaults to:</b> <code>black</code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">[ Crimson ] { color: crimson; }
+ -> { color: blue; }
+ [ Dark Orange ] { color: rgb(255,140,0); }
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph8" cellpadding=0 cellspacing=0>
+<tr>
+ <td colspan=4 rowspan=4 class='node' style="color: #dc143c">Crimson</td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #0000ff;color: #0000ff;">&nbsp;</td>
+
+ <td rowspan=4 class="edge va" style=" color: #0000ff;">&gt;</td>
+ <td colspan=4 rowspan=4 class='node' style="color: #ff8c00">Dark Orange</td>
+</tr>
+
+<tr></tr>
+
+<tr>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+</tr>
+
+</table>
+</div><div class="clear"></div>
+</div>
+
+<a name="edge_fill">
+<h4>fill</h4></a>
+
+<div class="entry">
+
+<p>
+The fill color, e.g. the color inside the shape. See the section about <a href="attributes.html#color_names_and_values">color names and values</a> for reference.<br>
+<b>Defaults to:</b> <code>"white" for the graph and nodes, "inherit" for edges</code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">[ Crimson ]
+  {
+  shape: octagon;
+  background: crimson;
+  fill: red;
+  border-color: slategrey;
+  }
+-- Aqua Marine -->
+  {
+  arrow-style: filled;
+  fill: red;
+  }
+[ Two ]
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph9" cellpadding=0 cellspacing=0>
+<tr>
+ <td colspan=4 rowspan=4 class='node' style="background: #ff0000; border-color: #708090">Crimson</td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">Aqua Marine</td>
+
+ <td rowspan=4 class="edge va" >&gt;</td>
+ <td colspan=4 rowspan=4 class='node'>Two</td>
+</tr>
+
+<tr></tr>
+
+<tr>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+</tr>
+
+</table>
+</div><div class="clear"></div>
+</div>
+
+<a name="edge_font-size">
+<h4>font-size</h4></a>
+
+<div class="entry">
+
+<p>
+The size of the label text, best expressed in I<em> (1.0em, 0.5em etc) or percent (100%, 50% etc)<br>
+<b>Defaults to:</b> <code>"1.0" for the graph and nodes, "0.75" for edges</code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">graph { font-size: 200%; label: Sample; }
+  [ Crimson ] { font-size: 1.5em; fill: darkred; }
+  -- Aqua Marine -->
+ { font-size: 0.2em; }
+  [ Two ]
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph10" cellpadding=0 cellspacing=0>
+<tr>
+  <td colspan=12 style='background: inherit; font-size: 200%; font-size: 200%; text-align: center'>Sample</td>
+</tr>
+<tr>
+ <td colspan=4 rowspan=4 class='node' style="background: #8b0000; font-size: 1.5em;">Crimson</td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;font-size: 0.2em;">Aqua Marine</td>
+
+ <td rowspan=4 class="edge va" >&gt;</td>
+ <td colspan=4 rowspan=4 class='node'>Two</td>
+</tr>
+
+<tr></tr>
+
+<tr>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+</tr>
+
+</table>
+</div><div class="clear"></div>
+</div>
+
+<a name="edge_label">
+<h4>label</h4></a>
+
+<div class="entry">
+
+<p>
+The text displayed as label. If not set, equals the name (for nodes) or no label (for edges, groups and the graph itself).<br>
+<b>Defaults to:</b> <code></code><br>
+<b>Example value:</b> <code>My label</code></p>
+
+</div>
+
+<a name="edge_label-color">
+<h4>label-color</h4></a>
+
+<div class="entry">
+
+<p>
+The text color for the label. If unspecified, will fall back to <a href="#edge_color">color</a>. See the section about <a href="attributes.html#color_names_and_values">color names and values</a> for reference.<br>
+<b>Defaults to:</b> <code>black</code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">[ Bonn ] -- ICE --> { label-color: blue; }
+ [ Berlin ]
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph11" cellpadding=0 cellspacing=0>
+<tr>
+ <td colspan=4 rowspan=4 class='node'>Bonn</td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;color: #0000ff;">ICE</td>
+
+ <td rowspan=4 class="edge va" >&gt;</td>
+ <td colspan=4 rowspan=4 class='node'>Berlin</td>
+</tr>
+
+<tr></tr>
+
+<tr>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+</tr>
+
+</table>
+</div><div class="clear"></div>
+</div>
+
+<a name="edge_link">
+<h4>link</h4></a>
+
+<div class="entry">
+
+<p>
+The link part, appended onto <a href="#edge_linkbase">linkbase</a>. See the section about <a href="attributes.html#links">links</a> for reference.<br>
+<b>Defaults to:</b> <code></code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">node {
+  autolink: name;
+  text-style: none;
+  font-size: 1.1em;
+  }
+graph {
+  linkbase: http://de.wikipedia.org/wiki/;
+  }
+edge {
+  text-style: overline;
+  }
+
+[] --> [ Friedrichshafen ]
+ -- Schiff --> { autolink: label; color: orange; title: Vrooom!; }
+[ Immenstaad ] { color: green; } --> [ Hagnau ]
+
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph12" cellpadding=0 cellspacing=0>
+<tr>
+ <td colspan=4 rowspan=4 class='node-anon'><a class='l' href='http://de.wikipedia.org/wiki/#0'> </a></td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">&nbsp;</td>
+
+ <td rowspan=4 class="edge va" >&gt;</td>
+ <td colspan=4 rowspan=4 class='node'><a class='l' href='http://de.wikipedia.org/wiki/Friedrichshafen' style="text-decoration: none; font-size: 1.1em;">Friedrichshafen</a></td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #ffa500;" title="Vrooom!"><a class='l' href='http://de.wikipedia.org/wiki/Schiff' style='color: #ffa500; text-decoration: overline;'>Schiff</a></td>
+
+ <td rowspan=4 class="edge va" style=" color: #ffa500;">&gt;</td>
+ <td colspan=4 rowspan=4 class='node'><a class='l' href='http://de.wikipedia.org/wiki/Immenstaad' style="color: #008000; text-decoration: none; font-size: 1.1em;">Immenstaad</a></td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">&nbsp;</td>
+
+ <td rowspan=4 class="edge va" >&gt;</td>
+ <td colspan=4 rowspan=4 class='node'><a class='l' href='http://de.wikipedia.org/wiki/Hagnau' style="text-decoration: none; font-size: 1.1em;">Hagnau</a></td>
+</tr>
+
+<tr></tr>
+
+<tr>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+</tr>
+
+</table>
+</div><div class="clear"></div>
+</div>
+
+<a name="edge_linkbase">
+<h4>linkbase</h4></a>
+
+<div class="entry">
+
+<p>
+The base URL prepended to all generated links. This attribute is inherited by nodes, edges and groups. See the section about <a href="attributes.html#links">links</a> for reference.<br>
+<b>Defaults to:</b> <code></code><br>
+<b>Example value:</b> <code>http://en.wikipedia.org/wiki/</code></p>
+
+</div>
+
+<a name="edge_style">
+<h4>style</h4></a>
+
+<div class="entry">
+
+<p>
+The line style of the edge. When set on the general edge class, this attribute changes only the style of all solid edges to the specified one.One of: <code>solid</code>, <code>dotted</code>, <code>dashed</code>, <code>dot-dash</code>, <code>dot-dot-dash</code>, <code>bold</code>, <code>double-dash</code>, <code>double</code>, <code>wave</code>.
+<br>
+<b>Defaults to:</b> <code>solid</code><br>
+<b>Example value:</b> <code>dotted</code></p>
+
+</div>
+
+<a name="edge_text-style">
+<h4>text-style</h4></a>
+
+<div class="entry">
+
+<p>
+The style of the label text. Either 'none', or any combination (separated with spaces) of 'underline', 'overline', 'bold', 'italic', 'line-through'. 'none' disables underlines on links.<br>
+<b>Defaults to:</b> <code>none</code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">graph {
+  font-size: 150%;
+  label: Verbindung;
+  text-style: bold italic;
+  }
+node {
+  text-style: underline bold;
+  fill: #ffd080;
+  }
+edge {
+  text-style: italic bold overline;
+  }
+
+[ Meersburg ] { font-size: 2em; }
+ -- Fähre --> { font-size: 1.2em; color: red; }
+ [ Konstanz ]
+
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph13" cellpadding=0 cellspacing=0>
+<tr>
+  <td colspan=12 style='background: inherit; font-size: 150%; font-style: italic; font-weight: bold; font-size: 150%; text-align: center'>Verbindung</td>
+</tr>
+<tr>
+ <td colspan=4 rowspan=4 class='node' style="font-weight: bold; text-decoration: underline; font-size: 2em;">Meersburg</td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #ff0000;color: #ff0000; font-style: italic; font-weight: bold; text-decoration: overline; font-size: 1.2em;">Fähre</td>
+
+ <td rowspan=4 class="edge va" style=" color: #ff0000;">&gt;</td>
+ <td colspan=4 rowspan=4 class='node' style="font-weight: bold; text-decoration: underline;">Konstanz</td>
+</tr>
+
+<tr></tr>
+
+<tr>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+</tr>
+
+</table>
+</div><div class="clear"></div>
+</div>
+
+<a name="edge_title">
+<h4>title</h4></a>
+
+<div class="entry">
+
+<p>
+The text displayed as mouse-over for nodes/edges, or as the title for the graph. No title will be generated unless <a href="#edge_autotitle">autotitle</a> is set.<br>
+<b>Defaults to:</b> <code></code><br>
+<b>Example value:</b> <code>My title</code></p>
+
+</div>
+
+
+
+</div>
+
+<div class="footer">
+Page created automatically at <span class="date">Sun Oct 30 21:02:33 2005</span> in 0.0450s. Contact: <a href="/mail.html">Tels</a>.
+</div>
+
+</div> <!-- end of right cell -->
+
+</body>
+</html>

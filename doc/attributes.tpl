@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Graph::Easy - Manual - Attributes</title>
- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf8">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
@@ -93,7 +93,7 @@ can have an arbitrary number of sub-classes.
 </p>
 
 <p>
-Subclass names are restricted to <code>[a-z]</code> (lower ascii letters A to Z) and the <code>_</code>
+Subclass names are restricted to <code>[a-z]</code> (lower ASCII letters A to Z) and the <code>_</code>
 (underscore). Each subclass can have its own set of attributes.
 <br>
 Objects with their <code>class</code>-attributea set will use the attributes from the appropriate

@@ -13,23 +13,28 @@ not run its Makefile.PL or Build.PL.
 
 -----BEGIN PGP SIGNED MESSAGE-----
 
-SHA1 099cabfe32b04d0c038f862c60b15ac8a960987d CHANGES
+SHA1 0f649f34563fd9b7e019f02476c8b2a9bd41d2c7 CHANGES
 SHA1 6d72d79fc06eb02d20d1521e1ebb55bcc9992dbe INSTALL
 SHA1 02154445bc9831e791c35050f1a018ed99030016 LICENSE
-SHA1 838447c45ce161158c52acef9f0b765e83116e67 MANIFEST
-SHA1 de7e10ba0385713993d338e3317c172c5b397445 META.yml
-SHA1 0024695e51c9b1663fadd2ab6a72ff3b4ef60fe1 Makefile.PL
+SHA1 e58f3fdad26e21b6d95388d44049499ae0e43256 MANIFEST
+SHA1 b771cc9bfe2f39a4f30a3363bec05b2d0d24223c META.yml
+SHA1 db8983ba9ba596495982f5f5f7f3829b94f64f3e Makefile.PL
 SHA1 fff5ddc08f34a7e15a9428d2bb2e87e640d9aee0 README
 SHA1 33908ba89e37dd0dc06709d2b285f8cebac978b9 TODO
 SHA1 9062daf33789d2647ed21e853fa6fd09801a4b1d doc/README
-SHA1 3f1d53e539e70df13821f4207a2c3f20b17ed44f doc/att_edges.tpl
-SHA1 9a956a6295f62c19923da488ff3b7fb88636253f doc/att_graphs.tpl
-SHA1 354c30025fad7a67959b1f96cbf73ce7cdbb756b doc/att_groups.tpl
-SHA1 6ccb0fef81b23556a13f0930ff660c3485e7cddf doc/att_nodes.tpl
-SHA1 fe00568877fbc03c0abdc75561b2eed944e56268 doc/attributes.tpl
+SHA1 84b9a5f4ddbe175bca300948f4fa9aa36a8ddc5f doc/att_edges.tpl
+SHA1 a77e9ee1c2cc228853b333fcb0834406fb323b2a doc/att_graphs.tpl
+SHA1 907b51170184b2daedc950fdddc4c85b12dba572 doc/att_groups.tpl
+SHA1 825b4a2027769efa9268884e7c5a6e45f733b9b1 doc/att_nodes.tpl
+SHA1 9a7899e2a2551ac21fb4ece6fe713fcc0e76b02e doc/attributes.tpl
 SHA1 8a90704a6b5eaa972b0b34743a953b14e7452b25 doc/base.css
-SHA1 969a71f3d806e50cc029551b320e1ac0d5d8acb6 doc/gen_manual
+SHA1 cdc746f5ac029806ccdc9c172c6cd042c47fff43 doc/gen_manual
 SHA1 6890cc5d37ddd36b2f8de904b231b484f2003136 doc/manual/a-star.html
+SHA1 24ae587c175c7a3bfd0d5f3f79d9e3825668adb6 doc/manual/att_edges.html
+SHA1 6d5d1d3ea8471c29807d158b11fe48dade2eda64 doc/manual/att_graphs.html
+SHA1 a674637815af6c9613aff150df4f966c29a54964 doc/manual/att_groups.html
+SHA1 4ca98960858eb29470d57f22ce4a525704747f3c doc/manual/att_nodes.html
+SHA1 0bee1b4a7837e6a9f3959f69254ab15115668c1a doc/manual/attributes.html
 SHA1 92f51a9561312d097779c56230d3991bf058e4e3 doc/manual/bench/serie.pl
 SHA1 294339263980d8a836bebbe0a024264587cfb6b9 doc/manual/benchmark.html
 SHA1 c331bef0c2a39c25783385bcf1ef24e38eb3db11 doc/manual/hinting.html
@@ -43,23 +48,23 @@ SHA1 fecc6a1ad3d3a387636709fd3448cfdb8f7e32fd doc/manual/img/example6.png
 SHA1 4b9e29b25989d40ac5832c4d08488c9f14b285ff doc/manual/img/example7.png
 SHA1 4b9e29b25989d40ac5832c4d08488c9f14b285ff doc/manual/img/example8.png
 SHA1 23783801f976cebe5ba655583e44a555a6d2fb2a doc/manual/index.html
-SHA1 a6092e6026596c75bcd3c15a63e36ef71d707db3 doc/manual/layouter.html
+SHA1 bb78e86be78d4b06ecd32eb8b07e790403eb69b4 doc/manual/layouter.html
 SHA1 c04b2a2d2864df527969734a50dd3c6ee5f9295e doc/manual/manual.css
-SHA1 a6c81e0da8b2129603efa4f8771c2fc964783e36 doc/manual/output.html
+SHA1 164adab857fb0646d93e19dfcdc0966fd448dde0 doc/manual/output.html
 SHA1 7a6f6924689f60d371db123925f81b48d28d847b doc/manual/overview.html
 SHA1 d4478ad139aa7fd8b802d2dbd8b53820af6a941e doc/manual/syntax.html
-SHA1 9881eda433021afbece6a494855d13f76000b0a7 doc/manual/test.svg
-SHA1 07fba9f6b249bd4c02712ac7391477fdc5814ffa lib/Graph/Easy/Manual.pm
+SHA1 d4c4269ed9f459bf26c8c9eec413670fee0eaa1f doc/manual/test.svg
+SHA1 72678f5a817cfd60aecf895990ef9c4fafe030cf lib/Graph/Easy/Manual.pm
 SHA1 9aabf388bdd70ef0a5eab3bf302530dca452d722 t/pod.t
 SHA1 fde74ebae5c163f515362b9d4c5dde21051a48a5 t/pod_cov.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.2.4 (GNU/Linux)
 
-iQEVAwUBQy2wq3cLPEOTuEwVAQFXNQf/SXTpzpyQ6IwCNqWkqVq28lNhwf13j5q7
-qdAwPk5VUxL7p0bQogkPjj6JQ1LKGY+FDBm3+BkiVeLSyCSXRsV6bWFW8MM++IZb
-tDSF1OzSBYyeuJ9PvaOKnlizBHM9O4mVNHspuXToi84f3f17haCsG0nvVuFj5Bn/
-JfliFCH1OYAkqcsjbXaZtM26quHHXta793MAIlmN1EH7a3kuuNC2WoqtlhFtk9XY
-UrxVwAb4APsD1pkLgcupYWDsRTMjtjqCR/6qAFmY52NtjoraithXccprVYoRy0l1
-da74sAHnOzzng6W+gMve7lph3CS38TSMQg/0w4jfCE9p9vpLX1ZlaA==
-=klg4
+iQEVAwUBQ2UnKHcLPEOTuEwVAQFFfAf+PUEbeNXaBpEC8pO17pk0iMYYepdv/rfp
+Vh2FxEYfUkBg6mgjTRBJRNiH76Af+5n0dQ+J3wtx3cRmHaXSbO2m+oombLc3pzok
+dDEcXPY8NZWcAe5c1g62hSe+JLU5BD5anCX+GJcsjSYhU6eLdkaBmccliOJ15jl0
+yOwX0CgVavaRHHC4bxkAYPeM9M/qrOYajK6fCwdHkstMZrVIJZ85WQUhPaTnCbHv
+UQDZO95BCHftXMFK8n7ipP/z3/LxvjaxkP8B6uf3caZFskCUHl8BSSbgztVuCKmZ
+GHCTqO1o8swbsTkLNgV9kepG2rjehRXHPcIETDBKGS+8Z0Rg98vPxA==
+=GAe6
 -----END PGP SIGNATURE-----

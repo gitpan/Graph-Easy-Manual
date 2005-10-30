@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Graph::Easy - Manual - Attributes for nodes</title>
- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf8">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">

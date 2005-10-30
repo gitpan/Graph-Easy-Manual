@@ -1,5 +1,9 @@
 Revision history for Graph::Easy::Manual:
 
+2005-10-30 v0.21 Tels 2 tests - Doc, doc, doc, document the code...
+  * regenerate from Graph::Easy 0.31
+  * encode HTML pages in UTF-8
+
 2005-09-18 v0.20 Tels 2 tests - Doc, doc, doc, document the code...
   * removed the POD-bases manual, and added the plain HTML
   * doc/gen_manual creates only the attributes pages

@@ -8,7 +8,7 @@ package Graph::Easy::Manual;
 use strict;
 
 use vars qw/$VERSION/;
-$VERSION = '0.20';
+$VERSION = '0.21';
 
 1;
 __END__
@@ -28,6 +28,10 @@ Graph::Easy::Manual - HTML manual for Graph::Easy
 
 A C<Graph::Easy::Manual> provides a comprehensive HTML manual
 for Graph::Easy.
+
+X<manual>
+X<graph>
+X<drawing>
 
 =head1 SEE ALSO
 

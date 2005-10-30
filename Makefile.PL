@@ -33,7 +33,7 @@ WriteMakefile(
     NAME		=> 'Graph::Easy::Manual',
     VERSION_FROM	=> 'lib/Graph/Easy/Manual.pm',
     PREREQ_PM		=> {
-	Graph::Easy => 0.28,
+	Graph::Easy => 0.31,
 	File::Spec => 3.01,
 	},
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
