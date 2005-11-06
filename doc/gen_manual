@@ -78,7 +78,12 @@ for my $class (qw/node edge graph group/)
     
     my $e = $todo->{$entry};
 
-    my $des = $e->[0]; $des =~ s/L<([^>]+)>/<a href="#${class}_$1">$1<\/a>/g;
+    my $des = $e->[0]; 
+
+    # convert L<>
+    $des =~ s/L<([^>]+)>/<a href="#${class}_$1">$1<\/a>/g;
+    # convert I<>
+    $des =~ s/I<([^>]+)>/<i>$1<\/i>/g;
 
     $des =~ s/(section about )(.*?)( for ref)/my $l = $2; $l =~ tr!A-Za-z0-9!_!c; "$1<a href=\"attributes.html#$l\">$2<\/a>$3";/eg;
 

@@ -1,6 +1,11 @@
 Revision history for Graph::Easy::Manual:
 
-2005-10-30 v0.21 Tels 2 tests - Doc, doc, doc, document the code...
+2005-11-06 v0.22 Tels 2 tests - Doc, doc, doc, document the code...
+  * regenerate from Graph::Easy 0.32
+  * support "I<>" markup in descriptions
+  * add X<> keywords to POD for indexing
+
+2005-10-30 v0.21 Tels 2 tests
   * regenerate from Graph::Easy 0.31
   * encode HTML pages in UTF-8
 

@@ -310,7 +310,7 @@ table.graph5 .node {
   border-color: black;
   border-style: solid;
   border-width: 1px;
-  background: #ffd080;
+  background: white;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
@@ -346,6 +346,62 @@ table.graph5 .v, table.graph5 .hat, table.graph5 .he {
   line-height: 0.6em;
   }
 table.graph5 .hat {
+  padding-top: 0.5em;
+  line-height: 0.2em;
+  }
+table.graph6 .edge {
+  background: inherit;
+  border-style: none;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+}
+table.graph6 {
+  background: inherit;
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph6 .node {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background: #ffd080;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-align: center;
+}
+table.graph6 td {
+  padding: 2px;
+  background: inherit;
+  }
+table.graph6 .va {
+  vertical-align: bottom;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph6 .ve {
+  width: 0em;
+  }
+table.graph6 .lh, table.graph6 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph6 .eb {
+  height: 1em;
+  line-height: 0.5em;
+  }
+table.graph6 .el {
+  width: 0.5em;
+  }
+table.graph6 .v, table.graph6 .hat, table.graph6 .he {
+  text-align: left;
+  height: 0.5em;
+  line-height: 0.6em;
+  }
+table.graph6 .hat {
   padding-top: 0.5em;
   line-height: 0.2em;
   }
@@ -408,7 +464,7 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
   <li><a href="att_nodes.html#node_label">label</a>, <a href="att_nodes.html#node_link">link</a>, <a href="att_nodes.html#node_linkbase">linkbase</a>, 
   <li><a href="att_nodes.html#node_offset">offset</a>, <a href="att_nodes.html#node_origin">origin</a>, 
   <li><a href="att_nodes.html#node_point-style">point-style</a>, 
-  <li><a href="att_nodes.html#node_rows">rows</a>, 
+  <li><a href="att_nodes.html#node_rotate">rotate</a>, <a href="att_nodes.html#node_rows">rows</a>, 
   <li><a href="att_nodes.html#node_shape">shape</a>, <a href="att_nodes.html#node_size">size</a>, 
   <li><a href="att_nodes.html#node_text-style">text-style</a>, <a href="att_nodes.html#node_title">title</a>, 
 </ul>
@@ -650,7 +706,7 @@ The general direction in which edges will leave this node first. One of 0, up, n
 <div class="entry">
 
 <p>
-The size of the label text, best expressed in I<em> (1.0em, 0.5em etc) or percent (100%, 50% etc)<br>
+The size of the label text, best expressed in <i>em</i> (1.0em, 0.5em etc) or percent (100%, 50% etc)<br>
 <b>Defaults to:</b> <code>"1.0" for the graph and nodes, "0.75" for edges</code><br>
 <b>Example graph:</b>
 </p>
@@ -809,6 +865,42 @@ Controls the style of a node that has a <a href="#node_shape">shape</a> of 'poin
 
 </div>
 
+<a name="node_rotate">
+<h4>rotate</h4></a>
+
+<div class="entry">
+
+<p>
+The rotation of the node shape, clockwise from 0..359 degrees.<br>
+<b>Defaults to:</b> <code>0</code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">[ Bonn ] { rotate: 45; } -- ICE --> 
+ [ Berlin ] { shape: triangle; rotate: 90; }
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph5" cellpadding=0 cellspacing=0>
+<tr>
+ <td colspan=4 rowspan=4 class='node' style="rotate: 45">Bonn</td>
+ <td rowspan=4 class="edge ve" ></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">ICE</td>
+
+ <td rowspan=4 class="edge va" >&gt;</td>
+ <td colspan=4 rowspan=4 class='node' style="rotate: 90">Berlin</td>
+</tr>
+
+<tr></tr>
+
+<tr>
+ <td colspan=2 rowspan=2 class="edge eb" >&nbsp;</td>
+</tr>
+
+</table>
+</div><div class="clear"></div>
+</div>
+
 <a name="node_rows">
 <h4>rows</h4></a>
 
@@ -877,7 +969,7 @@ edge {
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph5" cellpadding=0 cellspacing=0>
+<table class="graph6" cellpadding=0 cellspacing=0>
 <tr>
   <td colspan=12 style='background: inherit; font-size: 150%; font-style: italic; font-weight: bold; font-size: 150%; text-align: center'>Verbindung</td>
 </tr>
@@ -917,7 +1009,7 @@ The text displayed as mouse-over for nodes/edges, or as the title for the graph.
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Oct 30 21:02:33 2005</span> in 0.0317s. Contact: <a href="/mail.html">Tels</a>.
+Page created automatically at <span class="date">Sun Nov  6 15:33:15 2005</span> in 0.3612s. Contact: <a href="/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->

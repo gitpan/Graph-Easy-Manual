@@ -8,7 +8,7 @@ package Graph::Easy::Manual;
 use strict;
 
 use vars qw/$VERSION/;
-$VERSION = '0.21';
+$VERSION = '0.22';
 
 1;
 __END__
@@ -32,6 +32,7 @@ for Graph::Easy.
 X<manual>
 X<graph>
 X<drawing>
+X<flowchart>
 
 =head1 SEE ALSO
 
@@ -45,5 +46,9 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms of the GPL version 2.
 
 See the LICENSE file for more details.
+
+X<tels>
+X<gpl>
+X<license>
 
 =cut
