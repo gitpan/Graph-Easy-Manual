@@ -33,10 +33,11 @@ WriteMakefile(
     NAME		=> 'Graph::Easy::Manual',
     VERSION_FROM	=> 'lib/Graph/Easy/Manual.pm',
     PREREQ_PM		=> {
-	Graph::Easy => 0.32,
+	Graph::Easy => 0.33,
 	File::Spec => 3.01,
 	},
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
 	(ABSTRACT_FROM	=> 'lib/Graph/Easy/Manual.pm', # retrieve abstract from module
 	AUTHOR		=> 'Tels <nospam-abuse@bloodgate.com>') : ()),
+	PREREQ_FATAL	=> 1,	# can't work without the prereqs
 );

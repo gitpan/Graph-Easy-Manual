@@ -141,7 +141,23 @@ You can also have a list of nodes by seperating them with a comma:
 </pre>
 
 <p>
-Node lists currently only work on the left side of an expression.
+This would be rendered as:
+</p>
+
+<pre>
++---+     +---+     +---+
+| A | --> | D | <-- | C |
++---+     +---+     +---+
+            ^
+            |
+            |
+          +---+
+          | B |
+          +---+
+</pre>
+
+<p>
+<b>Note:</b> Node lists currently only work on the left side of an expression.
 </p>
 
 <p>
@@ -213,11 +229,34 @@ node.city { background: red; }	# for all nodes with class "city"
 [ Berlin ] { color: green; }	# for the node "Berlin"
 
 [ ABC ] { border: bold; color: white; }
-[ DEF ]
-  {
+[ DEF ], 			# DEF has no attributes
+[ GHI ]
+  {				# these apply only to GHI!
     border: bold; 
     color: white; 
   }
+[ ] { fill: brown; }		# for the anonymous node
+</pre>
+
+<p>
+As a special case for autosplit nodes, you can seperate attribute values
+with "|" (vertical bar) for each part of the auto-split node:
+</p>
+
+<pre>
+[ Bonn | Berlin | Frankfurt ] { fill: red|yellow|blue; }
+</pre>
+
+<p>
+In the example above, "Bonn" would be red, "Berlin" yellow and "Frankfurt" blue.
+Missing values will not set the attribute on the node as in the following
+example, where "Berlin" and "Ulm" will get the default background (white):
+<p>
+
+<pre>
+node { fill: white; }
+
+[ Bonn | Berlin | Hahn | Ulm ] { fill: red||blue; }
 </pre>
 
 <p>
@@ -246,12 +285,14 @@ The edges between the nodes can have the following styles:
 </pre>
 
 <p>
-There is also the style "bold". Unlike the others, this can only be
-set via the (optional) edge attributes:
+In addition to these, the following styles exist: "bold", "bold-dash", "broad" and "wide".
+Unlike the normal edge styles, these can only be set via the (optional) edge attributes:
 </p>
 
 <pre>
-        [ A ] --> { style: bold; } [ B ]
+        [ A ] --> { style: bold; }      [ B ]
+              --> { style: broad; }     [ B ]
+              --> { style: bold-dash; } [ C ]
 </pre>
 
 <p>
@@ -360,7 +401,7 @@ To use a label with an edge without arrow heads, use the attributes:
 </pre>
 
 <p>
-For a complete listing of possible attributes see the appropriate
+For a complete listing of possible edge attributes see the appropriate
 <a href="attributes.html">chapter</a>.
 </p>
 
@@ -520,6 +561,11 @@ Here is a few examples to make this clear:
 
 </pre>
 
+<p>
+Please see the section about <a href="#attributes" title="Attributes">attributes</a>
+on how to put individual attributes on each autosplit node.
+</p>
+
 <div class="clear"></div>
 
 <h4>Relative placement - manually</h4>
@@ -635,23 +681,26 @@ Here is an example that demonstrates this:
 
 <pre class="graph">
 
-       +---------+
-       |         v
+       +---------+         +---------+
+       |         v         v         |
      +---+     +-------------+     +---+
      |   | --> |      C      | --> | D |
      | B |     +-------------+     +---+
-     |   |       ^         ^         |
-  +->|   | ------+         +---------+
+     |   |       ^
+  +->|   | ------+
   |  +---+
   |    ^
   |    |
   |    |
   |  +--------+     +---+
-  +--|        | --> | F |
-     |   A    |     +---+
-     |        |     |   |
-     |        | --> | G |
+  +--|   A    | --> | F |
      +--------+     +---+
+       |
+       |
+       v
+     +---+
+     | G |
+     +---+
 </pre>
 
 <div class="clear"></div>
@@ -663,7 +712,7 @@ Please continue with the chapter about the <a href="attributes.html">attributes<
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-09-13</span>
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-11-12</span>
 </div>
 
 </div> <!-- end of right cell -->

@@ -1,8 +1,8 @@
 <?xml version="1.0" standalone="yes"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
-<svg viewBox="0 0 759 373.2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<!-- Generated at Sat Oct 29 14:51:01 2005 by:
+<svg width="759" height="373.2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generated at Sat Oct 29 15:00:25 2005 by:
   Graph::Easy v0.31
   Graph::Easy::As_svg v0.10
  -->
@@ -50,9 +50,11 @@
 
 <g class="edge">
   <!-- north/west corner, from One to Four -->
-  <g stroke="#0000ff" stroke-dasharray="2, 2" stroke-width="1">
-    <line x1="701" y1="226.8" x2="701" y2="249.2" />
-    <line x1="670" y1="249.2" x2="701" y2="249.2" />
+  <g stroke="#0000ff" stroke-width="1">
+    <line x1="700" y1="228.3" x2="700" y2="247.7" />
+    <line x1="702" y1="228.3" x2="702" y2="247.7" />
+    <line x1="670" y1="248.2" x2="701" y2="248.2" />
+    <line x1="670" y1="250.2" x2="701" y2="250.2" />
   </g>
   <use stroke="#0000ff" xlink:href="#ah" transform="translate(701 226.8) rotate(-90)"/>
 </g>
@@ -88,7 +90,10 @@
 
 <g class="edge">
   <!-- horizontal, from One to Four -->
-  <line x1="426" y1="249.2" x2="510" y2="249.2" stroke="#0000ff" stroke-dasharray="2, 2" stroke-width="1" />
+  <g stroke="#0000ff" stroke-width="1">
+    <line x1="426" y1="248.2" x2="510" y2="248.2" />
+    <line x1="426" y1="250.2" x2="510" y2="250.2" />
+  </g>
 </g>
 
 <g class="edge">
@@ -125,7 +130,10 @@
 
 <g class="edge">
   <!-- horizontal, from One to Four -->
-  <line x1="586" y1="249.2" x2="670" y2="249.2" stroke="#0000ff" stroke-dasharray="2, 2" stroke-width="1" />
+  <g stroke="#0000ff" stroke-width="1">
+    <line x1="586" y1="248.2" x2="670" y2="248.2" />
+    <line x1="586" y1="250.2" x2="670" y2="250.2" />
+  </g>
   <text class="text" x="630" y="238" fill="#008000" stroke="none">    
 <tspan y="238">Test</tspan>
     <tspan x="630" y="252">label</tspan>
@@ -235,9 +243,11 @@
 
 <g class="edge">
   <!-- north/east corner, from One to Four -->
-  <g stroke="#0000ff" stroke-dasharray="2, 2" stroke-width="1">
-    <line x1="388" y1="226.8" x2="388" y2="249.2" />
-    <line x1="388" y1="249.2" x2="426" y2="249.2" />
+  <g stroke="#0000ff" stroke-width="1">
+    <line x1="387" y1="228.3" x2="387" y2="247.7" />
+    <line x1="389" y1="228.3" x2="389" y2="247.7" />
+    <line x1="388" y1="248.2" x2="426" y2="248.2" />
+    <line x1="388" y1="250.2" x2="426" y2="250.2" />
   </g>
 </g>
 
@@ -258,7 +268,10 @@
 
 <g class="edge">
   <!-- horizontal, from One to Four -->
-  <line x1="510" y1="249.2" x2="586" y2="249.2" stroke="#0000ff" stroke-dasharray="2, 2" stroke-width="1" />
+  <g stroke="#0000ff" stroke-width="1">
+    <line x1="510" y1="248.2" x2="586" y2="248.2" />
+    <line x1="510" y1="250.2" x2="586" y2="250.2" />
+  </g>
 </g>
 
 </svg>

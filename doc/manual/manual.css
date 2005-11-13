@@ -2,6 +2,8 @@ span.node { background: #ffffff; }
 span.edge { background: #ffff80; }
 span.cell { background: #a0a0ff; }
 span.port { background: #ffa0ff; }
+span.port2 { background: #ffffa0; }
+span.port3 { background: #a0ffff; }
 table.features td {
   background: #a0a0a0;
   border: #606060 solid 1px;

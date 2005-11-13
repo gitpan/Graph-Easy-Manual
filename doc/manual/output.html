@@ -90,13 +90,18 @@ background.
 </pre>
 
 <p>
-In addition, the arrows are always rendered open, regardless of the actual
-arrow style.
+The following limitations apply:
 </p>
 
-<p>
-Node shapes with slanted or round borders are not yet supported in ASCII.
-</p>
+<ul>
+  <li>
+  The edge arrows are always rendered open, regardless of the actual
+  arrow style.
+  </li>
+  <li>Node shapes with slanted or round borders are not yet supported.</li>
+  <li>Edge styles <code>bold</code>, <code>broad</code> and <code>wide</code> are all rendered
+      with '#' and thus look the same.</li>
+</ul>
 
 <a name="boxart">
 <h3>Box Art</h3>
@@ -115,33 +120,36 @@ except:
   <li>corners on borders look better
   <li>rounded node borders are supported
   <li>the different arrow-styles work
+  <li>edge styles <code>bold</code>, <code>broad</code> and <code>wide</code> work
 </ul>
 
 <pre class="ascii" style="font-style: monospaced;">
+
                                 My sample graph
 
-                      Test label
-       ┌╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐
-       ╵                             ∨
-     ┌─────────────┐               ┌───────┐          ┌───────┐
-  ╔═>│    Five     │ ────────────> │ Seven │ ──────── │ Eight │ ········   None
-  ║  └─────────────┘               └───────┘          └───────┘
-  ║    │                                                ∧
-  ║    └────────────────────────────────────────────────┘
-  ║
-  ║  ┌−−−−−−−−−−−−−┐               ┌───────┐  label   ┌───────┐          ┌──────┐
-  ╚═>╎    Three    ╎ ◁════════════ │  One  │ ───────> │  Two  │ ───────> │ Four │
-     └−−−−−−−−−−−−−┘               └───────┘          └───────┘          └──────┘
-       △                             :                           Test      ∧
-       │                             :                           label     :
-       │ Test label                  └·····································┘
-       ▽
-     ┌─────────────┐
-     │    Sixty    │
-     │    Six      │
-     │    and      │
-     │    six      │
-     └─────────────┘
+                                             Test
+                                             label
+            ┌···············································┐
+            :                                               v
+          ┌─────────────┐  label   ▛▀▀▀▀▀▀▜               ┌───────┐
+          │     One     │ ───────> ▌ Two  ▐ ▬▬▬▬▬▬▬▬▬▬▬▬> │ Four  │ ···   None
+          └─────────────┘          ▙▄▄▄▄▄▄▟               └───────┘
+            ║                                Test label
+            ║                        ┌╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐
+            v                        ╵                      v
+          ┌−−−−−−−−−−−−−┐          ████████               ┏━━━━━━━┓     ┌───────┐
+  ┌·······╎    Three    ╎ <══════> █ Five █ ────────────> ┃ Seven ┃ ─── │ Eight │
+  :       └−−−−−−−−−−−−−┘          ████████               ┗━━━━━━━┛     └───────┘
+  :         ^                        │                                    ^
+  :         │                        │                                    │
+  : Test    │ Test label             └────────────────────────────────────┘
+  : label   v
+  :       ┌─────────────┐
+  :       │    Sixty    │
+  :       │    Six      │
+  :       │    and      │
+  └······>│    six      │
+          └─────────────┘
 </pre>
 
 <a name="html">
@@ -511,7 +519,7 @@ Please continue with the chapter about the <a href="syntax.html">syntax</a>.
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-19</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-09-14</span>
+Page created <span class="date">2005-08-19</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-11-12</span>
 </div>
 
 </div> <!-- end of right cell -->
