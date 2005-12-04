@@ -1,6 +1,20 @@
 Revision history for Graph::Easy::Manual:
 
-2005-11-12 v0.23 Tels 2 tests - Doc, doc, doc, document the code...
+2005-12-03 v0.24 Tels 2 tests - Doc, doc, doc, document the code...
+  * add examples/pod2html and lib/graph/Easy/Pod2HTML.pm
+  * require Graph::Easy 0.34
+  * fix object tag for SVG example (needs width/height for firefox)
+  * include explanation for non-SVG browsers
+  * include Graph::Easy::Manual version in output
+  * document:
+    + autosplit nodes with basenames
+    + A* runaway catcher
+    + edge start/ending port restrictions
+    + undirected/bidirectional edges with example 
+  * update benchmark page
+  * move specific hinting-examples from "Syntax" to "Hinting" chapter
+
+2005-11-12 v0.23 Tels 2 tests
   * regenerate from Graph::Easy 0.33
   * update the docs with the new edge styles, autosplit attributes etc
 

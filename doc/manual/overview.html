@@ -19,6 +19,8 @@
   <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
   <p style="height: 0.2em">&nbsp;</p>
   <p class="menucur"><a class="menucur" href="overview.html" title="How everything fits together">Overview</a></p>
+    <p class="menuind"><a class="menuind" href="#inout" title="Input/Output and dataflow overview">Input/Output</a></p>
+    <p class="menuind"><a class="menuind" href="#features" title="Supported features">Features</a></p>
   <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
   <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
   <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
@@ -47,7 +49,8 @@ Here is a short list of terms that will be used throughout the following documen
   <li>node - a node or vertex in a graph like [ Bonn ]
   <li>edge - an edge connects two <code>nodes</code> (or one node with itself) like in [ Bonn ] -> [ Berlin ]
   <li>name - unique name of a <code>node</code>
-  <li>label - the text that is displayed as the <code>node</code>, if not set, the node <code>name</code> will be used
+  <li>label - text that is displayed as the <code>node</code>, if not set, the node <code>name</code> will be used
+  <li>title - text displayed when you move the mouse over the <code>node</code>, <code>edge</code> etc.
   <li>port - each spot on a <code>node</code> where one <code>edge</code> can start or end
   <li>cell - one cell in the layout (which looks like a checker board)
   <li>path - needs to be found to connect two <code>nodes</code> in a <code>layout</code>
@@ -59,7 +62,9 @@ Here is a short list of terms that will be used throughout the following documen
   <li>A* - general algorithm to find a <code>path</code>
 </ul>
 
+<a name="inout">
 <h3>Input and Output</h3>
+</a>
 
 <p>
 Here is an overview of the data flow. Input is shown green, while direct output of Graph::Easy
@@ -144,7 +149,7 @@ For instance the following graph (given in the Graph::Easy syntax, more on that 
 can be laid out in (probably infinitely) many ways. Here are two examples:
 </p>
 
-<img src="img/example1.png" alt="Example layout of simple graph" style="float: left">
+<img src="img/example1.png" alt="Example layout of simple graph" class="float">
 <pre class="graph">
 +---+     +---+     +---+
 | A | --> | C | --> | D |
@@ -189,7 +194,14 @@ do when the edges don't run straight but all over the place :-)
 That's one of the reasons for the existance of Graph::Easy. :-P
 </p>
 
-<h3>Nodes and Edges</h3>
+<a name="features">
+<h3>Supported features</h3>
+</a>
+
+<p>
+Graph::Easy support a wide array of features, below you will find an overview
+of some of them.
+</p>
 
 <p>
 Usually each node name is unique, there cannot be two nodes with the same name. Since it is sometimes
@@ -205,21 +217,18 @@ text displayed with a label:
 This will be rendered like this:
 </p>
 
-<img src="img/example2.png" alt="Same node names" style="float: left">
+<img src="img/node_label.png" alt="Same node names" title="Same node names" class="float">
 <pre class="graph">
 +--------+     +--------+
 | Berlin | --> | Berlin |
 +--------+     +--------+
 </pre>
 
-<div class="clear"></div>
-
-<p>&nbsp;</p>
+<p class="clear">&nbsp;</p>
 
 <p>
 Most graphing packages also allow multi-edges. A multi-edge graph simply allows two edges going from the same
 starting node to the same target node:
-
 </p>
 
 <pre>
@@ -227,7 +236,8 @@ starting node to the same target node:
 [ Rostock ] -> [ Wismut ]
 </pre>
 
-<img src="img/example3.png" alt="Multi-edges" style="float: left">
+<img src="img/multi_edges.png" alt="Multi-edges" title="Multi-edges" class="float">
+
 <pre class="graph">
   +---------------+
   |               v
@@ -236,20 +246,19 @@ starting node to the same target node:
 +---------+     +--------+
 </pre>
 
-<div class="clear"></div>
-
-<p>&nbsp;</p>
+<p class="clear">&nbsp;</p>
 
 <p>
 In addition to that, self-loops are usefull for state-machines and flowcharts.
 A self-loop is one edge going from one node back to the same node again:
 </p>
 
-<pre>
+<pre class="graphtext">
 [ Chemnitz ] -> [ Chemnitz ]
 </pre>
 
-<img src="img/example4.png" alt="Self-loop" style="float: left">
+<img src="img/self_loop.png" alt="Self-loop" title="Self-loop" class="float">
+
 <pre class="graph">
   +------+
   v      |
@@ -258,8 +267,29 @@ A self-loop is one edge going from one node back to the same node again:
 +----------+
 </pre>
 
-<div class="clear"></div>
+<p class="clear">&nbsp;</p>
 
+<p>
+Another often used feature are undirected or bidirectional edges:
+</p>
+
+<pre class="graphtext">
+[ Hamm ] <--> [ Leverkusen ]
+[ Wismut ] -- [ Plauen ]
+</pre>
+
+<img src="img/edge_types.png" alt="Edge types undirected and bidirectional" class="float">
+
+<pre class="graph">
++--------+      +------------+
+|  Hamm  | <--> | Leverkusen |
++--------+      +------------+
++--------+      +------------+
+| Wismut | ---- |   Plauen   |
++--------+      +------------+
+</pre>
+
+<p class="clear">&nbsp;</p>
 </div><div class="text next">
 
 <p>
@@ -269,7 +299,7 @@ Please continue with the chapter about the <a href="layouter.html">layouter</a>.
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-09-13</span>
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-12-13</span>
 </div>
 
 </div> <!-- end of right cell -->

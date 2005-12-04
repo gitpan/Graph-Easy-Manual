@@ -18,8 +18,9 @@ BEGIN
 
 my $path = shift || 'manual';
 
-use Graph::Easy 0.31;
+use Graph::Easy 0.33;
 use Graph::Easy::Parser;
+use Graph::Easy::Manual;
 
 my $start = time();
 
@@ -128,6 +129,7 @@ for my $class (qw/node edge graph group/)
 
   $cur_tpl =~ s/##css##/$css/;
   $cur_tpl =~ s/##time##/ scalar localtime(); /eg;
+  $cur_tpl =~ s/##version##/$Graph::Easy::Manual::VERSION/g;
 
   my $took = sprintf("%0.4fs", time() - $start_time);
   $cur_tpl =~ s/##took##/$took/g;

@@ -22,6 +22,7 @@
   <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
   <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
   <p class="menucur"><a class="menucur" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
+    <p class="menuind"><a class="menuind" href="#terminating" title="Nodes">Stopping</a></p>
   <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
   <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
   <p class="menuext"><a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
@@ -162,6 +163,7 @@ is not so high as that the algorithm searches endless for a way around that does
 exist.
 </p>
 
+<a name="terminating"></a>
 <h4>Stopping</h4>
 
 <p>
@@ -172,16 +174,52 @@ spiral outwards and out of control, never finishing.
 </p>
 
 <p>
-The current solution is to stop the algorithm after a pre-determined number
-of steps have been taken. These are currently 10,000 steps.
-<br>
-It should be possible for the code to watch when the runaway situation
-occurs and abort the pathfinding. That would enable us to get rid of a
-hard-coded constant (which are always bad) and allow much earlier
-aborting then having to wait for all steps to finish.
+To protect against run-away situations (occuring mainly due to bugs),
+the algorithm stops after a hard-coded number of steps. This is
+currently set to 50,000 steps as to not interfere with normal
+working conditions, and yet stop the algorithm if it runs
+into a cycle (which should not happen, but experience has shown
+that some bugs always creep in :)
 </p>
 
-</div>
+<p>
+To prevent the algorithm from spiraling out of control, we define a working
+space:
+</p>
+
+<pre class="graph">
+.............................
+:                           :
+:   +-------+               :
+:   | Start | ------+       :
+:   +-------+       |       :
+:                   |       : 
+:                   |       :
+:                   v       :
+:                 +------+  :
+:                 | Dest |  :             
+:                 +------+  :
+:                           : 
+.............................
+</pre>
+
+<div class="clear"></div>
+
+<p>
+The working space is the rectangle that encompasses all used cells at the
+start of the algorithm, plus one cell in each direction.
+<br>
+Since it is possible to reach any cell in the outer stripe from any other
+cell in the same region, the algorithm never needs to leave that
+working space to find a path. By confining the algorithm into this
+region (simple dropping all OPEN cells outside this area), we
+make sure that there is a finite number of cells to check and visit.
+<br>
+When A* runs out of cells to check (OPEN is empty), we know we have reached
+every possible location reachable from our start position(s), and if
+no stop position was among them, the target is not reachable at all.
+The pathfinding thus stops without a result.
+</p>
 
 <h2>A* Map</h2>
 
@@ -690,7 +728,7 @@ Nodes in path: <b>21</b>
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-11-12</span>
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-11-30</span>
 </div>
 
 </div> <!-- end of right cell -->

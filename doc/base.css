@@ -78,7 +78,7 @@ p.hr
   }
 div.right
   {
-  margin-left: 7.6em;
+  margin-left: 8.6em;
   }
 div.text 
   {
@@ -96,7 +96,7 @@ div.menu
   {
   padding: 0.6em;
   margin-right: 0.6em;
-  width: 6em;
+  width: 7em;
   position: fixed;
   }
 a.top
@@ -158,7 +158,7 @@ p.menu, p.menuext, p.menucur, p.menuadd, p.menuind, p.menuinc, p.menucin
   padding-right: 0em;
   margin: 0em;
   margin-bottom: 0.4em;
-  min-width: 6em;
+  min-width: 7em;
   font-size: 0.8em;
   }
 p.menuind, p.menuinc, p.menucin
@@ -213,6 +213,10 @@ ul
 li
   {
   font-size: 0.9em;
+  }
+tr.odd td
+  {
+  background: #ffdead;
   }
 code
   {

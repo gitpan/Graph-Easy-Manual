@@ -110,7 +110,7 @@ node.cities { color: red; }
 [ Green ] --> [ Red ] { class: cities; }
 </pre>
 
-<img src="img/example5.png" border=0 title="Example of classes" style="float: left; margin-left: 1em;">
+<img src="img/classes.png" border=0 alt="Example of classes" title="Example of classes" style="float: left; margin-left: 1em;">
 
 <div class="clear"></div>
 
@@ -135,7 +135,7 @@ node { linkbase: http://www.bloodgate.com/perl/; }
 <area shape="rect" href="http://www.bloodgate.com/perl/graph/manual/" title="Manual" alt="Manual" coords="137,7,209,54" />
 </map>
 
-<img USEMAP="#NAME" src="img/example6.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
+<img USEMAP="#NAME" src="img/links.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
 
 <p class="clear">
 <code>linkbase</code> is ignored unless you also have <code>link</code> or <code>autolink</code>.
@@ -154,7 +154,7 @@ node { linkbase: http://www.bloodgate.com/perl/; autolink: name; }
 <area shape="rect" href="http://www.bloodgate.com/perl/graph/manual" title="graph/manual" alt="graph/manual" coords="137,7,244,54" />
 </map>
 
-<img USEMAP="#NAME2" src="img/example7.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
+<img USEMAP="#NAME2" src="img/linkbase.png" border=0 alt="Example of links" title="Example of links" style="float: left; margin-left: 1em;">
 
 <p class="clear">
 Note that <code>link</code> has precedence over <code>autolink</code>, the latter
@@ -177,7 +177,7 @@ node { linkbase: http://www.bloodgate.com/perl/; autolink: name; }
 <area shape="rect" href="http://bloodgate.com" title="graph/manual" alt="graph/manual" coords="137,7,244,54" />
 </map>
 
-<img USEMAP="#GRAPH_0" src="img/example8.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
+<img USEMAP="#GRAPH_0" src="img/link_linkbase.png" border=0 alt="Example of lins" title="Example of links" style="float: left; margin-left: 1em;">
 
 <div class="clear"></div>
 

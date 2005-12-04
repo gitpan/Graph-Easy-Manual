@@ -24,14 +24,15 @@ doc/manual/overview.html
 doc/manual/syntax.html
 doc/manual/test.svg
 doc/manual/img/dataflow.png
+doc/manual/img/edge_types.png
 doc/manual/img/example1.png
-doc/manual/img/example2.png
-doc/manual/img/example3.png
-doc/manual/img/example4.png
-doc/manual/img/example5.png
-doc/manual/img/example6.png
-doc/manual/img/example7.png
-doc/manual/img/example8.png
+doc/manual/img/node_label.png
+doc/manual/img/multi_edges.png
+doc/manual/img/self_loop.png
+doc/manual/img/classes.png
+doc/manual/img/links.png
+doc/manual/img/linkbase.png
+doc/manual/img/link_linkbase.png
 doc/README
 doc/attributes.tpl
 doc/att_edges.tpl
@@ -40,7 +41,10 @@ doc/att_groups.tpl
 doc/att_graphs.tpl
 doc/base.css
 doc/gen_manual
+examples/pod2html
+examples/00_Overview.pod
 t/pod.t
 t/pod_cov.t
 lib/Graph/Easy/Manual.pm
+lib/Graph/Easy/Pod2HTML.pm
 META.yml			Module meta-data

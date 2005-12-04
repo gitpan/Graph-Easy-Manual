@@ -79,7 +79,7 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
 
 <ul>
   <li><a href="att_nodes.html#node_autolink">autolink</a>, <a href="att_nodes.html#node_autotitle">autotitle</a>, 
-  <li><a href="att_nodes.html#node_background">background</a>, <a href="att_nodes.html#node_border">border</a>, <a href="att_nodes.html#node_border-color">border-color</a>, <a href="att_nodes.html#node_border-style">border-style</a>, <a href="att_nodes.html#node_border-width">border-width</a>, 
+  <li><a href="att_nodes.html#node_background">background</a>, <a href="att_nodes.html#node_basename">basename</a>, <a href="att_nodes.html#node_border">border</a>, <a href="att_nodes.html#node_border-color">border-color</a>, <a href="att_nodes.html#node_border-style">border-style</a>, <a href="att_nodes.html#node_border-width">border-width</a>, 
   <li><a href="att_nodes.html#node_class">class</a>, <a href="att_nodes.html#node_color">color</a>, <a href="att_nodes.html#node_columns">columns</a>, 
   <li><a href="att_nodes.html#node_fill">fill</a>, <a href="att_nodes.html#node_flow">flow</a>, <a href="att_nodes.html#node_font-size">font-size</a>, 
   <li><a href="att_nodes.html#node_label">label</a>, <a href="att_nodes.html#node_link">link</a>, <a href="att_nodes.html#node_linkbase">linkbase</a>, 
@@ -99,9 +99,10 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
   <li><a href="att_edges.html#edge_arrow-style">arrow-style</a>, <a href="att_edges.html#edge_autolink">autolink</a>, <a href="att_edges.html#edge_autotitle">autotitle</a>, 
   <li><a href="att_edges.html#edge_background">background</a>, <a href="att_edges.html#edge_border">border</a>, <a href="att_edges.html#edge_border-color">border-color</a>, <a href="att_edges.html#edge_border-style">border-style</a>, <a href="att_edges.html#edge_border-width">border-width</a>, 
   <li><a href="att_edges.html#edge_class">class</a>, <a href="att_edges.html#edge_color">color</a>, 
+  <li><a href="att_edges.html#edge_end">end</a>, 
   <li><a href="att_edges.html#edge_fill">fill</a>, <a href="att_edges.html#edge_font-size">font-size</a>, 
   <li><a href="att_edges.html#edge_label">label</a>, <a href="att_edges.html#edge_label-color">label-color</a>, <a href="att_edges.html#edge_link">link</a>, <a href="att_edges.html#edge_linkbase">linkbase</a>, 
-  <li><a href="att_edges.html#edge_style">style</a>, 
+  <li><a href="att_edges.html#edge_start">start</a>, <a href="att_edges.html#edge_style">style</a>, 
   <li><a href="att_edges.html#edge_text-style">text-style</a>, <a href="att_edges.html#edge_title">title</a>, 
 </ul>
 
@@ -151,7 +152,7 @@ node.cities { color: red; }
 [ Green ] --> [ Red ] { class: cities; }
 </pre>
 
-<img src="img/example5.png" border=0 title="Example of classes" style="float: left; margin-left: 1em;">
+<img src="img/classes.png" border=0 alt="Example of classes" title="Example of classes" style="float: left; margin-left: 1em;">
 
 <div class="clear"></div>
 
@@ -176,7 +177,7 @@ node { linkbase: http://www.bloodgate.com/perl/; }
 <area shape="rect" href="http://www.bloodgate.com/perl/graph/manual/" title="Manual" alt="Manual" coords="137,7,209,54" />
 </map>
 
-<img USEMAP="#NAME" src="img/example6.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
+<img USEMAP="#NAME" src="img/links.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
 
 <p class="clear">
 <code>linkbase</code> is ignored unless you also have <code>link</code> or <code>autolink</code>.
@@ -195,7 +196,7 @@ node { linkbase: http://www.bloodgate.com/perl/; autolink: name; }
 <area shape="rect" href="http://www.bloodgate.com/perl/graph/manual" title="graph/manual" alt="graph/manual" coords="137,7,244,54" />
 </map>
 
-<img USEMAP="#NAME2" src="img/example7.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
+<img USEMAP="#NAME2" src="img/linkbase.png" border=0 alt="Example of links" title="Example of links" style="float: left; margin-left: 1em;">
 
 <p class="clear">
 Note that <code>link</code> has precedence over <code>autolink</code>, the latter
@@ -218,7 +219,7 @@ node { linkbase: http://www.bloodgate.com/perl/; autolink: name; }
 <area shape="rect" href="http://bloodgate.com" title="graph/manual" alt="graph/manual" coords="137,7,244,54" />
 </map>
 
-<img USEMAP="#GRAPH_0" src="img/example8.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
+<img USEMAP="#GRAPH_0" src="img/link_linkbase.png" border=0 alt="Example of lins" title="Example of links" style="float: left; margin-left: 1em;">
 
 <div class="clear"></div>
 
@@ -437,7 +438,7 @@ For all other colors you can use one of the following notations:
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Nov 13 17:27:13 2005</span> in 0.2520s. Contact: <a href="/mail.html">Tels</a>.
+Page created automatically at <span class="date">Sun Dec  4 19:41:20 2005</span> in 0.2902s. Contact: <a href="/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->

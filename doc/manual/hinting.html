@@ -24,11 +24,13 @@
     <p class="menuind"><a class="menuind" href="#flow" title="Set the flow direction of the graph">Flow</a></p>
     <p class="menuind"><a class="menuind" href="#size" title="Adjust node sizes">Node size</a></p>
     <p class="menuind"><a class="menuind" href="#groups" title="Group nodes together">Grouping</a></p>
+    <p class="menuind"><a class="menuind" href="#autosplit" title="Create rows/columns of node cells">Autosplit</a></p>
     <p class="menuind"><a class="menuind" href="#clusters" title="Place nodes relative to each other">Clustering</a></p>
   <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
   <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
   <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
   <p class="menuext"><a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
+  <p class="menuext"><a class="menuext" href="benchmark.html" title="Benchmarks">Benchmarks</a></p>
 
 </div>
 
@@ -36,7 +38,7 @@
 
 <h1>Graph::Easy - Manual</h1>
 
-<h2>Layouter</h2>
+<h2>Hinting - or how to create specific graph layouts</h2>
 
 <div class="text">
 
@@ -77,8 +79,10 @@ the following:
 <ul>
   <li><a href="#flow">adjusting the flow direction</a>
   <li><a href="#size">setting node sizes</a>
-  <li><a href="#groups">grouping nodes</a>
+  <li><a href="#groups">grouping nodes together</a>
+  <li><a href="#autosplit">Creating rows/columns of nodes</a>
   <li><a href="#clusters">placing nodes relativ to each other</a>
+  <li><a href="#edges">specify edge starting/ending ports</a>
 </ul>
 
 <p>
@@ -166,27 +170,83 @@ graph { flow: left; }
 
 <div class="clear"></div>
 
-<a name="size">
-<h3>Node sizes</h3>
+<a name="sizes">
+<h3>Node sizes (multi-celled nodes)</h3>
 </a>
 
 <p>
-With the attributes
-<a href="attributes.html#node_size">size</a>,
-<a href="attributes.html#node_columns">columns</a> and
-<a href="attributes.html#node_rows">rows</a> you can influence the
-size of a node in cells.
-<br>
-Please see the chapter about <a href="syntax.html#advanced">Advanced Syntax</a>
-for details and examples.
+You can specify the size of a node in rows and columns by using either the
+<code>rows</code>, <code>columns</code> or <code>size</code> attribute:
 </p>
+
+<pre class="graphtext">
+[ A ] { size: 2,2; }
+-> [ B ] { rows: 2; }
+-> [ C ] { columns: 3; }
+</pre>
+
+<div class="clear"></div>
+
+<p>
+Here is an example that demonstrates this:
+</p>
+
+<pre class="graphtext">
+[ A ] { size: 2,2; }
+-> [ B ] { rows: 2; }
+-> [ C ] { columns: 3; }
+
+[ A ] -> [ B ]
+ -> [ C ]
+ -> [ D ]
+
+[ D ] -> [ C ]
+[ B ] -> [ C ]
+
+[ A ] -> [ F ]
+[ A ] -> [ G ]
+</pre>
+
+<pre class="graph">
+
+                      +---------+    +---------+
+                      |         v    v         |
++---+     +---+     +---+     +--------+     +---+
+| G | <-- |   | --> |   | --> |   C    | --> | D |
++---+     | A |     | B |     +--------+     +---+
+          |   |     |   |       ^
+          |   | --> |   | ------+
+          +---+     +---+
+            |
+            |
+            v
+          +---+
+          | F |
+          +---+
+</pre>
+
+<div class="clear"></div>
+
+<p>
+Even when you do not specify a size, the layouter will grow nodes
+automatically to satisify the constraints of the layout, for
+instance when more than four edges start/end at a particular
+node. Likewise, when specifying edge ports, these constraints
+will grow the node if necessary.
+<br>
+As an example, if you specifiy that there are 5 edges starting/ending
+at the south side of the node, than the node will be made
+at least 5 cells wide.
+</p>
+
+<div class="clear"></div>
 
 <a name="groups">
 <h3>Groups</h3>
 </a>
 
 <p>
-You can group nodes together by using braces:
+Nodes can be grouped together by using braces:
 </p>
 
 <pre>
@@ -205,15 +265,287 @@ Please see the chapter about <a href="syntax.html#advanced">Advanced Syntax</a>
 for details and examples.
 </p>
 
-<a name="clusters">
-<h3>Relative Node Placement</h3>
+<a name="autosplit">
+<h3>Relative placement (via auto-split)</h3>
 </a>
 
 <p>
-You can place each node relatively to another node.
-Please see the chapter about <a href="syntax.html#advanced">Advanced Syntax</a>
-for details and examples.
+You can cluster nodes together by placing them relatively to each other.
+<br>
+Perhaps the easiest way to achive the placement is to use the
+<i>auto-split</i> feature:
 </p>
+
+<ul>
+  <li>a <code>|</code> (vertical bar) in the node name will split the node
+      into two parts, and place them next to each other, horizontally
+  </li>
+  <li>likewise, <code>||</code> (two vertical bars) in the node name will split the node
+      into two parts, but place the second part at the start of a new row
+  </li>
+  <li>If a part between two <code>|</code> consists of exactly one space, an
+      invisible cell will be generated, e.g. one without borders and background
+  </li>
+  <li>If a part between two <code>|</code> consists of more than one space, an empty
+      cell (e.g. with borders and background) will be generated
+  </li>
+  <li>Trailing empty parts will be ignored, so <code>[ A|B| ]</code> equals
+      <code>[A|B]</code>. If you want an empty/invisible cell as last part, add
+      anoter <code>|</code>: <code>[ A|B| |]</code>
+  </li>
+</ul>
+
+<p>
+Here is a few examples to make this clear:
+</p>
+
+<pre class="graphtext">
+[ A | B | C ]
+</pre>
+
+<pre class="graph">
++---+---+---+
+| A | B | C |
++---+---+---+
+</pre>
+
+
+<pre class="graphtext">
+[ A | B || C ]
+</pre>
+
+<pre class="graph">
++---+---+
+| A | B |
++---+---+
+| C |
++---+
+</pre>
+
+<div class="clear"></div>
+
+<pre class="graphtext">
+[ A | B ||
+  C | D | E ||
+  F ]
+</pre>
+
+<pre class="graph">
++---+---+
+| A | B |
++---+---+---+
+| C | D | E |
++---+---+---+
+| F |
++---+
+</pre>
+
+<div class="clear"></div>
+
+<p>
+Please see the section about <a href="#attributes" title="Attributes">attributes</a>
+on how to put individual attributes on each autosplit node.
+</p>
+
+<p>
+To reference an autosplit node, you need to know it's basename and the number of
+the part that was split up. The basename can be set via an attribute. If not specified,
+it will be automatically created by concatenating all the parts together, without
+spaces or linebreaks. If the basename already exists, an incrementing number
+is appended (including a leading "-"), starting with "1":
+</p>
+
+<pre class="graphtext">
+[ A | B | C ]		# basename is: ABC
+[ A | B | C ]		# basename is: ABC-1
+</pre>
+
+<div class="clear"></div>
+
+<p>
+In this example, the basename for the first autosplit node is "ABC", the second one
+get's as basename "ABC-1".
+</p>
+
+<pre class="graphtext">
+[ A | B | C ]		# basename: ABC
+[ A | B | C ]		# basename: ABC-1
+[ C | D | E ]		# basename: CDE
+[ C | D | E ]		# basename: CDE-1
+</pre>
+
+<div class="clear"></div>
+
+<p>
+Note that the number is unique and increasing for the entire graph, thus
+creating "CDE" and "CDE-2", and <b>not</b> "CDE-1" in the second example.
+
+<p>
+The parts are referenced by their number, with a leading ".". Here is an example
+referencing the second part of the autosplit node:
+</p>
+
+<pre class="graphtext">
+[ A | B | C ]
+[ 1 ] -> [ ABC.2 ]
+</pre>
+
+<pre class="graph">
+         +---+
+         | 1 |
+         +---+
+           |
+           |
+           v
++---+---+----+
+| A | B |  C |
++---+---+----+
+</pre>
+
+<div class="clear"></div>
+
+<p>
+Here is a more complex example, using the basename attribute:
+</p>
+
+<pre class="graphtext">
+[ A|B|C ] { basename: A } [ 1 ] -> [ A.2 ]
+[ A|B|C ] [ 2 ] -> [ ABC-1.2 ]
+</pre>
+
+<div class="clear"></div>
+
+<p>
+This will be rendered like so:
+</p>
+
+<pre class="graph">
+         +---+
+         | 2 |
+         +---+
+           |
+           |
+           v
++---+---+----+
+| A | B |  C |
++---+---+----+
+         +---+
+         | 1 |
+         +---+
+           |
+           |
+           v
++---+---+----+
+| A | B |  C |
++---+---+----+
+</pre>
+
+<div class="clear"></div>
+
+<a name="clusters">
+<h3>Relative Node Placement (with offsets)</h3>
+</a>
+
+<p>
+Another way is to specify an <code>origin</code> and <code>offset</code>
+for a node, placing it relatively to another node:
+</p>
+
+<pre class="graphtext">
+[ Left ] -> [ Right ] { origin: Left; offset: 2,1; }
+</pre>
+
+<pre class="graph">
++------+
+| Left |
++------+
+  |
+  |              +-------+
+  +------------> | Right |
+                 +-------+
+</pre>
+
+<div class="clear"></div>
+
+<p>
+The offset should not be <code>0,0</code>. Also, be carefull to node place nodes
+inside each other, especially when using multicelled nodes as explained below.
+</p>
+
+<p>
+The offset is calculated from the left/right or top/bottom side of the node,
+so for a multicelled node that is 3 cells wide, an offset of 2 would still
+place the next node two cells from the right side (instead inside the
+first node):
+</p>
+
+<pre class="graphtext">
+[ A ] { size: 3,2; }
+
+[ A ] -> [ B ] { origin: A; offset: 2,0; }
+[ A ] -> [ C ] { origin: A; offset: 1,1; }
+</pre>
+
+<pre class="graph">
++---+     +---+
+|   | --> | B |
+| A |     +---+
+|   |
+|   |--+
++---+  v
+     +---+
+     | C |
+     +---+
+</pre>
+
+<div class="clear"></div>
+
+<p>
+You can set an <code>origin</code> for each node, even if this node has an
+origin itself.  The only exception is that you may not create loops like in
+the following:
+</p>
+
+<pre class="graphtext">
+[ A ] { origin: B; offset: 1,1; }
+[ B ] { origin: A; offset: 1,1; }       # invalid!
+
+[ C ] { origin: E; offset: 1,1; }
+[ D ] { origin: C; offset: 1,1; }
+[ E ] { origin: C; offset: 1,1; }       # invalid!
+</pre>
+
+<div class="clear"></div>
+
+<p>
+Here is an example, using a chain of origins:
+</p>
+
+<pre class="graphtext">
+[ A ] { origin: B; offset: 2,1; }
+
+-> [ B ] { origin: C; offset: 1,1; }
+-> [ C ] { origin: D; offset: 1,1; }
+-> [ D ]
+-> [ E ]
+</pre>
+
+<pre class="graph">
++---+     +---+
+| D | --> | E |
++---+     +---+
+  ^  +---+
+  +--| C |
+     +---+
+       ^  +---+
+       +--| B |
+          +---+
+            ^       +---+
+            +------ | A |
+                    +---+
+</pre>
+
+<div class="clear"></div>
 
 </div><div class="text next">
 
@@ -223,7 +555,7 @@ details on pathfinding.
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-19</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-09-13</span>
+Page created <span class="date">2005-08-19</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-12-03</span>
 </div>
 
 </div> <!-- end of right cell -->

@@ -25,6 +25,9 @@ table.features th {
 table.features td {
   background: #dfd5ff;
   }
+tr.odd td { 
+  background: #ffd5df;
+  }
 table.features caption {
   font-weight: bold;
   }
@@ -64,6 +67,7 @@ pre.graph
   background: white;
   float: left;
   }
+img.float { float: left; margin-right: 1em; margin-left: 1em; }
 pre.graphtext { float: left; }
 td.clrn { text-align: right; background: white; color: black; padding-left: 0.5em; border: none; }
 td.clre { width: 8em; }

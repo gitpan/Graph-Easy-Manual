@@ -195,8 +195,8 @@ If you merely want an invisible node, use <code>shape: invisible;</code>:
 </p>
 
 <pre>
-[ You don't see me! ] { shape: invisible; } -> [ Bischofswerda ]
--> [ You don't see me! ]
+[ $sys$Node ] { shape: invisible; title: You don't see me! }
+  -> [ Bischofswerda ] -> [ $sys$Node ]
 </pre>
 
 <pre class="ascii">
@@ -492,218 +492,19 @@ Perhaps the easiest way to achive the placement is to use the
       into two parts, and place them next to each other, horizontally
   <li>likewise, <code>||</code> (two vertical bars) in the node name will split the node
       into two parts, but place the second part at the start of a new row
-</ul>
-
-<p>
-Here is a few examples to make this clear:
-</p>
-
-<pre class="graphtext">
-[ A | B | C ]
-</pre>
-
-<pre class="graph">
-+---+---+---+
-| A | B | C |
-+---+---+---+
-</pre>
-
-
-<pre class="graphtext">
-[ A | B || C ]
-</pre>
-
-<pre class="graph">
-+---+---+
-| A | B |
-+---+---+
-| C |
-+---+
-</pre>
-
-<div class="clear"></div>
-
-<pre class="graphtext">
-[ A | B ||
-  C | D | E ||
-  F ]
-</pre>
-
-<pre class="graph">
-+---+---+
-| A | B |
-+---+---+---+
-| C | D | E |
-+---+---+---+
-| F |
-+---+
-</pre>
-
-<div class="clear"></div>
-
-<ul>
   <li>If a part between two <code>|</code> consists of exactly one space, an
       invisible cell will be generated, e.g. one without borders and background
   <li>If a part between two <code>|</code> consists of more than one space, an empty
       cell (e.g. with borders and background) will be generated
+  <li>Trailing empty parts will be ignored, so <code>[ A|B| ]</code> equals
+      <code>[A|B]</code>. If you want an empty/invisible cell as last part, add
+      anoter <code>|</code>: <code>[ A|B| |]</code>
 </ul>
 
-<pre class="graphtext">
-[ A | | B || C | | D |   | E ]
-</pre>
-
-<pre class="graph">
-+---+   +---+
-| A |   | B |
-+---+   +---+---+---+
-| C |   | D |   | E |
-+---+   +---+---+---+
-
-</pre>
-
 <p>
-Please see the section about <a href="#attributes" title="Attributes">attributes</a>
-on how to put individual attributes on each autosplit node.
+Please see the section in <a href="hinting.html#autosplit">Hinting</a> for
+examples and explanations.
 </p>
-
-<div class="clear"></div>
-
-<h4>Relative placement - manually</h4>
-
-<p>
-Another way is to specify an <code>origin</code> and <code>offset</code>
-for a node, placing it relatively to another node:
-</p>
-
-<pre class="graphtext">
-[ Left ] -> [ Right ] { origin: Left; offset: 2,1; }
-</pre>
-
-<pre class="graph">
-+------+
-| Left |
-+------+
-  |
-  |              +-------+
-  +------------> | Right |
-                 +-------+      
-</pre>
-
-<div class="clear"></div>
-
-<p>
-The offset should not be <code>0,0</code>. Also, be carefull to node place nodes
-inside each other, especially when using multicelled nodes as explained below.
-</p>
-
-<p>
-You can set an origin for each node, even if this node has an origin itself.
-The only exception is that you may not create loops like in the following:
-</p>
-
-<pre class="graphtext">
-[ A ] { origin: B; offset: 1,1; }
-[ B ] { origin: A; offset: 1,1; }	# invalid!
-
-[ C ] { origin: E; offset: 1,1; }
-[ D ] { origin: C; offset: 1,1; }
-[ E ] { origin: C; offset: 1,1; }	# invalid!
-</pre>
-
-<div class="clear"></div>
-
-<p>
-Here is an example, using a chain of origins:
-</p>
-
-<pre class="graphtext">
-[ A ] { origin: B; offset: 2,1; }
-
--> [ B ] { origin: C; offset: 1,1; }
--> [ C ] { origin: D; offset: 1,1; }
--> [ D ]
--> [ E ]
-</pre>
-
-<pre class="graph">
-+---+     +---+
-| D | --> | E |
-+---+     +---+
-  ^  +---+
-  +--| C |
-     +---+
-       ^  +---+
-       +--| B |
-          +---+
-            ^       +---+
-            +------ | A |
-                    +---+
-</pre>
-
-<div class="clear"></div>
-
-<p>
-
-<h4>Multi-celled nodes</h4>
-
-<p>
-You can specify the size of a node in rows and columns by using either the
-<code>rows</code>, <code>columns</code> or <code>size</code> attribute:
-</p>
-
-<pre class="graphtext">
-[ A ] { size: 2,2; }
--> [ B ] { rows: 2; }
--> [ C ] { columns: 3; }
-</pre>
-
-<div class="clear"></div>
-
-<p>
-Here is an example that demonstrates this:
-</p>
-
-<pre class="graphtext">
-[ A ] { size: 2,2; }
--> [ B ] { rows: 2; }
--> [ C ] { columns: 3; }
-
-[ A ] -> [ B ]
- -> [ C ]
- -> [ D ]
-
-[ D ] -> [ C ]
-[ B ] -> [ C ]
-
-[ A ] -> [ F ]
-[ A ] -> [ G ]
-</pre>
-
-<pre class="graph">
-
-       +---------+         +---------+
-       |         v         v         |
-     +---+     +-------------+     +---+
-     |   | --> |      C      | --> | D |
-     | B |     +-------------+     +---+
-     |   |       ^
-  +->|   | ------+
-  |  +---+
-  |    ^
-  |    |
-  |    |
-  |  +--------+     +---+
-  +--|   A    | --> | F |
-     +--------+     +---+
-       |
-       |
-       v
-     +---+
-     | G |
-     +---+
-</pre>
-
-<div class="clear"></div>
 
 </div><div class="text next">
 
@@ -712,7 +513,7 @@ Please continue with the chapter about the <a href="attributes.html">attributes<
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-11-12</span>
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-12-03</span>
 </div>
 
 </div> <!-- end of right cell -->
