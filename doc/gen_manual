@@ -85,13 +85,15 @@ for my $class (qw/node edge graph group/)
     $des =~ s/L<([^>]+)>/<a href="#${class}_$1">$1<\/a>/g;
     # convert I<>
     $des =~ s/I<([^>]+)>/<i>$1<\/i>/g;
+    # convert B<>
+    $des =~ s/B<([^>]+)>/<b>$1<\/b>/g;
 
     $des =~ s/(section about )(.*?)( for ref)/my $l = $2; $l =~ tr!A-Za-z0-9!_!c; "$1<a href=\"attributes.html#$l\">$2<\/a>$3";/eg;
 
     if (ref($e->[1]) eq 'ARRAY')
       {
       # list of words
-      $des .= "One of: <code>" . join ("</code>, <code>", @{$e->[1]}) . "</code>.\n";
+      $des .= " One of: <code>" . join ("</code>, <code>", @{$e->[1]}) . "</code>.\n";
       } 
 
     $txt .= "<p>\n$des<br>\n";
@@ -203,6 +205,7 @@ sub write_file
 
   print "Writing $file...\n";
   open FILE, ">$file" or die ("Cannot write '$file': $!");
+  binmode FILE, ':utf8' or die ("binmode $file, ':utf8' failed: $!");
   print FILE $txt;
   close FILE;
   }

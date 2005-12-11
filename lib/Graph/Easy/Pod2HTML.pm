@@ -8,16 +8,16 @@ package Graph::Easy::Pod2HTML;
 
 use 5.006001;
 require Exporter;
-use Pod::Simple::HTML;
+use Pod::Simple::XHTML;
 use Graph::Easy;
 use Graph::Easy::Parser;
 use strict;
 use vars qw/$VERSION @ISA @EXPORT_OK/;
 
-@ISA = qw/Pod::Simple::HTML Exporter/;
+@ISA = qw/Pod::Simple::XHTML Exporter/;
 @EXPORT_OK = qw/go/;
 
-$VERSION = '0.03';
+$VERSION = '0.04';
 
 BEGIN { $|++; }
 
@@ -46,57 +46,94 @@ sub new
 
   $g->{format} = 'html';	# default is 'html' only
 
-  $self->{Tagmap}->{"/head2"} = "</a></h2>\n\n<div class='text'>\n\n";
-  $self->{Tagmap}->{"head2"} = "</div>\n\n<h2>";
-
-  $self->{Tagmap}->{"/head1"} = "</a></h2>\n\n<div class='text'>\n\n";
-
-  my $header = 
-<<EOF
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
- <title>
-EOF
-  ;
-  
-  $header =~ s/\n\z//;
-  $self->html_header_before_title($header);
-
-  $header = 
-<<EOF2
- </title>
- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
- <meta name="MSSmartTagsPreventParsing" content="TRUE">
- <meta http-equiv="imagetoolbar" content="no">
-</head>
-<body bgcolor=white text=black>
-##version##
-<a name="___top"></a>
-
-  ##MENU##
-
-EOF2
-  ;
-
-  $header =~ s/^\n//;
-  $header =~ s/##version##/ $self->version_tag_comment(); /eg;
-
-  $self->html_header_after_title($header);
-
   # set default footer contents
-  $self->footer_contents('');
-
-  $self->footer_contents(
-   "Generated at " . scalar localtime() . " by " . __PACKAGE__ . " v$VERSION");
-
-  $self->output_string( \$g->{output_string} );
+#  $self->footer_contents(
+#   "Generated at " . scalar localtime() . " by " . __PACKAGE__ . " v$VERSION");
 
   $self;
   }
 
 #############################################################################
 # customizations:
+
+# This handles =begin and =for blocks of all kinds.
+sub start_for
+  {
+  my ($self, $flags) = @_;
+
+  my $g = $self->{_graph};
+
+  if ($flags->{target} eq 'graph')
+    {
+    $g->{parser}->reset();
+    $g->{state} = 1;					# in graph
+    }
+  elsif ($flags->{target} eq 'graph-common')
+    {
+    $g->{state} = 2;
+    }
+  else
+    {
+    $self->SUPER::start_for($flags);
+    }
+  }
+
+sub handle_text 
+  {
+  my ($self, $text) = @_;
+  
+  my $g = $self->{_graph};
+  if ($g->{state} == 0)
+    {
+    # not a graph- paragraph
+    $self->{scratch} .= $text;
+    }
+  else
+    {
+    if ($g->{state} == 2)
+      {
+      $g->{common} = $text."\n";	# store for later usage
+      }
+    else
+      {
+      my $parser = $g->{parser};
+      my $graph = $parser->from_text( $g->{common} . $text );
+
+      if ($parser->error())
+	{
+        $self->{scratch} = '<span class="error">Parser error: ' . $parser->error() . "</span>\n";
+        }
+      elsif ($graph->error())
+	{
+        $text = '<span class="error">Graph error: ' . $graph->error() . "</span>\n";
+	}
+      else
+        {
+        # give graph the running ID
+        $graph->id( $g->{id} );
+
+	$g->{css} .= $graph->css();
+
+        foreach my $format (split /,/, $g->{format})
+          {
+          if ($format eq 'src')
+            {
+            $self->{scratch} .= "<pre style='float: left;' class='graph'>\n" . $text . "</pre>";
+            }
+          else
+	    {
+	    my $method = 'as_' . $format;
+	    $method .= '_html' if $format =~ /^(ascii|boxart)\z/;	# ascii => as_ascii_html()
+	    $self->{scratch} .= $graph->$method() . "\n<div class='clear'></div>\n"
+	      if $graph->can($method);
+	    }
+	  }
+	}
+      $g->{id}++; 				# next graph get's a new ID
+      }
+    $g->{state} = 0;				# reset state
+    }
+  }
 
 sub footer_contents
   {
@@ -168,11 +205,6 @@ sub output_format
 #############################################################################
 #############################################################################
 
-sub _add_top_anchor
-  {
-  # we override this one to inhibit a second useless top anchor
-  }
-
 sub html_css
   {
   # return the accumulated CSS code
@@ -190,21 +222,11 @@ sub html_css
          " --> </style>"; 
   }
 
-sub do_end
+sub _create_TOC
   {
-  # we override this to finally output our accumulated output
   my $self = shift;
 
-  $self->SUPER::do_end();
-
-  my $g = $self->{_graph};
-
-  # insert CSS into the output:
-  $g->{output_string} =~ s/##CSS_CODE##/$g->{css}/g;
-
-  # remove the ugly links to the top (these are always inserted by
-  # Pod::Simple::HTML :/
-  $g->{output_string} =~ s/<a class='u'[^>]+>//g;
+  my $g = $self->{graph};
 
   # insert the menu links into the menu
   my $menu_tpl = '  <p class="menuext"><a class="menuext" href="##FILE##" title="##TITLE##">##NAME##</a></p>';
@@ -227,11 +249,10 @@ sub do_end
     $menu .= "\n  </div>\n\n  <div class='right'>\n";
 
     }
-  $g->{output_string} =~ s/##MENU##/$menu/;
 
-  print STDOUT $g->{output_string};
-
-  1;
+# $g->{output_string} =~ s/##MENU##/$menu/;
+#
+# print STDOUT $g->{output_string};
   }
 
 sub add_menulink
@@ -251,104 +272,6 @@ sub go
   $self->parse_from_file(@_);
   }
 
-#############################################################################
-#############################################################################
-
-sub _handle_element_start
-  {
-  my($self, $element_name, $att) = @_;
-
-  return $self->SUPER::_handle_element_start($element_name,$att)
-    if $element_name ne 'for' || $att->{target} !~ /^graph/;
-
-  #print "handle start $element_name\n";
-
-  my $g = $self->{_graph};
-  my $parser = $g->{parser}; 	# get the reusable parser object
-
-  $parser->reset();
-  $g->{state} = 1;		# note that we are inside graph
-  $g->{state} = 2 if $att->{target} eq 'graph-common';
-
-  return;
-  }
-
-sub _handle_element_end 
-  {
-  my($self, $element_name) = @_;
-
-  my $g = $self->{_graph};
-
-  return $self->SUPER::_handle_element_end($element_name)
-    unless $element_name eq 'for' && $g->{state} > 0;
-
-#  print "handle end $element_name\n";
-
-  if ($g->{state} == 1)		# handled a graph
-    {
-    $g->{id}++; 		# next graph get's a new ID
-    $g->{output_string} .= $g->{output};
-    delete $g->{output};
-    }
-
-  $g->{state} = 0;		# outside of graph again
-
-  return;
-  }
-
-sub _handle_text
-  {
-  my($self, $text) = @_;
-
-  my $g = $self->{_graph};
-
-#  print "handle text $text\n";
-
-  return $self->SUPER::_handle_text($text)
-    unless $g->{state} > 0;
-    
-  if ($g->{state} == 2)		# found graph-common parts
-    {
-    $g->{common} = $text."\n";	# store for later usage
-    return;
-    }
- 
-  # get the reusable parser object
-  my $parser = $g->{parser};
-  # create a graph object from the common parts plus the current text
-  $g->{graph} = $parser->from_text( $g->{common} . $text);
-
-  if (!defined $g->{graph})
-    {
-    # something went wrong, like an parser error (invalid input etc)
-    $g->{output} .= 'Error: ' . $parser->error();
-    }
-  else
-    {
-    # and give it the running ID
-    $g->{graph}->id( $g->{id} );
-
-    $g->{css} .= $g->{graph}->css(); 
-
-    foreach my $format (split /,/, $g->{format})
-      {
-      if ($format eq 'src')
-        {
-        $g->{output} .= "<pre style='float: left;' class='graph'>\n" . $text . "</pre>";
-        }
-      else
-        {
-        my $method = 'as_' . $format;
-        $method .= '_html' if $format eq 'ascii';	# ascii => as_ascii_html()
-        $g->{output} .= $g->{graph}->$method() . "\n<div class='clear'></div>\n"
-	  if $g->{graph}->can($method);
-        }
-      }	
-    }
-
-  return;
-  }
-
 1;
 __END__
 =head1 NAME
@@ -361,8 +284,8 @@ Graph::Easy::Pod2HTML - Render pod with graph code as HTML
 	
 =head1 DESCRIPTION
 
-C<Graph::Easy::Pod2HTML> uses L<Pod::Simple::HTML> to render POD
-as HTML. In addition to Pod::Simple::HTML, it also handles paragraphs
+C<Graph::Easy::Pod2HTML> uses L<Pod::Simple::XHTML> to render POD
+as HTML. In addition to Pod::Simple::XHTML, it also handles paragraphs
 of the type C<graph> like shown here:
 
 	=for graph [ A ] => [ B ]
@@ -433,7 +356,8 @@ contents of the output of C<Graph::Easy::Pod2HTML>:
 
 This method let's you decide whether you want a final footer paragraph,
 or not, and what it should contain. The default is a timestamp and the
-version of Graph::Easy::Pod2HTML.
+version of C<Graph::Easy> and C<Graph::Easy::Pod2HTML> used to generate
+the document.
 
 =head2 css_file
 

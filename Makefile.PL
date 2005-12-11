@@ -34,8 +34,11 @@ WriteMakefile(
     NAME		=> 'Graph::Easy::Manual',
     VERSION_FROM	=> 'lib/Graph/Easy/Manual.pm',
     PREREQ_PM		=> {
-	'Graph::Easy' => 0.34,
+	'Graph::Easy' => 0.35,
 	'File::Spec' => 3.01,
+	'Pod::Simple' => 3.02,
+#	'HTML::Tagset' => 3.10,
+#	'HTML::Parser' => 3.48,
 	},
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
 	(ABSTRACT_FROM	=> 'lib/Graph/Easy/Manual.pm', # retrieve abstract from module

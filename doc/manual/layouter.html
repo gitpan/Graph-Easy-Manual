@@ -20,11 +20,18 @@
   <p style="height: 0.2em">&nbsp;</p>
   <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
   <p class="menucur"><a class="menucur" href="layouter.html" title="How the layouter works">Layouter</a></p>
+    <p class="menuind"><a class="menuind" href="#overview" title="Overview">Overview</a></p>
+    <p class="menuind"><a class="menuind" href="#cells" title="Cells">Cells</a></p>
+    <p class="menuind"><a class="menuind" href="#ports" title="Cells">Ports</a></p>
+    <p class="menuind"><a class="menuind" href="#edges" title="Edge pices">Edges</a></p>
+    <p class="menuind"><a class="menuind" href="#crossings" title="Edge crossings">Crossings</a></p>
+    <p class="menuind"><a class="menuind" href="#joints" title="Edge joints">Joints</a></p>
   <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
   <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
   <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
   <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
   <p class="menuext"><a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
+  <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
 
 </div>
 
@@ -79,7 +86,9 @@ the actual layout will be performed by an external program, like "dot",
 "neato" etc.
 </p>
 
+<a name="overview">
 <h3>Overview</h3>
+</a>
 
 <p>
 To generate a specific layout, the Graph::Easy layouter works in three phases:
@@ -140,7 +149,9 @@ You can see the difference the chain-finding code makes :)
              +---------+
 </pre>
 
+<a name="cells">
 <h3>Cells and placement</h3>
+</a>
 
 <p>
 Unlike other packages, Graph::Easy works on an infinite big checkered board layout.
@@ -199,7 +210,57 @@ colored lightblue:
 ...........................................
 </pre>
 
+<a name="ports">
+<h3>Ports</h3>
+</a>
+
+<p>
+As you can see from the example above, each <em>cell</em> has four ports, right, bottom, left and top
+of it. These directions are labeled East, South, West and North, accodingly. Ports are shown
+light purple here:
+</p>
+
+<pre>
+...........................................
+:     :<span class="port">     </span>:     :     :     :     :     :
+: 0,0 :<span class="port">North</span>: 2,0 : 3,0 : 4,0 : 5,0 : 6,0 :
+:     :<span class="port">     </span>:     :     :     :     :     :
+...........................................
+:<span class="port">     </span>:<span class="node">+---+</span>:<span class="port">     </span>:     :     :     :     :
+:<span class="port">West </span>:<span class="node">| A |</span>:<span class="port"> East</span>: 3,1 : 4,1 : 5,1 : 6,1 :
+:<span class="port">     </span>:<span class="node">+---+</span>:<span class="port">     </span>:     :     :     :     :
+...........................................
+:     :<span class="port">     </span>:     :     :     :     :     :
+: 0,2 :<span class="port">South</span>: 2,2 : 3,2 : 4,2 : 5,2 : 6,2 :
+:     :<span class="port">     </span>:     :     :     :     :     :
+...........................................
+</pre>
+
+<p>
+So, if a node occupies exactly one cell and one cell has four
+ports, then there can only be four edges going from or to this node.
+</p>
+
+<p>
+That is a serious limitation and to overcome it, nodes can occupy more
+than one cell. Nodes are grown automatically to multiple cells when 
+they need to be bigger than one cell.
+</p>
+
+<p>
+You can also explicitely specify how many rows/columns a node should at least
+have, which is explained in detail in the <a href="hinting.html#size">next chapter</a>.
+</p>
+
+<p>
+A multi-celled node has more than four ports. To create more strict layouts
+it is possible to specifiy at which port an edge should start or end. The
+details for that can be found in the <a href="hinting.html#ports">next chapter</a>.
+</p>
+
+<a name="edges">
 <h3>Edge pieces</h3>
+</a>
 
 <p>
 There are 11 basic edge cells, e.g. this one goes to eleven :)
@@ -270,7 +331,9 @@ Vertical, horizontal and self-loop edge pieces can also have an attached
 label. Where the label appears is automatically selected by they layouter.
 </p>
 
+<a name="crossings">
 <h3>Edge crossings</h3>
+</a>
 
 <p>
 Edges can cross themselves, although the layouter tries to avoid this as
@@ -336,51 +399,17 @@ seemingly much shorter way for it would be to cross the edge from "Bonn" to "Ber
 but since that is a short edge, it may not be crossed.
 </p>
 
-<h3>Ports</h3>
+<a name="joints">
+<h3>Edge Joints</h3>
+</a>
 
 <p>
-As you can see from the example above, each <em>cell</em> has four ports, right, bottom, left and top
-of it. These directions are labeled East, South, West and North, accodingly. Ports are shown
-light purple here:
+<font color="red">Section not done yet.</font>
 </p>
 
-<pre>
-...........................................
-:     :<span class="port">     </span>:     :     :     :     :     :
-: 0,0 :<span class="port">North</span>: 2,0 : 3,0 : 4,0 : 5,0 : 6,0 :
-:     :<span class="port">     </span>:     :     :     :     :     :
-...........................................
-:<span class="port">     </span>:<span class="node">+---+</span>:<span class="port">     </span>:     :     :     :     :
-:<span class="port">West </span>:<span class="node">| A |</span>:<span class="port"> East</span>: 3,1 : 4,1 : 5,1 : 6,1 :
-:<span class="port">     </span>:<span class="node">+---+</span>:<span class="port">     </span>:     :     :     :     :
-...........................................
-:     :<span class="port">     </span>:     :     :     :     :     :
-: 0,2 :<span class="port">South</span>: 2,2 : 3,2 : 4,2 : 5,2 : 6,2 :
-:     :<span class="port">     </span>:     :     :     :     :     :
-...........................................
-</pre>
-
-<p>
-So, if a node occupies exactly one cell and one cell has four
-ports, then there can only be four edges going from or to this node.
-</p>
-
-<p>
-That is a serious limitation and to overcome it, nodes can occupy more
-than one cell. Nodes are grown automatically to multiple cells when any
-of the following two conditions is met:
-</p>
-
-<ul>
-  <li>they need more than four ports (from v0.24 onwards)
-  <li>or they are overly wide or high (not yet)
-</ul>
-
-<p>
-You can also explicitely specify how many rows/columns a node should have.
-</p>
-
+<a name="multicell">
 <h3>Multi-celled nodes</h3>
+</a>
 
 <pre>
 ...........................................
@@ -448,7 +477,7 @@ Now that you know some details about how the layouter works, you are ready to re
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-11-12</span>
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-12-06</span>
 </div>
 
 </div> <!-- end of right cell -->

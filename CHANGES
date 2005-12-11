@@ -1,6 +1,14 @@
 Revision history for Graph::Easy::Manual:
 
-2005-12-03 v0.24 Tels 2 tests - Doc, doc, doc, document the code...
+2005-12-10 v0.25 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy 0.35
+  * add space before "One of..."
+  * add support for "B<...>"
+  * output HTML files in utf-8
+  * add error.html
+  * make Pod2HTML use Pod::Simple::XHTML (easier to override)
+
+2005-12-03 v0.24 Tels 2 tests
   * add examples/pod2html and lib/graph/Easy/Pod2HTML.pm
   * require Graph::Easy 0.34
   * fix object tag for SVG example (needs width/height for firefox)

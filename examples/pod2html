@@ -33,8 +33,8 @@ if (!$rc || $options == 0 || $version)
 my $parser = Graph::Easy::Pod2HTML->new();
 
 $parser->css_file('base.css');
-$parser->output_format($format);
-$parser->add_menulink($menulink);
+#$parser->output_format($format);
+#$parser->add_menulink($menulink);
+#$parser->set_output_file($output) if $output;
 $parser->parse_file($input);
 
-my $out = $output;

@@ -29,6 +29,7 @@
   <p class="menuind"><a class="menuind" href="#small" title="Startup overhead and simple graphs">Small</a></p>
   <p class="menuind"><a class="menuind" href="#series" title="Series of graphs over versions and sizes">Series</a></p>
   <p class="menuind"><a class="menuind" href="#large" title="Parsing and rendering large graphs">Parsing</a></p>
+  <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
 
 </div>
 
@@ -108,8 +109,9 @@ SwapFree:            0 kB</pre></td>
 
 </table>
 
-<a name="small"></a>
+<a name="small">
 <h3>Simple graph</h3>
+</a>
 
 <p>
 In the first example we try to measure the overhead of loading
@@ -348,8 +350,9 @@ The table shows us a few things:
       from Graph::Easy.
 </ul>
 
-<a name="series"></a>
+<a name="series">
 <h3>Creation and Dumping of big Graphs</h3>
+</a>
 
 <p>
 In this test we create a series of graphs, with an increasing number of
@@ -758,12 +761,16 @@ the error field, etc. That also makes graph creation about 10% faster, too.
 <li>
 v0.34 is much faster in creating the <code>as_ascii()</code> version. This
 is mainly due to the rewritten chain tracking code and some
-streamlining.
+streamlining. Note that v0.33 and earlier took about <b>3.5 times</b> as long
+for <code>as_ascii()</code> if you doubled the number of objects - v0.34 only takes about
+twice as long. So it dropped from about O(N*N) to O(N).
 </li>
 
 </ul>
 
+<a name="large">
 <h3>Parsing and Rendering</h3>
+</a>
 
 <p>
 <font color="red">Not done yet.</font>

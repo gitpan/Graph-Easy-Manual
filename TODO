@@ -1,3 +1,2 @@
 
-* Write a working POD2HTML converter (Pod::Simple::HTML still doesn't work
-  properly),
+* Write a working POD2HTML converter using Pod::Simple::XHTML

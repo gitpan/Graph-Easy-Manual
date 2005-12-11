@@ -30,13 +30,15 @@
   <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
   <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
   <p class="menucur"><a class="menucur" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
-  <p class="menuind"><a class="menuind" href="att_graphs.html" title="Graph attributes">Graphs</a></p>
-  <p class="menuind"><a class="menuind" href="att_nodes.html" title="Node attributes">Nodes</a></p>
-  <p class="menuind"><a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a></p>
-  <p class="menuind"><a class="menuind" href="att_groups.html" title="Group attributes">Groups</a></p>
-  <p class="menuind"><a class="menuind" href="#class_names" title="Classes and their names">Classes</a></p>
-  <p class="menuind"><a class="menuind" href="#links" title="Links and URLs">Links</a></p>
+    <p class="menuind"><a class="menuind" href="att_graphs.html" title="Graph attributes">Graphs</a></p>
+    <p class="menuind"><a class="menuind" href="att_nodes.html" title="Node attributes">Nodes</a></p>
+    <p class="menuind"><a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a></p>
+    <p class="menuind"><a class="menuind" href="att_groups.html" title="Group attributes">Groups</a></p>
+    <p class="menuind"><a class="menuind" href="#class_names" title="Classes and their names">Classes</a></p>
+    <p class="menuind"><a class="menuind" href="#labels__titles__names_and_links" title="Labels, titles, names and links">Labels</a></p>
+    <p class="menuind"><a class="menuind" href="#links" title="Links and URLs">Links</a></p>
   <p class="menuind"><a class="menuind" href="#color_names_and_values" title="Color names and values">Colors</a></p>
+  <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
 
 </div>
 
@@ -53,7 +55,7 @@ If you haven't done so, please read the <a href="overview.html">Overview</a> fir
 </p>
 
 <p>
-This chapter describes all the possible attributes for graphs, nodes and edges.
+This chapter describes all the possible attributes for graphs, groups, nodes and edges.
 It is generated automatically from the definitions in <code>Graph::Easy::Attributes</code>.
 </p>
 
@@ -113,6 +115,27 @@ node.cities { color: red; }
 <img src="img/classes.png" border=0 alt="Example of classes" title="Example of classes" style="float: left; margin-left: 1em;">
 
 <div class="clear"></div>
+
+<a name="labels__titles__names_and_links">
+<h3>Labels, Titles and Names</h3>
+</a>
+
+<p>
+The <code>label</code> is the text displayed for the node, edge etc. It can be different from the name of the object.
+</p>
+
+<p>
+<code>Edges</code> do not have a name, but they can have a label. If you try to access the name
+of an edge, for instance via the <code>autotitle: name;</code> attribute, than the edge
+optional label will be used instead.
+<p>
+
+<p>
+Apart from setting a label manually via the <code>label: Foo;</code> attribute, you can
+also set labels for entire classes, or use the <code>autolabel:</code> attribute. The
+latter has the advantage that it can shorten the label automaticall to sane values.
+See <a href="att_graphs.html#graph_autolabel">this graph for an example.
+<p>
 
 <a name="links">
 <h3>Links and URLs</h3>
