@@ -137,15 +137,11 @@ Nodes are written (or "quoted", if you wish) with enclosing square brackets:
 You can also have a list of nodes by seperating them with a comma:
 </p>
 
-<pre>
+<pre class="graphtext">
 [ A ], [ B ], [ C ] --> [ D ]
 </pre>
 
-<p>
-This would be rendered as:
-</p>
-
-<pre>
+<pre class="graph">
 +---+     +---+     +---+
 | A | --> | D | <-- | C |
 +---+     +---+     +---+
@@ -157,11 +153,28 @@ This would be rendered as:
           +---+
 </pre>
 
-<p>
-<b>Note:</b> Node lists currently only work on the left side of an expression.
+<p class="clear">
+It also works for lists on the right side of an edge:
 </p>
 
-<p>
+<pre class="graphtext">
+[ A ] -> [ B ], [ C ], [ D ]
+</pre>
+
+
+<pre class="graph">
++---+     +---+     +---+
+| B | <-- | A | --> | C |
++---+     +---+     +---+
+            |
+            |
+            v
+          +---+
+          | D |
+          +---+
+</pre>
+
+<p class="clear">
 In addition, you can chain nodes together like this:
 </p>
 
@@ -514,7 +527,7 @@ Please continue with the chapter about the <a href="attributes.html">attributes<
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-12-03</span>
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-12-18</span>
 </div>
 
 </div> <!-- end of right cell -->

@@ -1,6 +1,10 @@
 Revision history for Graph::Easy::Manual:
 
 2005-12-10 v0.25 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy 0.36
+  * update output.html
+
+2005-12-10 v0.25 Tels 2 tests
   * regen from Graph::Easy 0.35
   * add space before "One of..."
   * add support for "B<...>"
