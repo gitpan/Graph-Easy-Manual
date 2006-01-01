@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Graph::Easy - Manual - Benchmarks</title>
- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
@@ -228,6 +228,12 @@ ms between runs, anyway. Although with small times like seen from
   <td>0.114</td>
 </tr>
 
+<tr>
+  <td>Graph::Easy</td>
+  <td>v0.38</td>
+  <td>0.160</td>
+</tr>
+
 <tr class="odd">
   <td>dot, png</td>
   <td>v1.1</td>
@@ -246,12 +252,30 @@ ms between runs, anyway. Although with small times like seen from
   <td>0.026</td>
 </tr>
 
+<tr class="even">
+  <td>dot, png</td>
+  <td>v2.6</td>
+  <td>0.090</td>
+</tr>
+
+<tr class="even">
+  <td>dot, map + png</td>
+  <td>v2.6</td>
+  <td>0.091</td>
+</tr>
+
+<tr class="even">
+  <td>dot, map + dot png</td>
+  <td>v2.6</td>
+  <td>0.171</td>
+</tr>
+
 </table>
 
 <p>
 As can be seen from the table above, the startup time for Graph::Easy
-is much higher than the one from <code>dot</code> - but it got much
-lower from v0.25 onwards, and the sole reason for that is that Graph::Easy
+is much higher than the one from the old (v1.1) <code>dot</code> - but it got
+much lower from v0.25 onwards, and the sole reason for that is that Graph::Easy
 no longer loads the really huge Graph module. Below we will examine this in
 detail.
 <br>
@@ -265,7 +289,20 @@ than v0.24 using Graph, though.
 </p>
 
 <p>
-Note that on older, slower systems the differences are even more pronounced.
+We also see that modern versions of <code>dot</code> take much longer, and
+come very close to the time used by <code>Graph::Easy</code>. Who says
+C is faster than Perl? :)
+</p>
+
+<p>
+The timing above shows that the startup cost for Graph::Easy is high, and since
+for each graph rendered the startup occurs again, a way to reduce this cost
+must be found. One such way would be to write a deamon using Net::Server.
+This deamon would listen on a network port, take the the graph text as
+input and return the graph output. Thus the modules would be sitting
+in memory and not be needed to be loaded and compiled each time you
+want to render a graph. This might bring the per-graph time for
+small graphs even below the time from graphviz/dot!
 </p>
 
 <h4>Memory consumption</h4>
@@ -787,7 +824,7 @@ If you have questions, feel free to send me an <a href="mailto:nospam-abuse@bloo
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-09-02</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-12-02</span>
+Page created <span class="date">2005-09-02</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-01</span>
 </div>
 
 </div> <!-- end of right cell -->

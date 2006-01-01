@@ -28,6 +28,9 @@ table.features td {
 tr.odd td { 
   background: #ffd5df;
   }
+tr.even td { 
+  background: #ffa0a0;
+  }
 table.features caption {
   font-weight: bold;
   }

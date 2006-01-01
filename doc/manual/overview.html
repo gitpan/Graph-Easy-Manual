@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Graph::Easy - Manual - Overview</title>
- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
@@ -98,9 +98,7 @@ use Graph::Easy;
 my $graph = Graph::Easy->new();
 
 $graph->add_edge('Bonn', 'Berlin');
-
-my $edge = Graph::Easy::Edge->new( label => 'train' );
-$graph->add_edge('Berlin', 'Bonn', $edge);
+$graph->add_edge('Berlin', 'Bonn', 'train' );
 </pre>
 
 <p>
@@ -119,13 +117,13 @@ code is up to you, of course.
 </p>
 
 <p>
-Likewise, once you have your data in an Graph::Easy object, you can output it in the
+Likewise, once you have your data in an <code>Graph::Easy</code> object, you can output it in the
 format you desire.
 </p>
 
 <p>
 Note that the textual description format allows you a round-trip: you can feed
-it to the Parser, and then generate again text from the resulting Graph::Easy object.
+it to the Parser, and then generate text again from the resulting <code>Graph::Easy</code> object.
 </p>
 
 <h3>Storage vs. Layout</h3>
@@ -180,11 +178,11 @@ There are some possibilities for generating a layout from a graph via Perl:
 </ul>
 
 <p>
-There might be more - when I started with Graph::Easy this were the options.
+There might be more - when I started with <code>Graph::Easy</code>, this were the options.
 </p>
 
 <p>
-Unlike the others, Graph::Easy works on a checker-board tiled layout.
+Unlike the others, <code>Graph::Easy</code> works on a checker-board tiled layout.
 <br>
 Note that the traditional way of placing the nodes <em>anywhere</em> does not enable you
 to generate ASCII output, nor HTML. Well, it might be possible, but it is quite hard to
@@ -192,7 +190,7 @@ do when the edges don't run straight but all over the place :-)
 </p>
 
 <p>
-That's one of the reasons for the existance of Graph::Easy. :-P
+That's one of the reasons for the existance of this project. :-P
 </p>
 
 <a name="features">
@@ -291,6 +289,32 @@ Another often used feature are undirected or bidirectional edges:
 </pre>
 
 <p class="clear">&nbsp;</p>
+
+<p>
+Also, subgraphs (called "groups" in Graph::Easy) allow you to cluster nodes together:
+</p>
+
+<pre class="graphtext">
+( Capitals: [ Bonn ], [ Berlin ] )
+</pre>
+
+<img src="img/group.png" alt="Grouping/Clustering/subgraphs" class="float">
+
+<pre class="graph">
++ - - - - - - +
+' Capitals:   '
+'             '
+' +---------+ '
+' | Berlin  | '
+' +---------+ '
+' +---------+ '
+' |  Bonn   | '
+' +---------+ '
+'             '
++ - - - - - - +
+</pre>
+
+<p class="clear">&nbsp;</p>
 </div><div class="text next">
 
 <p>
@@ -300,7 +324,7 @@ Please continue with the chapter about the <a href="layouter.html">layouter</a>.
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-12-13</span>
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-01</span>
 </div>
 
 </div> <!-- end of right cell -->

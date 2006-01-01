@@ -22,11 +22,12 @@
   <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
   <p class="menucur"><a class="menucur" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
     <p class="menuind"><a class="menuind" href="#flow" title="Set the flow direction of the graph">Flow</a></p>
+    <p class="menuind"><a class="menuind" href="#ports" title="Specify edge end/start ports">Ports</a></p>
+    <p class="menuind"><a class="menuind" href="#joints" title="Edge joining, splicing and connecting">Joints</a></p>
     <p class="menuind"><a class="menuind" href="#size" title="Adjust node sizes">Node size</a></p>
     <p class="menuind"><a class="menuind" href="#groups" title="Group nodes together">Grouping</a></p>
     <p class="menuind"><a class="menuind" href="#autosplit" title="Create rows/columns of node cells">Autosplit</a></p>
     <p class="menuind"><a class="menuind" href="#clusters" title="Place nodes relative to each other">Clustering</a></p>
-    <p class="menuind"><a class="menuind" href="#ports" title="Specify edge end/start ports">Ports</a></p>
   <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
   <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
   <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
@@ -95,7 +96,7 @@ create dilemmas for the layouter. So use them only when absolutely neccessary.
 </p>
 
 <a name="flow">
-<h3>Flow Direction</h3>
+<h3>Flow Control</h3>
 </a>
 
 <p>
@@ -104,6 +105,13 @@ use the attribute
 <a href="attributes.html#graph_flow">flow</a>
 to let the graph flow in another general direction.
 </p>
+
+<h4>Flow-dependend and Flow-independend Directions</h4>
+
+<p>
+</p>
+
+<h4>Controlling the Overall Graph Flow</h4>
 
 <pre class="graphtext">
 graph { flow: south; }
@@ -130,7 +138,7 @@ graph { flow: south; }
 </pre>
 
 <pre class="graphtext clear">
-graph { flow: left; }
+graph { flow: west; }
 
 [ Hamm ] -> [ Essen ] -> [ Olpe ]
 </pre>
@@ -147,12 +155,14 @@ generating <code>graphviz</code> code (<i>dot</i> does not easily support
 upwards and leftwards flow directions without some trickery).
 </p>
 
+<h4>Controlling the Flow per Node</h4>
+
 <p>
 You can also change the flow on a per-node basis:
 </p>
 
 <pre class="graphtext">
-graph { flow: left; }
+graph { flow: west; }
 
 [ Duisburg ] -> [ Siegen ] { flow: south; }
  -> [ Adenau ]
@@ -169,6 +179,241 @@ graph { flow: left; }
 | Adenau |
 +--------+
 </pre>
+
+<div class="clear"></div>
+
+<a name="ports">
+<h3>Edge start/end ports</h3>
+</a>
+
+<pre>
+..................................................
+:      :<span class="port">       </span>:<span class="port">       </span>:       :     :     :     :
+: 0,0  :<span class="port">north,0</span>:<span class="port">north,1</span>: 3,0   : 4,0 : 5,0 : 6,0 :
+:      :<span class="port">left,0 </span>:<span class="port">left,1 </span>:       :     :     :     :
+:      :<span class="port">       </span>:<span class="port">       </span>:       :     :     :     :
+..................................................
+:<span class="port">      </span>:<span class="node">+-------------+</span>:<span class="port">       </span>:     :     :     :
+:<span class="port">west,0</span>:<span class="node">|             |</span>:<span class="port">east,0 </span>: 4,1 : 5,1 : 6,1 :
+:<span class="port">back,1</span>:<span class="node">|             |</span>:<span class="port">front,0</span>:     :     :     :
+:<span class="port">      </span>:<span class="node">|             |</span>:<span class="port">       </span>:     :     :     :
+........<span class="node">|    Node     |</span>...........................
+:<span class="port">      </span>:<span class="node">|             |</span>:<span class="port">       </span>:     :     :     :
+:<span class="port">west,1</span>:<span class="node">|             |</span>:<span class="port">east,1 </span>: 4,2 : 5,2 : 6,2 :
+:<span class="port">back,1</span>:<span class="node">|             |</span>:<span class="port">front,1</span>:     :     :     :
+:<span class="port">      </span>:<span class="node">+-------------+</span>:<span class="port">       </span>:     :     :     :
+.................................................
+:      :<span class="port">       </span>:<span class="port">       </span>:       :     :     :     :
+: 0,3  :<span class="port">south,0</span>:<span class="port">south,1</span>: 3,3   : 4,3 : 5,3 : 6,3 :
+:      :<span class="port">right,0</span>:<span class="port">right,1</span>:       :     :     :     :
+:      :<span class="port">       </span>:<span class="port">       </span>:       :     :     :     :
+.................................................
+</pre>
+
+<p>
+Each side of a node can be named. The reason that there are two names
+(<code>north</code> and <code>left</code>)
+has to do with graph/node flow. The south side of the node is always
+the same side, no matter what the flow at the node is. The <code>right</code>
+side is always perpendicular to the <code>front</code> side - and the
+front side always points in the direction of the flow.
+Here is an example that should make this clear:
+</p>
+
+<pre class="graphtext">
+[ Node ] -> { start: south; } [ south ] { origin: Node; offset: 0,2; }
+[ Node ] -> { start: north; } [ north ] { origin: Node; offset: 0,-2; }
+[ Node ] -> { start: east; }  [ east ] { origin: Node; offset: 2,0; }
+[ Node ] -> { start: west; }  [ west ] { origin: Node; offset: -2,0; }
+</pre>
+
+<pre class="graph">
+             +-------+
+             | north |
+             +-------+
+               ^
+               |
+               |
++------+     +-------+     +------+
+| west | <-- | Node  | --> | east |
++------+     +-------+     +------+
+               |
+               |
+               v
+             +-------+
+             | south |
+             +-------+
+</pre>
+
+<div class="clear"></div>
+
+<pre class="graphtext">
+graph { flow: east; }
+
+[ Node ] -> { start: right; } [ right ] { origin: Node; offset: 0,2; }
+[ Node ] -> { start: left; }  [ left ] { origin: Node; offset: 0,-2; }
+[ Node ] -> { start: front; } [ front ] { origin: Node; offset: 2,0; }
+[ Node ] -> { start: back; }  [ back ] { origin: Node; offset: -2,0; }
+</pre>
+
+<pre class="graph">
+             +-------+
+             | left  |
+             +-------+
+               ^
+               |
+               |
++------+     +-------+     +-------+
+| back | <-- | Node  | --> | front |
++------+     +-------+     +-------+
+               |
+               |
+               v
+             +-------+
+             | right |
+             +-------+
+</pre>
+
+<div class="clear"></div>
+
+<p>
+Both graphs look the same, so there does not seem much point in using
+<code>right</code> or <code>south</code>. However changing the flow of the
+graph will show a difference:
+</p>
+
+<pre class="graphtext">
+graph { flow: down; }
+
+[ Node ] -> { start: south; } [ south ] { origin: Node; offset: 0,2; }
+[ Node ] -> { start: north; } [ north ] { origin: Node; offset: 0,-2; }
+[ Node ] -> { start: east; }  [ east ] { origin: Node; offset: 2,0; }
+[ Node ] -> { start: west; }  [ west ] { origin: Node; offset: -2,0; }
+</pre>
+
+<pre class="graph">
+             +-------+
+             | north |
+             +-------+
+               ^
+               |
+               |
++------+     +-------+     +------+
+| west | <-- | Node  | --> | east |
++------+     +-------+     +------+
+               |
+               |
+               v
+             +-------+
+             | south |
+             +-------+
+</pre>
+
+<div class="clear"></div>
+
+<pre class="graphtext">
+graph { flow: down; }
+
+[ Node ] -> { start: right; } [ right ] { origin: Node; offset: 0,2; }
+[ Node ] -> { start: left; }  [ left ] { origin: Node; offset: 0,-2; }
+[ Node ] -> { start: front; } [ front ] { origin: Node; offset: 2,0; }
+[ Node ] -> { start: back; }  [ back ] { origin: Node; offset: -2,0; }
+</pre>
+
+<pre class="graph">
+             +-------+
+             | north | <+
+             +-------+  |
+                        |
+  +------------+        |
+  v            |        |
++------+     +-------+  |  +------+
+| west |  +--| Node  |--+  | east |
++------+  |  +-------+     +------+
+          |    |             ^
+          |    +-------------+
+          |
+          |  +-------+
+          +->| south |
+             +-------+
+</pre>
+
+<div class="clear"></div>
+
+<p>
+You can see that the first graph did not change at all.
+<br>
+The second one looks different, though. Since the node offsets are fixed
+(they do not change with the flow, as this is not possible yet), all the nodes
+are still placed at the same position.
+But the starting ports moved (rotated) with the flow direction!
+</p>
+
+<p>
+Summary: To make graphs flow-invariant, use south etc, to make it possible
+to rotate graphs, use <code>left</code>, <code>right</code>, <code>front</code>
+or <code>back</code>.
+.</p>
+
+<div class="clear"></div>
+
+<h4>Port numbers</h4>
+
+<p>
+By setting the start/end port to one side, you instruct the layouter
+to place the edge on one arbitrary port on that side:
+</p>
+
+<pre class="graphtext">
+graph { flow: east; }
+
+[ Left ] -> { start: left; end: left; } [ Right ]
+</pre>
+
+<pre class="graph">
+  +------------+
+  |            v
++------+     +-------+
+| Left |     | Right |
++------+     +-------+
+</pre>
+
+<p class="clear"></p>
+
+<a name="joints">
+<h3>Edge joining and splicing</h3>
+</a>
+
+<p>
+Whenever two edges share one common port (not just one side, like
+<code>south</code>), they will split up somewhere along their path:
+</p>
+
+<pre class="graphtext">
+[ Jena ] --> { start: front, 0; } [ Augsburg ] { origin: Jena; offset: 2,0; }
+[ Jena ] --> { start: front, 0; } [ Ulm ] { origin: Augsburg; offset: 0,2; }
+</pre>
+
+<pre class="graph">
++------+          +----------+
+| Jena | ------+  | Augsburg |
++------+       |  +----------+
+               |    ^
+               +----+
+               |
+               |
+               |
+               |
+               |  +----------+
+               +->|   Ulm    |
+                  +----------+
+</pre>
+
+<div class="clear"></div>
+
+<p>
+<b>Section not completed yet.</b>
+</p>
 
 <div class="clear"></div>
 
@@ -248,24 +493,77 @@ at least 5 cells wide.
 </a>
 
 <p>
-Nodes can be grouped together by using braces:
+Nodes can be grouped together by using braces, thus creating a subgraph
+(or cluster). A group gives the layouter the hint that these
+nodes are related and should be laid out closely together:
 </p>
 
-<pre>
+<pre class="graphtxt">
 ( German Cities
   [ Berlin ] -> [ Potsdam ]
 ) {
-  background: lightbrown;
+  border-style: dashed;
+  }
+</pre>
+
+<img src="img/grouping.png" alt="Grouping/Clustering/subgraphs" class="float">
+
+<pre class="graph">
+...................................
+: German Cities:                  :
+:                                 :
+: +-------------+     +---------+ :
+: |   Berlin    | --> | Potsdam | :
+: +-------------+     +---------+ :
+:                                 :
+:.................................:
+</pre>
+
+<p class="clear">
+Note: <b>Groups can not yet be nested.</b>
+</p>
+
+<p>
+The grouping feature is especially powerfull in combination with the
+<code>nodeclass</code> attribute:
+</p>
+
+<pre>
+node.cities { color: blue; }
+
+( German Cities
+  [ Berlin ] -> [ Potsdam ]
+) { 
+  border-style: dashed;
+  nodeclass: cities;
   }
 </pre>
 
 <p>
-Putting nodes into a group gives the layouter the hint that these
-nodes are related and should be laid out closely together.
-<br>
-Please see the chapter about <a href="syntax.html#advanced">Advanced Syntax</a>
-for details and examples.
+In this example, all nodes in the group will automatically be put into the
+class <code>node.cities</code>.
 </p>
+
+<p>
+You can also defined edges that run from one group to another,
+or from a node to a group, or from a group to a node:
+</p>
+
+<pre>
+[ From Node to Group ] -->
+
+( German cities:
+  [ Berlin ] -> [ Potsdam ]
+) 
+
+  -- group to group -->
+
+( German rivers:
+  [ Rhein ] -> [ Elbe ]
+)
+
+--> [ From Group to Node ]
+</pre>
 
 <a name="autosplit">
 <h3>Relative placement (via auto-split)</h3>
@@ -549,216 +847,16 @@ Here is an example, using a chain of origins:
 
 <div class="clear"></div>
 
-<a name="ports">
-<h3>Edge start/end ports</h3>
-</a>
-
-<pre>
-..................................................
-:      :<span class="port">       </span>:<span class="port">       </span>:       :     :     :     :
-: 0,0  :<span class="port">north,0</span>:<span class="port">north,1</span>: 3,0   : 4,0 : 5,0 : 6,0 :
-:      :<span class="port">left,0 </span>:<span class="port">left,1 </span>:       :     :     :     :
-:      :<span class="port">       </span>:<span class="port">       </span>:       :     :     :     :
-..................................................
-:<span class="port">      </span>:<span class="node">+-------------+</span>:<span class="port">       </span>:     :     :     :
-:<span class="port">west,0</span>:<span class="node">|             |</span>:<span class="port">east,0 </span>: 4,1 : 5,1 : 6,1 :
-:<span class="port">back,1</span>:<span class="node">|             |</span>:<span class="port">front,0</span>:     :     :     :
-:<span class="port">      </span>:<span class="node">|             |</span>:<span class="port">       </span>:     :     :     :
-........<span class="node">|    Node     |</span>...........................
-:<span class="port">      </span>:<span class="node">|             |</span>:<span class="port">       </span>:     :     :     :
-:<span class="port">west,1</span>:<span class="node">|             |</span>:<span class="port">east,1 </span>: 4,2 : 5,2 : 6,2 :
-:<span class="port">back,1</span>:<span class="node">|             |</span>:<span class="port">front,1</span>:     :     :     :
-:<span class="port">      </span>:<span class="node">+-------------+</span>:<span class="port">       </span>:     :     :     :
-.................................................
-:      :<span class="port">       </span>:<span class="port">       </span>:       :     :     :     :
-: 0,3  :<span class="port">south,0</span>:<span class="port">south,1</span>: 3,3   : 4,3 : 5,3 : 6,3 :
-:      :<span class="port">right,0</span>:<span class="port">right,1</span>:       :     :     :     :
-:      :<span class="port">       </span>:<span class="port">       </span>:       :     :     :     :
-.................................................
-</pre>
-
-<p>
-Each side of a node can be named. The reason that there are two names
-(<code>north</code> and <code>left</code>)
-has to do with graph/node flow. The south side of the node is always
-the same side, no matter what the flow at the node is. The <code>right</code>
-side is always perpendicular to the <code>front</code> side - and the
-front side always points in the direction of the flow.
-Here is an example that should make this clear:
-</p>
-
-<pre class="graphtext">
-[ Node ] -> { start: south; } [ south ] { origin: Node; offset: 0,2; }
-[ Node ] -> { start: north; } [ north ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { start: east; }  [ east ] { origin: Node; offset: 2,0; }
-[ Node ] -> { start: west; }  [ west ] { origin: Node; offset: -2,0; }
-</pre>
-
-<pre class="graph">
-             +-------+
-             | north |
-             +-------+
-               ^
-               |
-               |
-+------+     +-------+     +------+
-| west | <-- | Node  | --> | east |
-+------+     +-------+     +------+
-               |
-               |
-               v
-             +-------+
-             | south |
-             +-------+
-</pre>
-
-<div class="clear"></div>
-
-<pre class="graphtext">
-graph { flow: east; }
-
-[ Node ] -> { start: right; } [ right ] { origin: Node; offset: 0,2; }
-[ Node ] -> { start: left; }  [ left ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { start: front; } [ front ] { origin: Node; offset: 2,0; }
-[ Node ] -> { start: back; }  [ back ] { origin: Node; offset: -2,0; }
-</pre>
-
-<pre class="graph">
-             +-------+
-             | left  |
-             +-------+
-               ^
-               |
-               |
-+------+     +-------+     +-------+
-| back | <-- | Node  | --> | front |
-+------+     +-------+     +-------+
-               |
-               |
-               v
-             +-------+
-             | right |
-             +-------+
-</pre>
-
-<div class="clear"></div>
-
-<p>
-Both graphs look the same, so there does not seem much point in using
-<code>right</code> or <code>south</code>. However changing the flow of the
-graph will show a difference:
-</p>
-
-<pre class="graphtext">
-graph { flow: down; }
-
-[ Node ] -> { start: south; } [ south ] { origin: Node; offset: 0,2; }
-[ Node ] -> { start: north; } [ north ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { start: east; }  [ east ] { origin: Node; offset: 2,0; }
-[ Node ] -> { start: west; }  [ west ] { origin: Node; offset: -2,0; }
-</pre>
-
-<pre class="graph">
-             +-------+
-             | north |
-             +-------+
-               ^
-               |
-               |
-+------+     +-------+     +------+
-| west | <-- | Node  | --> | east |
-+------+     +-------+     +------+
-               |
-               |
-               v
-             +-------+
-             | south |
-             +-------+
-</pre>
-
-<div class="clear"></div>
-
-<pre class="graphtext">
-graph { flow: down; }
-
-[ Node ] -> { start: right; } [ right ] { origin: Node; offset: 0,2; }
-[ Node ] -> { start: left; }  [ left ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { start: front; } [ front ] { origin: Node; offset: 2,0; }
-[ Node ] -> { start: back; }  [ back ] { origin: Node; offset: -2,0; }
-</pre>
-
-<pre class="graph">
-             +-------+
-             | north | <+
-             +-------+  |
-                        |
-  +------------+        |
-  v            |        |
-+------+     +-------+  |  +------+
-| west |  +--| Node  |--+  | east |
-+------+  |  +-------+     +------+
-          |    |             ^
-          |    +-------------+
-          |
-          |  +-------+
-          +->| south |
-             +-------+
-</pre>
-
-<div class="clear"></div>
-
-<p>
-You can see that the first graph did not change at all.
-<br>
-The second one looks different, though. Since the node offsets are fixed
-(they do not change with the flow, as this is not possible yet), all the nodes
-are still placed at the same position.
-But the starting ports moved (rotated) with the flow direction!
-</p>
-
-<p>
-Summary: To make graphs flow-invariant, use south etc, to make it possible
-to rotate graphs, use <code>left</code>, <code>right</code>, <code>front</code>
-or <code>back</code>.
-.</p>
-
-<div class="clear"></div>
-
-<h4>Port numbers</h4>
-
-<p>
-By setting the start/end port to one side, you instruct the layouter
-to place the edge on one arbitrary port on that side:
-</p>
-
-<pre class="graphtext">
-graph { flow: east; }
-
-[ Left ] -> { start: left; end: left; } [ Right ]
-</pre>
-
-<pre class="graph">
-  +------------+
-  |            v
-+------+     +-------+
-| Left |     | Right |
-+------+     +-------+
-</pre>
-
-<p>
-</p>
-
-<div class="clear"></div>
 
 </div><div class="text next">
 
-Please continue with the pachapter about the <a href="a-star.html">A* algorithm</a> for
+Please continue with the chapter about the <a href="a-star.html">A* algorithm</a> for
 details on pathfinding.
 
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-19</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-12-06</span>
+Page created <span class="date">2005-08-19</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-01</span>
 </div>
 
 </div> <!-- end of right cell -->

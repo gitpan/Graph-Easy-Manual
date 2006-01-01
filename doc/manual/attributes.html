@@ -35,6 +35,7 @@
     <p class="menuind"><a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a></p>
     <p class="menuind"><a class="menuind" href="att_groups.html" title="Group attributes">Groups</a></p>
     <p class="menuind"><a class="menuind" href="#class_names" title="Classes and their names">Classes</a></p>
+    <p class="menuind"><a class="menuind" href="#flow_control" title="Flow Control">Flow</a></p>
     <p class="menuind"><a class="menuind" href="#labels__titles__names_and_links" title="Labels, titles, names and links">Labels</a></p>
     <p class="menuind"><a class="menuind" href="#links" title="Links and URLs">Links</a></p>
   <p class="menuind"><a class="menuind" href="#color_names_and_values" title="Color names and values">Colors</a></p>
@@ -102,7 +103,7 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
   <li><a href="att_edges.html#edge_background">background</a>, <a href="att_edges.html#edge_border">border</a>, <a href="att_edges.html#edge_border-color">border-color</a>, <a href="att_edges.html#edge_border-style">border-style</a>, <a href="att_edges.html#edge_border-width">border-width</a>, 
   <li><a href="att_edges.html#edge_class">class</a>, <a href="att_edges.html#edge_color">color</a>, 
   <li><a href="att_edges.html#edge_end">end</a>, 
-  <li><a href="att_edges.html#edge_fill">fill</a>, <a href="att_edges.html#edge_font-size">font-size</a>, 
+  <li><a href="att_edges.html#edge_fill">fill</a>, <a href="att_edges.html#edge_flow">flow</a>, <a href="att_edges.html#edge_font-size">font-size</a>, 
   <li><a href="att_edges.html#edge_label">label</a>, <a href="att_edges.html#edge_label-color">label-color</a>, <a href="att_edges.html#edge_link">link</a>, <a href="att_edges.html#edge_linkbase">linkbase</a>, 
   <li><a href="att_edges.html#edge_start">start</a>, <a href="att_edges.html#edge_style">style</a>, 
   <li><a href="att_edges.html#edge_text-style">text-style</a>, <a href="att_edges.html#edge_title">title</a>, 
@@ -156,7 +157,16 @@ node.cities { color: red; }
 
 <img src="img/classes.png" border=0 alt="Example of classes" title="Example of classes" style="float: left; margin-left: 1em;">
 
-<div class="clear"></div>
+<p class="clear"></p>
+
+<a name="flow_control">
+<h3>Flow Control</h3>
+</a>
+
+<p>
+Please see the section about <a href="hinting.html#flow">Flow Control</a> for details about controlling
+the flow (placement direction of edges and nodes) in a graph.
+</p>
 
 <a name="labels__titles__names_and_links">
 <h3>Labels, Titles and Names</h3>
@@ -168,8 +178,8 @@ The <code>label</code> is the text displayed for the node, edge etc. It can be d
 
 <p>
 <code>Edges</code> do not have a name, but they can have a label. If you try to access the name
-of an edge, for instance via the <code>autotitle: name;</code> attribute, than the edge
-optional label will be used instead.
+of an edge, for instance via the <code>autotitle: name;</code> attribute, than the
+optional edge label will be used instead.
 <p>
 
 <p>
@@ -184,7 +194,7 @@ See <a href="att_graphs.html#graph_autolabel">this graph for an example.
 </a>
 
 <p>
-Links are constructed from two parts, by concating the <code>linkbase</code> attribute and
+Links are constructed from two parts, by concatenating the <code>linkbase</code> attribute and
 the <code>link</code> attribute:
 </p>
 
@@ -245,6 +255,10 @@ node { linkbase: http://www.bloodgate.com/perl/; autolink: name; }
 <img USEMAP="#GRAPH_0" src="img/link_linkbase.png" border=0 alt="Example of lins" title="Example of links" style="float: left; margin-left: 1em;">
 
 <div class="clear"></div>
+
+<p>
+Of course you can also attach a link to an edge, group or graph label.
+</p>
 
 <a name="color_names_and_values">
 <h3>Color Names and Values</h3>
@@ -463,7 +477,7 @@ For all other colors you can use one of the following notations:
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Dec 18 20:07:28 2005</span> in 0.4504s. Contact: <a href="/mail.html">Tels</a>.
+Page created automatically at <span class="date">Sun Jan  1 18:52:00 2006</span> in 0.4468s. Contact: <a href="/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->

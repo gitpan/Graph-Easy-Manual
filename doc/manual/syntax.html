@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Graph::Easy - Manual - Syntax</title>
- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
@@ -26,7 +26,7 @@
   <p class="menucur"><a class="menucur" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
     <p class="menuind"><a class="menuind" href="#nodes" title="Nodes">Nodes</a></p>
     <p class="menuind"><a class="menuind" href="#attributes" title="Attributes">Attributes</a></p>
-    <p class="menuind"><a class="menuind" href="#edges" title="Nodes">Edges</a></p>
+    <p class="menuind"><a class="menuind" href="#edges" title="Edges">Edges</a></p>
     <p class="menuind"><a class="menuind" href="#advanced" title="Advanced syntax for special effects">Advanced</a></p>
   <p class="menuext"><a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
   <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
@@ -229,6 +229,9 @@ If you merely want an invisible node, use <code>shape: invisible;</code>:
 Attributes are enclosed in <code>{ }</code>,
 are in the format <code>attributename: attributevalue;</code>
 and follow immidiately the object for that they apply.
+<br>
+Attributes on a node in a node list apply to all nodes in
+the list that came to this point.
 </p>
 
 <pre>
@@ -243,13 +246,22 @@ node.city { background: red; }	# for all nodes with class "city"
 [ Berlin ] { color: green; }	# for the node "Berlin"
 
 [ ABC ] { border: bold; color: white; }
-[ DEF ], 			# DEF has no attributes
+
+[ DEF ] 			# DEF has not yet attributes
+  {
+  fill: #ff8060;		# applies only to DEF
+  } ,
 [ GHI ]
-  {				# these apply only to GHI!
+  {				# these apply to DEF and GHI!
     border: bold; 
     color: white; 
+  } ,
+[ JKL ]
+  {
+    shape: circle;		# apply to DEF, GHI and JKL
   }
-[ ] { fill: brown; }		# for the anonymous node
+
+[ ] { fill: brown; }		# for the anonymous node only
 </pre>
 
 <p>
@@ -423,6 +435,20 @@ For a complete listing of possible edge attributes see the appropriate
 <h3>Advanced Layouts</h3>
 </a>
 
+<h4>Joints</h4>
+
+<p>
+Sometimes you want on edge join another, or have a pair of edges start
+at a common point, and then split up. Or you even want two edges being
+connected by a third edge. <code>Graph::Easy</code> allows all these things
+by a feature called <b>shared ports</b>.
+</p>
+
+<p>
+For detailed information and examples please see the
+<a href="hinting.html#joints">chapter about joints</a>.
+</p>
+
 <h4>Classes</h4>
 
 <p>
@@ -472,24 +498,8 @@ nodes are related and should be laid out closely together.
 </p>
 
 <p>
-This is especially powerfull in combintation with the <code>nodeclass</code>
-attribute:
-</p>
-
-<pre>
-node.cities { color: blue; }
-
-( German Cities
-  [ Berlin ] -> [ Potsdam ]
-) { 
-  background: lightbrown;
-  nodeclass: cities;
-  }
-</pre>
-
-<p>
-In this example, all nodes in the group will automatically be put into the
-class <code>node.cities</code>.
+Please see the <a href="hinting.html#groups">section about grouping</a> for
+further details and examples. 
 </p>
 
 <h4>Relative placement (via auto-split)</h4>
@@ -527,7 +537,7 @@ Please continue with the chapter about the <a href="attributes.html">attributes<
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-12-18</span>
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-01</span>
 </div>
 
 </div> <!-- end of right cell -->

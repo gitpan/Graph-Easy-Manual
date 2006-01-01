@@ -1,5 +1,5 @@
 #############################################################################
-# (c) by Tels 2004-2005. Manual for Graph::Easy.
+# (c) by Tels 2004-2006. Manual for Graph::Easy.
 #
 #############################################################################
 
@@ -8,7 +8,7 @@ package Graph::Easy::Manual;
 use strict;
 
 use vars qw/$VERSION/;
-$VERSION = '0.26';
+$VERSION = '0.27';
 
 1;
 __END__
@@ -40,7 +40,7 @@ L<Graph::Easy>.
 
 =head1 AUTHOR
 
-Copyright (C) 2004 - 2005 by Tels L<http://bloodgate.com>
+Copyright (C) 2004 - 2006 by Tels L<http://bloodgate.com>
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms of the GPL version 2.

@@ -35,6 +35,7 @@
     <p class="menuind"><a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a></p>
     <p class="menuind"><a class="menuind" href="att_groups.html" title="Group attributes">Groups</a></p>
     <p class="menuind"><a class="menuind" href="#class_names" title="Classes and their names">Classes</a></p>
+    <p class="menuind"><a class="menuind" href="#flow_control" title="Flow Control">Flow</a></p>
     <p class="menuind"><a class="menuind" href="#labels__titles__names_and_links" title="Labels, titles, names and links">Labels</a></p>
     <p class="menuind"><a class="menuind" href="#links" title="Links and URLs">Links</a></p>
   <p class="menuind"><a class="menuind" href="#color_names_and_values" title="Color names and values">Colors</a></p>
@@ -114,7 +115,16 @@ node.cities { color: red; }
 
 <img src="img/classes.png" border=0 alt="Example of classes" title="Example of classes" style="float: left; margin-left: 1em;">
 
-<div class="clear"></div>
+<p class="clear"></p>
+
+<a name="flow_control">
+<h3>Flow Control</h3>
+</a>
+
+<p>
+Please see the section about <a href="hinting.html#flow">Flow Control</a> for details about controlling
+the flow (placement direction of edges and nodes) in a graph.
+</p>
 
 <a name="labels__titles__names_and_links">
 <h3>Labels, Titles and Names</h3>
@@ -126,8 +136,8 @@ The <code>label</code> is the text displayed for the node, edge etc. It can be d
 
 <p>
 <code>Edges</code> do not have a name, but they can have a label. If you try to access the name
-of an edge, for instance via the <code>autotitle: name;</code> attribute, than the edge
-optional label will be used instead.
+of an edge, for instance via the <code>autotitle: name;</code> attribute, than the
+optional edge label will be used instead.
 <p>
 
 <p>
@@ -142,7 +152,7 @@ See <a href="att_graphs.html#graph_autolabel">this graph for an example.
 </a>
 
 <p>
-Links are constructed from two parts, by concating the <code>linkbase</code> attribute and
+Links are constructed from two parts, by concatenating the <code>linkbase</code> attribute and
 the <code>link</code> attribute:
 </p>
 
@@ -203,6 +213,10 @@ node { linkbase: http://www.bloodgate.com/perl/; autolink: name; }
 <img USEMAP="#GRAPH_0" src="img/link_linkbase.png" border=0 alt="Example of lins" title="Example of links" style="float: left; margin-left: 1em;">
 
 <div class="clear"></div>
+
+<p>
+Of course you can also attach a link to an edge, group or graph label.
+</p>
 
 <a name="color_names_and_values">
 <h3>Color Names and Values</h3>

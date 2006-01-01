@@ -1249,8 +1249,8 @@ The fill color, e.g. the color inside the shape. See the section about <a href="
 <div class="entry">
 
 <p>
-The general direction in which edges will leave this node first. One of 0, up, north, 90, east, right, 180, south, down, 270, west, left.<br>
-<b>Defaults to:</b> <code>right</code><br>
+The general direction in which edges will leave this node first. See the section about <a href="attributes.html#flow_control">flow control</a> for reference.<br>
+<b>Defaults to:</b> <code>east</code><br>
 <b>Example value:</b> <code>south</code></p>
 
 </div>
@@ -1453,12 +1453,12 @@ Controls the style of a node that has a <a href="#node_shape">shape</a> of 'poin
 <div class="entry">
 
 <p>
-The rotation of the node shape, clockwise from 0..359 degrees.<br>
+The rotation of the node shape, either an absolute value (like C<south>, C<up>, C<down> or C<123>), or a relative value (like C<+12>, C<-90>, C<left>, C<right>). For relative angles, the rotation will be based on the node's <a href="#node_flow">flow</a>. Rotation is clockwise.<br>
 <b>Defaults to:</b> <code>0</code><br>
 <b>Example graph:</b>
 </p>
 <pre class="graphtext">[ Bonn ] { rotate: 45; } -- ICE --> 
- [ Berlin ] { shape: triangle; rotate: 90; }
+ [ Berlin ] { shape: triangle; rotate: -90; }
 </pre>
 
 <div class="clear"></div><div style="margin-left: 1em;">
@@ -1470,7 +1470,7 @@ The rotation of the node shape, clockwise from 0..359 degrees.<br>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">ICE</td>
 
  <td rowspan=4 class="edge va" style=" color: black;">&gt;</td>
- <td colspan=4 rowspan=4 class='node' style="rotate: 90">Berlin</td>
+ <td colspan=4 rowspan=4 class='node' style="rotate: -90">Berlin</td>
 </tr>
 
 <tr></tr>
@@ -1643,7 +1643,7 @@ The text displayed as mouse-over for nodes/edges, or as the title for the graph.
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Dec 18 20:07:27 2005</span> in 0.1437s. Contact: <a href="/mail.html">Tels</a>.
+Page created automatically at <span class="date">Sun Jan  1 18:52:00 2006</span> in 0.1381s. Contact: <a href="/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->

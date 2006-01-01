@@ -1,6 +1,11 @@
 Revision history for Graph::Easy::Manual:
 
-2005-12-10 v0.25 Tels 2 tests - Doc, doc, doc, document the code...
+2006-01-01 v0.27 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy 0.38
+  * update doc about node ports, add examples of joints
+  * add section about flow control
+
+2005-12-18 v0.26 Tels 2 tests
   * regen from Graph::Easy 0.36
   * update output.html
 

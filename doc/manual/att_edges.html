@@ -883,7 +883,7 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
   <li><a href="att_edges.html#edge_background">background</a>, <a href="att_edges.html#edge_border">border</a>, <a href="att_edges.html#edge_border-color">border-color</a>, <a href="att_edges.html#edge_border-style">border-style</a>, <a href="att_edges.html#edge_border-width">border-width</a>, 
   <li><a href="att_edges.html#edge_class">class</a>, <a href="att_edges.html#edge_color">color</a>, 
   <li><a href="att_edges.html#edge_end">end</a>, 
-  <li><a href="att_edges.html#edge_fill">fill</a>, <a href="att_edges.html#edge_font-size">font-size</a>, 
+  <li><a href="att_edges.html#edge_fill">fill</a>, <a href="att_edges.html#edge_flow">flow</a>, <a href="att_edges.html#edge_font-size">font-size</a>, 
   <li><a href="att_edges.html#edge_label">label</a>, <a href="att_edges.html#edge_label-color">label-color</a>, <a href="att_edges.html#edge_link">link</a>, <a href="att_edges.html#edge_linkbase">linkbase</a>, 
   <li><a href="att_edges.html#edge_start">start</a>, <a href="att_edges.html#edge_style">style</a>, 
   <li><a href="att_edges.html#edge_text-style">text-style</a>, <a href="att_edges.html#edge_title">title</a>, 
@@ -1276,34 +1276,17 @@ The ending port of this edge. See the section about <a href="attributes.html#nod
 
 <table class="graph20" cellpadding=0 cellspacing=0>
 <tr>
- <td colspan=8 rowspan=4 class='node'>Bonn</td>
+ <td colspan=4 rowspan=4 class='node'>Bonn</td>
  <td colspan=4 rowspan=4></td>
- <td colspan=4 rowspan=8 class='node'>Berlin</td>
-</tr>
-
-<tr></tr>
-
-<tr></tr>
-
-<tr></tr>
-
-<tr>
- <td colspan=4 rowspan=4></td>
- <td colspan=4 class="edge he"></td>
- <td colspan=4 rowspan=4></td>
+ <td colspan=4 rowspan=4 class='node'>Berlin</td>
   <td rowspan=2 class="edge va" style=" color: black;">&lt;</td>
  <td rowspan=2 class="edge eb" style="border-bottom: solid 2px black;">&nbsp;</td>
  <td colspan=2 rowspan=2 class="edge eb"></td>
 </tr>
 
-<tr>
- <td colspan=2 rowspan=3 class="edge el">&nbsp;</td>
- <td colspan=2 rowspan=3 class="edge lv" style="border-left: solid 2px black;">&nbsp;</td>
- 
-</tr>
+<tr></tr>
 
 <tr>
- 
   <td colspan=2 rowspan=2 class="edge eb"></td>
  <td colspan=2 rowspan=2 class="edge eb" style="border-left: solid 2px black;">&nbsp;</td>
 </tr>
@@ -1311,19 +1294,23 @@ The ending port of this edge. See the section about <a href="attributes.html#nod
 <tr></tr>
 
 <tr>
- <td colspan=4 rowspan=4></td>
-  <td colspan=2 rowspan=2 class="edge eb"></td>
- <td colspan=2 rowspan=2 class="edge eb" style="border-bottom: solid 2px black; border-left: solid 2px black;">&nbsp;</td>
+  <td colspan=4 class="edge eb"></td>
   <td colspan=4 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">&nbsp;</td>
   <td colspan=4 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">NORTH</td>
   <td colspan=2 rowspan=2 class="edge eb" style="border-bottom: solid 2px black;">&nbsp;</td>
  <td colspan=2 rowspan=2 class="edge eb" style="border-left: solid 2px black;">&nbsp;</td>
 </tr>
 
-<tr></tr>
+<tr>
+  <td colspan=2 rowspan=3 class="edge eb"></td>
+ <td colspan=2 class="edge eb" style="border-bottom: solid 2px black; border-left: solid 2px black;">&nbsp;</td>
+ 
+ 
+ 
+</tr>
 
 <tr>
-  <td colspan=4 rowspan=2 class="edge eb"></td>
+  <td colspan=2 rowspan=2 class="edge eb"></td>
  <td colspan=4 rowspan=2 class="edge eb">&nbsp;</td>
  <td colspan=4 rowspan=2 class="edge eb">&nbsp;</td>
   <td colspan=4 rowspan=2 class="edge eb"></td>
@@ -1378,6 +1365,18 @@ The fill color, e.g. the color inside the shape. See the section about <a href="
 
 </table>
 </div><div class="clear"></div>
+</div>
+
+<a name="edge_flow">
+<h4>flow</h4></a>
+
+<div class="entry">
+
+<p>
+The flow direction for this edge. See the section about <a href="attributes.html#flow_control">flow control</a> for reference.<br>
+<b>Defaults to:</b> <code>east</code><br>
+<b>Example value:</b> <code>south</code></p>
+
 </div>
 
 <a name="edge_font-size">
@@ -1588,7 +1587,6 @@ The starting port of this edge. See the section about <a href="attributes.html#n
 
 <table class="graph25" cellpadding=0 cellspacing=0>
 <tr>
- <td colspan=4 rowspan=4></td>
   <td colspan=2 rowspan=2 class="edge eb"></td>
  <td colspan=2 rowspan=2 class="edge eb" style="border-bottom: solid 2px black;">&nbsp;</td>
   <td colspan=4 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">NORTH</td>
@@ -1613,9 +1611,9 @@ The starting port of this edge. See the section about <a href="attributes.html#n
 </tr>
 
 <tr>
- <td colspan=8 rowspan=4 class='node'>Bonn</td>
+ <td colspan=4 rowspan=4 class='node'>Bonn</td>
  <td colspan=4 rowspan=4></td>
- <td colspan=8 rowspan=4 class='node'>Berlin</td>
+ <td colspan=4 rowspan=4 class='node'>Berlin</td>
 </tr>
 
 </table>
@@ -1764,7 +1762,7 @@ The text displayed as mouse-over for nodes/edges, or as the title for the graph.
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Dec 18 20:07:27 2005</span> in 0.1293s. Contact: <a href="/mail.html">Tels</a>.
+Page created automatically at <span class="date">Sun Jan  1 18:52:00 2006</span> in 0.1304s. Contact: <a href="/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->
