@@ -18,7 +18,7 @@ BEGIN
 
 my $path = shift || 'manual';
 
-use Graph::Easy 0.33;
+use Graph::Easy 0.39;
 use Graph::Easy::Parser;
 use Graph::Easy::Manual;
 
@@ -87,6 +87,8 @@ for my $class (qw/node edge graph group/)
     $des =~ s/I<([^>]+)>/<i>$1<\/i>/g;
     # convert B<>
     $des =~ s/B<([^>]+)>/<b>$1<\/b>/g;
+    # convert C<>
+    $des =~ s/C<([^>]+)>/<code>$1<\/code>/g;
 
     $des =~ s/(section about )(.*?)( for ref)/my $l = $2; $l =~ tr!A-Za-z0-9!_!c; "$1<a href=\"attributes.html#$l\">$2<\/a>$3";/eg;
 

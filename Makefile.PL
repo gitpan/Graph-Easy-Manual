@@ -34,7 +34,7 @@ WriteMakefile(
     NAME		=> 'Graph::Easy::Manual',
     VERSION_FROM	=> 'lib/Graph/Easy/Manual.pm',
     PREREQ_PM		=> {
-	'Graph::Easy' => 0.38,
+	'Graph::Easy' => 0.39,
 	'File::Spec' => 3.01,
 	'Pod::Simple' => 3.02,
 #	'HTML::Tagset' => 3.10,

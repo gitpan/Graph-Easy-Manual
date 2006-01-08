@@ -1,5 +1,11 @@
 Revision history for Graph::Easy::Manual:
 
+2006-01-08 v0.28 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy 0.39
+  * add Glossary
+  * fix the various menus on the pages to contain all chapters
+  * support "C<..>" in attribute descriptions
+
 2006-01-01 v0.27 Tels 2 tests - Doc, doc, doc, document the code...
   * regen from Graph::Easy 0.38
   * update doc about node ports, add examples of joints

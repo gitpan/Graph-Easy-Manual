@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Graph::Easy - Manual - Attributes for nodes</title>
- <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
@@ -40,6 +40,7 @@ table.graph .node {
 table.graph td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph .va {
   vertical-align: center;
@@ -93,6 +94,7 @@ table.graph1 .node {
 table.graph1 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph1 .va {
   vertical-align: center;
@@ -146,6 +148,7 @@ table.graph2 .node {
 table.graph2 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph2 .va {
   vertical-align: center;
@@ -199,6 +202,7 @@ table.graph3 .node {
 table.graph3 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph3 .va {
   vertical-align: center;
@@ -252,6 +256,7 @@ table.graph4 .node {
 table.graph4 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph4 .va {
   vertical-align: center;
@@ -305,6 +310,7 @@ table.graph5 .node {
 table.graph5 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph5 .va {
   vertical-align: center;
@@ -358,6 +364,7 @@ table.graph6 .node {
 table.graph6 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph6 .va {
   vertical-align: center;
@@ -411,6 +418,7 @@ table.graph7 .node {
 table.graph7 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph7 .va {
   vertical-align: center;
@@ -473,6 +481,7 @@ table.graph8 td[class|="group"] { padding: 0.2em; }
 table.graph8 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph8 .va {
   vertical-align: center;
@@ -533,6 +542,7 @@ table.graph9 .node {
 table.graph9 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph9 .node-anon {
   border: none;
@@ -589,6 +599,7 @@ table.graph10 .node {
 table.graph10 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph10 .va {
   vertical-align: center;
@@ -642,6 +653,7 @@ table.graph11 .node {
 table.graph11 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph11 .va {
   vertical-align: center;
@@ -695,6 +707,7 @@ table.graph12 .node {
 table.graph12 td {
   padding: 2px;
   background: inherit;
+  white-space: pre;
   }
 table.graph12 .va {
   vertical-align: center;
@@ -740,13 +753,15 @@ table.graph12 .hat {
   <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
   <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
   <p class="menucur"><a class="menucur" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
-  <p class="menuind"><a class="menuind" href="att_graphs.html" title="Graph attributes">Graphs</a></p>
-  <p class="menucin"><a class="menucin" href="#Nodes" title="Node attributes">Nodes</a></p>
-  <p class="menuind"><a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a></p>
-  <p class="menuind"><a class="menuind" href="att_groups.html" title="Group attributes">Groups</a></p>
-  <p class="menuind"><a class="menuind" href="attributes.html#class_names" title="Classes and their names">Classes</a></p>
-  <p class="menuind"><a class="menuind" href="attributes.html#links" title="Links and URLs">Links</a></p>
-  <p class="menuind"><a class="menuind" href="attributes.html#color_names_and_values" title="Color names and values">Colors</a></p>
+    <p class="menuind"><a class="menuind" href="att_graphs.html" title="Graph attributes">Graphs</a></p>
+    <p class="menucin"><a class="menucin" href="#Nodes" title="Node attributes">Nodes</a></p>
+    <p class="menuind"><a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a></p>
+    <p class="menuind"><a class="menuind" href="att_groups.html" title="Group attributes">Groups</a></p>
+    <p class="menuind"><a class="menuind" href="attributes.html#class_names" title="Classes and their names">Classes</a></p>
+    <p class="menuind"><a class="menuind" href="attributes.html#links" title="Links and URLs">Links</a></p>
+    <p class="menuind"><a class="menuind" href="attributes.html#color_names_and_values" title="Color names and values">Colors</a></p>
+  <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
+  <p class="menuext"><a class="menuext" href="glossary.html" title="Glossary of often used terms">Glossary</a></p>
 
 </div>
 
@@ -803,12 +818,12 @@ Will automatically generate the <a href="#node_label">label</a>, unless <a href=
 
 <table class="graph" cellpadding=0 cellspacing=0>
 <tr>
- <td colspan=4 rowspan=4 class='node' title="Bonn">Bonn</td>
+ <td colspan=4 rowspan=4 class='node' title='Bonn'>Bonn</td>
  <td rowspan=4 class="edge ve"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;" title="Acme Travels Incorporated">Acme Tr ... porated</td>
 
  <td rowspan=4 class="edge va" style=" color: black;">&gt;</td>
- <td colspan=4 rowspan=4 class='node' title="Frankfurt (Main) / Flughafen">Frankfu ... ughafen</td>
+ <td colspan=4 rowspan=4 class='node' title='Frankfurt (Main) / Flughafen'>Frankfu ... ughafen</td>
 </tr>
 
 <tr></tr>
@@ -1453,7 +1468,7 @@ Controls the style of a node that has a <a href="#node_shape">shape</a> of 'poin
 <div class="entry">
 
 <p>
-The rotation of the node shape, either an absolute value (like C<south>, C<up>, C<down> or C<123>), or a relative value (like C<+12>, C<-90>, C<left>, C<right>). For relative angles, the rotation will be based on the node's <a href="#node_flow">flow</a>. Rotation is clockwise.<br>
+The rotation of the node shape, either an absolute value (like <code>south</code>, <code>up</code>, <code>down</code> or <code>123</code>), or a relative value (like <code>+12</code>, <code>-90</code>, <code>left</code>, <code>right</code>). For relative angles, the rotation will be based on the node's <a href="#node_flow">flow</a>. Rotation is clockwise.<br>
 <b>Defaults to:</b> <code>0</code><br>
 <b>Example graph:</b>
 </p>
@@ -1501,7 +1516,7 @@ The size of the node in rows. See also <a href="#node_size">size</a>.<br>
 <div class="entry">
 
 <p>
-The shape of the node. Nodes with shape 'point' (see <a href="#node_point-style">point-style</a>) have a fixed size and do not display their label. One of: <code>circle</code>, <code>diamond</code>, <code>ellipse</code>, <code>hexagon</code>, <code>house</code>, <code>invisible</code>, <code>invhouse</code>, <code>invtrapezium</code>, <code>invtriangle</code>, <code>octagon</code>, <code>parallelogram</code>, <code>pentagon</code>, <code>point</code>, <code>triangle</code>, <code>trapezium</code>, <code>septagon</code>, <code>rect</code>, <code>rounded</code>, <code>none</code>.
+The shape of the node. Nodes with shape 'point' (see <a href="#node_point-style">point-style</a>) have a fixed size and do not display their label. When set to the value 'img', the <a href="#node_label">label</a> will be interpreted as an external image resource to display. In this case attributes like <a href="#node_color">color</a>, <a href="#node_font-size">font-size</a> etc. are ignored. One of: <code>circle</code>, <code>diamond</code>, <code>ellipse</code>, <code>hexagon</code>, <code>house</code>, <code>invisible</code>, <code>invhouse</code>, <code>invtrapezium</code>, <code>invtriangle</code>, <code>octagon</code>, <code>parallelogram</code>, <code>pentagon</code>, <code>point</code>, <code>triangle</code>, <code>trapezium</code>, <code>septagon</code>, <code>rect</code>, <code>rounded</code>, <code>none</code>, <code>img</code>.
 <br>
 <b>Defaults to:</b> <code>rect</code><br>
 <b>Example graph:</b>
@@ -1512,6 +1527,8 @@ The shape of the node. Nodes with shape 'point' (see <a href="#node_point-style"
  -> [ Ulm ] { shape: point; }
  -> [ Wasserburg ] { shape: invisible; }
  -> [ Augsburg ] { shape: triangle; }
+ -> [ House ] { shape: img; label: img/house.png;
+          border: none; title: My House; fill: inherit; }
 </pre>
 
 <div class="clear"></div><div style="margin-left: 1em;">
@@ -1544,11 +1561,17 @@ The shape of the node. Nodes with shape 'point' (see <a href="#node_point-style"
 
  <td rowspan=4 class="edge va" style=" color: black;">&gt;</td>
  <td colspan=4 rowspan=4 class='node'>Augsburg</td>
+ <td rowspan=4 class="edge ve"></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">&nbsp;</td>
+
+ <td rowspan=4 class="edge va" style=" color: black;">&gt;</td>
+ <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none"><img class='i' src='img/house.png' alt='My House' title='My House' border='0' /></td>
 </tr>
 
 <tr></tr>
 
 <tr>
+ <td colspan=2 rowspan=2 class="edge eb">&nbsp;</td>
  <td colspan=2 rowspan=2 class="edge eb">&nbsp;</td>
  <td colspan=2 rowspan=2 class="edge eb">&nbsp;</td>
  <td colspan=2 rowspan=2 class="edge eb">&nbsp;</td>
@@ -1643,7 +1666,7 @@ The text displayed as mouse-over for nodes/edges, or as the title for the graph.
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Jan  1 18:52:00 2006</span> in 0.1381s. Contact: <a href="/mail.html">Tels</a>.
+Page created automatically at <span class="date">Sun Jan  8 20:37:10 2006</span> in 0.1356s. Contact: <a href="/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->

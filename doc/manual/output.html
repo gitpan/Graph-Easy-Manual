@@ -31,6 +31,7 @@
   <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
   <p class="menuext"><a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
   <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
+  <p class="menuext"><a class="menuext" href="glossary.html" title="Glossary of often used terms">Glossary</a></p>
 
 </div>
 
@@ -460,6 +461,11 @@ supporting the full spec instead of some random subset.
 </p>
 
 <p>
+Shape <code>img</code> is not supported by SVG since it seems impossible
+to embed bitmap/raster grafics into a SVG document.
+</p>
+
+<p>
 Otherwise, the SVG output is mainly complete. If you notice any feature missing or
 not working, please open a 
 <a href="http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Graph-Easy">bug report</a>.
@@ -496,7 +502,7 @@ this. Here is a short list of features that are incomplete:
 </p>
 
 <ul>
-  <li>nodes that are placed relatively to each other
+  <li>nodes that are placed <a href="hinting.html#relative">relatively to each other</a> 
   <li>multi-celled nodes (labels like "{ A | B }" could emulate this)
   <li>per-node flow directions (flow for the entire graph will work, though)
 </ul>
@@ -514,6 +520,17 @@ to find out how:
   <li>node shape: point with other point-styles than "circle"
 </ul>
 
+<p>
+Note thar unlike with the other output methods, Graph::Easy has less control
+over the layout when outputting graphviz code. Sometimes this improves
+graph layout, because dot et. al. are not restricted to a grid-like
+layout, but certain features might be rendered quite differently
+by dot than by Graph::Easy.
+<br>
+Especially the per-node and per-edge flow and relatively placed nodes
+will likely be lost in the generated graphviz code.
+</p>
+
 </div><div class="text next">
 
 Please continue with the chapter about the <a href="syntax.html">syntax</a>.
@@ -521,7 +538,7 @@ Please continue with the chapter about the <a href="syntax.html">syntax</a>.
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-19</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-01</span>
+Page created <span class="date">2005-08-19</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-08</span>
 </div>
 
 </div> <!-- end of right cell -->

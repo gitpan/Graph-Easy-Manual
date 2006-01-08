@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Graph::Easy - Manual - Attributes for graphs</title>
- <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
@@ -30,14 +30,16 @@
   <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
   <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
   <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
-  <p class="menucur"><a class="menucur" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
-  <p class="menucin"><a class="menucin" href="#Graphs" title="Graph attributes">Graphs</a></p>
-  <p class="menuind"><a class="menuind" href="att_nodes.html" title="Node attributes">Nodes</a></p>
-  <p class="menuind"><a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a></p>
-  <p class="menuind"><a class="menuind" href="att_groups.html" title="Group attributes">Groups</a></p>
-  <p class="menuind"><a class="menuind" href="attributes.html#class_names" title="Classes and their names">Classes</a></p>
-  <p class="menuind"><a class="menuind" href="attributes.html#links" title="Links and URLs">Links</a></p>
-  <p class="menuind"><a class="menuind" href="attributes.html#color_names_and_values" title="Color names and values">Colors</a></p>
+    <p class="menucur"><a class="menucur" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
+    <p class="menucin"><a class="menucin" href="#Graphs" title="Graph attributes">Graphs</a></p>
+    <p class="menuind"><a class="menuind" href="att_nodes.html" title="Node attributes">Nodes</a></p>
+    <p class="menuind"><a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a></p>
+    <p class="menuind"><a class="menuind" href="att_groups.html" title="Group attributes">Groups</a></p>
+    <p class="menuind"><a class="menuind" href="attributes.html#class_names" title="Classes and their names">Classes</a></p>
+    <p class="menuind"><a class="menuind" href="attributes.html#links" title="Links and URLs">Links</a></p>
+    <p class="menuind"><a class="menuind" href="attributes.html#color_names_and_values" title="Color names and values">Colors</a></p>
+  <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
+  <p class="menuext"><a class="menuext" href="glossary.html" title="Glossary of often used terms">Glossary</a></p>
 
 </div>
 

@@ -200,6 +200,10 @@ p {
   margin-bottom: 0.4em;
   margin-top: 0.4em;
   }
+img.i
+  {
+  border: none;
+  }
 img
   {
   border: 1px solid gray;

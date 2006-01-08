@@ -35,6 +35,7 @@ doc/manual/img/link_linkbase.png
 doc/manual/img/node_label.png
 doc/manual/img/multi_edges.png
 doc/manual/img/self_loop.png
+doc/manual/img/house.png
 doc/README
 doc/attributes.tpl
 doc/att_edges.tpl

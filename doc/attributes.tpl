@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Graph::Easy - Manual - Attributes</title>
- <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
@@ -38,8 +38,9 @@
     <p class="menuind"><a class="menuind" href="#flow_control" title="Flow Control">Flow</a></p>
     <p class="menuind"><a class="menuind" href="#labels__titles__names_and_links" title="Labels, titles, names and links">Labels</a></p>
     <p class="menuind"><a class="menuind" href="#links" title="Links and URLs">Links</a></p>
-  <p class="menuind"><a class="menuind" href="#color_names_and_values" title="Color names and values">Colors</a></p>
+    <p class="menuind"><a class="menuind" href="#color_names_and_values" title="Color names and values">Colors</a></p>
   <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
+  <p class="menuext"><a class="menuext" href="glossary.html" title="Glossary of often used terms">Glossary</a></p>
 
 </div>
 
