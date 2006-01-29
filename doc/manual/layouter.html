@@ -19,6 +19,7 @@
   <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
   <p style="height: 0.2em">&nbsp;</p>
   <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
+  <p class="menuext"><a class="menuext" href="features.html" title="Feature list - what is possible with Graph::Easy">Features</a></p>
   <p class="menucur"><a class="menucur" href="layouter.html" title="How the layouter works">Layouter</a></p>
     <p class="menuind"><a class="menuind" href="#overview" title="Overview">Overview</a></p>
     <p class="menuind"><a class="menuind" href="#cells" title="Cells">Cells</a></p>
@@ -322,7 +323,9 @@ from one node back to the same node:
 </pre>
 
 <p>
-These four pieces always have exactly one end and one start point on them.
+These four pieces always have exactly one end and one start point on them,
+although they can have zero, one or two arrows, depending on whether
+the edge is undirected, normal or bidirectional.
 </p>
 
 <h3>Edge labels</h3>
@@ -395,7 +398,7 @@ also turn out like this:
 </pre>
 
 <p>
-Note the edge from "Ulm" to "Koblenz" crossing the edge from "Bautzen" to "Koblenz". A
+Note the edge from "Ulm" to "Koblenz" crossing the edge from "Bautzen" to "Berlin". A
 seemingly much shorter way for it would be to cross the edge from "Bonn" to "Berlin",
 but since that is a short edge, it may not be crossed.
 </p>
@@ -411,6 +414,13 @@ but since that is a short edge, it may not be crossed.
 <a name="multicell">
 <h3>Multi-celled nodes</h3>
 </a>
+
+<p>
+Per default, a node is just one cell big. When necessary, the layouter
+will grow the node to accomodate the edge connections. You can also
+set a minimum size via the <a href="att_nodes.html#node_size">size</a> 
+attribute.
+</p>
 
 <pre>
 ...........................................
@@ -478,7 +488,7 @@ Now that you know some details about how the layouter works, you are ready to re
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2005-12-06</span>
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-09</span>
 </div>
 
 </div> <!-- end of right cell -->

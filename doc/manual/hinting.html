@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Graph::Easy - Manual - Hinting aka generating specific layouts</title>
- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
@@ -19,6 +19,7 @@
   <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
   <p style="height: 0.2em">&nbsp;</p>
   <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
+  <p class="menuext"><a class="menuext" href="features.html" title="Feature list - what is possible with Graph::Easy">Features</a></p>
   <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
   <p class="menucur"><a class="menucur" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
     <p class="menuind"><a class="menuind" href="#flow" title="Set the flow direction of the graph">Flow</a></p>
@@ -27,7 +28,7 @@
     <p class="menuind"><a class="menuind" href="#size" title="Adjust node sizes">Node size</a></p>
     <p class="menuind"><a class="menuind" href="#groups" title="Group nodes together">Grouping</a></p>
     <p class="menuind"><a class="menuind" href="#autosplit" title="Create rows/columns of node cells">Autosplit</a></p>
-    <p class="menuind"><a class="menuind" href="#clusters" title="Place nodes relative to each other">Clustering</a></p>
+    <p class="menuind"><a class="menuind" href="#relatives" title="Place nodes relative to each other">Relatives</a></p>
   <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
   <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
   <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
@@ -110,6 +111,10 @@ to let the graph flow in another general direction.
 <h4>Flow-dependend and Flow-independend Directions</h4>
 
 <p>
+Flow can be specified either
+<b>absolut</b> (giving absolut directions like <code>south</code> or <code>west</code>),
+or <b>relative</b> (directions <code>left</code>, <code>front</code> etc that
+are relative to the local flow at that node).
 </p>
 
 <h4>Controlling the Overall Graph Flow</h4>
@@ -159,7 +164,15 @@ upwards and leftwards flow directions without some trickery).
 <h4>Controlling the Flow per Node</h4>
 
 <p>
-You can also change the flow on a per-node basis:
+You can also change the flow on a per-node basis.
+<br>
+In the next example the node <b>Siegen</b> has a flow towards <code>west</code> (because this is
+the general flow of the graph). The default flow for all its outgoing edges is
+then modified to be <code>left</code>, which amounts to <code>south</code>,
+since looking westwards and turning left 90 degress will make you looking
+southwards:
+</p>
+
 </p>
 
 <pre class="graphtext">
@@ -183,9 +196,55 @@ graph { flow: west; }
 
 <div class="clear"></div>
 
+<h4>Controlling the Flow per Edge</h4>
+
+<p>
+You can also set the flow direction for each edge on its own.
+We modify the example above by adding another node. Instead
+of relying on the out-going flow from <b>Siegen</b>, we
+give this edge its own flow, namely <code>up</code>. (<code>right</code>
+would have worked, too. In fact, relative flow is always better,
+we will see below why.)
+</p>
+
+<pre class="graphtext">
+graph { flow: west; }
+
+[ Duisburg ] -> [ Siegen ] { flow: left; }
+ -> [ Adenau ]
+[ Siegen ] -> { flow: up; } [ Monschau ]
+</pre>
+
+<img src="img/flow.png" alt="Flow directions (partially supported by dot)" title="Flow directions (partially supported by dot)" class="float">
+
+<pre class="graph">
++----------+
+| Monschau |
++----------+
+  ^
+  |
+  |
++----------+     +----------+
+|  Siegen  | <-- | Duisburg |
++----------+     +----------+
+  |
+  |
+  v
++----------+
+|  Adenau  |
++----------+
+</pre>
+
+<div class="clear"></div>
+
 <a name="ports">
 <h3>Edge start/end ports</h3>
 </a>
+
+<p>
+Before we continue with the differences between relative and absolute flow,
+let's just have a look at <code>port numbers</code> and <code>sides</code>:
+</p>
 
 <pre>
 ..................................................
@@ -354,7 +413,7 @@ But the starting ports moved (rotated) with the flow direction!
 Summary: To make graphs flow-invariant, use south etc, to make it possible
 to rotate graphs, use <code>left</code>, <code>right</code>, <code>front</code>
 or <code>back</code>.
-.</p>
+</p>
 
 <div class="clear"></div>
 
@@ -391,22 +450,15 @@ Whenever two edges share one common port (not just one side, like
 </p>
 
 <pre class="graphtext">
-[ Jena ] --> { start: front, 0; } [ Augsburg ] { origin: Jena; offset: 2,0; }
-[ Jena ] --> { start: front, 0; } [ Ulm ] { origin: Augsburg; offset: 0,2; }
+[ Jena ] --> { start: front, 0; } [ Augsburg ], [ Ulm ]
 </pre>
 
 <pre class="graph">
 +------+          +----------+
-| Jena | ------+  | Augsburg |
-+------+       |  +----------+
-               |    ^
-               +----+
-               |
-               |
-               |
-               |
-               |  +----------+
-               +->|   Ulm    |
+| Jena |--+-----> |   Ulm    |
++------+  |       +----------+
+          |       +----------+
+          +-----> | Augsburg |
                   +----------+
 </pre>
 
@@ -477,9 +529,9 @@ Here is an example that demonstrates this:
 
 <p>
 Even when you do not specify a size, the layouter will grow nodes
-automatically to satisify the constraints of the layout, for
+automatically to satisfy the constraints of the layout, for
 instance when more than four edges start/end at a particular
-node. Likewise, when specifying edge ports (see <a href="#ports">below</a>,
+node. Likewise, when specifying edge ports (see <a href="#ports">above</a>),
 these constraints will grow the node if necessary.
 <br>
 As an example, if you specifiy that there are 5 edges starting/ending
@@ -743,7 +795,7 @@ This will be rendered like so:
 
 <div class="clear"></div>
 
-<a name="clusters">
+<a name="relatives">
 <h3>Relative Node Placement (with offsets)</h3>
 </a>
 
@@ -857,7 +909,7 @@ details on pathfinding.
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-19</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-01</span>
+Page created <span class="date">2005-08-19</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-23</span>
 </div>
 
 </div> <!-- end of right cell -->

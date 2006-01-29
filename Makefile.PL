@@ -11,7 +11,8 @@ sub MY::metafile {
     return $self->SUPER::metafile_target(@_);
   };
 
-  my $node = new YAML::Node {};
+  require YAML::Node;
+  my $node = YAML::Node->new({});
 
   $node->{name}                 = $self->{DISTNAME};
   $node->{version}              = $self->{VERSION};
@@ -34,7 +35,7 @@ WriteMakefile(
     NAME		=> 'Graph::Easy::Manual',
     VERSION_FROM	=> 'lib/Graph/Easy/Manual.pm',
     PREREQ_PM		=> {
-	'Graph::Easy' => 0.39,
+	'Graph::Easy' => 0.40,
 	'File::Spec' => 3.01,
 	'Pod::Simple' => 3.02,
 #	'HTML::Tagset' => 3.10,

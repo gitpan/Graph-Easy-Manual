@@ -19,6 +19,7 @@
   <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
   <p style="height: 0.2em">&nbsp;</p>
   <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
+  <p class="menuext"><a class="menuext" href="features.html" title="Feature list - what is possible with Graph::Easy">Features</a></p>
   <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
   <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
   <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
@@ -287,6 +288,46 @@ node { fill: white; }
 </pre>
 
 <p>
+You can also set an attribute for all parts, or only for specific parts:
+</p>
+
+<ul>
+  <li><code>[ A|B ] { class: |legend; }</code>
+      will put B into class 'legend' and leave the class of A alone
+  <li><code>[ A|B ] { class: legend|; }</code>
+      will put A into class 'legend' and leave the class of B alone
+  <li><code>[ A|B ] { class: legend; }</code>
+      will put A <b>and</b> B into class 'legend'
+</ul>
+
+<p>
+Here are the rules from above in an example showing their effect:
+</p>
+
+<pre class="graphtext">
+node.1 { border: dotted; }
+node.2 { border: dashed; }
+node.3 { border: dot-dash; }
+node { border: double; }
+
+[ AAAA|BBBB ] { class: |1; }
+[ CCCC|DDDD ] { class: 2|; }
+[ EEEE|FFFF ] { class: 3; }
+</pre>
+
+<pre class="graph">
+#======#.......
+H AAAA H BBBB :
+#======#......:
++ - - -+======#
+' CCCC ' DDDD H
++ - - -+======#
++-.-.-.+.-.-.-+
+! EEEE ! FFFF !
++-.-.-.+.-.-.-+
+</pre>
+
+<p class="clear">
 For a complete listing of possible attributes see the appropriate
 <a href="attributes.html">chapter</a>.
 </p>
@@ -312,17 +353,37 @@ The edges between the nodes can have the following styles:
 </pre>
 
 <p>
-In addition to these, the following styles exist: "bold", "bold-dash", "broad" and "wide".
+In addition to these, the following styles exist:
+</p>
+
+<ul>
+  <li><code>bold</code>
+  <li><code>bold-dash</code>
+  <li><code>broad</code>
+  <li><code>wide</code>
+  <li><code>invisible</code>
+</ul>
+
+<p>
 Unlike the normal edge styles, these can only be set via the (optional) edge attributes:
 </p>
 
-<pre>
+<pre class="graphtext">
         [ A ] --> { style: bold; }      [ B ]
               --> { style: broad; }     [ B ]
               --> { style: bold-dash; } [ C ]
+              --> { style: invisible; } [ D ]
 </pre>
 
-<p>
+<pre class="graph">
+            ####
+            v  #
++---+     +------+     +---+     +---+
+| A | ##> |  B   | # > | C |     | D |
++---+     +------+     +---+     +---+
+</pre>
+
+<p class="clear">
 You can repeat each of the style-patterns as much as you like:
 </p>
 
@@ -453,8 +514,8 @@ For detailed information and examples please see the
 <h4>Classes</h4>
 
 <p>
-Each part of a graph is a (primary) class and you can assign it
-attributes:
+Each part of a graph is a (primary) class and you can set
+attributes on a per-class basis:
 </p>
 
 <pre>
@@ -478,6 +539,10 @@ node.cities { color: darkgreen; }
 group { color: brown; }
 group.cities { color: darkbrown; }
 </pre>
+
+<p>
+See also the section about <a href="attributes.html#class_names">class names</a> for reference.
+</p>
 
 <h4>Groups</h4>
 
@@ -538,7 +603,7 @@ Please continue with the chapter about the <a href="attributes.html">attributes<
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-01</span>
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-23</span>
 </div>
 
 </div> <!-- end of right cell -->

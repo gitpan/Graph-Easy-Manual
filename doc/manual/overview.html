@@ -19,8 +19,10 @@
   <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
   <p style="height: 0.2em">&nbsp;</p>
   <p class="menucur"><a class="menucur" href="overview.html" title="How everything fits together">Overview</a></p>
-    <p class="menuind"><a class="menuind" href="#inout" title="Input/Output and dataflow overview">Input/Output</a></p>
-    <p class="menuind"><a class="menuind" href="#features" title="Supported features">Features</a></p>
+    <p class="menuind"><a class="menuind" href="#glossary" title="You said what?">Glossary</a></p>
+    <p class="menuind"><a class="menuind" href="#inout" title="Input/Output and data flow">Dataflow</a></p>
+    <p class="menuind"><a class="menuind" href="#layout" title="Storage vs. Layout">Layouts</a></p>
+  <p class="menuext"><a class="menuext" href="features.html" title="Feature list - what is possible with Graph::Easy">Features</a></p>
   <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
   <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
   <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
@@ -41,7 +43,9 @@
 
 <div class="text">
 
+<a name="glossary">
 <h3>Terminology</h3>
+</a>
 
 <p>
 You can look up terms unfamiliar to you in the <a href="glossary.html">glossary</a>.
@@ -110,7 +114,9 @@ Note that the textual description format allows you a round-trip: you can feed
 it to the Parser, and then generate text again from the resulting <code>Graph::Easy</code> object.
 </p>
 
+<a name="layout">
 <h3>Storage vs. Layout</h3>
+</a>
 
 <p>
 Graph::Easy did use the <a href="http://search.cpan.org/~jhi/Graph/">Graph</a> module
@@ -177,138 +183,16 @@ do when the edges don't run straight but all over the place :-)
 That's one of the reasons for the existance of this project. :-P
 </p>
 
-<a name="features">
-<h3>Supported features</h3>
-</a>
-
-<p>
-Graph::Easy support a wide array of features, below you will find an overview
-of some of them.
-</p>
-
-<p>
-Usually each node name is unique, there cannot be two nodes with the same name. Since it is sometimes
-desired to have two nodes with the same text appearing in the layout, you can override the
-text displayed with a label:
-</p>
-
-<pre>
-[ Bonn ] { label: Berlin; } -> [ Berlin ]
-</pre>
-
-<p>
-This will be rendered like this:
-</p>
-
-<img src="img/node_label.png" alt="Same node names" title="Same node names" class="float">
-<pre class="graph">
-+--------+     +--------+
-| Berlin | --> | Berlin |
-+--------+     +--------+
-</pre>
-
-<p class="clear">&nbsp;</p>
-
-<p>
-Most graphing packages also allow multi-edges. A multi-edge graph simply allows two edges going from the same
-starting node to the same target node:
-</p>
-
-<pre>
-[ Rostock ] -> [ Wismut ]
-[ Rostock ] -> [ Wismut ]
-</pre>
-
-<img src="img/multi_edges.png" alt="Multi-edges" title="Multi-edges" class="float">
-
-<pre class="graph">
-  +---------------+
-  |               v
-+---------+     +--------+
-| Rostock | --> | Wismut |
-+---------+     +--------+
-</pre>
-
-<p class="clear">&nbsp;</p>
-
-<p>
-In addition to that, self-loops are usefull for state-machines and flowcharts.
-A self-loop is one edge going from one node back to the same node again:
-</p>
-
-<pre class="graphtext">
-[ Chemnitz ] -> [ Chemnitz ]
-</pre>
-
-<img src="img/self_loop.png" alt="Self-loop" title="Self-loop" class="float">
-
-<pre class="graph">
-  +------+
-  v      |
-+----------+
-| Chemnitz |
-+----------+
-</pre>
-
-<p class="clear">&nbsp;</p>
-
-<p>
-Another often used feature are undirected or bidirectional edges:
-</p>
-
-<pre class="graphtext">
-[ Hamm ] <--> [ Leverkusen ]
-[ Wismut ] -- [ Plauen ]
-</pre>
-
-<img src="img/edge_types.png" alt="Edge types undirected and bidirectional" class="float">
-
-<pre class="graph">
-+--------+      +------------+
-|  Hamm  | <--> | Leverkusen |
-+--------+      +------------+
-+--------+      +------------+
-| Wismut | ---- |   Plauen   |
-+--------+      +------------+
-</pre>
-
-<p class="clear">&nbsp;</p>
-
-<p>
-Also, subgraphs (called "groups" in Graph::Easy) allow you to cluster nodes together:
-</p>
-
-<pre class="graphtext">
-( Capitals: [ Bonn ], [ Berlin ] )
-</pre>
-
-<img src="img/group.png" alt="Grouping/Clustering/subgraphs" class="float">
-
-<pre class="graph">
-+ - - - - - - +
-' Capitals:   '
-'             '
-' +---------+ '
-' | Berlin  | '
-' +---------+ '
-' +---------+ '
-' |  Bonn   | '
-' +---------+ '
-'             '
-+ - - - - - - +
-</pre>
-
-<p class="clear">&nbsp;</p>
 </div><div class="text next">
 
 <p>
-Please continue with the chapter about the <a href="layouter.html">layouter</a>.
+Please continue with the chapter about the <a href="features.html">feature set</a>.
 </p>
 
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-01</span>
+Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-09</span>
 </div>
 
 </div> <!-- end of right cell -->

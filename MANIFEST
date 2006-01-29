@@ -15,6 +15,9 @@ doc/manual/att_groups.html
 doc/manual/att_edges.html
 doc/manual/bench/serie.pl
 doc/manual/benchmark.html
+doc/manual/errors.html
+doc/manual/features.html
+doc/manual/glossary.html
 doc/manual/hinting.html
 doc/manual/index.html
 doc/manual/layouter.html
@@ -29,6 +32,8 @@ doc/manual/img/group.png
 doc/manual/img/grouping.png
 doc/manual/img/edge_types.png
 doc/manual/img/example1.png
+doc/manual/img/flow.png
+#doc/manual/img/joints.png
 doc/manual/img/links.png
 doc/manual/img/linkbase.png
 doc/manual/img/link_linkbase.png

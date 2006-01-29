@@ -1,5 +1,13 @@
 Revision history for Graph::Easy::Manual:
 
+2006-01-28 v0.29 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy 0.40
+  * include the missing pages errors.html and glossary.html
+  * move the feature set to an extra page, making the overview slimmer
+  * add more examples of joints to features.html
+  * fix doc about classes (multiple classes)
+  * fix Makefile.PL to work with newer YAML
+
 2006-01-08 v0.28 Tels 2 tests - Doc, doc, doc, document the code...
   * regen from Graph::Easy 0.39
   * add Glossary
