@@ -62,7 +62,6 @@ table.features td.y {
   background: #ffff80;
   }
 pre.wide { max-width: 50em; }
-pre.ascii { background: white; max-width: 50em; }
 pre.table { background: inherit; margin: 0; border: none; }
 div.entry { padding-left: 2em; }
 pre.graph

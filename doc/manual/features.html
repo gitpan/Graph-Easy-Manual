@@ -21,6 +21,7 @@
   <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
   <p class="menucur"><a class="menucur" href="features.html" title="Feature list - what is possible with Graph::Easy">Features</a></p>
     <p class="menuind"><a class="menuind" href="#multinode" title="Nodes with the same text displayed">Multi-Node</a></p>
+    <p class="menuind"><a class="menuind" href="#anon" title="Anonymous and invisible nodes">Anon Nodes</a></p>
     <p class="menuind"><a class="menuind" href="#multiedge" title="More than one edge from A to B">Multi-Edge</a></p>
     <p class="menuind"><a class="menuind" href="#selfloops" title="From one node back to itself">Self-Loops</a></p>
     <p class="menuind"><a class="menuind" href="#directions" title="Undirected and bidirectional edges">Directions</a></p>
@@ -62,11 +63,11 @@ desired to have two nodes with the same text appearing in the layout, you can ov
 text displayed with a label:
 </p>
 
-<pre>
+<pre class="graphtext">
 [ Bonn ] { label: Berlin; } -> [ Berlin ]
 </pre>
 
-<p>
+<p class="clear">
 This will be rendered like this:
 </p>
 
@@ -78,6 +79,41 @@ This will be rendered like this:
 </pre>
 
 <p class="clear">&nbsp;</p>
+
+<a name="anon">
+<h3>Anonymous and Invisible Nodes and Edges</h3>
+</a>
+
+<p>
+<code>Graph::Easy</code> supports anonymous nodes,
+normal invisible nodes (with a minimum size) and truly invisible
+nodes (their size is as small as possible), as well as
+invisible edges:
+</p>
+
+<pre class="graphtext">
+[ ] { title: Anonymous Node; }
+  -> [ $sys$Node ] { shape: invisible; title: You don't see me! }
+  -> [ Bischofswerda ]
+  -> [ Borna ] { shape: point; point-style: invisible; }
+  -> [ Bremen ]
+  -> { style: invisible; } [ Bonn ]
+  -> [ $sys$Node ]
+</pre>
+
+<pre class="clear graph">
+
+          +---------------------------------------------------+
+          v                                                   |
+                  +---------------+          +--------+     +------+
+    -->       --> | Bischofswerda | -->  --> | Bremen |     | Bonn |
+                  +---------------+          +--------+     +------+
+</pre>
+
+<p class="clear">
+Please see the <a href="syntax.html#anon">chapter about the syntax</a>
+for details on anonymous and invisible nodes and edges.
+</p>
 
 <a name="multiedge">
 <h3>Multi-Edges</h3>
@@ -273,7 +309,7 @@ Please continue with the chapter about the <a href="layouter.html">layouter</a>.
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-01-09</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-09</span>
+Page created <span class="date">2005-01-09</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-02-05</span>
 </div>
 
 </div> <!-- end of right cell -->

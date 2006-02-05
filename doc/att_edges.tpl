@@ -70,7 +70,7 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">##time##</span> in ##took##. Contact: <a href="/mail.html">Tels</a>.
+Page created automatically at <span class="date">##time##</span> in ##took##. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->

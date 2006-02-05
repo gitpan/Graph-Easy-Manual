@@ -25,9 +25,11 @@
   <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
   <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
   <p class="menucur"><a class="menucur" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
+    <p class="menuind"><a class="menuind" href="#input" title="Charset and encoding">Input</a></p>
     <p class="menuind"><a class="menuind" href="#nodes" title="Nodes">Nodes</a></p>
     <p class="menuind"><a class="menuind" href="#attributes" title="Attributes">Attributes</a></p>
     <p class="menuind"><a class="menuind" href="#edges" title="Edges">Edges</a></p>
+    <p class="menuind"><a class="menuind" href="#groups" title="Subgraphs, grouping and clustering">Groups</a></p>
     <p class="menuind"><a class="menuind" href="#advanced" title="Advanced syntax for special effects">Advanced</a></p>
   <p class="menuext"><a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
   <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
@@ -53,6 +55,19 @@ This chapter describes the syntax of the text format that is parsed by
 
 <h3>General rules</h3>
 
+<a name="input">
+<h4>Input and Encoding</h4>
+
+<p>
+<code>Graph::Easy</code>, and especially the Parser, expect the input to
+be in utf-8. This means that the input must be valid Unicode.
+<br>
+But it also means you can embed arbitrary characters, like Japanese, box
+art drawing, Umlaute etc into the labels without the need for cumbersome
+quoting.
+</p>
+
+</a>
 <a name="comments">
 <h4>Comments</h4>
 </a>
@@ -122,6 +137,27 @@ To insert a line break into a node or edge label, use literally <code>\n</code>:
 
 <div class="clear"></div>
 
+<p>
+You can also replace the <code>\n</code> by <code>\r</code>, <code>\c</code>
+or <code>\l</code> to align the next line <code>right</code>, <code>left</code>
+or <code>center</code>, respectively:
+</p>
+
+<pre>
+[ Long Node Label\l left\r right\c center ] -- A\r long\n edge label --> [ B ]
+</pre>
+
+<pre class="graph">
++-----------------+               +---+
+| Long Node Label |  A            |   |
+| left            |        long   | B |
+|           right |  edge label   |   |
+|     center      | ------------> |   |
++-----------------+               +---+
+</pre>
+
+<div class="clear"></div>
+
 <a name="nodes">
 <h4>Nodes</h4>
 </a>
@@ -136,7 +172,7 @@ Nodes are written (or "quoted", if you wish) with enclosing square brackets:
 </pre>
 
 <p>
-You can also have a list of nodes by seperating them with a comma:
+You can also have a list of nodes by separating them with a comma:
 </p>
 
 <pre class="graphtext">
@@ -186,6 +222,8 @@ In addition, you can chain nodes together like this:
  -> [ E ]
 </pre>
 
+<a name="anon"></a>
+
 <p>
 You can also create invisible, anonymous nodes with <code>[ ]</code>. These nodes
 are called anonymous, because you do not know their name and thus cannot refer
@@ -200,28 +238,38 @@ to them again:
 That would be rendered like:
 </p>
 
-<pre class="ascii">
+<pre class="graph">
         +-----------+             +--------+
     --> | Karlsruhe | -->     --> | Plauen |
         +-----------+             +--------+
 </pre>
 
-<p>
-If you merely want an invisible node, use <code>shape: invisible;</code>:
+<p class="clear">
+If you merely want an invisible node, use either
+<code>shape: invisible;</code> (for a node with a certain
+minimum size) or
+<code>shape: point; point-style: invisible;</code> for a
+very small and invisible node:
 </p>
 
 <pre>
 [ $sys$Node ] { shape: invisible; title: You don't see me! }
-  -> [ Bischofswerda ] -> [ $sys$Node ]
+  -> [ Bischofswerda ]
+  -> [ Borna ] { shape: point; point-style: invisible; }
+  -> [ Bremen ]
+  -> [ $sys$Node ]
 </pre>
 
-<pre class="ascii">
-  +---------------------+
-  v                     |
-+---------------+
-| Bischofswerda | -->
-+---------------+
+<pre class="graph">
+
+  +------------------------------------+
+  v                                    |
+          +---------------+          +--------+
+      --> | Bischofswerda | -->  --> | Bremen |
+          +---------------+          +--------+
 </pre>
+
+<div class="clear"></div>
 
 <a name="attributes">
 <h4>Attributes</h4>
@@ -267,7 +315,7 @@ node.city { background: red; }	# for all nodes with class "city"
 </pre>
 
 <p>
-As a special case for autosplit nodes, you can seperate attribute values
+As a special case for autosplit nodes, you can separate attribute values
 with "|" (vertical bar) for each part of the auto-split node:
 </p>
 
@@ -493,6 +541,49 @@ For a complete listing of possible edge attributes see the appropriate
 <a href="attributes.html">chapter</a>.
 </p>
 
+<a name="groups">
+<h3>Groups</h3>
+</a>
+
+<p>
+You can group nodes together by using parantheses:
+</p>
+
+<pre>
+( German Cities
+  [ Berlin ] -> [ Potsdam ]
+) { 
+  background: lightbrown;
+  }
+</pre>
+
+<p>
+Putting nodes into a group gives the layouter the hint that these
+nodes are related and should be laid out closely together.
+The name of the group can also be ommitted. Since the group label
+defaults to the group name you will get an invisible label as
+a side-effect:
+</p>
+
+<pre class="graphtext">
+( [ Bremen ] -> [ Bremerhaven ] )
+</pre>
+
+<pre class="graph">
++ - - - - - - - - - - - - - - - -+
+'                                '
+' +--------+     +-------------+ '
+' | Bremen | --> | Bremerhaven | '
+' +--------+     +-------------+ '
+'                                '
++ - - - - - - - - - - - - - - - -+
+</pre>
+
+<p class="clear">
+Please see the <a href="hinting.html#groups">section about grouping</a> for
+further details and examples. 
+</p>
+
 <a name="advanced">
 <h3>Advanced Layouts</h3>
 </a>
@@ -544,30 +635,6 @@ group.cities { color: darkbrown; }
 See also the section about <a href="attributes.html#class_names">class names</a> for reference.
 </p>
 
-<h4>Groups</h4>
-
-<p>
-You can group nodes together by using braces:
-</p>
-
-<pre>
-( German Cities
-  [ Berlin ] -> [ Potsdam ]
-) { 
-  background: lightbrown;
-  }
-</pre>
-
-<p>
-Putting nodes into a group gives the layouter the hint that these
-nodes are related and should be laid out closely together.
-</p>
-
-<p>
-Please see the <a href="hinting.html#groups">section about grouping</a> for
-further details and examples. 
-</p>
-
 <h4>Relative placement (via auto-split)</h4>
 
 <p>
@@ -603,7 +670,7 @@ Please continue with the chapter about the <a href="attributes.html">attributes<
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="/mail.html">Tels</a>. Last update: <span class="date">2006-01-23</span>
+Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-02-05</span>
 </div>
 
 </div> <!-- end of right cell -->

@@ -95,7 +95,7 @@ for my $class (qw/node edge graph group/)
     if (ref($e->[1]) eq 'ARRAY')
       {
       # list of words
-      $des .= " One of: <code>" . join ("</code>, <code>", @{$e->[1]}) . "</code>.\n";
+      $des .= "\nOne of: <code>" . join ("</code>, <code>", @{$e->[1]}) . "</code>.\n";
       } 
 
     $txt .= "<p>\n$des<br>\n";

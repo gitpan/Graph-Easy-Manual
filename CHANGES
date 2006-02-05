@@ -1,5 +1,17 @@
 Revision history for Graph::Easy::Manual:
 
+2006-02-05 v0.30 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy 0.41
+  * add section about invisible and anonymous nodes to syntax and features
+  * remove rendundant 'ascii' class from CSS
+  * add more examples:
+    + invisible edges
+    + groups with empty label
+    + point-style: invisible
+  * update HTML output section to match current code status
+  * add a paragraph about the input format and charset/encoding to syntax.html
+  * make links absolute (so that they works on mirrors)
+
 2006-01-28 v0.29 Tels 2 tests - Doc, doc, doc, document the code...
   * regen from Graph::Easy 0.40
   * include the missing pages errors.html and glossary.html
