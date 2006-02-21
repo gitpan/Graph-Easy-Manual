@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+ <title>Graph::Easy - F.A.Q. - Frequently Asked Questions</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="MSSmartTagsPreventParsing" content="TRUE">
+ <meta http-equiv="imagetoolbar" content="no">
+ <link rel="stylesheet" type="text/css" href="../base.css">
+ <!-- compliance patch for microsoft browsers -->
+ <!--[if lt IE 7]><script src="/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
+</head>
+<body bgcolor=white text=black>
+
+<a name="top"></a>
+
+<div class="menu">
+
+  <a class="menubck" href="index.html" title="Back to the index">Index</a>
+  <p style="height: 0.2em">&nbsp;</p>
+
+  <a class="menuext" href="overview.html" title="How everything fits together">Overview</a>
+  <a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a>
+  <a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a>
+  <a class="menuext" href="output.html" title="Output formats and their limitations">Output</a>
+  <a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a>
+  <a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
+  <a class="menucur" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
+    <a class="menuind" href="#svg" title="SVG output and problems">SVG?</a>
+    <a class="menuind" href="#graphviz" title="How does Graph::Easy compare to Graphviz?">Graphviz?</a>
+    <a class="menuind" href="benchmark.html" title="Benchmarks">Benchmarks</a>
+    <a class="menuind" href="errors.html" title="Error codes and explanations">Errors</a>
+    <a class="menuind" href="glossary.html" title="Glossary of often used terms">Glossary</a>
+  <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
+
+</div>
+
+<div class="right">
+
+<h1>Graph::Easy - Manual</h1>
+
+<h2>F.A.Q. - Frequently Asked Questions</h2>
+
+<div class="text">
+
+<p>
+This document tried to answer the most frequently asked questions in relation
+to Graph::Easy, as well as for the MediaWiki integration.
+</p>
+
+</div>
+
+<a name="svg"></a>
+<h2>SVG (Scalable Vector Graphic) Problems</h2>
+
+<div class="text">
+<h3>Links open inside the SVG</h3>
+
+<span class="q">Question:</span>
+
+<p class="ind">
+When I click a link in an SVG graph, the new page is opened inside the graph,
+instead of in a new window/tab or even in the same window.
+</p>
+
+<span class="a">Answer:</span>
+
+<p class="ind">
+This is a Firefox 1.5 bug. Firefox will open links in SVGs by default "inline", and
+it even ignores attributes like "xlink:show" and "xlink:target".
+<br>
+The bug is reportedly already
+fixed in the Mozilla codebase, so it should work in the near future in a browser
+on your system.
+<br>
+In the meantime upgrade <a href="http://search.cpan.org/~tels/Graph-Easy-As_svg">Graph::Easy::As_svg</a>,
+as newer versions contain a workaround for this bug. 
+
+<br>
+See also <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=315389">bug #315389</a> in the bugzilla.
+</p>
+
+<h3>Text too big</h3>
+
+<span class="q">Question:</span>
+
+<p class="ind">
+The text on nodes is to big, and sometimes even crosses the node border.
+</p>
+
+<span class="a">Answer:</span>
+
+<p class="ind">
+Yet another Firefox bug. Firefox 1.5 renders the text in the user-specified font-size,
+ignoring the font-site set inside the SVG document. Since the rest of the
+generated SVG code assumes the set size, the nodes are too small (or too big).
+<br>
+This isn't really fixable from my end, because the SVG generator cannot know what
+text size the user specified in the <code>Preferences</code>.
+<br>
+You can see the bug in action when you use the text-zoom (<code>CTRL</code> plus
+<code>+</code> or <code>-</code>), Firefox will zoom the font/text, but not
+the rest of the SVG, thus the graphic quickly becomes garbled.
+</p>
+
+<h3>Graphic corruptions</h3>
+
+<span class="q">Question:</span>
+
+<p class="ind">
+I see only garbled graphs, f.i. it has black rectangles or
+the labels are not properly centered.
+</p>
+
+<span class="a">Answer:</span>
+
+<p class="ind">
+Make sure you are using the latest version of your browser. Opera 8.5 does only
+support SVG Tiny, which is not enough to properly display the SVG generated
+by Graph::Easy. Likewise, Opera 9.0 only supports SVG Basic, which sadly
+also misses key features like centered text.
+<br>
+Other browsers seem to lack support for CSS-styles inside SVG, and thus will
+render the fillcolor inside nodes wrongly (the default is black, and the
+overriden color from the CSS is ignored by these buggy browsers).
+</p>
+
+</div>
+
+<a name="graphviz"></a>
+<h2>Graphviz</h2>
+
+<div class="text">
+<h3>Todo</h3>
+
+<span class="q">Question:</span>
+
+<p>
+</p>
+
+<span class="a">Answer:</span>
+
+<p>
+</p>
+
+</div>
+
+<h2>Contact and Bugreports</h2>
+
+<div class="text">
+
+<p>
+If you have questions, feel free to send me an <a href="http://bloodgate.com/mail.html">email</a>
+<small>(<a href="http://bloodgate.com/tels.asc">Gnupg key</a>)</small>.
+<b>Bugreports</b> should go to <a href="http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Graph-Easy">rt.cpan.org</a>.
+</p>
+
+</div>
+
+<div class="footer">
+Page created <span class="date">2005-01-11</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-02-12</span>
+</div>
+
+</div> <!-- end of right cell -->
+
+</body>
+</html>

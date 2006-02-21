@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Graph::Easy - Manual - A*</title>
- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
@@ -15,28 +15,26 @@
 <a name="top"></a>
 
 <div class="menu">
-
-  <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
+  <a class="menubck" href="index.html" title="Back to the manual index">Index</a>
   <p style="height: 0.2em">&nbsp;</p>
-  <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
-  <p class="menuext"><a class="menuext" href="features.html" title="Feature list - what is possible with Graph::Easy">Features</a></p>
-  <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
-  <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
-  <p class="menucur"><a class="menucur" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
-    <p class="menuind"><a class="menuind" href="#terminating" title="Nodes">Stopping</a></p>
-  <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
-  <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
-  <p class="menuext"><a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
-  <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
-  <p class="menuext"><a class="menuext" href="glossary.html" title="Glossary of often used terms">Glossary</a></p>
 
+  <a class="menuext" href="overview.html" title="How everything fits together">Overview</a>
+  <a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a>
+    <a class="menucin" href="a-star.html" title="A* algorithm (pathfinding)">A*</a>
+    <a class="menuind" href="#terminating" title="Nodes">Stopping</a>
+  <a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a>
+  <a class="menuext" href="output.html" title="Output formats and their limitations">Output</a>
+  <a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a>
+  <a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
+  <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
+  <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
 </div>
 
 <div class="right">
 
 <h1>Graph::Easy - Manual</h1>
 
-<h2>A*</h2>
+<h2>Layouter - A* (A-star)</h2>
 
 <div class="text">
 
@@ -179,7 +177,7 @@ spiral outwards and out of control, never finishing.
 <p>
 To protect against run-away situations (occuring mainly due to bugs),
 the algorithm stops after a hard-coded number of steps. This is
-currently set to 50,000 steps as to not interfere with normal
+currently set to 10,000 steps as to not interfere with normal
 working conditions, and yet stop the algorithm if it runs
 into a cycle (which should not happen, but experience has shown
 that some bugs always creep in :)
@@ -221,12 +219,11 @@ make sure that there is a finite number of cells to check and visit.
 When A* runs out of cells to check (OPEN is empty), we know we have reached
 every possible location reachable from our start position(s), and if
 no stop position was among them, the target is not reachable at all.
-The pathfinding thus stops without a result.
+The pathfinding thus stops without a result, but after a small finite amount
+of steps.
 </p>
 
-<h2>A* Map</h2>
-
-<div class="text">
+<h3>A* Map</h3>
 
 <p>
 Below is a diagnostic output of the A* algorithm finding a path from a one-cell node
@@ -731,7 +728,7 @@ Nodes in path: <b>21</b>
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2005-11-30</span>
+Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-02-11</span>
 </div>
 
 </div> <!-- end of right cell -->

@@ -8,7 +8,7 @@ package Graph::Easy::Manual;
 use strict;
 
 use vars qw/$VERSION/;
-$VERSION = '0.30';
+$VERSION = '0.31';
 
 1;
 __END__
@@ -43,7 +43,7 @@ L<Graph::Easy>.
 Copyright (C) 2004 - 2006 by Tels L<http://bloodgate.com>
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms of the GPL version 2.
+it under the same terms as the GPL version 2.
 
 See the LICENSE file for more details.
 

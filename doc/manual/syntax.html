@@ -15,26 +15,23 @@
 <a name="top"></a>
 
 <div class="menu">
-
-  <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
+  <a class="menubck" href="index.html" title="Back to the manual index">Index</a>
   <p style="height: 0.2em">&nbsp;</p>
-  <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
-  <p class="menuext"><a class="menuext" href="features.html" title="Feature list - what is possible with Graph::Easy">Features</a></p>
-  <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
-  <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
-  <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
-  <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
-  <p class="menucur"><a class="menucur" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
-    <p class="menuind"><a class="menuind" href="#input" title="Charset and encoding">Input</a></p>
-    <p class="menuind"><a class="menuind" href="#nodes" title="Nodes">Nodes</a></p>
-    <p class="menuind"><a class="menuind" href="#attributes" title="Attributes">Attributes</a></p>
-    <p class="menuind"><a class="menuind" href="#edges" title="Edges">Edges</a></p>
-    <p class="menuind"><a class="menuind" href="#groups" title="Subgraphs, grouping and clustering">Groups</a></p>
-    <p class="menuind"><a class="menuind" href="#advanced" title="Advanced syntax for special effects">Advanced</a></p>
-  <p class="menuext"><a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
-  <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
-  <p class="menuext"><a class="menuext" href="glossary.html" title="Glossary of often used terms">Glossary</a></p>
 
+  <a class="menuext" href="overview.html" title="How everything fits together">Overview</a>
+  <a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a>
+  <a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a>
+  <a class="menuext" href="output.html" title="Output formats and their limitations">Output</a>
+  <a class="menucur" href="syntax.html" title="Syntax rules for the text format">Syntax</a>
+    <a class="menuind" href="#input" title="Charset and encoding">Input</a>
+    <a class="menuind" href="#nodes" title="Nodes">Nodes</a>
+    <a class="menuind" href="#attributes" title="Attributes">Attributes</a>
+    <a class="menuind" href="#edges" title="Edges">Edges</a>
+    <a class="menuind" href="#groups" title="Subgraphs, grouping and clustering">Groups</a>
+    <a class="menuind" href="#advanced" title="Advanced syntax for special effects">Advanced</a>
+  <a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
+  <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
+  <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
 </div>
 
 <div class="right">
@@ -653,9 +650,10 @@ Perhaps the easiest way to achive the placement is to use the
       invisible cell will be generated, e.g. one without borders and background
   <li>If a part between two <code>|</code> consists of more than one space, an empty
       cell (e.g. with borders and background) will be generated
-  <li>Trailing empty parts will be ignored, so <code>[ A|B| ]</code> equals
-      <code>[A|B]</code>. If you want an empty/invisible cell as last part, add
-      anoter <code>|</code>: <code>[ A|B| |]</code>
+  <li>Trailing empty parts will be treated just like when they apeared in the
+      middle, e.g. both <code>[ |...</code> and <code>[|..-</code> create an
+      invisible leading part, while <code>[  |...</code> (two spaces) creates
+      an empty, but visible leading part. Likewise for trailing parts.
 </ul>
 
 <p>

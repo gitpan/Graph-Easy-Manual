@@ -15,28 +15,25 @@
 <a name="top"></a>
 
 <div class="menu">
-
-  <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
+  <a class="menubck" href="index.html" title="Back to the manual index">Index</a>
   <p style="height: 0.2em">&nbsp;</p>
-  <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
-  <p class="menuext"><a class="menuext" href="features.html" title="Feature list - what is possible with Graph::Easy">Features</a></p>
-  <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
-  <p class="menucur"><a class="menucur" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
-    <p class="menuind"><a class="menuind" href="#flow" title="Set the flow direction of the graph">Flow</a></p>
-    <p class="menuind"><a class="menuind" href="#ports" title="Specify edge end/start ports">Ports</a></p>
-    <p class="menuind"><a class="menuind" href="#joints" title="Edge joining, splicing and connecting">Joints</a></p>
-    <p class="menuind"><a class="menuind" href="#size" title="Adjust node sizes">Node size</a></p>
-    <p class="menuind"><a class="menuind" href="#groups" title="Group nodes together">Grouping</a></p>
-    <p class="menuind"><a class="menuind" href="#autosplit" title="Create rows/columns of node cells">Autosplit</a></p>
-    <p class="menuind"><a class="menuind" href="#relatives" title="Place nodes relative to each other">Relatives</a></p>
-  <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
-  <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
-  <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
-  <p class="menuext"><a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
-  <p class="menuext"><a class="menuext" href="benchmark.html" title="Benchmarks">Benchmarks</a></p>
-  <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
-  <p class="menuext"><a class="menuext" href="glossary.html" title="Glossary of often used terms">Glossary</a></p>
 
+  <a class="menuext" href="overview.html" title="How everything fits together">Overview</a>
+  <a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a>
+  <a class="menucur" href="hinting.html" title="Generating specific layouts">Hinting</a>
+    <a class="menuind" href="#flow" title="Set the flow direction of the graph">Flow</a>
+    <a class="menuind" href="#ports" title="Specify edge end/start ports">Ports</a>
+    <a class="menuind" href="#joints" title="Edge joining, splicing and connecting">Joints</a>
+    <a class="menuind" href="#size" title="Adjust node sizes">Node size</a>
+    <a class="menuind" href="#groups" title="Group nodes together">Grouping</a>
+    <a class="menuind" href="#minlen" title="Enforce minimum edge lengths and distances">Minlen</a>
+    <a class="menuind" href="#relatives" title="Place nodes relative to each other">Relatives</a>
+    <a class="menuind" href="#autosplit" title="Create rows/columns of node cells">Autosplit</a>
+  <a class="menuext" href="output.html" title="Output formats and their limitations">Output</a>
+  <a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a>
+  <a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
+  <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
+  <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
 </div>
 
 <div class="right">
@@ -86,6 +83,8 @@ the following:
   <li><a href="#size">setting node sizes</a>
   <li><a href="#groups">grouping nodes together</a>
   <li><a href="#autosplit">Creating rows/columns of nodes</a>
+  <li><a href="#relatives">Placing nodes relativ to each other</a>
+  <li><a href="#minlen">Enforcing edge lengths and minimum distances</a>
   <li><a href="#clusters">placing nodes relativ to each other</a>
   <li><a href="#edges">specify edge starting/ending ports</a>
 </ul>
@@ -102,10 +101,8 @@ create dilemmas for the layouter. So use them only when absolutely neccessary.
 </a>
 
 <p>
-While East is the prefered direction for all edges, you can
-use the attribute
-<a href="attributes.html#graph_flow">flow</a>
-to let the graph flow in another general direction.
+You can use the attribute <a href="att_graphs.html#graph_flow">flow</a>
+to let the graph flow in another general direction:
 </p>
 
 <h4>Flow-dependend and Flow-independend Directions</h4>
@@ -559,7 +556,7 @@ nodes are related and should be laid out closely together:
   }
 </pre>
 
-<img src="img/grouping.png" alt="Grouping/Clustering/subgraphs" class="float">
+<img src="img/grouping.png" alt="Grouping/Clustering/subgraphs" title="Grouping/Clustering/subgraphs" class="float">
 
 <pre class="graph">
 ...................................
@@ -618,6 +615,44 @@ or from a node to a group, or from a group to a node:
 --> [ From Group to Node ]
 </pre>
 
+<a name="minlen">
+<h3>Relative placement (via minlen)</h3>
+</a>
+
+<p>
+Sometimes you want to enforce a minimum distance between different nodes.
+To achive this, you can set the <a href="att_edges.html#minlen">minlen</a>
+attribute on an edge.
+If necessary, you can also set the edge to <code>invisible</code>
+to hide it from view:
+</p>
+
+<pre class="graphtxt">
+[ Aachen ] --> [ Bonn ] --> [ Coburg ]
+[ Aue ] --> { minlen: 3; } [ Cuxhaven ]
+</pre>
+
+<img src="img/minlen.png" alt="minlen attribute" title="minlen attribute" class="float">
+
+<pre class="graph">
++--------+     +------+     +----------+
+| Aachen | --> | Bonn | --> |  Coburg  |
++--------+     +------+     +----------+
++--------+                  +----------+
+|  Aue   | ---------------> | Cuxhaven |
++--------+                  +----------+
+</pre>
+
+<p class="clear">
+The advantage of setting a minlen on an edge is that the distance
+is enforced in the direction of the flow, e.g. with an relative flow
+the distance becomes rotation-invariant. If one would use a
+relative placement via <code>offset</code>, the two nodes would
+be always placed with the same offset from each other, no matter
+what the flow of the graph is.
+</p>
+
+</a>
 <a name="autosplit">
 <h3>Relative placement (via auto-split)</h3>
 </a>
@@ -642,9 +677,10 @@ Perhaps the easiest way to achive the placement is to use the
   <li>If a part between two <code>|</code> consists of more than one space, an empty
       cell (e.g. with borders and background) will be generated
   </li>
-  <li>Trailing empty parts will be ignored, so <code>[ A|B| ]</code> equals
-      <code>[A|B]</code>. If you want an empty/invisible cell as last part, add
-      anoter <code>|</code>: <code>[ A|B| |]</code>
+  <li>Trailing empty parts will be treated just like when they apeared in the
+      middle, e.g. both <code>[ |...</code> and <code>[|..-</code> create an
+      invisible leading part, while <code>[  |...</code> (two spaces) creates
+      an empty, but visible leading part. Likewise for trailing parts.
   </li>
 </ul>
 
@@ -693,10 +729,51 @@ Here is a few examples to make this clear:
 +---+
 </pre>
 
+<p class="clear">
+And now an example showing empty trailing and leading parts:
+</p>
+
+<pre class="graphtext">
+[  | C |  ]
+[ | D |  ]
+[  | E | ]
+[ | F | ]
+[|G|]
+[  |H| |]
+
+[ C.2 ] -> [ A1 ]
+[ D.2 ] -> [ A2 ]
+[ E.2 ] -> [ A3 ]
+[ F.2 ] -> [ A4 ]
+[ G.2 ] -> [ A5 ]
+[ H.3 ] -> [ A6 ]
+</pre>
+
+<pre class="graph">
+    +--+---+--+     +----+
+    |  | C |  | --> | A1 |
+    +--+---+--+     +----+
+       |---+--+     +----+
+       | D |  | --> | A2 |
+        ---+--+     +----+
+    +--+---+        +----+
+    |  | E |    --> | A3 |
+    +--+---+        +----+
+       |---+        +----+
+       | F |    --> | A4 |
+        ---+        +----+
+       |---+        +----+
+       | G |    --> | A5 |
+        ---+        +----+
++--+---+            +----+
+|  | H |        --> | A6 |
++--+---+            +----+
+</pre>
+
 <div class="clear"></div>
 
 <p>
-Please see the section about <a href="#attributes" title="Attributes">attributes</a>
+Please see the section about <a href="syntax.html#attributes" title="Attributes">attributes</a>
 on how to put individual attributes on each autosplit node.
 </p>
 
@@ -822,7 +899,7 @@ for a node, placing it relatively to another node:
 
 <p>
 The offset should not be <code>0,0</code>. Also, be carefull to node place nodes
-inside each other, especially when using multicelled nodes as explained below.
+inside each other, especially when using multicelled nodes as explained above.
 </p>
 
 <p>
@@ -871,7 +948,7 @@ the following:
 <div class="clear"></div>
 
 <p>
-Here is an example, using a chain of origins:
+And here is an example, using a chain of origins:
 </p>
 
 <pre class="graphtext">
@@ -909,7 +986,7 @@ details on pathfinding.
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-19</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-01-23</span>
+Page created <span class="date">2005-08-19</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-02-11</span>
 </div>
 
 </div> <!-- end of right cell -->

@@ -1,6 +1,22 @@
 Revision history for Graph::Easy::Manual:
 
-2006-02-05 v0.30 Tels 2 tests - Doc, doc, doc, document the code...
+2006-02-21 v0.31 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy 0.42
+  * add FAQ and tutorial
+  * fix a few broken links and add some small explanations
+  * add more examples and images (minlen, joints, colors, unicode)
+  * complete redesign of the menu structure:
+    + move three menu items to submenus
+    + get rid of container-<p>'s by making <a> as "display: block"
+
+    The background of these changes is:
+    + The menu got too long, cutting of most entries on systems with 800x600
+    + Hovering over a menu-item could only color the text, not the background,
+      since the <a> was not as big as the container-<p> with the border
+    + the base.css file shrunk from 3520 bytes to 2985, and we save a couple
+      hundred bytes on each page in the menu
+
+2006-02-05 v0.30 Tels 2 tests
   * regen from Graph::Easy 0.41
   * add section about invisible and anonymous nodes to syntax and features
   * remove rendundant 'ascii' class from CSS
@@ -12,7 +28,7 @@ Revision history for Graph::Easy::Manual:
   * add a paragraph about the input format and charset/encoding to syntax.html
   * make links absolute (so that they works on mirrors)
 
-2006-01-28 v0.29 Tels 2 tests - Doc, doc, doc, document the code...
+2006-01-28 v0.29 Tels 2 tests
   * regen from Graph::Easy 0.40
   * include the missing pages errors.html and glossary.html
   * move the feature set to an extra page, making the overview slimmer
@@ -20,13 +36,13 @@ Revision history for Graph::Easy::Manual:
   * fix doc about classes (multiple classes)
   * fix Makefile.PL to work with newer YAML
 
-2006-01-08 v0.28 Tels 2 tests - Doc, doc, doc, document the code...
+2006-01-08 v0.28 Tels 2 tests
   * regen from Graph::Easy 0.39
   * add Glossary
   * fix the various menus on the pages to contain all chapters
   * support "C<..>" in attribute descriptions
 
-2006-01-01 v0.27 Tels 2 tests - Doc, doc, doc, document the code...
+2006-01-01 v0.27 Tels 2 tests
   * regen from Graph::Easy 0.38
   * update doc about node ports, add examples of joints
   * add section about flow control

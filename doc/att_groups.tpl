@@ -21,26 +21,26 @@
 <a name="top"></a>
 
 <div class="menu">
-
-  <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
+  <a class="menubck" href="index.html" title="Back to the manual index">Index</a>
   <p style="height: 0.2em">&nbsp;</p>
-  <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
-  <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
-  <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
-  <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
-  <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
-  <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
-    <p class="menucur"><a class="menucur" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
-    <p class="menuind"><a class="menuind" href="att_graphs.html" title="Graph attributes">Graphs</a></p>
-    <p class="menuind"><a class="menuind" href="att_nodes.html" title="Node attributes">Nodes</a></p>
-    <p class="menuind"><a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a></p>
-    <p class="menucin"><a class="menucin" href="#Groups" title="Group attributes">Groups</a></p>
-    <p class="menuind"><a class="menuind" href="attributes.html#class_names" title="Classes and their names">Classes</a></p>
-    <p class="menuind"><a class="menuind" href="attributes.html#links" title="Links and URLs">Links</a></p>
-    <p class="menuind"><a class="menuind" href="attributes.html#color_names_and_values" title="Color names and values">Colors</a></p>
-  <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
-  <p class="menuext"><a class="menuext" href="glossary.html" title="Glossary of often used terms">Glossary</a></p>
 
+  <a class="menuext" href="overview.html" title="How everything fits together">Overview</a>
+  <a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a>
+  <a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a>
+  <a class="menuext" href="output.html" title="Output formats and their limitations">Output</a>
+  <a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a>
+    <a class="menucur" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
+    <a class="menuind" href="att_graphs.html" title="Graph attributes">Graphs</a>
+    <a class="menuind" href="att_nodes.html" title="Node attributes">Nodes</a>
+    <a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a>
+    <a class="menucin" href="#Groups" title="Group attributes">Groups</a>
+
+    <a class="menuind" href="attributes.html#class_names" title="Classes and their names">Classes</a>
+    <a class="menuind" href="attributes.html#labels__titles__names_and_links" title="Labels, titles, names and links">Labels</a>
+    <a class="menuind" href="attributes.html#links" title="Links and URLs">Links</a>
+    <a class="menuind" href="attributes.html#color_names_and_values" title="Color names and values">Colors</a>
+  <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
+  <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
 </div>
 
 <div class="right">

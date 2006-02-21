@@ -27,6 +27,7 @@ table.graph43 {
   padding: 0.5em;
 }
 table.graph43 .group {
+  text-align: left;
   border-color: black;
   border-style: none;
   border-width: 1px;
@@ -611,6 +612,7 @@ table.graph51 {
   padding: 0.5em;
 }
 table.graph51 .group {
+  text-align: left;
   border-color: black;
   border-style: none;
   border-width: 1px;
@@ -837,26 +839,26 @@ table.graph53 .eb {
 <a name="top"></a>
 
 <div class="menu">
-
-  <p class="menu"><a class="menu" href="index.html" title="Back to the manual index">Index</a></p>
+  <a class="menubck" href="index.html" title="Back to the manual index">Index</a>
   <p style="height: 0.2em">&nbsp;</p>
-  <p class="menuext"><a class="menuext" href="overview.html" title="How everything fits together">Overview</a></p>
-  <p class="menuext"><a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a></p>
-  <p class="menuext"><a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a></p>
-  <p class="menuext"><a class="menuext" href="a-star.html" title="A* algorithm (pathfinding)">A*</a></p>
-  <p class="menuext"><a class="menuext" href="output.html" title="Output formats and their limitations">Output</a></p>
-  <p class="menuext"><a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a></p>
-    <p class="menucur"><a class="menucur" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a></p>
-    <p class="menuind"><a class="menuind" href="att_graphs.html" title="Graph attributes">Graphs</a></p>
-    <p class="menuind"><a class="menuind" href="att_nodes.html" title="Node attributes">Nodes</a></p>
-    <p class="menuind"><a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a></p>
-    <p class="menucin"><a class="menucin" href="#Groups" title="Group attributes">Groups</a></p>
-    <p class="menuind"><a class="menuind" href="attributes.html#class_names" title="Classes and their names">Classes</a></p>
-    <p class="menuind"><a class="menuind" href="attributes.html#links" title="Links and URLs">Links</a></p>
-    <p class="menuind"><a class="menuind" href="attributes.html#color_names_and_values" title="Color names and values">Colors</a></p>
-  <p class="menuext"><a class="menuext" href="errors.html" title="Error codes and explanations">Errors</a></p>
-  <p class="menuext"><a class="menuext" href="glossary.html" title="Glossary of often used terms">Glossary</a></p>
 
+  <a class="menuext" href="overview.html" title="How everything fits together">Overview</a>
+  <a class="menuext" href="layouter.html" title="How the layouter works">Layouter</a>
+  <a class="menuext" href="hinting.html" title="Generating specific layouts">Hinting</a>
+  <a class="menuext" href="output.html" title="Output formats and their limitations">Output</a>
+  <a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a>
+    <a class="menucur" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
+    <a class="menuind" href="att_graphs.html" title="Graph attributes">Graphs</a>
+    <a class="menuind" href="att_nodes.html" title="Node attributes">Nodes</a>
+    <a class="menuind" href="att_edges.html" title="Edge attributes">Edges</a>
+    <a class="menucin" href="#Groups" title="Group attributes">Groups</a>
+
+    <a class="menuind" href="attributes.html#class_names" title="Classes and their names">Classes</a>
+    <a class="menuind" href="attributes.html#labels__titles__names_and_links" title="Labels, titles, names and links">Labels</a>
+    <a class="menuind" href="attributes.html#links" title="Links and URLs">Links</a>
+    <a class="menuind" href="attributes.html#color_names_and_values" title="Color names and values">Colors</a>
+  <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
+  <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
 </div>
 
 <div class="right">
@@ -932,25 +934,23 @@ node {align: left;}
 
 <tr>
  <td colspan=4 rowspan=4 class='group gl'>&nbsp;</td>
- <td colspan=4 rowspan=4 class='node' style="text-align: right">Right
- <br />Aligned</td>
+ <td colspan=4 rowspan=4 class='node' style="text-align: right">Right<br />Aligned</td>
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
- <td rowspan=4 class="group edge ve" style=" background: #a0d0ff;"></td>
- <td colspan=2 rowspan=2 class="group edge lh" style="border-bottom: solid 2px black; background: #a0d0ff;">label<br />text</td>
+ <td rowspan=4 class="group edge ve"></td>
+ <td colspan=2 rowspan=2 class="group edge lh" style="border-bottom: solid 2px black;">label<br />text</td>
 
- <td rowspan=2 class="group edge" style=" color: black; background: #a0d0ff;"><span class="sh">&gt;</span></td>
+ <td rowspan=2 class="group edge" style=" color: black;"><span class="sh">&gt;</span></td>
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
- <td colspan=4 rowspan=4 class='node'>Left
- <br />aligned</td>
+ <td colspan=4 rowspan=4 class='node'>Left<br />aligned</td>
  <td colspan=4 rowspan=4 class='group gr'>&nbsp;</td>
 </tr>
 
 <tr></tr>
 
 <tr>
- <td colspan=2 rowspan=2 class="group edge eb" style=" background: #a0d0ff;">&nbsp;</td>
+ <td colspan=2 rowspan=2 class="group edge eb">&nbsp;</td>
 
- <td rowspan=2 class="group edge eb" style=" background: #a0d0ff;">&nbsp;</td>
+ <td rowspan=2 class="group edge eb">&nbsp;</td>
 </tr>
 
 <tr></tr>
@@ -1327,7 +1327,7 @@ The fill color, e.g. the color inside the shape. See the section about <a href="
  <td rowspan=4 class="edge ve"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">Aqua Marine</td>
 
- <td rowspan=2 class="edge" style=" color: black;"><span class="sh">&gt;</span></td>
+ <td rowspan=2 class="edge" style=" color: black;"><span class="sh">▶</span></td>
  <td colspan=4 rowspan=4 class='node'>Two</td>
 </tr>
 
@@ -1385,10 +1385,10 @@ The size of the label text, best expressed in <i>em</i> (1.0em, 0.5em etc) or pe
  <td colspan=4 rowspan=4 class='group gl'>&nbsp;</td>
  <td colspan=4 rowspan=4 class='node' style="background: #8b0000; color: #ffffff; font-size: 1.5em;">Crimson</td>
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
- <td rowspan=4 class="group edge ve" style=" background: #a0d0ff;"></td>
- <td colspan=2 rowspan=2 class="group edge lh" style="border-bottom: solid 2px black;font-size: 0.2em; background: #a0d0ff;">Aqua Marine</td>
+ <td rowspan=4 class="group edge ve"></td>
+ <td colspan=2 rowspan=2 class="group edge lh" style="border-bottom: solid 2px black;font-size: 0.2em;">Aqua Marine</td>
 
- <td rowspan=2 class="group edge" style=" color: black; background: #a0d0ff;"><span class="sh">&gt;</span></td>
+ <td rowspan=2 class="group edge" style=" color: black;"><span class="sh">&gt;</span></td>
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
  <td colspan=4 rowspan=4 class='node'>Two</td>
  <td colspan=4 rowspan=4 class='group gr'>&nbsp;</td>
@@ -1397,9 +1397,9 @@ The size of the label text, best expressed in <i>em</i> (1.0em, 0.5em etc) or pe
 <tr></tr>
 
 <tr>
- <td colspan=2 rowspan=2 class="group edge eb" style=" background: #a0d0ff;">&nbsp;</td>
+ <td colspan=2 rowspan=2 class="group edge eb">&nbsp;</td>
 
- <td rowspan=2 class="group edge eb" style=" background: #a0d0ff;">&nbsp;</td>
+ <td rowspan=2 class="group edge eb">&nbsp;</td>
 </tr>
 
 <tr></tr>
@@ -1458,22 +1458,22 @@ edge {
 
 <table class="graph52" cellpadding=0 cellspacing=0>
 <tr>
- <td colspan=4 rowspan=4 class='node-anon'><a class='l' href='http://de.wikipedia.org/wiki/#0'></a></td>
+ <td colspan=4 rowspan=4 class='node-anon'><a href='http://de.wikipedia.org/wiki/#0'></a></td>
  <td rowspan=4 class="edge ve"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">&nbsp;</td>
 
  <td rowspan=2 class="edge" style=" color: black;"><span class="sh">&gt;</span></td>
- <td colspan=4 rowspan=4 class='node'><a class='l' href='http://de.wikipedia.org/wiki/Friedrichshafen' style="text-decoration: none;">Friedrichshafen</a></td>
+ <td colspan=4 rowspan=4 class='node'><a href='http://de.wikipedia.org/wiki/Friedrichshafen' style="text-decoration: none;">Friedrichshafen</a></td>
  <td rowspan=4 class="edge ve"></td>
- <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #ffa500;" title="Vrooom!"><a class='l' href='http://de.wikipedia.org/wiki/Schiff' style='color: #ffa500; text-decoration: overline;'>Schiff</a></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #ffa500;" title="Vrooom!"><a href='http://de.wikipedia.org/wiki/Schiff' style='color: #ffa500; text-decoration: overline;'>Schiff</a></td>
 
  <td rowspan=2 class="edge" style=" color: #ffa500;"><span class="sh">&gt;</span></td>
- <td colspan=4 rowspan=4 class='node'><a class='l' href='http://de.wikipedia.org/wiki/Immenstaad' style="color: #008000; text-decoration: none;">Immenstaad</a></td>
+ <td colspan=4 rowspan=4 class='node'><a href='http://de.wikipedia.org/wiki/Immenstaad' style="color: #008000; text-decoration: none;">Immenstaad</a></td>
  <td rowspan=4 class="edge ve"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px black;">&nbsp;</td>
 
  <td rowspan=2 class="edge" style=" color: black;"><span class="sh">&gt;</span></td>
- <td colspan=4 rowspan=4 class='node'><a class='l' href='http://de.wikipedia.org/wiki/Hagnau' style="text-decoration: none;">Hagnau</a></td>
+ <td colspan=4 rowspan=4 class='node'><a href='http://de.wikipedia.org/wiki/Hagnau' style="text-decoration: none;">Hagnau</a></td>
 </tr>
 
 <tr></tr>
@@ -1585,7 +1585,7 @@ The text displayed as mouse-over for nodes/edges, or as the title for the graph.
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Feb  5 22:10:31 2006</span> in 0.0964s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
+Page created automatically at <span class="date">Tue Feb 21 17:44:41 2006</span> in 0.1314s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->
