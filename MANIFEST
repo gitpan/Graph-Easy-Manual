@@ -25,9 +25,9 @@ doc/manual/layouter.html
 doc/manual/manual.css
 doc/manual/output.html
 doc/manual/overview.html
+doc/manual/svg.html
 doc/manual/syntax.html
 doc/manual/teamwork.css
-doc/manual/test.svg
 doc/manual/tutorial.html
 doc/manual/tutorial_tree.html
 doc/manual/tutorial_bypass.html
@@ -49,6 +49,8 @@ doc/manual/img/minlen.png
 doc/manual/img/multi_edges.png
 doc/manual/img/self_loop.png
 doc/manual/img/house.png
+doc/manual/svg/test.svg
+doc/manual/svg/edges.svg
 doc/README
 doc/attributes.tpl
 doc/att_edges.tpl

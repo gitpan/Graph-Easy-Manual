@@ -1,4 +1,4 @@
-use 5.006001;
+use 5.008000;
 use ExtUtils::MakeMaker;
 use strict;
 
@@ -35,14 +35,13 @@ WriteMakefile(
     NAME		=> 'Graph::Easy::Manual',
     VERSION_FROM	=> 'lib/Graph/Easy/Manual.pm',
     PREREQ_PM		=> {
-	'Graph::Easy' => 0.40,
+	'Graph::Easy' => 0.44,
 	'File::Spec' => 3.01,
 	'Pod::Simple' => 3.02,
 #	'HTML::Tagset' => 3.10,
 #	'HTML::Parser' => 3.48,
 	},
-    ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
-	(ABSTRACT_FROM	=> 'lib/Graph/Easy/Manual.pm', # retrieve abstract from module
-	AUTHOR		=> 'Tels <nospam-abuse@bloodgate.com>') : ()),
-	PREREQ_FATAL	=> 1,	# can't work without the prereqs
+    ABSTRACT_FROM	=> 'lib/Graph/Easy/Manual.pm', 	# retrieve abstract from module
+    AUTHOR		=> 'Tels <nospam-abuse@bloodgate.com>',
+    PREREQ_FATAL	=> 1,	# can't work without the prereqs
 );

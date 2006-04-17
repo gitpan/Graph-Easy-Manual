@@ -71,18 +71,13 @@ for my $class (qw/node edge graph group/)
       $idx .= "\n  <li>";
       }
     $last = substr($entry,0,1);
-    $idx .= "<a href=\"$file#${class}_$entry\">$entry</a>, ";
-    
-    $txt .= "<a name=\"${class}_$entry\">\n<h4>$entry</h4></a>\n\n";
 
-    $txt .= "<div class=\"entry\">\n\n";
-    
     my $e = $todo->{$entry};
 
     my $des = $e->[0]; 
+    my $short_des = $des; $short_des =~ s/\. .*/\./; $short_des =~ s/"/''/g;
+    $short_des =~ s/[IBCL]<([^>]+)>/$1/g;
 
-    # convert L<>
-    $des =~ s/L<([^>]+)>/<a href="#${class}_$1">$1<\/a>/g;
     # convert I<>
     $des =~ s/I<([^>]+)>/<i>$1<\/i>/g;
     # convert B<>
@@ -90,8 +85,17 @@ for my $class (qw/node edge graph group/)
     # convert C<>
     $des =~ s/C<([^>]+)>/<code>$1<\/code>/g;
 
+    # convert L<>
+    $des =~ s/L<([^>]+)>/<a href="#${class}_$1">$1<\/a>/g;
     $des =~ s/(section about )(.*?)( for ref)/my $l = $2; $l =~ tr!A-Za-z0-9!_!c; "$1<a href=\"attributes.html#$l\">$2<\/a>$3";/eg;
 
+    # insert into the index/short overview:
+    $idx .= "<a href='$file#${class}_$entry' title=\"$short_des\">$entry</a>, ";
+    
+    $txt .= "<a name=\"${class}_$entry\">\n<h4>$entry</h4></a>\n\n";
+
+    $txt .= "<div class=\"entry\">\n\n";
+    
     if (ref($e->[1]) eq 'ARRAY')
       {
       # list of words
@@ -104,9 +108,15 @@ for my $class (qw/node edge graph group/)
     if (defined $e->[5])
       {
       $txt .= "<br>\n<b>Example graph:</b>\n</p>\n";
-      $txt .= '<pre class="graphtext">' . $e->[5] . "\n</pre>\n\n";
+      my $sample = $e->[5];
 
-      $txt .= '<div class="clear"></div>';
+      # quote hTML chars
+      $sample =~ s/&/&amp;/g;
+      $sample =~ s/>/&gt;/g;
+      $sample =~ s/</&lt;/g;
+
+      $txt .= '<pre class="graphtext">' . "$sample\n</pre>\n\n" .
+              '<div class="clear"></div>';
 
       my $graph = $parser->from_text($e->[5]);
 

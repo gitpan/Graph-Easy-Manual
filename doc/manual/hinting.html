@@ -7,8 +7,10 @@
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
  <link rel="stylesheet" type="text/css" href="manual.css">
+ <link rel="Start" href="index.html">
+ <link href="http://bloodgate.com/mail.html" rev="made">
  <!-- compliance patch for microsoft browsers -->
- <!--[if lt IE 7]><script src="/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
+ <!--[if lt IE 7]><script src="http://bloodgate.com/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
 </head>
 <body bgcolor=white text=black>
 
@@ -27,8 +29,8 @@
     <a class="menuind" href="#size" title="Adjust node sizes">Node size</a>
     <a class="menuind" href="#groups" title="Group nodes together">Grouping</a>
     <a class="menuind" href="#minlen" title="Enforce minimum edge lengths and distances">Minlen</a>
-    <a class="menuind" href="#relatives" title="Place nodes relative to each other">Relatives</a>
     <a class="menuind" href="#autosplit" title="Create rows/columns of node cells">Autosplit</a>
+    <a class="menuind" href="#relatives" title="Place nodes relative to each other">Relatives</a>
   <a class="menuext" href="output.html" title="Output formats and their limitations">Output</a>
   <a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a>
   <a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
@@ -278,57 +280,55 @@ Here is an example that should make this clear:
 </p>
 
 <pre class="graphtext">
-[ Node ] -> { start: south; } [ south ] { origin: Node; offset: 0,2; }
-[ Node ] -> { start: north; } [ north ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { start: east; }  [ east ] { origin: Node; offset: 2,0; }
-[ Node ] -> { start: west; }  [ west ] { origin: Node; offset: -2,0; }
+[ Node ] -> { start: south; } [ S ] { origin: Node; offset: 0,2; }
+[ Node ] -> { start: north; } [ N ] { origin: Node; offset: 0,-2; }
+[ Node ] -> { start: east; }  [ E ] { origin: Node; offset: 2,0; }
+[ Node ] -> { start: west; }  [ W ] { origin: Node; offset: -2,0; }
 </pre>
 
 <pre class="graph">
-             +-------+
-             | north |
-             +-------+
-               ^
-               |
-               |
-+------+     +-------+     +------+
-| west | <-- | Node  | --> | east |
-+------+     +-------+     +------+
-               |
-               |
-               v
-             +-------+
-             | south |
-             +-------+
+          +------+
+          |  N   |
+          +------+
+            ^
+            |
+            |
++---+     +------+     +---+
+| W | <-- | Node | --> | E |
++---+     +------+     +---+
+            |
+            |
+            v
+          +------+
+          |  S   |
+          +------+
 </pre>
 
 <div class="clear"></div>
 
 <pre class="graphtext">
-graph { flow: east; }
-
-[ Node ] -> { start: right; } [ right ] { origin: Node; offset: 0,2; }
-[ Node ] -> { start: left; }  [ left ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { start: front; } [ front ] { origin: Node; offset: 2,0; }
-[ Node ] -> { start: back; }  [ back ] { origin: Node; offset: -2,0; }
+[ Node ] -> { start: right; } [ R ] { origin: Node; offset: 0,2; }
+[ Node ] -> { start: left; }  [ L ] { origin: Node; offset: 0,-2; }
+[ Node ] -> { start: front; } [ F ] { origin: Node; offset: 2,0; }
+[ Node ] -> { start: back; }  [ B ] { origin: Node; offset: -2,0; }
 </pre>
 
 <pre class="graph">
-             +-------+
-             | left  |
-             +-------+
-               ^
-               |
-               |
-+------+     +-------+     +-------+
-| back | <-- | Node  | --> | front |
-+------+     +-------+     +-------+
-               |
-               |
-               v
-             +-------+
-             | right |
-             +-------+
+          +------+
+          |  L   |
+          +------+
+            ^
+            |
+            |
++---+     +------+     +---+
+| B | <-- | Node | --> | F |
++---+     +------+     +---+
+            |
+            |
+            v
+          +------+
+          |  R   |
+          +------+
 </pre>
 
 <div class="clear"></div>
@@ -340,59 +340,59 @@ graph will show a difference:
 </p>
 
 <pre class="graphtext">
-graph { flow: down; }
+graph { <em>flow: down;</em> }
 
-[ Node ] -> { start: south; } [ south ] { origin: Node; offset: 0,2; }
-[ Node ] -> { start: north; } [ north ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { start: east; }  [ east ] { origin: Node; offset: 2,0; }
-[ Node ] -> { start: west; }  [ west ] { origin: Node; offset: -2,0; }
+[ Node ] -> { <em>start: south;</em> } [ S ] { origin: Node; offset: 0,2; }
+[ Node ] -> { <em>start: north;</em> } [ N ] { origin: Node; offset: 0,-2; }
+[ Node ] -> { <em>start: east;</em> }  [ E ] { origin: Node; offset: 2,0; }
+[ Node ] -> { <em>start: west;</em> }  [ W ] { origin: Node; offset: -2,0; }
 </pre>
 
 <pre class="graph">
-             +-------+
-             | north |
-             +-------+
-               ^
-               |
-               |
-+------+     +-------+     +------+
-| west | <-- | Node  | --> | east |
-+------+     +-------+     +------+
-               |
-               |
-               v
-             +-------+
-             | south |
-             +-------+
+          +------+
+          |  N   |
+          +------+
+            ^
+            |
+            |
++---+     +------+     +---+
+| W | <-- | Node | --> | E |
++---+     +------+     +---+
+            |
+            |
+            v
+          +------+
+          |  S   |
+          +------+
 </pre>
 
 <div class="clear"></div>
 
 <pre class="graphtext">
-graph { flow: down; }
+graph { <em>flow: down;</em> }
 
-[ Node ] -> { start: right; } [ right ] { origin: Node; offset: 0,2; }
-[ Node ] -> { start: left; }  [ left ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { start: front; } [ front ] { origin: Node; offset: 2,0; }
-[ Node ] -> { start: back; }  [ back ] { origin: Node; offset: -2,0; }
+[ Node ] -> { <em>start: right;</em> } [ R ] { origin: Node; offset: 0,2; }
+[ Node ] -> { <em>start: left;</em> }  [ L ] { origin: Node; offset: 0,-2; }
+[ Node ] -> { <em>start: front;</em> } [ F ] { origin: Node; offset: 2,0; }
+[ Node ] -> { <em>start: back;</em> }  [ B ] { origin: Node; offset: -2,0; }
 </pre>
 
 <pre class="graph">
-             +-------+
-             | north | <+
-             +-------+  |
-                        |
-  +------------+        |
-  v            |        |
-+------+     +-------+  |  +------+
-| west |  +--| Node  |--+  | east |
-+------+  |  +-------+     +------+
-          |    |             ^
-          |    +-------------+
-          |
-          |  +-------+
-          +->| south |
-             +-------+
+          +------+
+          |  L   | <+
+          +------+  |
+                    |
+  +---------+       |
+  v         |       |
++---+     +------+  |  +---+
+| B |  +--| Node |--+  | F |
++---+  |  +------+     +---+
+       |    |            ^
+       |    +------------+
+       |
+       |  +------+
+       +->|  R   |
+          +------+
 </pre>
 
 <div class="clear"></div>
@@ -986,7 +986,7 @@ details on pathfinding.
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-19</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-02-11</span>
+Page created <span class="date">2005-08-19</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-03-19</span>
 </div>
 
 </div> <!-- end of right cell -->

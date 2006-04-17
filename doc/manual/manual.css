@@ -74,3 +74,12 @@ pre.graphtext { float: left; }
 td.clrn { text-align: right; background: white; color: black; padding-left: 0.5em; border: none; }
 td.clre { width: 8em; }
 .next { margin-top: 1em; padding-top: 0.2em; padding-bottom: 0.2em; }
+span.a, span.q
+  {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  }
+

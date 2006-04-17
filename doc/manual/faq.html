@@ -6,8 +6,10 @@
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
+ <link rel="stylesheet" type="text/css" href="manual.css">
+ <link href="http://bloodgate.com/mail.html" rev="made">
  <!-- compliance patch for microsoft browsers -->
- <!--[if lt IE 7]><script src="/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
+ <!--[if lt IE 7]><script src="http://bloodgate.com/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
 </head>
 <body bgcolor=white text=black>
 
@@ -25,8 +27,8 @@
   <a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a>
   <a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
   <a class="menucur" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
-    <a class="menuind" href="#svg" title="SVG output and problems">SVG?</a>
     <a class="menuind" href="#graphviz" title="How does Graph::Easy compare to Graphviz?">Graphviz?</a>
+    <a class="menuind" href="#svg" title="SVG output and problems">SVG?</a>
     <a class="menuind" href="benchmark.html" title="Benchmarks">Benchmarks</a>
     <a class="menuind" href="errors.html" title="Error codes and explanations">Errors</a>
     <a class="menuind" href="glossary.html" title="Glossary of often used terms">Glossary</a>
@@ -45,6 +47,131 @@
 <p>
 This document tried to answer the most frequently asked questions in relation
 to Graph::Easy, as well as for the MediaWiki integration.
+</p>
+
+</div>
+
+
+<a name="graphviz"></a>
+<h2>Graphviz</h2>
+
+<div class="text">
+
+<span class="q">Question:</span>
+
+<p>
+What are the main differences between <code>Graph::Easy</code> and Graphviz?
+</p>
+
+<span class="a">Answer: <small>[2006-03-12]</small></span>
+
+<p>
+<code>Graph::Easy</code> has:
+</p>
+
+<ul>
+  <li>an easier syntax, that is very human readable/writable and makes thus maintance easier,
+      especially for people unfamiliar with graphviz, HTML or similar languages
+  <li>a grid based layouter, which is suited for flowcharts. For complex graphs it can also
+      use graphviz as backend, giving you the best of both worlds
+  <li>is easier to install, needs no compiler, just Perl
+  <li>Can output HTML, and ASCII art
+</ul>
+
+<span class="q">Question:</span>
+
+<p>
+What can Graphviz, that <code>Graph::Easy</code> cannot do?
+</p>
+
+<span class="a">Answer: <small>[2006-03-12]</small></span>
+
+<p>
+Here is a list of things that <code>Graph::Easy</code> has difficulties with, or that are
+not yet implemented:
+</p>
+
+<ul>
+  <li>For complex layouts, the layouter might break down.
+  <li>One cannot define a starting point on an edge, edges always start with a plain line.
+  <li>It is not possible to specify a font family/name. (<font color="green">Implemented in v0.43</font>)
+  <li>Groups (aka subgraphs) cannot yet be nested.
+  <li>Some shapes and options (node shape egg, edge lines with more than two lines f.i.) are not yet possible
+</ul>
+
+<span class="q">Question:</span>
+
+<p>
+What can <code>Graph::Easy</code>, that Graphviz cannot do?
+</p>
+
+<span class="a">Answer: <small>[2006-03-12]</small></span>
+
+<ul>
+  <li>Full unicodee support on both input and output (when supported by the output format,
+      all native ones like HTML, SVG and ASCII/Unicode output do). Graphviz has problems
+      when you include "foreign" characters, then you must set the proper font (and hope that
+      it is portable and contains all glyphs your label has)
+  <li>You can set text-styles on labels like <span style="text-decoration: underline">underline</span>,
+      <span style="text-decoration: overline">overline</span>, <b>bold</b>, <i>italic</i> etc
+  <li>You can even set these text-styles for parts of a label and mix them, even nest them like
+      so:
+      <span style="text-decoration: underline">underline<b>bold</b> and <i>italic</i></span> (<font color="green">Implemented in v0.43</font>)
+  <li><code>text-wrap: auto</code> automatically wraps labels (<font color="green">Implemented in v0.43</font>)
+  <li>You cannot only set the flow (direction of layout) for the entire graph, but change it
+      on an per-node or even per-edge basis.
+  <li>Graphviz doesn't implement the border or edge style "wave". Edge styles involving double
+      lines are non-obvious to create in Graphviz.
+  <li><code>Graph::Easy</code> works around the Firefox bug with links in SVGs.
+  <li>Links are build from two parts, a <code>linkbase</code> and a <code>link</code>. Thus you
+      can easily set a common base part and put the rest per node on it. There are even attributes
+      than build links or titles automatically.
+  <li>You can restrict the node length automatically, and make a title automatically show the
+      full node text.
+  <li>Edge arrows can have their arrows filled with a different color
+  <li>Animations are possible (even w/o knowledge of scripting languages) (<font color="red">Will be implemented in v0.44</font>)
+</ul>
+
+<span class="q">Question:</span>
+
+<p>
+Are there other differences between <code>Graph::Easy</code> and Graphviz?
+</p>
+
+<span class="a">Answer: <small>[2006-03-12]</small></span>
+
+<p>
+There are other differences which have mainly to do with the output formats and their
+limitations or advantages. For instance:
+
+<ul>
+  <li>HTML allows text zoom (good for people with bad eyesight, or big monitors), while f.i.
+      raster image formats like PNG only support one fixed size
+  <li>Plain text formats like HTML or SVG allow easy indexing of the contents.
+  <li>SVG files are truly resolution independend.
+  <li>ASCII output lacks many things, but can be read even on a terminal or by
+      a screen reader.
+</ul>
+
+<p>
+Since Graph::Easy's own layouter can only output HTMl, ASCII or SVG, other formats like PNG or PDF 
+must be created by either using the graphviz backend, or by outputting SVG and then converting
+this. In the future SVG support by viewing and printer subsystems will hopefully be so good
+that such "hacks" are no longer required, though. 
+</p>
+
+<span class="q">Question:</span>
+
+<p>
+Is there a speed difference?
+</p>
+
+<span class="a">Answer: <small>[2006-03-12]</small></span>
+
+<p>
+<code>Graph::Easy</code> might be a bit slower for some things, but is faster for others.
+In praxis this hardly matters. For details, please see the <a href="benchmark">benchmark page</a>.
+
 </p>
 
 </div>
@@ -84,22 +211,20 @@ See also <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=315389">bug #3153
 <span class="q">Question:</span>
 
 <p class="ind">
-The text on nodes is to big, and sometimes even crosses the node border.
+The text on nodes is to small, or to big, and sometimes even crosses the node
+border.
 </p>
 
 <span class="a">Answer:</span>
 
 <p class="ind">
-Yet another Firefox bug. Firefox 1.5 renders the text in the user-specified font-size,
-ignoring the font-site set inside the SVG document. Since the rest of the
-generated SVG code assumes the set size, the nodes are too small (or too big).
+Please upgrade <a href="
+">Graph::Easy::As_svg</a>, this bug has been fixed in v0.18.
 <br>
-This isn't really fixable from my end, because the SVG generator cannot know what
-text size the user specified in the <code>Preferences</code>.
-<br>
-You can see the bug in action when you use the text-zoom (<code>CTRL</code> plus
-<code>+</code> or <code>-</code>), Firefox will zoom the font/text, but not
-the rest of the SVG, thus the graphic quickly becomes garbled.
+You still might see text that is either too big or too small if you
+use the text-zoom (<code>CTRL</code> plus <code>+</code> or <code>-</code>),
+Firefox will zoom the font/text, but not the rest of the SVG, thus the graphic quickly
+becomes garbled.
 </p>
 
 <h3>Graphic corruptions</h3>
@@ -126,30 +251,13 @@ overriden color from the CSS is ignored by these buggy browsers).
 
 </div>
 
-<a name="graphviz"></a>
-<h2>Graphviz</h2>
-
-<div class="text">
-<h3>Todo</h3>
-
-<span class="q">Question:</span>
-
-<p>
-</p>
-
-<span class="a">Answer:</span>
-
-<p>
-</p>
-
-</div>
-
 <h2>Contact and Bugreports</h2>
 
 <div class="text">
 
 <p>
-If you have questions, feel free to send me an <a href="http://bloodgate.com/mail.html">email</a>
+If you have questions, or found an error on this page, feel free to send me an
+<a href="http://bloodgate.com/mail.html">email</a>
 <small>(<a href="http://bloodgate.com/tels.asc">Gnupg key</a>)</small>.
 <b>Bugreports</b> should go to <a href="http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Graph-Easy">rt.cpan.org</a>.
 </p>
@@ -157,7 +265,7 @@ If you have questions, feel free to send me an <a href="http://bloodgate.com/mai
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-01-11</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-02-12</span>
+Page created <span class="date">2005-01-11</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-04-09</span>
 </div>
 
 </div> <!-- end of right cell -->

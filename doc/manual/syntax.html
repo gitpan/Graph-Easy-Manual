@@ -7,8 +7,10 @@
  <meta http-equiv="imagetoolbar" content="no">
  <link rel="stylesheet" type="text/css" href="../base.css">
  <link rel="stylesheet" type="text/css" href="manual.css">
+ <link rel="Start" href="index.html">
+ <link href="http://bloodgate.com/mail.html" rev="made">
  <!-- compliance patch for microsoft browsers -->
- <!--[if lt IE 7]><script src="/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
+ <!--[if lt IE 7]><script src="http://bloodgate.com/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
 </head>
 <body bgcolor=white text=black>
 
@@ -60,7 +62,7 @@ This chapter describes the syntax of the text format that is parsed by
 be in utf-8. This means that the input must be valid Unicode.
 <br>
 But it also means you can embed arbitrary characters, like Japanese, box
-art drawing, Umlaute etc into the labels without the need for cumbersome
+art drawing, Umlaute etc. into the labels without the need for cumbersome
 quoting.
 </p>
 
@@ -274,11 +276,55 @@ very small and invisible node:
 
 <p>
 Attributes are enclosed in <code>{ }</code>,
-are in the format <code>attributename: attributevalue;</code>
-and follow immidiately the object for that they apply.
+are in the format <code>attributename: attributevalue;</code>.
+</p>
+
+<p>
+Attributes <b>names</b> must not be quoted, attribute
+values can be quoted, and the quotes will be removed on
+them:
+</p>
+
+<pre>
+[ "Monitor Size" ] --> { label: 21"; } [ Big ] { label: "Huge"; }
+</pre>
+
+This will produce:
+
+<pre class="graph">
+</pre>
+
+<p>
+If you want to embed a <code>;</code> (semi-colon), then quote the
+string:
+</p>
+
+<pre>
+[ Baz;Bar ] --> { label: "Baz;Bar"; } [ Berlin ] { label: ";;"; }
+</pre>
+
+<p>
+If you want to embed a semi-colon <b>and</b>
+have quotes at the start <b>and</b> end of the string value,
+then use backslashes to escape the quotes and encode the
+semi-colon as <code>%3b</code>:
+</p>
+
+<pre>
+[ A ] { label: \"Hello%3b\"; } --> [ Berlin ] { label: Baz%3bBar; }
+</pre>
+
+<p>
+Note that the need to code, encode or escape B<only>
+apply to attribute values, and not to node or group names, since
+these are always used <i>as-they-are</i>.
+</p>
+
+<p class="clear">
+Attributes follow immidiately the object(s) for that they apply.
 <br>
-Attributes on a node in a node list apply to all nodes in
-the list that came to this point.
+Please note that attributes following a node in a node list apply
+to <b>all</b> nodes in the list that came to this point.
 </p>
 
 <pre>

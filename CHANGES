@@ -1,6 +1,15 @@
 Revision history for Graph::Easy::Manual:
 
-2006-02-21 v0.31 Tels 2 tests - Doc, doc, doc, document the code...
+2006-04-17 v0.32 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy 0.44
+  * add doc about quoting, escaping and encoding to syntax.html
+  * clarify (sub) class name section
+  * make link to IE CSS workaround absolute to make it work on CPAN, too
+  * fix stylesheet to only change color on hovering over links (seems
+    IE allows hover on anything and causes wierd colors)  
+  * quote <, > and & in sample graph texts
+
+2006-02-21 v0.31 Tels 2 tests
   * regen from Graph::Easy 0.42
   * add FAQ and tutorial
   * fix a few broken links and add some small explanations

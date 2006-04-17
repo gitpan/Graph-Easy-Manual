@@ -1,12 +1,12 @@
 ---
 name: Graph-Easy-Manual
-version: 0.31
+version: 0.32
 version_from: lib/Graph/Easy/Manual.pm
 license: gpl
 distribution_type: module
-generated_by: Graph-Easy-Manual version 0.31
+generated_by: Graph-Easy-Manual version 0.32
 installdirs: site
 requires:
   File::Spec: 3.01
-  Graph::Easy: 0.4
+  Graph::Easy: 0.44
   Pod::Simple: 3.02
