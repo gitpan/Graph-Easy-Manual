@@ -1,5 +1,15 @@
 Revision history for Graph::Easy::Manual:
 
+2006-08-11 v0.33 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy 0.46
+  * add a Build.PL file
+  * various small fixes and examples added
+  * update section about joints with more examples, fix links to it
+  * update FAQ
+  * output all the color schemes with their colors
+  * gen-manual: allow different output styles for example graphs
+  * update the overview image, and make it safe for colorblind people
+
 2006-04-17 v0.32 Tels 2 tests - Doc, doc, doc, document the code...
   * regen from Graph::Easy 0.44
   * add doc about quoting, escaping and encoding to syntax.html

@@ -56,6 +56,7 @@ This chapter describes the syntax of the text format that is parsed by
 
 <a name="input">
 <h4>Input and Encoding</h4>
+</a>
 
 <p>
 <code>Graph::Easy</code>, and especially the Parser, expect the input to
@@ -292,33 +293,50 @@ them:
 This will produce:
 
 <pre class="graph">
++----------------+  21"   +------+
+| "Monitor Size" | -----> | Huge |
++----------------+        +------+
 </pre>
 
-<p>
+<p class="clear">
 If you want to embed a <code>;</code> (semi-colon), then quote the
 string:
 </p>
 
 <pre>
-[ Baz;Bar ] --> { label: "Baz;Bar"; } [ Berlin ] { label: ";;"; }
+[ Baz;Bar ] --> { label: "Baz;Bar"; } [ Bonn ] { label: ";;"; }
 </pre>
 
-<p>
+<pre class="graph">
++---------+  Baz;Bar   +----+
+| Baz;Bar | ---------> | ;; |
++---------+            +----+
+</pre>
+
+<p class="clear">
 If you want to embed a semi-colon <b>and</b>
 have quotes at the start <b>and</b> end of the string value,
-then use backslashes to escape the quotes and encode the
-semi-colon as <code>%3b</code>:
+then quote the string <em>and</em> use backslashes to escape the
+inner quotes:
 </p>
 
 <pre>
-[ A ] { label: \"Hello%3b\"; } --> [ Berlin ] { label: Baz%3bBar; }
+[ A ] { label: "\"Hello;\""; } --> [ Berlin ]
 </pre>
 
-<p>
-Note that the need to code, encode or escape B<only>
-apply to attribute values, and not to node or group names, since
+<pre class="graph">
++----------+     +--------+
+| "Hello;" | --> | Berlin |
++----------+     +--------+
+</pre>
+
+<p class="clear">
+Note that the need to quote or escape <b>only</b>
+applies to attribute values, and not to node or group names, since
 these are always used <i>as-they-are</i>.
 </p>
+
+<h4>Attribute Scope</h4>
 
 <p class="clear">
 Attributes follow immidiately the object(s) for that they apply.
@@ -714,7 +732,8 @@ Please continue with the chapter about the <a href="attributes.html">attributes<
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-02-05</span>
+Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
+Last update: <span class="date">2006-08-11</span>
 </div>
 
 </div> <!-- end of right cell -->

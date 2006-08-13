@@ -71,8 +71,8 @@ pre.graph
   }
 img.float { float: left; margin-right: 1em; margin-left: 1em; }
 pre.graphtext { float: left; }
-td.clrn { text-align: right; background: white; color: black; padding-left: 0.5em; border: none; }
-td.clre { width: 8em; }
+table.clr { margin-left: 1em; }
+td.clre { width: 3em; text-align: center; font-size: 80%; }
 .next { margin-top: 1em; padding-top: 0.2em; padding-bottom: 0.2em; }
 span.a, span.q
   {

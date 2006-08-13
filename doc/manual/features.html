@@ -303,22 +303,35 @@ for more details and examples.
 </a>
 
 <p>
-You can also have edges that split or join up, or do both at the same time:
+You can also have edges that split or join up:
 </p>
 
 <pre class="graphtext">
- [ Potsdam ], [ Mannheim ] --> { end: back,0; } [ Weimar ]
-
- [ Weimar ] --> { start: front,0; } [ Finsterwalde ], [ Aschersleben ]
+ [ Potsdam ], [ Mannheim ] 
+   --> { end: back,0; }
+ [ Weimar ]
+   --> { start: front,0; } [ Finsterwalde ], [ Aachen ]
 </pre>
+
+<div class="clear"></div>
 
 <img src="img/joints.png" alt="Edge joints" title="Example of edge joints" class="float">
 
 <pre class="graph">
-Output missing!
++----------+           +--------+          +--------------+
+| Mannheim | ------+-> | Weimar | -+-----> | Finsterwalde |
++----------+       |   +--------+  |       +--------------+
+                   |               |
+                   |               |
+                   |               |
++----------+       |               |       +--------------+
+| Potsdam  | ------+               +-----> |    Aachen    |
++----------+                               +--------------+
 </pre>
 
-<p class="clear">&nbsp;</p>
+<p class="clear">
+Please see the <a href="hinting.html#joints">section about joints</a> for further reference.
+</p>
 
 <a name="flow">
 <h3>Flow directions</h3>
@@ -495,7 +508,8 @@ Please continue with the chapter about the <a href="layouter.html">layouter</a>.
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-01-09</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-02-10</span>
+Page created <span class="date">2005-01-09</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
+Last update: <span class="date">2006-08-11</span>
 </div>
 
 </div> <!-- end of right cell -->

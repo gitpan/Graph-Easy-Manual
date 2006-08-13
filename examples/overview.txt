@@ -1,0 +1,23 @@
+graph { flow: south; colorscheme: spectral9; }
+
+node { fill: white; }
+node.in { fill: 8; }
+node.dot { fill: 9; color: white; }
+node.out { fill: 2; }
+node.dotout { fill: 6; }
+
+[ Graphviz ], [ Text ], [ Perl ] { class: in; }
+
+[ Graphviz ], [ Text ] --> [ Parser ]
+
+ [ Parser ], [ Perl ] --> [ Graph::Easy ]
+  --> [ Graphviz2 ] { class: out; label: Graphviz; }
+  --> [ dot\n(or neato, fdb etc.) ] { class: dot; }
+  --> [ .svg ], [ .png ], [ .ps ], [ .pdf ] { class: dotout; }
+  
+  [ Graph::Easy ] --> [ Text2 ] { class: out; label: Text; } #, [ Layouter ]
+  [ Graph::Easy ] --> { minlen: 3; } [ Layouter ]
+
+  [ Layouter ] -->
+  [ ASCII /\nUnicode ], [ HTML ], [ SVG ] { class: out; }
+

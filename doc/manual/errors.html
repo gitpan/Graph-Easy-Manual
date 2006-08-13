@@ -101,7 +101,7 @@ run it manually from your MediaWiki directory (e.g.
 </p>
 
 <pre>
-perl graph/graphcnv '[ Bonn ] -> [ Berlin ]' 'ascii'
+perl graph/graphcnv '[ Bonn ] -> [ Berlin ]' 'utf-8' 'ascii'
 </pre>
 
 <p>
@@ -162,13 +162,14 @@ have a look at the <a href="attributes.html">attribute definitions</a>.
   <li>html</li>
   <li>ascii</li>
   <li>boxart</li>
+  <li>debug</li>
 </ul>
 
 <p>
 To what exact format the <code>graphviz</code> format is rendered is
 set in the config file <code>graph.cfg</code>. The user cannot
 change this from inside the graph code. This means that all
-files generated via graphviz are in the same format, f.i. <code>png</code>.
+files generated via graphviz are in the same file format, f.i. <code>png</code>.
 </p>
 
 </div>
@@ -250,7 +251,8 @@ If you have questions, feel free to send me an <a href="mailto:nospam-abuse@bloo
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-12-10</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2005-12-10</span>
+Page created <span class="date">2005-12-10</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
+Last update: <span class="date">2006-08-12</span>
 </div>
 
 </div> <!-- end of right cell -->

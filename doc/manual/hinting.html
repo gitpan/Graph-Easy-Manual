@@ -280,55 +280,55 @@ Here is an example that should make this clear:
 </p>
 
 <pre class="graphtext">
-[ Node ] -> { start: south; } [ S ] { origin: Node; offset: 0,2; }
-[ Node ] -> { start: north; } [ N ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { start: east; }  [ E ] { origin: Node; offset: 2,0; }
-[ Node ] -> { start: west; }  [ W ] { origin: Node; offset: -2,0; }
+[ C ] -> { start: south; } [ S ] { origin: C; offset: 0,2; }
+[ C ] -> { start: north; } [ N ] { origin: C; offset: 0,-2; }
+[ C ] -> { start: east; }  [ E ] { origin: C; offset: 2,0; }
+[ C ] -> { start: west; }  [ W ] { origin: C; offset: -2,0; }
 </pre>
 
 <pre class="graph">
-          +------+
-          |  N   |
-          +------+
+          +---+
+          | N |
+          +---+
             ^
             |
             |
-+---+     +------+     +---+
-| W | <-- | Node | --> | E |
-+---+     +------+     +---+
++---+     +---+     +---+
+| W | <-- | C | --> | E |
++---+     +---+     +---+
             |
             |
             v
-          +------+
-          |  S   |
-          +------+
+          +---+
+          | S |
+          +---+
 </pre>
 
 <div class="clear"></div>
 
 <pre class="graphtext">
-[ Node ] -> { start: right; } [ R ] { origin: Node; offset: 0,2; }
-[ Node ] -> { start: left; }  [ L ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { start: front; } [ F ] { origin: Node; offset: 2,0; }
-[ Node ] -> { start: back; }  [ B ] { origin: Node; offset: -2,0; }
+[ C ] -> { start: right; } [ R ] { origin: C; offset: 0,2; }
+[ C ] -> { start: left; }  [ L ] { origin: C; offset: 0,-2; }
+[ C ] -> { start: front; } [ F ] { origin: C; offset: 2,0; }
+[ C ] -> { start: back; }  [ B ] { origin: C; offset: -2,0; }
 </pre>
 
 <pre class="graph">
-          +------+
-          |  L   |
-          +------+
+          +---+
+          | L |
+          +---+
             ^
             |
             |
-+---+     +------+     +---+
-| B | <-- | Node | --> | F |
-+---+     +------+     +---+
++---+     +---+     +---+
+| B | <-- | C | --> | F |
++---+     +---+     +---+
             |
             |
             v
-          +------+
-          |  R   |
-          +------+
+          +---+
+          | R |
+          +---+
 </pre>
 
 <div class="clear"></div>
@@ -342,28 +342,28 @@ graph will show a difference:
 <pre class="graphtext">
 graph { <em>flow: down;</em> }
 
-[ Node ] -> { <em>start: south;</em> } [ S ] { origin: Node; offset: 0,2; }
-[ Node ] -> { <em>start: north;</em> } [ N ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { <em>start: east;</em> }  [ E ] { origin: Node; offset: 2,0; }
-[ Node ] -> { <em>start: west;</em> }  [ W ] { origin: Node; offset: -2,0; }
+[ C ] -> { <em>start: south;</em> } [ S ] { origin: C; offset: 0,2; }
+[ C ] -> { <em>start: north;</em> } [ N ] { origin: C; offset: 0,-2; }
+[ C ] -> { <em>start: east;</em> }  [ E ] { origin: C; offset: 2,0; }
+[ C ] -> { <em>start: west;</em> }  [ W ] { origin: C; offset: -2,0; }
 </pre>
 
 <pre class="graph">
-          +------+
-          |  N   |
-          +------+
+          +---+
+          | N |
+          +---+
             ^
             |
             |
-+---+     +------+     +---+
-| W | <-- | Node | --> | E |
-+---+     +------+     +---+
++---+     +---+     +---+
+| W | <-- | C | --> | E |
++---+     +---+     +---+
             |
             |
             v
-          +------+
-          |  S   |
-          +------+
+          +---+
+          | S |
+          +---+
 </pre>
 
 <div class="clear"></div>
@@ -371,29 +371,31 @@ graph { <em>flow: down;</em> }
 <pre class="graphtext">
 graph { <em>flow: down;</em> }
 
-[ Node ] -> { <em>start: right;</em> } [ R ] { origin: Node; offset: 0,2; }
-[ Node ] -> { <em>start: left;</em> }  [ L ] { origin: Node; offset: 0,-2; }
-[ Node ] -> { <em>start: front;</em> } [ F ] { origin: Node; offset: 2,0; }
-[ Node ] -> { <em>start: back;</em> }  [ B ] { origin: Node; offset: -2,0; }
+[ C ] -> { <em>start: right;</em> } [ R ] { origin: C; offset: 0,2; }
+[ C ] -> { <em>start: left;</em> }  [ L ] { origin: C; offset: 0,-2; }
+[ C ] -> { <em>start: front;</em> } [ F ] { origin: C; offset: 2,0; }
+[ C ] -> { <em>start: back;</em> }  [ B ] { origin: C; offset: -2,0; }
 </pre>
 
 <pre class="graph">
-          +------+
-          |  L   | <+
-          +------+  |
-                    |
-  +---------+       |
-  v         |       |
-+---+     +------+  |  +---+
-| B |  +--| Node |--+  | F |
-+---+  |  +------+     +---+
-       |    |            ^
-       |    +------------+
+          +---+
+          | L | <+
+          +---+  |
+                 |
+  +---------+    |
+  v         |    |
++---+     +---+  |  +---+
+| B |  +- | C | -+  | F |
++---+  |  +---+     +---+
+       |    |         ^
+       |    +---------+
        |
-       |  +------+
-       +->|  R   |
-          +------+
+       |  +---+
+       +> | R |
+          +---+
 </pre>
+
+<img src="img/ports.png" alt="Relative starting side of edges" title="Relative starting side of edges" class="float">
 
 <div class="clear"></div>
 
@@ -422,10 +424,10 @@ to place the edge on one arbitrary port on that side:
 </p>
 
 <pre class="graphtext">
-graph { flow: east; }
-
 [ Left ] -> { start: left; end: left; } [ Right ]
 </pre>
+
+<img src="img/sides.png" alt="Edge start/end side" title="Edge start/end side" class="float">
 
 <pre class="graph">
   +------------+
@@ -438,32 +440,65 @@ graph { flow: east; }
 <p class="clear"></p>
 
 <a name="joints">
-<h3>Edge joining and splicing</h3>
+<h3>Joins (Edge Splicing and Splitting</h3>
 </a>
 
 <p>
-Whenever two edges share one common port (not just one side, like
-<code>south</code>), they will split up somewhere along their path:
+Whenever two (or more) edges share <b>one common start port</b> (not just one side, like
+<code>south</code>), they will split up somewhere along their path.<br>
+Likewise, when two or more edges share <b>one common end port</b>, the
+edges will joint up somewhere on their way to the target node:
 </p>
 
 <pre class="graphtext">
-[ Jena ] --> { start: front, 0; } [ Augsburg ], [ Ulm ]
-</pre>
-
-<pre class="graph">
-+------+          +----------+
-| Jena |--+-----> |   Ulm    |
-+------+  |       +----------+
-          |       +----------+
-          +-----> | Augsburg |
-                  +----------+
+ [ Potsdam ], [ Mannheim ]
+   --> { <em>end: back,0;</em> }
+ [ Weimar ]
+   --> { <em>start: front,0;</em> } [ Finsterwalde ], [ Aachen ]
 </pre>
 
 <div class="clear"></div>
 
-<p>
-<b>Section not completed yet.</b>
+<img src="img/joints.png" alt="Edge joints" title="Example of edge joints" class="float">
+
+<pre class="graph">
++----------+           +--------+          +--------------+
+| Mannheim | ------+-> | Weimar | -+-----> | Finsterwalde |
++----------+       |   +--------+  |       +--------------+
+                   |               |
+                   |               |
+                   |               |
++----------+       |               |       +--------------+
+| Potsdam  | ------+               +-----> |    Aachen    |
++----------+                               +--------------+
+</pre>
+
+<p class="clear">
+This works even in combination with edge labels:
 </p>
+
+<pre class="graphtext">
+[ Jena ] 
+ <em>-- train --&gt;</em> { <em>start: front, 0;</em> } 
+  [ Augsburg ], [ Ulm ]
+[ Jena ] <em>-- car --&gt;</em> { start: front, 0; } [ Plauen ]
+</pre>
+
+<div class="clear"></div>
+
+<img src="img/joint_labels.png" alt="Edge joints" title="Edge joints with labels" class="float">
+
+<pre class="graph">
++------+           train    +----------+
+| Jena | ------+----------> |   Ulm    |
++------+       |            +----------+
+               |   train    +----------+
+               +----------> | Augsburg |
+               |            +----------+
+               |    car     +----------+
+               +----------> |  Plauen  |
+                            +----------+
+</pre>
 
 <div class="clear"></div>
 
@@ -986,7 +1021,8 @@ details on pathfinding.
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-19</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-03-19</span>
+Page created <span class="date">2005-08-19</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
+Last update: <span class="date">2006-08-11</span>
 </div>
 
 </div> <!-- end of right cell -->

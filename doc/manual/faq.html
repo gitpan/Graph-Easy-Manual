@@ -73,7 +73,7 @@ What are the main differences between <code>Graph::Easy</code> and Graphviz?
   <li>an easier syntax, that is very human readable/writable and makes thus maintance easier,
       especially for people unfamiliar with graphviz, HTML or similar languages
   <li>a grid based layouter, which is suited for flowcharts. For complex graphs it can also
-      use graphviz as backend, giving you the best of both worlds
+      use graphviz as backend, giving you the best of both worlds.
   <li>is easier to install, needs no compiler, just Perl
   <li>Can output HTML, and ASCII art
 </ul>
@@ -84,7 +84,7 @@ What are the main differences between <code>Graph::Easy</code> and Graphviz?
 What can Graphviz, that <code>Graph::Easy</code> cannot do?
 </p>
 
-<span class="a">Answer: <small>[2006-03-12]</small></span>
+<span class="a">Answer: <small>[2006-08-06]</small></span>
 
 <p>
 Here is a list of things that <code>Graph::Easy</code> has difficulties with, or that are
@@ -92,11 +92,14 @@ not yet implemented:
 </p>
 
 <ul>
-  <li>For complex layouts, the layouter might break down.
+  <li>For complex layouts, the layouter easily breaks down.
+  <li>The layouter only has one overall strategy (unlike graphviz, where dot, neato and circo all implement wildly different strategies)
   <li>One cannot define a starting point on an edge, edges always start with a plain line.
-  <li>It is not possible to specify a font family/name. (<font color="green">Implemented in v0.43</font>)
   <li>Groups (aka subgraphs) cannot yet be nested.
   <li>Some shapes and options (node shape egg, edge lines with more than two lines f.i.) are not yet possible
+  <li>There are only 3 different arrow shapes (open, closed and filled triangles)
+  <li>Not as many layout influencing options (margins, paddings and spacings are generally missing)
+  <li>It is not yet possible to specify transparency for colors (especially fill/background).
 </ul>
 
 <span class="q">Question:</span>
@@ -107,18 +110,23 @@ What can <code>Graph::Easy</code>, that Graphviz cannot do?
 
 <span class="a">Answer: <small>[2006-03-12]</small></span>
 
+Apart from the IMHO easier for humans syntax of the input format, here are the key points:
+
 <ul>
-  <li>Full unicodee support on both input and output (when supported by the output format,
-      all native ones like HTML, SVG and ASCII/Unicode output do). Graphviz has problems
-      when you include "foreign" characters, then you must set the proper font (and hope that
-      it is portable and contains all glyphs your label has)
+  <li>Full <a href="http://unicode.org/">Unicode</a> support on both input
+      and output (when supported by the output format, all native ones like
+      HTML, SVG and ASCII/Unicode output do). Graphviz has problems
+      when you include "foreign" characters, then you must set the proper
+      font (and hope that it is portable and contains all glyphs your label has)
+  <li>Grid-based layouter
+  <li>Support for HTML, ASCII and boxart drawing (Unicode) output formats
   <li>You can set text-styles on labels like <span style="text-decoration: underline">underline</span>,
       <span style="text-decoration: overline">overline</span>, <b>bold</b>, <i>italic</i> etc
   <li>You can even set these text-styles for parts of a label and mix them, even nest them like
       so:
       <span style="text-decoration: underline">underline<b>bold</b> and <i>italic</i></span> (<font color="green">Implemented in v0.43</font>)
   <li><code>text-wrap: auto</code> automatically wraps labels (<font color="green">Implemented in v0.43</font>)
-  <li>You cannot only set the flow (direction of layout) for the entire graph, but change it
+  <li>You can set the flow (direction of layout) for the entire graph, and change it
       on an per-node or even per-edge basis.
   <li>Graphviz doesn't implement the border or edge style "wave". Edge styles involving double
       lines are non-obvious to create in Graphviz.
@@ -129,7 +137,8 @@ What can <code>Graph::Easy</code>, that Graphviz cannot do?
   <li>You can restrict the node length automatically, and make a title automatically show the
       full node text.
   <li>Edge arrows can have their arrows filled with a different color
-  <li>Animations are possible (even w/o knowledge of scripting languages) (<font color="red">Will be implemented in v0.44</font>)
+  <li>Graphviz supports an additional color scheme, <code>w3c</code>. This is also the default.  (<font color="green">Color scheme support is implemented in v0.46</font>)
+  <li>Animations are possible (even w/o knowledge of scripting languages) (<font color="red">Will be implemented in v0.50</font>)
 </ul>
 
 <span class="q">Question:</span>
@@ -170,7 +179,7 @@ Is there a speed difference?
 
 <p>
 <code>Graph::Easy</code> might be a bit slower for some things, but is faster for others.
-In praxis this hardly matters. For details, please see the <a href="benchmark">benchmark page</a>.
+In praxis this only matters for huge graphs. For details, please see the <a href="benchmark.html">benchmark page</a>.
 
 </p>
 
@@ -265,7 +274,8 @@ If you have questions, or found an error on this page, feel free to send me an
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-01-11</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-04-09</span>
+Page created <span class="date">2005-01-11</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
+Last update: <span class="date">2006-08-06</span>
 </div>
 
 </div> <!-- end of right cell -->

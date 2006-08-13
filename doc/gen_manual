@@ -18,7 +18,7 @@ BEGIN
 
 my $path = shift || 'manual';
 
-use Graph::Easy 0.39;
+use Graph::Easy 0.46;
 use Graph::Easy::Parser;
 use Graph::Easy::Manual;
 
@@ -87,7 +87,7 @@ for my $class (qw/node edge graph group/)
 
     # convert L<>
     $des =~ s/L<([^>]+)>/<a href="#${class}_$1">$1<\/a>/g;
-    $des =~ s/(section about )(.*?)( for ref)/my $l = $2; $l =~ tr!A-Za-z0-9!_!c; "$1<a href=\"attributes.html#$l\">$2<\/a>$3";/eg;
+    $des =~ s/(section about )([^>]*?)( for ref)/my $l = $2; $l =~ tr!A-Za-z0-9!_!c; "$1<a href=\"attributes.html#$l\">$2<\/a>$3";/eg;
 
     # insert into the index/short overview:
     $idx .= "<a href='$file#${class}_$entry' title=\"$short_des\">$entry</a>, ";
@@ -124,8 +124,15 @@ for my $class (qw/node edge graph group/)
      
       $graph->id($example_graph_id);
 
-      $css .= $graph->css();
-      $txt .= '<div style="margin-left: 1em;">' . $graph->as_html() . '</div>';
+      if (($graph->attribute('output') || 'html') eq 'html')
+        {
+        $css .= $graph->css();
+        $txt .= '<div style="margin-left: 1em;">' . $graph->as_html() . '</div>';
+        }
+      else
+        {
+        $txt .= '<div style="margin-left: 1em;"><pre>' . $graph->output() . '</pre></div>';
+        }
 
       $txt .= '<div class="clear"></div>';
       $example_graph_id ||= 0; $example_graph_id++;
@@ -154,28 +161,56 @@ for my $class (qw/node edge graph group/)
   $tpl =~ s/##$class##/$idx/;
   }
 
-my $colors = Graph::Easy->color_names();
+# insert the list of colors as one table per colorscheme
 
-my $list = "<table>\n<tr>\n"; my $o = 0;
-for my $clr (sort {
-  my $ac = $a; $ac =~ /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/;
-  $ac = hex($1) * 256 * 256 + hex($2) * 256 + hex($3); 
-  my $bc = $b; $bc =~ /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/;
-  $bc = hex($1) * 256 * 256 + hex($2) * 256 + hex($3); 
-  $ac <=> $bc;
-  } keys %$colors)
+my $schemes = Graph::Easy->color_names();
+
+my $list = '';
+
+for my $scheme ('w3c', 'x11')
   {
-  my $c = $colors->{$clr};
-  $list .= "<td class='clrn'>$c:</td><td class='clre' style='background: $clr' title='$c ($clr)'>&nbsp;</td>\n";
-  if ($o++ > 1)
-    { 
-    $o = 0;
-    $list .= "</tr><tr>\n";
+  my $colors = $schemes->{$scheme};
+
+  my $limit = 6; 
+
+  $list .= "<b>$scheme</b> color scheme:<br>\n<table class='clr'>\n<tr>\n"; my $o = 0;
+  for my $clr (sort {
+    my $ac = $colors->{$a}; $ac =~ /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/;
+#    $ac = hex($1) * 256 * 256 + hex($2) * 256 + hex($3); 
+    $ac = hex($1) * hex($1) + hex($2) * hex($2) + hex($3) * hex($3); 
+    my $bc = $colors->{$b}; $bc =~ /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/;
+#    $bc = hex($1) * 256 * 256 + hex($2) * 256 + hex($3); 
+    $bc = hex($1) * hex($1) + hex($2) * hex($2) + hex($3) * hex($3); 
+    $ac <=> $bc;
+    } keys %$colors)
+    {
+    $list .= _color_entry($clr,$colors->{$clr});
+    if ($o++ > $limit)
+      { 
+      $o = 0;
+      $list .= "</tr><tr>\n";
+      }
     }
+  $list =~ s/<tr>\n\z//;		# remove last <tr>
+  $list .= "</table>\n";
   }
 
-$list =~ s/<tr>\n\z//;		# remove last <tr>
-$list .= "</table>\n";
+# ColorBrewer schemes:
+$list .= "<p><b><a href='http://colorbrewer.org/'>ColorBrewer</a></b> schemes:<p>\n";
+for my $scheme (sort keys %$schemes)
+  {
+  my $colors = $schemes->{$scheme};
+  # do w3c and x11 later
+  next if $scheme =~ /^(w3c|x11)\z/;
+
+  $list .= "<b>$scheme</b> color scheme:<br>\n<table class='clr'>\n<tr>\n";
+  for my $clr (sort { $a <=> $b } keys %$colors)
+    {
+    $list .= _color_entry($clr,$colors->{$clr});
+    }
+  $list =~ s/<tr>\n\z//;		# remove last <tr>
+  $list .= "</table>\n";
+  } # end for all schemes
 
 $tpl =~ s/##colors##/$list/;
 
@@ -185,6 +220,29 @@ my $took = sprintf("%0.4fs", time() - $start);
 $tpl =~ s/##took##/$took/g;
 
 write_file(File::Spec->catfile($path,'attributes.html'),$tpl);
+
+#############################################################################
+
+sub _color_entry
+  {
+  # create on color entry
+  my ($name, $color) = @_;
+
+  my $font_a = ''; my $font_e = '';
+
+  if ($name ne 'inherit')
+    {
+    $color =~ /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/;
+    my $ac = hex($1) * hex($1) + hex($2) * hex($2) + hex($3) * hex($3); 
+    if ($ac < (256*170))
+      {
+      $font_a = '<font color="white">';
+      $font_e = '</font>';
+      }
+    }
+
+  "<td class='clre' style='background: $color' title='$color'>${font_a}$name&nbsp;$font_e</td>\n";
+  }
 
 sub read_file
   {

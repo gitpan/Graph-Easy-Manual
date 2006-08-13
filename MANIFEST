@@ -1,4 +1,5 @@
 CHANGES
+Build.PL
 INSTALL
 Makefile.PL
 MANIFEST
@@ -39,7 +40,9 @@ doc/manual/img/grouping.png
 doc/manual/img/edge_types.png
 doc/manual/img/example1.png
 doc/manual/img/flow.png
+doc/manual/img/house.png
 doc/manual/img/joints.png
+doc/manual/img/joint_labels.png
 doc/manual/img/invisible.png
 doc/manual/img/links.png
 doc/manual/img/linkbase.png
@@ -47,8 +50,10 @@ doc/manual/img/link_linkbase.png
 doc/manual/img/node_label.png
 doc/manual/img/minlen.png
 doc/manual/img/multi_edges.png
+doc/manual/img/ports.png
 doc/manual/img/self_loop.png
-doc/manual/img/house.png
+doc/manual/img/sides.png
+doc/manual/img/unicode.png
 doc/manual/svg/test.svg
 doc/manual/svg/edges.svg
 doc/README
@@ -61,8 +66,23 @@ doc/base.css
 doc/gen_manual
 examples/pod2html
 examples/00_Overview.pod
+examples/overview.txt
 t/pod.t
 t/pod_cov.t
 lib/Graph/Easy/Manual.pm
 lib/Graph/Easy/Pod2HTML.pm
 META.yml			Module meta-data
+
+inc/Module/AutoInstall.pm
+inc/Module/Install.pm
+inc/Module/Install/AutoInstall.pm
+inc/Module/Install/Base.pm
+inc/Module/Install/Build.pm
+inc/Module/Install/Can.pm
+inc/Module/Install/Fetch.pm
+inc/Module/Install/Include.pm
+inc/Module/Install/Makefile.pm
+inc/Module/Install/Metadata.pm
+inc/Module/Install/Win32.pm
+inc/Module/Install/WriteAll.pm
+

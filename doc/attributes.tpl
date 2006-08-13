@@ -100,7 +100,7 @@ can have an arbitrary number of sub-classes.
 Subclass names are restricted to <code>[a-z]</code> (lower ASCII letters A to Z) and the <code>_</code>
 (underscore). Each subclass can have its own set of attributes.
 <br>
-Objects with their <code>class</code>-attributea set will use the attributes from the appropriate
+Objects with their <code>class</code>-attributes set will use the attributes from the appropriate
 subclass.
 If an attribute was not defined there, they will inherit the attribute from their primary
 class. In the following example the left node will have green text, the right one
@@ -149,15 +149,15 @@ the <code>link</code> attribute:
 </p>
 
 <pre class="graphtext">
-node { linkbase: http://www.bloodgate.com/perl/; }
+node { linkbase: http://bloodgate.com/perl/; }
 
 [ Graph ] { link: graph/; }
  --> [ Manual ] { link: graph/manual/; }
 </pre>
 
 <map id="NAME" name="NAME">
-<area shape="rect" href="http://www.bloodgate.com/perl/graph/" title="Graph" alt="Graph" coords="17,7,89,54" />
-<area shape="rect" href="http://www.bloodgate.com/perl/graph/manual/" title="Manual" alt="Manual" coords="137,7,209,54" />
+<area shape="rect" href="http://bloodgate.com/perl/graph/" title="Graph" alt="Graph" coords="17,7,89,54" />
+<area shape="rect" href="http://bloodgate.com/perl/graph/manual/" title="Manual" alt="Manual" coords="137,7,209,54" />
 </map>
 
 <img USEMAP="#NAME" src="img/links.png" border=0 title="Example of links" style="float: left; margin-left: 1em;">
@@ -169,14 +169,14 @@ name, label, or titel of the object:
 </p>
 
 <pre class="graphtext">
-node { linkbase: http://www.bloodgate.com/perl/; autolink: name; }
+node { linkbase: http://bloodgate.com/perl/; autolink: name; }
 
 [ graph ] --> [ graph/manual ]
 </pre>
 
 <map id="NAME2" name="NAME2">
-<area shape="rect" href="http://www.bloodgate.com/perl/graph" title="graph" alt="graph" coords="17,7,89,54" />
-<area shape="rect" href="http://www.bloodgate.com/perl/graph/manual" title="graph/manual" alt="graph/manual" coords="137,7,244,54" />
+<area shape="rect" href="http://bloodgate.com/perl/graph" title="graph" alt="graph" coords="17,7,89,54" />
+<area shape="rect" href="http://bloodgate.com/perl/graph/manual" title="graph/manual" alt="graph/manual" coords="137,7,244,54" />
 </map>
 
 <img USEMAP="#NAME2" src="img/linkbase.png" border=0 alt="Example of links" title="Example of links" style="float: left; margin-left: 1em;">
@@ -191,14 +191,14 @@ will not have the name autolinked, and the second node will ignore the linkbase:
 </p>
 
 <pre class="graphtext">
-node { linkbase: http://www.bloodgate.com/perl/; autolink: name; }
+node { linkbase: http://bloodgate.com/perl/; autolink: name; }
 
 [ graph ] { link: index.html; } 
   --> [ graph/manual ] { link: http://bloodgate.com; }
 </pre>
 
 <map id="GRAPH_0" name="GRAPH_0">
-<area shape="rect" href="http://www.bloodgate.com/perl/index.html" title="graph" alt="graph" coords="17,7,89,54" />
+<area shape="rect" href="http://bloodgate.com/perl/index.html" title="graph" alt="graph" coords="17,7,89,54" />
 <area shape="rect" href="http://bloodgate.com" title="graph/manual" alt="graph/manual" coords="137,7,244,54" />
 </map>
 
@@ -215,12 +215,13 @@ Of course you can also attach a link to an edge, group or graph label.
 </a>
 
 <p>
-Here is a list of the color names recognized by Graph::Easy and their
-corrosponding color values. Note that this list is exactly the same as
+The following color schemes are recognized by <code>Graph::Easy</code>.
+This lists all the colors known under each scheme, and their
+corrosponding color values. Note that the <code>w3c</code> scheme is exactly the same as
 the <a href="http://www.w3.org/TR/SVG/types.html#ColorKeywords">one published</a> by
 <a href="">W3C</a>. So do not blame me for silly things
 like <font style="color: white; background: darkseagreen">darkseagreen</font>
-being lighter than <font style="color: white; background: seagreen">seagreen</font>...
+being lighter than <font style="color: white; background: seagreen">seagreen</font> ...
 </p>
 
 <p>&nbsp;</p>
@@ -232,10 +233,15 @@ For all other colors you can use one of the following notations:
 </p>
 
 <ul>
-  <li>Hex: <code>#ff0080</code>
+  <li>Hex: <code>#ff0080</code> (#rrggbb)
+  <li>Hex: <code>#f08</code> (#rgb)
   <li>RGB: <code>rgb(255,0,128)</code>
+  <li>RGB: <code>rgb(50%, 10%, 20%)</code>
+  <li>RGB: <code>rgb(0.5, 0, 1.0)</code>
 </ul>
 
+Note that mixing the different ways to express the red, green and blue
+channels is possible, so <code>rgb(0, 50%,0.5)</code> is a valid color.
 </div>
 
 <div class="footer">
