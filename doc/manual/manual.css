@@ -68,6 +68,7 @@ pre.graph
   {
   background: white;
   float: left;
+  font-weight: bold;
   }
 img.float { float: left; margin-right: 1em; margin-left: 1em; }
 pre.graphtext { float: left; }

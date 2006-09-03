@@ -39,6 +39,7 @@
     <a class="menuind" href="#class_names" title="Classes and their names">Classes</a>
     <a class="menuind" href="#labels__titles__names_and_links" title="Labels, titles, names and links">Labels</a>
     <a class="menuind" href="#links" title="Links and URLs">Links</a>
+    <a class="menuind" href="#node_ranks" title="Node Ranks">Ranks</a>
     <a class="menuind" href="#color_names_and_values" title="Color names and values">Colors</a>
   <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
   <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
@@ -97,8 +98,9 @@ can have an arbitrary number of sub-classes.
 </p>
 
 <p>
-Subclass names are restricted to <code>[a-z]</code> (lower ASCII letters A to Z) and the <code>_</code>
-(underscore). Each subclass can have its own set of attributes.
+Class names case-insensitive, and must start with a letter (<code>[a-z]</code>), which can
+be followed by any of the following: letters <code>a-z</code>, digits <code>0-9</code> or the underscore
+<code>_</code>. Each subclass can have its own set of attributes.
 <br>
 Objects with their <code>class</code>-attributes set will use the attributes from the appropriate
 subclass.
@@ -208,6 +210,27 @@ node { linkbase: http://bloodgate.com/perl/; autolink: name; }
 
 <p>
 Of course you can also attach a link to an edge, group or graph label.
+</p>
+
+<a name="node_ranks">
+<h3>Node Ranks</h3>
+</a>
+
+<p>
+The rank of a node determines the order in which nodes are placed by the layouter, as well
+as their position relatively to each other.
+</p>
+
+<p>
+When set to <code>auto</code>, which is also the default, the rank will be determined automatically
+prior to generating the layout. Starting with the root node, or nodes with no incoming edge,
+nodes will get increasing ranks until all nodes have a rank set.
+</p>
+
+<p>
+When setting the rank to <code>same</code> for all nodes in list, these nodes will all get the same,
+automatically determined (random) rank. These nodes will also be put into an anonymous
+collection so that they are laid out in the same row (or column, depending on graph flow).
 </p>
 
 <a name="color_names_and_values">

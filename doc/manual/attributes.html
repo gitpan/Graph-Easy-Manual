@@ -39,6 +39,7 @@
     <a class="menuind" href="#class_names" title="Classes and their names">Classes</a>
     <a class="menuind" href="#labels__titles__names_and_links" title="Labels, titles, names and links">Labels</a>
     <a class="menuind" href="#links" title="Links and URLs">Links</a>
+    <a class="menuind" href="#node_ranks" title="Node Ranks">Ranks</a>
     <a class="menuind" href="#color_names_and_values" title="Color names and values">Colors</a>
   <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
   <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
@@ -93,7 +94,7 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
   <li><a href='att_nodes.html#node_label' title="The text displayed as label.">label</a>, <a href='att_nodes.html#node_link' title="The link part, appended onto linkbase.">link</a>, <a href='att_nodes.html#node_linkbase' title="The base URL prepended to all generated links.">linkbase</a>, 
   <li><a href='att_nodes.html#node_offset' title="The offset of this node from the origin node, in columns and rows.">offset</a>, <a href='att_nodes.html#node_origin' title="The name of the node, that this node is relativ to.">origin</a>, 
   <li><a href='att_nodes.html#node_point-style' title="Controls the style of a node that has a shape of 'point'.">point-style</a>, 
-  <li><a href='att_nodes.html#node_rotate' title="The rotation of the node shape, either an absolute value (like south, up, down or 123), or a relative value (like +12, -90, left, right).">rotate</a>, <a href='att_nodes.html#node_rows' title="The size of the node in rows.">rows</a>, 
+  <li><a href='att_nodes.html#node_rank' title="The rank of the node, used by the layouter to find the order and placement of nodes.">rank</a>, <a href='att_nodes.html#node_rotate' title="The rotation of the node shape, either an absolute value (like south, up, down or 123), or a relative value (like +12, -90, left, right).">rotate</a>, <a href='att_nodes.html#node_rows' title="The size of the node in rows.">rows</a>, 
   <li><a href='att_nodes.html#node_shape' title="The shape of the node.">shape</a>, <a href='att_nodes.html#node_size' title="The size of the node in columns and rows.">size</a>, 
   <li><a href='att_nodes.html#node_text-style' title="The style of the label text.">text-style</a>, <a href='att_nodes.html#node_text-wrap' title="When set to auto, the label text will be wrapped to make the node size smaller, alignments on individual line breaks are ignored..">text-wrap</a>, <a href='att_nodes.html#node_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
 </ul>
@@ -146,8 +147,9 @@ can have an arbitrary number of sub-classes.
 </p>
 
 <p>
-Subclass names are restricted to <code>[a-z]</code> (lower ASCII letters A to Z) and the <code>_</code>
-(underscore). Each subclass can have its own set of attributes.
+Class names case-insensitive, and must start with a letter (<code>[a-z]</code>), which can
+be followed by any of the following: letters <code>a-z</code>, digits <code>0-9</code> or the underscore
+<code>_</code>. Each subclass can have its own set of attributes.
 <br>
 Objects with their <code>class</code>-attributes set will use the attributes from the appropriate
 subclass.
@@ -257,6 +259,27 @@ node { linkbase: http://bloodgate.com/perl/; autolink: name; }
 
 <p>
 Of course you can also attach a link to an edge, group or graph label.
+</p>
+
+<a name="node_ranks">
+<h3>Node Ranks</h3>
+</a>
+
+<p>
+The rank of a node determines the order in which nodes are placed by the layouter, as well
+as their position relatively to each other.
+</p>
+
+<p>
+When set to <code>auto</code>, which is also the default, the rank will be determined automatically
+prior to generating the layout. Starting with the root node, or nodes with no incoming edge,
+nodes will get increasing ranks until all nodes have a rank set.
+</p>
+
+<p>
+When setting the rank to <code>same</code> for all nodes in list, these nodes will all get the same,
+automatically determined (random) rank. These nodes will also be put into an anonymous
+collection so that they are laid out in the same row (or column, depending on graph flow).
 </p>
 
 <a name="color_names_and_values">
@@ -3965,7 +3988,7 @@ channels is possible, so <code>rgb(0, 50%,0.5)</code> is a valid color.
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Aug 13 19:22:17 2006</span> in 1.4881s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
+Page created automatically at <span class="date">Sun Sep  3 17:01:15 2006</span> in 0.9674s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->

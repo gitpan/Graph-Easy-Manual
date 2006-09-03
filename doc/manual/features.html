@@ -28,6 +28,7 @@
     <a class="menuind" href="#anon" title="Anonymous and invisible nodes">Anon Nodes</a>
     <a class="menuind" href="#multiedge" title="More than one edge from A to B">Multi-Edge</a>
     <a class="menuind" href="#selfloops" title="From one node back to itself">Self-Loops</a>
+    <a class="menuind" href="#edges" title="A node as edge-part">Node-Edges</a>
     <a class="menuind" href="#directions" title="Undirected and bidirectional edges">Directions</a>
     <a class="menuind" href="#clusters" title="Group things together">Clusters</a>
     <a class="menuind" href="#joints" title="Edges that join or split">Joints</a>
@@ -229,6 +230,40 @@ A self-loop is one edge going from one node back to the same node again:
 +----------+
 | Chemnitz |
 +----------+
+</pre>
+
+<p class="clear">&nbsp;</p>
+
+<a name="edges">
+<h3>Edge-parts as endpoint of another edges</h3>
+</a>
+
+<p>
+Sometimes you want to point an edge towards the label of another edge.
+Since tradionally edges can only connect nodes with other nodes,
+Graph::Easy features nodes with a shape of <code>edge</code>, these
+nodes will fit seamless into an edge and thus create the illusion that
+you point the edge at the label of another edge:
+</p>
+
+<pre class="graphtext">
+[ car ] { shape: edge; }
+
+[ Bonn ] -- train --> [ Berlin ] -- [ car ] --> [ Ulm ]
+
+[ rented ] --> [ car ]
+</pre>
+
+<pre class="graph">
++------+  train   +--------+      car           +-----+
+| Bonn | -------> | Berlin | -----------------> | Ulm |
++------+          +--------+                    +-----+
+                                   ^
+                                   |
+                                   |
+                                 +--------+
+                                 | rented |
+                                 +--------+
 </pre>
 
 <p class="clear">&nbsp;</p>
@@ -495,7 +530,10 @@ table.graph1 .eb {
 
 <img src="img/colors.png" alt="Different colors, shapes and styles" title="Different colors, shapes and styles" class="float">
 
-<p>&nbsp;</p>
+<p>
+Please see the chapter about <a href="attributes.html">attributes</a> for possible values and
+many examples.
+</p>
 
 </div>
 
@@ -509,7 +547,7 @@ Please continue with the chapter about the <a href="layouter.html">layouter</a>.
 
 <div class="footer">
 Page created <span class="date">2005-01-09</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
-Last update: <span class="date">2006-08-11</span>
+Last update: <span class="date">2006-09-03</span>
 </div>
 
 </div> <!-- end of right cell -->

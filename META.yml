@@ -17,4 +17,4 @@ requires:
   File::Spec: 3.01
   Graph::Easy: 0.46
   Pod::Simple: 3.02
-version: 0.33
+version: 0.34

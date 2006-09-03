@@ -1682,7 +1682,7 @@ table.graph21 .node {
   border-style: solid;
   border-width: 1px;
   color: #000000;
-  background: #ffd080;
+  background: white;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
@@ -1751,30 +1751,18 @@ table.graph22 {
   margin: 0.5em;
   padding: 0.5em;
 }
-table.graph22 .group {
-  text-align: left;
-  border-color: #000000;
-  border-style: none;
-  border-width: 1px;
-  color: #000000;
-  background: #a0d0ff;
-  font-size: 0.8em;
-  padding: 0.2em;
-}
 table.graph22 .node {
   text-align: center;
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
   color: #000000;
-  background: white;
+  background: #ffd080;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
-  white-space: normal;
 }
-table.graph22 td[class|="group"] { padding: 0.2em; }
 table.graph22 td {
   padding: 2px;
   background: inherit;
@@ -1824,12 +1812,99 @@ table.graph22 .eb {
   max-height: 0.4em;
   line-height: 0.4em;
   }
-table.graph22 .gi { border: none;}
-table.graph22 .gr { border-right-style: dashed;}
-table.graph22 .gl { border-left-style: dashed;}
-table.graph22 .gt { border-top-style: dashed;}
-table.graph22 .gb { border-bottom-style: dashed;}
-table.graph22 .ga { border-style: dashed;}
+table.graph23 .edge {
+  background: inherit;
+  border-style: none;
+  color: #000000;
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+}
+table.graph23 {
+  background: inherit;
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph23 .group {
+  text-align: left;
+  border-color: #000000;
+  border-style: none;
+  border-width: 1px;
+  color: #000000;
+  background: #a0d0ff;
+  font-size: 0.8em;
+  padding: 0.2em;
+}
+table.graph23 .node {
+  text-align: center;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  color: #000000;
+  background: white;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  white-space: normal;
+}
+table.graph23 td[class|="group"] { padding: 0.2em; }
+table.graph23 td {
+  padding: 2px;
+  background: inherit;
+  white-space: nowrap;
+  }
+table.graph23 span.l { float: left; }
+table.graph23 span.r { float: right; }
+table.graph23 .va {
+  vertical-align: center;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph23 .el {
+  width: 0.1em;
+  max-width: 0.1em;
+  min-width: 0.1em;
+  }
+table.graph23 .lh, table.graph23 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph23 .v, table.graph23 .hat, table.graph23 .sv {
+  text-align: left;
+  height: 0.5em;
+  line-height: 0.6em;
+  }
+table.graph23 .sv {
+  position: relative;
+  left: -0.5em;
+  overflow: visible;
+  }
+table.graph23 .sh, table.graph23 .shl {
+  position: relative;
+  top: 0.8em;
+  left: -0.2em;
+  vertical-align: bottom;
+  overflow: visible;
+  }
+table.graph23 .shl {
+  left: 0.2em;
+  }
+table.graph23 .hat {
+  padding-top: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph23 .eb {
+  max-height: 0.4em;
+  line-height: 0.4em;
+  }
+table.graph23 .gi { border: none;}
+table.graph23 .gr { border-right-style: dashed;}
+table.graph23 .gl { border-left-style: dashed;}
+table.graph23 .gt { border-top-style: dashed;}
+table.graph23 .gb { border-bottom-style: dashed;}
+table.graph23 .ga { border-style: dashed;}
 
    -->
  </style>
@@ -1893,7 +1968,7 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
   <li><a href='att_nodes.html#node_label' title="The text displayed as label.">label</a>, <a href='att_nodes.html#node_link' title="The link part, appended onto linkbase.">link</a>, <a href='att_nodes.html#node_linkbase' title="The base URL prepended to all generated links.">linkbase</a>, 
   <li><a href='att_nodes.html#node_offset' title="The offset of this node from the origin node, in columns and rows.">offset</a>, <a href='att_nodes.html#node_origin' title="The name of the node, that this node is relativ to.">origin</a>, 
   <li><a href='att_nodes.html#node_point-style' title="Controls the style of a node that has a shape of 'point'.">point-style</a>, 
-  <li><a href='att_nodes.html#node_rotate' title="The rotation of the node shape, either an absolute value (like south, up, down or 123), or a relative value (like +12, -90, left, right).">rotate</a>, <a href='att_nodes.html#node_rows' title="The size of the node in rows.">rows</a>, 
+  <li><a href='att_nodes.html#node_rank' title="The rank of the node, used by the layouter to find the order and placement of nodes.">rank</a>, <a href='att_nodes.html#node_rotate' title="The rotation of the node shape, either an absolute value (like south, up, down or 123), or a relative value (like +12, -90, left, right).">rotate</a>, <a href='att_nodes.html#node_rows' title="The size of the node in rows.">rows</a>, 
   <li><a href='att_nodes.html#node_shape' title="The shape of the node.">shape</a>, <a href='att_nodes.html#node_size' title="The size of the node in columns and rows.">size</a>, 
   <li><a href='att_nodes.html#node_text-style' title="The style of the label text.">text-style</a>, <a href='att_nodes.html#node_text-wrap' title="When set to auto, the label text will be wrapped to make the node size smaller, alignments on individual line breaks are ignored..">text-wrap</a>, <a href='att_nodes.html#node_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
 </ul>
@@ -3108,6 +3183,49 @@ One of: <code>circle</code>, <code>cross</code>, <code>diamond</code>, <code>dot
 </div><div class="clear"></div>
 </div>
 
+<a name="node_rank">
+<h4>rank</h4></a>
+
+<div class="entry">
+
+<p>
+The rank of the node, used by the layouter to find the order and placement of nodes. Set to <code>auto</code> (the default), <code>same</code> (usefull for node lists) or a positive number. See the section about <a href="attributes.html#node_ranks">node ranks</a> for reference and more examples.<br>
+<b>Defaults to:</b> <code>auto</code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">[ Bonn ], [ Berlin ] { rank: same; }
+ [ Bonn ] -&gt; [ Cottbus ] -&gt; [ Berlin ]
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph19" cellpadding=0 cellspacing=0>
+<tr>
+ <td colspan=4 rowspan=4 class='node' style="rank: same">Bonn</td>
+ <td rowspan=4 class="edge el"></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
+
+ <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">&gt;</span></td>
+ <td colspan=4 rowspan=4 class='node'>Cottbus</td>
+ <td rowspan=4 class="edge el"></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
+
+ <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">&gt;</span></td>
+ <td colspan=4 rowspan=4 class='node' style="rank: same">Berlin</td>
+</tr>
+
+<tr></tr>
+
+<tr>
+ <td colspan=6 rowspan=2 class="edge eb">&nbsp;</td>
+
+ <td rowspan=2 class="edge eb">&nbsp;</td>
+</tr>
+
+</table>
+</div><div class="clear"></div>
+</div>
+
 <a name="node_rotate">
 <h4>rotate</h4></a>
 
@@ -3124,7 +3242,7 @@ The rotation of the node shape, either an absolute value (like <code>south</code
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph19" cellpadding=0 cellspacing=0>
+<table class="graph20" cellpadding=0 cellspacing=0>
 <tr>
  <td colspan=4 rowspan=4 class='node' style="rotate: 45">Bonn</td>
  <td rowspan=4 class="edge el"></td>
@@ -3165,7 +3283,7 @@ The size of the node in rows. See also <a href="#node_size">size</a>.<br>
 
 <p>
 The shape of the node. Nodes with shape 'point' (see <a href="#node_point-style">point-style</a>) have a fixed size and do not display their label. The border of such a node is the outline of the <code>point-shape</code>, and the fill is the inside of the <code>point-shape</code>. When the <code>shape</code> is set to the value 'img', the <a href="#node_label">label</a> will be interpreted as an external image resource to display. In this case attributes like <a href="#node_color">color</a>, <a href="#node_font-size">font-size</a> etc. are ignored.
-One of: <code>circle</code>, <code>diamond</code>, <code>ellipse</code>, <code>hexagon</code>, <code>house</code>, <code>invisible</code>, <code>invhouse</code>, <code>invtrapezium</code>, <code>invtriangle</code>, <code>octagon</code>, <code>parallelogram</code>, <code>pentagon</code>, <code>point</code>, <code>triangle</code>, <code>trapezium</code>, <code>septagon</code>, <code>rect</code>, <code>rounded</code>, <code>none</code>, <code>img</code>.
+One of: <code>circle</code>, <code>diamond</code>, <code>edge</code>, <code>ellipse</code>, <code>hexagon</code>, <code>house</code>, <code>invisible</code>, <code>invhouse</code>, <code>invtrapezium</code>, <code>invtriangle</code>, <code>octagon</code>, <code>parallelogram</code>, <code>pentagon</code>, <code>point</code>, <code>triangle</code>, <code>trapezium</code>, <code>septagon</code>, <code>rect</code>, <code>rounded</code>, <code>none</code>, <code>img</code>.
 <br>
 <b>Defaults to:</b> <code>rect</code><br>
 <b>Example graph:</b>
@@ -3182,7 +3300,7 @@ One of: <code>circle</code>, <code>diamond</code>, <code>ellipse</code>, <code>h
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph20" cellpadding=0 cellspacing=0>
+<table class="graph21" cellpadding=0 cellspacing=0>
 <tr>
  <td colspan=4 rowspan=4 class='node'>Bonn</td>
  <td rowspan=4 class="edge el"></td>
@@ -3272,7 +3390,7 @@ edge {
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph21" cellpadding=0 cellspacing=0>
+<table class="graph22" cellpadding=0 cellspacing=0>
 <tr>
   <td colspan=12 style="font-style: italic; font-weight: bold; font-size: 150%; text-align: center">Verbindung</td>
 </tr>
@@ -3319,7 +3437,7 @@ One of: <code>auto</code>, <code>none</code>.
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph22" cellpadding=0 cellspacing=0>
+<table class="graph23" cellpadding=0 cellspacing=0>
 <tr>
  <td colspan=4 rowspan=4 class='group gt gl'>&nbsp;</td>
  <td colspan=4 rowspan=4 class='group gt'>Nodes:</td>
@@ -3383,7 +3501,7 @@ The text displayed as mouse-over for nodes/edges, or as the title for the graph.
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Aug 13 19:22:16 2006</span> in 0.4486s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
+Page created automatically at <span class="date">Sun Sep  3 17:01:14 2006</span> in 0.2374s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->

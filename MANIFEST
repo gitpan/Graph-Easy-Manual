@@ -32,6 +32,7 @@ doc/manual/teamwork.css
 doc/manual/tutorial.html
 doc/manual/tutorial_tree.html
 doc/manual/tutorial_bypass.html
+doc/manual/tutorial_edges.html
 doc/manual/img/classes.png
 doc/manual/img/colors.png
 doc/manual/img/dataflow.png
@@ -56,6 +57,7 @@ doc/manual/img/sides.png
 doc/manual/img/unicode.png
 doc/manual/svg/test.svg
 doc/manual/svg/edges.svg
+doc/manual/svg/bypass.svg
 doc/README
 doc/attributes.tpl
 doc/att_edges.tpl
@@ -67,6 +69,10 @@ doc/gen_manual
 examples/pod2html
 examples/00_Overview.pod
 examples/overview.txt
+examples/bypass_0.txt
+examples/bypass_1.txt
+examples/bypass_2.txt
+examples/bypass_3.txt
 t/pod.t
 t/pod_cov.t
 lib/Graph/Easy/Manual.pm

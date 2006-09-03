@@ -1,5 +1,10 @@
 Revision history for Graph::Easy::Manual:
 
+2006-09-01 v0.34 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy 0.47
+  * add the tutorial about creating a bypass
+  * add the tutorial about inline edge labels
+
 2006-08-11 v0.33 Tels 2 tests - Doc, doc, doc, document the code...
   * regen from Graph::Easy 0.46
   * add a Build.PL file

@@ -8,7 +8,7 @@ package Graph::Easy::Manual;
 use strict;
 
 use vars qw/$VERSION/;
-$VERSION = '0.33';
+$VERSION = '0.34';
 
 1;
 __END__
@@ -22,7 +22,7 @@ Graph::Easy::Manual - HTML manual for Graph::Easy
         cd doc
 	./gen_manual
 
-	# then open doc/manual/index.html in Browser
+	# then open doc/manual/index.html in browser
 
 =head1 DESCRIPTION
 
