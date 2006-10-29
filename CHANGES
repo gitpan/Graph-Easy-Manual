@@ -1,11 +1,18 @@
 Revision history for Graph::Easy::Manual:
 
-2006-09-01 v0.34 Tels 2 tests - Doc, doc, doc, document the code...
+2006-10-29 v0.35 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy 0.49
+  * make background of normal text a bit lighther to look more clean
+  * move color names and tables to extra page
+  * list all attribute name aliases with "-" ("font-size" etc)
+  * generate lists from the new default attribute entries
+
+2006-09-01 v0.34 Tels 2 tests
   * regen from Graph::Easy 0.47
   * add the tutorial about creating a bypass
   * add the tutorial about inline edge labels
 
-2006-08-11 v0.33 Tels 2 tests - Doc, doc, doc, document the code...
+2006-08-11 v0.33 Tels 2 tests
   * regen from Graph::Easy 0.46
   * add a Build.PL file
   * various small fixes and examples added
@@ -15,7 +22,7 @@ Revision history for Graph::Easy::Manual:
   * gen-manual: allow different output styles for example graphs
   * update the overview image, and make it safe for colorblind people
 
-2006-04-17 v0.32 Tels 2 tests - Doc, doc, doc, document the code...
+2006-04-17 v0.32 Tels 2 tests
   * regen from Graph::Easy 0.44
   * add doc about quoting, escaping and encoding to syntax.html
   * clarify (sub) class name section

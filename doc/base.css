@@ -37,7 +37,7 @@ h2.mint { background: #c0ffe0; }
   }
 div.footer
   {
-  background: #f0f0f0;
+  background: #e0e0e0;
   border: 1px solid gray;
   padding: 0.6em;
   padding-left: 1.6em;
@@ -60,11 +60,16 @@ div.text
   border: 1px solid gray;
   padding: 0.5em;
   padding-left: 1.5em;
-  background: #e8e8e8;
+  background: #f0f0f0;
   color: black;
   font-size: 0.9em;
   }
 .clear { clear: both; }
+a:link
+  {
+  color: #000060;
+  }
+h4, h3 { color: black; }
 a.top
   {
   font-size: 0.8em;
@@ -86,7 +91,7 @@ a:hover
   }
 a:hover h4, a:hover h3
   {
-  background: #e8e8e8;
+  background: #f0f0f0;
   color: black;
   }
 .menubck, .menuext, .menucur, .menuadd, .menuind, .menuinc, .menucin
@@ -163,4 +168,5 @@ pre
   border: 1px solid black;
   max-width: 40em;
   }
-em { font-weight: bold; color: yellow; background: #a08080; font-style: normal; }  
+em { font-weight: bold; color: yellow; background: #a08080; font-style: normal; }
+iframe, object { margin: 1em; }

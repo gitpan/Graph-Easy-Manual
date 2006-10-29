@@ -40,7 +40,7 @@
     <a class="menuind" href="#labels__titles__names_and_links" title="Labels, titles, names and links">Labels</a>
     <a class="menuind" href="#links" title="Links and URLs">Links</a>
     <a class="menuind" href="#node_ranks" title="Node Ranks">Ranks</a>
-    <a class="menuind" href="#color_names_and_values" title="Color names and values">Colors</a>
+    <a class="menuind" href="att_colors.html" title="Color names and values">Colors</a>
   <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
   <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
 </div>
@@ -61,6 +61,22 @@ If you haven't done so, please read the <a href="overview.html">Overview</a> fir
 This chapter describes all the possible attributes for graphs, groups, nodes and edges.
 It is generated automatically from the definitions in <code>Graph::Easy::Attributes</code>.
 </p>
+
+<p>
+Please note that for compatibility reasons, as well for making it easier to remember
+attribute names, the following attribute names are also accepted:
+</p>
+
+<ul>
+  <li>arrow-style</li>
+  <li>border-color, border-style, border-width
+  <li>font-size</li>
+  <li>label-color, label-pos</li>
+  <li>text-style, text-wrap</li>
+  <li>point-style, point-shape</li>
+</ul>
+
+<hr>
 
 <a name="Graphs">
 <h3>Graphs</h3>
@@ -94,7 +110,12 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
 
 <p>
 Each of the primary classes <code>node</code>, <code>edge</code> and <code>group</code>
-can have an arbitrary number of sub-classes.
+can have an arbitrary number of sub-classes. Objects can then have one of
+these subclasses set via the attribute <code>class</code>.
+<br>
+The primary class <code>graph</code>
+cannot have subclasses, and there is only one graph object and it is always
+in the class <code>graph</code>. 
 </p>
 
 <p>
@@ -119,6 +140,10 @@ node.cities { color: red; }
 <img src="img/classes.png" border=0 alt="Example of classes" title="Example of classes" style="float: left; margin-left: 1em;">
 
 <p class="clear"></p>
+
+<p>
+It is not yet possible to have one object belong to more than one subclass.
+</p>
 
 <a name="labels__titles__names_and_links">
 <h3>Labels, Titles and Names</h3>
@@ -213,12 +238,12 @@ Of course you can also attach a link to an edge, group or graph label.
 </p>
 
 <a name="node_ranks">
-<h3>Node Ranks</h3>
+<h3>Ranks</h3>
 </a>
 
 <p>
-The rank of a node determines the order in which nodes are placed by the layouter, as well
-as their position relatively to each other.
+The rank of a node or group determines the order in which nodes/groups are placed by the
+layouter, as well as their position relatively to each other.
 </p>
 
 <p>
@@ -238,37 +263,12 @@ collection so that they are laid out in the same row (or column, depending on gr
 </a>
 
 <p>
-The following color schemes are recognized by <code>Graph::Easy</code>.
-This lists all the colors known under each scheme, and their
-corrosponding color values. Note that the <code>w3c</code> scheme is exactly the same as
-the <a href="http://www.w3.org/TR/SVG/types.html#ColorKeywords">one published</a> by
-<a href="">W3C</a>. So do not blame me for silly things
-like <font style="color: white; background: darkseagreen">darkseagreen</font>
-being lighter than <font style="color: white; background: seagreen">seagreen</font> ...
+Please see the page <a href="attr_colors.html">about colorschemes and color names</a>.
 </p>
-
-<p>&nbsp;</p>
-
-##colors##
-
-<p>
-For all other colors you can use one of the following notations:
-</p>
-
-<ul>
-  <li>Hex: <code>#ff0080</code> (#rrggbb)
-  <li>Hex: <code>#f08</code> (#rgb)
-  <li>RGB: <code>rgb(255,0,128)</code>
-  <li>RGB: <code>rgb(50%, 10%, 20%)</code>
-  <li>RGB: <code>rgb(0.5, 0, 1.0)</code>
-</ul>
-
-Note that mixing the different ways to express the red, green and blue
-channels is possible, so <code>rgb(0, 50%,0.5)</code> is a valid color.
-</div>
 
 <div class="footer">
-Page created automatically at <span class="date">##time##</span> in ##took##. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
+Page created automatically at <span class="date">##time##</span> in ##took##.
+Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->

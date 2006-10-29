@@ -8,7 +8,7 @@ package Graph::Easy::Manual;
 use strict;
 
 use vars qw/$VERSION/;
-$VERSION = '0.34';
+$VERSION = '0.35';
 
 1;
 __END__

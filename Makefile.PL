@@ -12,11 +12,11 @@ name		'Graph-Easy-Manual';
 # Get most of the details from the primary module
 all_from	'lib/Graph/Easy/Manual.pm';
 
-requires	'Graph::Easy'	=> 0.46,
+requires	'Graph::Easy'	=> 0.49,
 		'File::Spec'	=> 3.01,
 		'Pod::Simple'	=> 3.02;
 
-recommends	'Graph::Easy::As_svg'	=> 0.19;
+recommends	'Graph::Easy::As_svg'	=> 0.21;
 
 build_requires	'Test::More'	=> 0.42;
 

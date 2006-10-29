@@ -18,7 +18,7 @@ BEGIN
 
 my $path = shift || 'manual';
 
-use Graph::Easy 0.46;
+use Graph::Easy 0.49;
 use Graph::Easy::Parser;
 use Graph::Easy::Manual;
 
@@ -103,7 +103,24 @@ for my $class (qw/node edge graph group/)
       } 
 
     $txt .= "<p>\n$des<br>\n";
-    $txt .= "<b>Defaults to:</b> <code>$e->[2]</code>";
+    my $default = $e->[2]; $default = '' unless defined $default;
+
+    if (ref($default))
+      {
+      my $d = $default; $default = "<ul>\n";
+      for my $k (sort keys %$d)
+	{
+        next if $k eq 'default';
+	$default .= "  <li><code>$d->{$k}</code> for $k</li>\n";
+	}
+      $default .= "  <li><code>$d->{default}</code> for anything else</li>\n" if exists $d->{default};
+      $default .= "</ul>\n";
+      }
+    else
+      {
+      $default = '<code>' . $default . '</code>';
+      }
+    $txt .= "<b>Defaults to:</b> $default";
 
     if (defined $e->[5])
       {
@@ -161,12 +178,21 @@ for my $class (qw/node edge graph group/)
   $tpl =~ s/##$class##/$idx/;
   }
 
+my $took = sprintf("%0.4fs", time() - $start);
+$tpl =~ s/##took##/$took/g;
+
+$tpl =~ s/##time##/ scalar localtime(); /eg;
+write_file(File::Spec->catfile($path,'attributes.html'),$tpl);
+
+
+#############################################################################
 # insert the list of colors as one table per colorscheme
 
+$start = time();
+$tpl = read_file('att_colors.tpl');
+
 my $schemes = Graph::Easy->color_names();
-
 my $list = '';
-
 for my $scheme ('w3c', 'x11')
   {
   my $colors = $schemes->{$scheme};
@@ -216,10 +242,10 @@ $tpl =~ s/##colors##/$list/;
 
 $tpl =~ s/##time##/ scalar localtime(); /eg;
 
-my $took = sprintf("%0.4fs", time() - $start);
+$took = sprintf("%0.4fs", time() - $start);
 $tpl =~ s/##took##/$took/g;
 
-write_file(File::Spec->catfile($path,'attributes.html'),$tpl);
+write_file(File::Spec->catfile($path,'att_colors.html'),$tpl);
 
 #############################################################################
 

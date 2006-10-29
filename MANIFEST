@@ -14,6 +14,7 @@ doc/manual/att_graphs.html
 doc/manual/att_nodes.html
 doc/manual/att_groups.html
 doc/manual/att_edges.html
+doc/manual/att_colors.html
 doc/manual/bench/serie.pl
 doc/manual/benchmark.html
 doc/manual/errors.html
@@ -64,6 +65,7 @@ doc/att_edges.tpl
 doc/att_nodes.tpl
 doc/att_groups.tpl
 doc/att_graphs.tpl
+doc/att_colors.tpl
 doc/base.css
 doc/gen_manual
 examples/pod2html
