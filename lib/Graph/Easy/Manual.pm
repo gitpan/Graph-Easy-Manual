@@ -8,7 +8,7 @@ package Graph::Easy::Manual;
 use strict;
 
 use vars qw/$VERSION/;
-$VERSION = '0.35';
+$VERSION = '0.36';
 
 1;
 __END__
@@ -18,6 +18,8 @@ __END__
 Graph::Easy::Manual - HTML manual for Graph::Easy
 
 =head1 SYNOPSIS
+
+	# generate the HTML manual locally:
 
         cd doc
 	./gen_manual
@@ -36,7 +38,16 @@ X<flowchart>
 
 =head1 SEE ALSO
 
-L<Graph::Easy>.
+The HTML-Version is currently mirrored on these two locations:
+
+=over 12
+
+=item L<http://bloodgate.com/perl/graph/manual/index.html>
+=item L<http://search.cpan.org/~tels/Graph-Easy-Manual/doc/manual/index.html>
+
+=back
+
+See also: L<Graph::Easy>.
 
 =head1 AUTHOR
 

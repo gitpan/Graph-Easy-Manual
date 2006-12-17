@@ -290,6 +290,7 @@ sub write_file
   my @dirs = File::Spec->splitdir($dir);
 
   my $comb = '';
+  $comb = File::Spec->curdir() unless File::Spec->file_name_is_absolute($dirs[0]);
   foreach my $d (@dirs)
     {
     $comb = File::Spec->catdir($comb,$d);

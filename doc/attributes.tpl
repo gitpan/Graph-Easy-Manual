@@ -54,7 +54,8 @@
 <div class="text">
 
 <p>
-If you haven't done so, please read the <a href="overview.html">Overview</a> first.
+If you haven't already done so, please read the
+<a href="syntax.html#attributes">Chapter about attribute syntax</a> first.
 </p>
 
 <p>

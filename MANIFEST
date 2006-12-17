@@ -7,7 +7,6 @@ LICENSE
 README
 SIGNATURE
 TODO
-doc/manual/manual.css
 doc/manual/a-star.html
 doc/manual/attributes.html
 doc/manual/att_graphs.html
@@ -80,7 +79,6 @@ t/pod_cov.t
 lib/Graph/Easy/Manual.pm
 lib/Graph/Easy/Pod2HTML.pm
 META.yml			Module meta-data
-
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -93,4 +91,3 @@ inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
-

@@ -27,6 +27,7 @@
   <a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a>
   <a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
   <a class="menucur" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
+    <a class="menuind" href="#general" title="Some generic questions and answers">General</a>
     <a class="menuind" href="#graphviz" title="How does Graph::Easy compare to Graphviz?">Graphviz?</a>
     <a class="menuind" href="#svg" title="SVG output and problems">SVG?</a>
     <a class="menuind" href="benchmark.html" title="Benchmarks">Benchmarks</a>
@@ -51,6 +52,45 @@ to Graph::Easy, as well as for the MediaWiki integration.
 
 </div>
 
+
+<a name="general"></a>
+<h2>General</h2>
+
+<div class="text">
+
+<span class="q">Question:</span>
+
+<p>
+What extension should Graph::Easy files have?
+</p>
+
+<span class="a">Answer: <small>[2006-12-17]</small></span>
+
+<p>
+The <i>native</i> format of Graph::Easy is called "txt", as can be seen on the
+method names (<code>as_txt()</code>) as well as the converter options. And
+since a graph description in Graph::Easy is just this, text, the file
+extension used should be <code><b>.txt</b></code>.
+<br>
+Some people like to invent their own extension for Graph::Easy files, but this
+just is a solution in search for a problem, and actually causes more problems,
+namely:
+</p>
+
+<ul>
+  <li>There aren't enough two- and three-letter combinations available, so
+      name clashes are unavoidable</li>
+  <li>All current modern operating systems know how to handle .txt files, but
+      for an unknown extension no handler is setup/installed</li>
+  <li>Likewise, sending .txt files via email etc. already works</li>
+</ul>
+
+<p>
+Therefore, Graph::Easy textual descriptions should be called what they are:
+<code><b>.txt</b></code>.
+</p>
+
+</div>
 
 <a name="graphviz"></a>
 <h2>Graphviz</h2>
@@ -111,7 +151,7 @@ not yet implemented:
 What can <code>Graph::Easy</code>, that Graphviz cannot do?
 </p>
 
-<span class="a">Answer: <small>[2006-03-12]</small></span>
+<span class="a">Answer: <small>[2006-11-18]</small></span>
 
 Apart from the IMHO easier for humans syntax of the input format, here are the key points:
 
@@ -133,7 +173,6 @@ Apart from the IMHO easier for humans syntax of the input format, here are the k
       on an per-node or even per-edge basis.
   <li>Graphviz doesn't implement the border or edge style "wave". Edge styles involving double
       lines are non-obvious to create in Graphviz.
-  <li><code>Graph::Easy</code> works around the Firefox bug with links in SVGs.
   <li>Links are build from two parts, a <code>linkbase</code> and a <code>link</code>. Thus you
       can easily set a common base part and put the rest per node on it. There are even attributes
       than build links or titles automatically.
@@ -141,7 +180,7 @@ Apart from the IMHO easier for humans syntax of the input format, here are the k
       full node text.
   <li>Edge arrows can have their arrows filled with a different color
   <li>Graphviz supports an additional color scheme, <code>w3c</code>. This is also the default.  (<font color="green">Color scheme support is implemented in v0.46</font>)
-  <li>Animations are possible (even w/o knowledge of scripting languages) (<font color="red">Will be implemented in v0.50</font>)
+  <li>Animations are possible (even w/o knowledge of scripting languages) (<font color="red">Will be implemented in v0.60</font>)
 </ul>
 
 <span class="q">Question:</span>
@@ -278,7 +317,7 @@ If you have questions, or found an error on this page, feel free to send me an
 
 <div class="footer">
 Page created <span class="date">2005-01-11</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
-Last update: <span class="date">2006-08-20</span>
+Last update: <span class="date">2006-12-17</span>
 </div>
 
 </div> <!-- end of right cell -->

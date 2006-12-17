@@ -80,9 +80,10 @@ Certain things are except from this rule, like color values like
 </p>
 
 <p>
-To make sure that you comments are parsed correctly, always put a space
-as the first character after the hatch (entire lines consisting only
-of the '#' character are ok, though):
+To make sure that you comments are parsed correctly
+put a space as the first character after the hatch (entire lines consisting only
+of the '#' character are ok, though). In addition, inside attributes you
+should escape the '#' character with a backslash:
 </p>
 
 <pre>
@@ -91,6 +92,8 @@ of the '#' character are ok, though):
 
 #############################
 #This is bad.
+
+node { label: \#5; }			# Note the "\"!
 </pre>
 
 <a name="whitespace">
@@ -118,12 +121,21 @@ When writing graph text, you are encouraged to use whitespace and linebreaks
 for clarity, like in the second example above.
 </p>
 
+<a name="linebreaks">
+<h4>Linebreaks and wrapping</h4>
+</a>
+
 <p>
-To insert a line break into a node or edge label, use literally <code>\n</code>:
+To insert a line break into a node or edge label, use literally <code>\n</code>.
+Note that the graph description becomes more readable if you insert
+linebreaks after every literal <code>\n</code>:
 </p>
 
 <pre>
-[ My\n long\n node\n name ] -- A\n long\n label --> [ B ]
+[ My\n long\n node\n name ] 
+  -- A\n
+     longer\n
+     label --> [ B ]
 </pre>
 
 <pre class="graph">
@@ -135,9 +147,7 @@ To insert a line break into a node or edge label, use literally <code>\n</code>:
 +------+          +---+
 </pre>
 
-<div class="clear"></div>
-
-<p>
+<p class="clear">
 You can also replace the <code>\n</code> by <code>\r</code>, <code>\c</code>
 or <code>\l</code> to align the next line <code>right</code>, <code>left</code>
 or <code>center</code>, respectively:
@@ -154,6 +164,32 @@ or <code>center</code>, respectively:
 |           right |  edge label   |   |
 |     center      | ------------> |   |
 +-----------------+               +---+
+</pre>
+
+<p class="clear">
+Another method to create more readable labels is to use the
+<a href="attributes.html#textwrap">textwrap</a>-attribute, either setting it
+for all types of labels in the graph at once (by putting it on the graph), or
+only for certain classes:
+</p>
+
+<pre>
+graph { textwrap: auto; }
+
+[ Long Node Label left right center ] 
+  -- A long edge label --> { text-wrap: 10; }
+[ B ]
+</pre>
+
+<pre class="graph">
++--------+           +---+
+|  Long  |           |   |
+|  Node  |           |   |
+| Label  |  A long   | B |
+|  left  |  edge     |   |
+| right  |  label    |   |
+| center | --------> |   |
++--------+           +---+
 </pre>
 
 <div class="clear"></div>
@@ -281,9 +317,11 @@ are in the format <code>attributename: attributevalue;</code>.
 </p>
 
 <p>
-Attributes <b>names</b> must not be quoted, attribute
-values can be quoted, and the quotes will be removed on
-them:
+Attributes <b>names</b> must <i>not</i> be quoted, attribute
+values <i>can</i> be quoted, and any double quotes (when they appear
+at start and end) will be removed.
+Note that the quotes are only removed from attribute values, and
+not from node or group names:
 </p>
 
 <pre>
@@ -299,12 +337,12 @@ This will produce:
 </pre>
 
 <p class="clear">
-If you want to embed a <code>;</code> (semi-colon), then quote the
-string:
+If you want to embed a <code>;</code> (semicolon), then either
+<i>quote</i> the string or <i>escape</i> the semicolon with a backslash:
 </p>
 
 <pre>
-[ Baz;Bar ] --> { label: "Baz;Bar"; } [ Bonn ] { label: ";;"; }
+[ Baz;Bar ] --> { label: "Baz;Bar"; } [ Bonn ] { label: \;\;; }
 </pre>
 
 <pre class="graph">
@@ -314,20 +352,35 @@ string:
 </pre>
 
 <p class="clear">
-If you want to embed a semi-colon <b>and</b>
-have quotes at the start <b>and</b> end of the string value,
-then quote the string <em>and</em> use backslashes to escape the
-inner quotes:
+If you want to embed a semicolon <b>and</b> have quotes at the start
+<b>and</b> end of the string value, simple use backslashes to escape the
+quotes and semicolon:
 </p>
 
 <pre>
-[ A ] { label: "\"Hello;\""; } --> [ Berlin ]
+[ A ] { label: \"Hello\;\"; } --> [ Berlin ]
 </pre>
 
 <pre class="graph">
 +----------+     +--------+
 | "Hello;" | --> | Berlin |
 +----------+     +--------+
+</pre>
+
+<p class="clear">
+If you want to embed a <code>#</code> (hashmark), then you <b>must</b>
+ <i>escape</i> the hashmark, or the parser will see it as the start
+of a comment:
+</p>
+
+<pre>
+[ Baz\#Bar ] --> { label: "Baz\#Bar"; } [ Bonn ] { label: \#\#; }
+</pre>
+
+<pre class="graph">
++---------+  Baz#Bar   +----+
+| Baz#Bar | ---------> | ## |
++---------+            +----+
 </pre>
 
 <p class="clear">
@@ -375,6 +428,8 @@ node.city { background: red; }	# for all nodes with class "city"
 [ ] { fill: brown; }		# for the anonymous node only
 </pre>
 
+<h4>Multiple Attributes</h4>
+
 <p>
 As a special case for autosplit nodes, you can separate attribute values
 with "|" (vertical bar) for each part of the auto-split node:
@@ -386,7 +441,7 @@ with "|" (vertical bar) for each part of the auto-split node:
 
 <p>
 In the example above, "Bonn" would be red, "Berlin" yellow and "Frankfurt" blue.
-Missing values will not set the attribute on the node as in the following
+Missing values will <b>NOT</b> change the attribute on the node as in the following
 example, where "Berlin" and "Ulm" will get the default background (white):
 <p>
 
@@ -395,6 +450,12 @@ node { fill: white; }
 
 [ Bonn | Berlin | Hahn | Ulm ] { fill: red||blue; }
 </pre>
+
+<p>
+The <code>||</code> here means that the attribute value is missing, please do
+not confuse that with <code>||</code> inside the autosplit node itself,
+where this introduces a "linebreak".
+</p>
 
 <p>
 You can also set an attribute for all parts, or only for specific parts:
@@ -519,7 +580,7 @@ present. Thus:
 </pre>
 
 <p>
-In additon to the styles, the following two directions are possible:
+In additon to the styles, the following directions are possible:
 </p>
 
 <pre>
@@ -531,7 +592,8 @@ In additon to the styles, the following two directions are possible:
 
 <p>
 Of course you can combine all directions with all styles. However,
-note that edges without arrows cannot use the shortcuts for styles:
+note that edges without arrows <b>must</b> use at least
+two repetitions of the full pattern:
 </p>
 
 <pre>
@@ -541,11 +603,6 @@ note that edges without arrows cannot use the shortcuts for styles:
         -               # invalid!
         ~               # invalid!
 </pre>
-
-<p>
-Just remember to use at least two repetitions of the full pattern
-for arrow-less edges.
-</p>
 
 <p>
 You can also give edges a label, either by inlining it into the style,
@@ -572,9 +629,9 @@ or by setting it via the attributes:
 </pre>
 
 <p>
-Note that the two patterns on the left and right of the label must be
-the same, and that there is a <b>mandatory space</b> between the left pattern and the
-label, as well as the label and the right pattern.
+Note that the two patterns on the left and right of the label <b>must</b> be
+the same, and that there is a <b>mandatory space</b> between the label
+and the patterns on the left and right side.
 </p>
 
 <p>
@@ -733,7 +790,7 @@ Please continue with the chapter about the <a href="attributes.html">attributes<
 
 <div class="footer">
 Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
-Last update: <span class="date">2006-08-11</span>
+Last update: <span class="date">2006-12-17</span>
 </div>
 
 </div> <!-- end of right cell -->

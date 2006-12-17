@@ -12,7 +12,7 @@ name		'Graph-Easy-Manual';
 # Get most of the details from the primary module
 all_from	'lib/Graph/Easy/Manual.pm';
 
-requires	'Graph::Easy'	=> 0.49,
+requires	'Graph::Easy'	=> 0.50,
 		'File::Spec'	=> 3.01,
 		'Pod::Simple'	=> 3.02;
 

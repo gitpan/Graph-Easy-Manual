@@ -422,6 +422,39 @@ to rotate graphs, use <code>left</code>, <code>right</code>, <code>front</code>
 or <code>back</code>.
 </p>
 
+<p>
+Here is one more example:
+</p>
+
+<pre class="graphtext">
+graph { flow: east; }
+
+[1 - turn back]
+ --> {flow: <em>back</em> } [2 - turn left]
+ --> {flow: <em>left</em> } [3 - turn left]
+ --> {flow: <em>left</em> } [4 - turn right] 
+ --> {flow: <em>right</em> } [5 - turn right] 
+ --> {flow: <em>right</em> } [6 - finished]
+</pre>
+
+<pre class="graph">
++---------------+     +----------------+
+| 2 - turn left | <-- | 1 - turn back  |
++---------------+     +----------------+
+  |
+  |
+  v
++---------------+     +----------------+
+| 3 - turn left | --> | 4 - turn right |
++---------------+     +----------------+
+                        |
+                        |
+                        v
++---------------+     +----------------+
+| 6 - finished  | <-- | 5 - turn right |
++---------------+     +----------------+
+</pre>
+
 <div class="clear"></div>
 
 <h4>Port numbers</h4>
@@ -821,7 +854,7 @@ on how to put individual attributes on each autosplit node.
 </p>
 
 <p>
-To reference an autosplit node, you need to know it's basename and the number of
+To reference an autosplit node, you need to know its basename and the number of
 the part that was split up. The basename can be set via an attribute. If not specified,
 it will be automatically created by concatenating all the parts together, without
 spaces or linebreaks. If the basename already exists, an incrementing number
@@ -1030,7 +1063,7 @@ details on pathfinding.
 
 <div class="footer">
 Page created <span class="date">2005-08-19</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
-Last update: <span class="date">2006-10-13</span>
+Last update: <span class="date">2006-11-21</span>
 </div>
 
 </div> <!-- end of right cell -->

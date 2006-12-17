@@ -54,7 +54,8 @@
 <div class="text">
 
 <p>
-If you haven't done so, please read the <a href="overview.html">Overview</a> first.
+If you haven't already done so, please read the
+<a href="syntax.html#attributes">Chapter about attribute syntax</a> first.
 </p>
 
 <p>
@@ -92,7 +93,7 @@ attribute names, the following attribute names are also accepted:
   <li><a href='att_graphs.html#graph_label' title="The text displayed as label.">label</a>, <a href='att_graphs.html#graph_labelpos' title="The position of the graph label.">labelpos</a>, <a href='att_graphs.html#graph_link' title="The link part, appended onto linkbase.">link</a>, <a href='att_graphs.html#graph_linkbase' title="The base URL prepended to all generated links.">linkbase</a>, 
   <li><a href='att_graphs.html#graph_output' title="The desired output format.">output</a>, 
   <li><a href='att_graphs.html#graph_root' title="The name of the root node, given as hint to the layouter to start the layout there.">root</a>, 
-  <li><a href='att_graphs.html#graph_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_graphs.html#graph_textwrap' title="When set to auto, the label text will be wrapped to make the node size smaller, alignments on individual line breaks are ignored..">textwrap</a>, <a href='att_graphs.html#graph_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
+  <li><a href='att_graphs.html#graph_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_graphs.html#graph_textwrap' title="The default none makes the label text appear exactly as it was written, with <a href='syntax.html'>manual line breaks</a> applied.">textwrap</a>, <a href='att_graphs.html#graph_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
 </ul>
 
 
@@ -112,7 +113,7 @@ attribute names, the following attribute names are also accepted:
   <li><a href='att_nodes.html#node_pointstyle' title="Controls the style of a node that has a shape of 'point'.">pointstyle</a>, 
   <li><a href='att_nodes.html#node_rank' title="The rank of the node, used by the layouter to find the order and placement of nodes.">rank</a>, <a href='att_nodes.html#node_rotate' title="The rotation of the node shape, either an absolute value (like south, up, down or 123), or a relative value (like +12, -90, left, right).">rotate</a>, <a href='att_nodes.html#node_rows' title="The size of the node in rows.">rows</a>, 
   <li><a href='att_nodes.html#node_shape' title="The shape of the node.">shape</a>, <a href='att_nodes.html#node_size' title="The size of the node in columns and rows.">size</a>, 
-  <li><a href='att_nodes.html#node_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_nodes.html#node_textwrap' title="When set to auto, the label text will be wrapped to make the node size smaller, alignments on individual line breaks are ignored..">textwrap</a>, <a href='att_nodes.html#node_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
+  <li><a href='att_nodes.html#node_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_nodes.html#node_textwrap' title="The default none makes the label text appear exactly as it was written, with <a href='syntax.html'>manual line breaks</a> applied.">textwrap</a>, <a href='att_nodes.html#node_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
 </ul>
 
 
@@ -130,7 +131,7 @@ attribute names, the following attribute names are also accepted:
   <li><a href='att_edges.html#edge_label' title="The text displayed as label.">label</a>, <a href='att_edges.html#edge_labelcolor' title="The text color for the label.">labelcolor</a>, <a href='att_edges.html#edge_link' title="The link part, appended onto linkbase.">link</a>, <a href='att_edges.html#edge_linkbase' title="The base URL prepended to all generated links.">linkbase</a>, 
   <li><a href='att_edges.html#edge_minlen' title="The minimum length of the edge, in cells.">minlen</a>, 
   <li><a href='att_edges.html#edge_start' title="The starting port of this edge.">start</a>, <a href='att_edges.html#edge_style' title="The line style of the edge.">style</a>, 
-  <li><a href='att_edges.html#edge_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_edges.html#edge_textwrap' title="When set to auto, the label text will be wrapped to make the node size smaller, alignments on individual line breaks are ignored..">textwrap</a>, <a href='att_edges.html#edge_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
+  <li><a href='att_edges.html#edge_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_edges.html#edge_textwrap' title="The default none makes the label text appear exactly as it was written, with <a href='syntax.html'>manual line breaks</a> applied.">textwrap</a>, <a href='att_edges.html#edge_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
 </ul>
 
 
@@ -144,11 +145,12 @@ attribute names, the following attribute names are also accepted:
   <li><a href='att_groups.html#group_class' title="The subclass of the object.">class</a>, <a href='att_groups.html#group_color' title="The foreground/text/label color.">color</a>, <a href='att_groups.html#group_colorscheme' title="The colorscheme to use for all color values.">colorscheme</a>, 
   <li><a href='att_groups.html#group_edgeclass' title="The class into which all edges defined in this group are put.">edgeclass</a>, 
   <li><a href='att_groups.html#group_fill' title="The fill color, e.g.">fill</a>, <a href='att_groups.html#group_flow' title="The general direction in which edges will leave nodes first.">flow</a>, <a href='att_groups.html#group_font' title="A prioritized list of lower-case, unquoted values, separated by a comma.">font</a>, <a href='att_groups.html#group_fontsize' title="The size of the label text, best expressed in em (1.0em, 0.5em etc) or percent (100%, 50% etc)">fontsize</a>, <a href='att_groups.html#group_format' title="The formatting language of the label.">format</a>, 
+  <li><a href='att_groups.html#group_group' title="Puts the group inside this group, nesting the two groups inside each other.">group</a>, 
   <li><a href='att_groups.html#group_id' title="A unique identifier for this object, consisting only of letters, digits, or underscores.">id</a>, 
   <li><a href='att_groups.html#group_label' title="The text displayed as label.">label</a>, <a href='att_groups.html#group_link' title="The link part, appended onto linkbase.">link</a>, <a href='att_groups.html#group_linkbase' title="The base URL prepended to all generated links.">linkbase</a>, 
   <li><a href='att_groups.html#group_nodeclass' title="The class into which all nodes of this group are put.">nodeclass</a>, 
   <li><a href='att_groups.html#group_rank' title="The rank of the group, used by the layouter to find the order and placement of group.">rank</a>, <a href='att_groups.html#group_root' title="The name of the root node, given as hint to the layouter to start the layout there.">root</a>, 
-  <li><a href='att_groups.html#group_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_groups.html#group_textwrap' title="When set to auto, the label text will be wrapped to make the node size smaller, alignments on individual line breaks are ignored..">textwrap</a>, <a href='att_groups.html#group_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
+  <li><a href='att_groups.html#group_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_groups.html#group_textwrap' title="The default none makes the label text appear exactly as it was written, with <a href='syntax.html'>manual line breaks</a> applied.">textwrap</a>, <a href='att_groups.html#group_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
 </ul>
 
 
@@ -317,7 +319,7 @@ Please see the page <a href="attr_colors.html">about colorschemes and color name
 </p>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Oct 29 17:48:00 2006</span> in 1.2926s.
+Page created automatically at <span class="date">Sun Dec 17 16:12:48 2006</span> in 1.6855s.
 Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
 </div>
 

@@ -1978,7 +1978,7 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
   <li><a href='att_nodes.html#node_pointstyle' title="Controls the style of a node that has a shape of 'point'.">pointstyle</a>, 
   <li><a href='att_nodes.html#node_rank' title="The rank of the node, used by the layouter to find the order and placement of nodes.">rank</a>, <a href='att_nodes.html#node_rotate' title="The rotation of the node shape, either an absolute value (like south, up, down or 123), or a relative value (like +12, -90, left, right).">rotate</a>, <a href='att_nodes.html#node_rows' title="The size of the node in rows.">rows</a>, 
   <li><a href='att_nodes.html#node_shape' title="The shape of the node.">shape</a>, <a href='att_nodes.html#node_size' title="The size of the node in columns and rows.">size</a>, 
-  <li><a href='att_nodes.html#node_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_nodes.html#node_textwrap' title="When set to auto, the label text will be wrapped to make the node size smaller, alignments on individual line breaks are ignored..">textwrap</a>, <a href='att_nodes.html#node_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
+  <li><a href='att_nodes.html#node_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_nodes.html#node_textwrap' title="The default none makes the label text appear exactly as it was written, with <a href='syntax.html'>manual line breaks</a> applied.">textwrap</a>, <a href='att_nodes.html#node_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
 </ul>
 <a name="node_align">
 <h4>align</h4></a>
@@ -2031,14 +2031,14 @@ node {align: left;}
 <!-- row 1 line 0 -->
 <tr>
  <td colspan=4 rowspan=4 class='group gl'>&nbsp;</td>
- <td colspan=4 rowspan=4 class='node' style="text-align: right">Right<br />Aligned</td>
+ <td colspan=4 rowspan=4 class='node' style="text-align: right">Right<br>Aligned</td>
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
  <td rowspan=4 class="group edge el" style=" background: #a0d0ff;"></td>
- <td colspan=2 rowspan=2 class="group edge lh" style="border-bottom: solid 2px #000000; background: #a0d0ff;">label<br />text</td>
+ <td colspan=2 rowspan=2 class="group edge lh" style="border-bottom: solid 2px #000000; background: #a0d0ff;">label<br>text</td>
 
  <td rowspan=2 class="group edge" style=" color: #000000; background: #a0d0ff;"><span class="sh">&gt;</span></td>
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
- <td colspan=4 rowspan=4 class='node'>Left<br />aligned</td>
+ <td colspan=4 rowspan=4 class='node'>Left<br>aligned</td>
  <td colspan=4 rowspan=4 class='group gr'>&nbsp;</td>
 </tr>
 
@@ -3452,11 +3452,6 @@ The rank of the node, used by the layouter to find the order and placement of no
 
  <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">&gt;</span></td>
  <td colspan=4 rowspan=4 class='node'>Cottbus</td>
- <td rowspan=4 class="edge el"></td>
- <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
-
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">&gt;</span></td>
- <td colspan=4 rowspan=4 class='node' style="rank: same">Berlin</td>
 </tr>
 
 <!-- row 0 line 1 -->
@@ -3464,12 +3459,52 @@ The rank of the node, used by the layouter to find the order and placement of no
 
 <!-- row 0 line 2 -->
 <tr>
- <td colspan=6 rowspan=2 class="edge eb">&nbsp;</td>
+ <td colspan=2 rowspan=2 class="edge eb">&nbsp;</td>
 
  <td rowspan=2 class="edge eb">&nbsp;</td>
 </tr>
 
 <!-- row 0 line 3 -->
+<tr></tr>
+
+<!-- row 1 line 0 -->
+<tr>
+ <td colspan=8 rowspan=4></td>
+ <td colspan=4 class="edge he"></td>
+</tr>
+
+<!-- row 1 line 1 -->
+<tr>
+ <td colspan=2 rowspan=3 class="edge el">&nbsp;</td>
+ <td colspan=2 rowspan=3 class="edge lv" style="border-left: solid 2px #000000;">&nbsp;</td>
+</tr>
+
+<!-- row 1 line 2 -->
+<tr></tr>
+
+<!-- row 1 line 3 -->
+<tr></tr>
+
+<!-- row 2 line 0 -->
+<tr>
+ <td colspan=4 rowspan=4 class='node' style="rank: same">Berlin</td>
+ <td rowspan=2 class="edge" style=" color: #000000;"><span class="shl">&lt;</span></td>
+ <td colspan=3 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
+  <td colspan=2 rowspan=2 class="edge eb" style="border-bottom: solid 2px #000000;">&nbsp;</td>
+ <td colspan=2 rowspan=2 class="edge eb" style="border-left: solid 2px #000000;">&nbsp;</td>
+</tr>
+
+<!-- row 2 line 1 -->
+<tr></tr>
+
+<!-- row 2 line 2 -->
+<tr>
+ <td rowspan=2 class="edge eb">&nbsp;</td>
+<td colspan=3 rowspan=2 class="edge eb">&nbsp;</td>
+  <td colspan=4 rowspan=2 class="edge eb"></td>
+</tr>
+
+<!-- row 2 line 3 -->
 </table>
 </div><div class="clear"></div>
 </div>
@@ -3681,10 +3716,12 @@ edge {
 <div class="entry">
 
 <p>
-When set to <code>auto</code>, the label text will be wrapped to make the node size smaller, alignments on individual line breaks are ignored.. The default <code>none</code> makes the label text appear exactly as it was written, with <a href='syntax.html'>manual line breaks</a> applied.
-One of: <code>auto</code>, <code>none</code>.
+The default <code>none</code> makes the label text appear exactly as it was written, with <a href='syntax.html'>manual line breaks</a> applied. When set to a positive number, the label text will be wrapped after this number of characters. When set to <code>auto</code>, the label text will be wrapped to make the node size as small as possible, depending on output format this may even be dynamic. When not <code>none</code>, manual line breaks and alignments on them are ignored.<br>
+<b>Defaults to:</b> <ul>
+  <li><code>none</code> for graph</li>
+  <li><code>inherit</code> for anything else</li>
+</ul>
 <br>
-<b>Defaults to:</b> <code>none</code><br>
 <b>Example graph:</b>
 </p>
 <pre class="graphtext">node { textwrap: auto; }
@@ -3777,7 +3814,7 @@ The text displayed as mouse-over for nodes/edges, or as the title for the graph.
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Oct 29 17:47:59 2006</span> in 0.5937s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
+Page created automatically at <span class="date">Sun Dec 17 16:12:47 2006</span> in 0.6267s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->

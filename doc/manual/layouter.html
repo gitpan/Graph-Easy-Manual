@@ -410,7 +410,37 @@ but since that is a short edge, it may not be crossed.
 </a>
 
 <p>
-<font color="red">Section not done yet.</font>
+Whenever two (or more) edges share <b>one common start port</b> (not just one side, like
+<code>south</code>), they will split up somewhere along their path.<br>
+Likewise, when two or more edges share <b>one common end port</b>, the
+edges will joint up somewhere on their way to the target node:
+</p>
+
+<pre class="graphtext">
+ [ Potsdam ], [ Mannheim ]
+   --> { <em>end: back,0;</em> }
+ [ Weimar ]
+   --> { <em>start: front,0;</em> } [ Finsterwalde ], [ Aachen ]
+</pre>
+
+<div class="clear"></div>
+
+<img src="img/joints.png" alt="Edge joints" title="Example of edge joints" class="float">
+
+<pre class="graph">
++----------+           +--------+          +--------------+
+| Mannheim | ------+-> | Weimar | -+-----> | Finsterwalde |
++----------+       |   +--------+  |       +--------------+
+                   |               |
+                   |               |
+                   |               |
++----------+       |               |       +--------------+
+| Potsdam  | ------+               +-----> |    Aachen    |
++----------+                               +--------------+
+</pre>
+
+<p>
+Please see the <a href="hinting.html#joints">chapter</a> for more details.
 </p>
 
 <a name="multicell">
@@ -490,7 +520,8 @@ Now that you know some details about how the layouter works, you are ready to re
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-01-09</span>
+Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
+Last update: <span class="date">2006-11-21</span>
 </div>
 
 </div> <!-- end of right cell -->
