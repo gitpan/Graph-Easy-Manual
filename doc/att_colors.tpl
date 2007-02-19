@@ -14,6 +14,8 @@
  <style type="text/css">
    <!-- 
     h4 { margin-bottom: 0em; padding-left: 1em; }
+    td, td.w { padding-left: 0.4em; padding-right: 0.4em; width: 3em; text-align: center; font-size: 80%; }
+    td.w { color: white; }
    -->
  </style>
 </head>
@@ -60,16 +62,23 @@ For all colors you can use one of the following notations:
 <ul>
   <li>Hex: <code>#ff0080</code> (#rrggbb)
   <li>Hex: <code>#f08</code> (#rgb)
-  <li>RGB: <code>rgb(255,0,128)</code>
-  <li>RGB: <code>rgb(50%, 10%, 20%)</code>
-  <li>RGB: <code>rgb(0.5, 0, 1.0)</code>
-  <li>Name: <code>red</code> (see below for colorschemes info)
-  <li>Index: <code>0</code> (see below for colorschemes info)
+  <li>RGB: <code>rgb(255,0,128)</code> (0 .. 255, 0 .. 255, 0 .. 255)
+  <li>HSV: <code>hsv(0.5, 0, 1.0)</code> (0 .. 1.0, 0 .. 1.0, 0 .. 1.0)
+  <li>HSL: <code>hsl(300, 0.5, 0.5)</code> (0 .. 359.9999, 0 .. 1.0, 0 .. 1.0)
+  <li>Name or index: <code>red</code> or <code>1</code> (see below for colorscheme info)
+  <li>Special: <code>inherit</code>, <code>transparent</code> (color will be inherited from containing object)
 </ul>
 
 <p>
-Note that mixing the different ways to express the red, green and blue
-channels is possible, so <code>rgb(0, 50%,0.5)</code> is a valid color.
+Note that mixing the different ways to express the RGB, HSL or HSV channels
+via absolute value, percentage value or a partial value from 0..1.0 is possible,
+and whitespaces are allowed, so <code>rgb(0, 50%,0.5)</code>
+is a valid color.
+<br>
+All color values (except #RGB) take an optional alpha value.
+<br>
+Any color that has <code>grey</code> in it's name will also be accepted with the alternative
+spelling of <code>gray</code>.
 <p>
 
 <p>
@@ -83,7 +92,13 @@ like <font style="color: white; background: darkseagreen">darkseagreen</font>
 being lighter than <font style="color: white; background: seagreen">seagreen</font> ...
 </p>
 
-<p>&nbsp;</p>
+<h3>Supported color schemes:</h3>
+
+<ul>
+  <li><a href="#w3c">w3c</a></li>
+  <li><a href="#x11">x11</a></li>
+  <li><a href="#colorbrewer">Color Brewer</a></li>
+</ul>
 
 ##colors##
 

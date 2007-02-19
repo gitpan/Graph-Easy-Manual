@@ -18,7 +18,7 @@ BEGIN
 
 my $path = shift || 'manual';
 
-use Graph::Easy 0.49;
+use Graph::Easy 0.52;
 use Graph::Easy::Parser;
 use Graph::Easy::Manual;
 
@@ -199,17 +199,19 @@ for my $scheme ('w3c', 'x11')
 
   my $limit = 6; 
 
-  $list .= "<b>$scheme</b> color scheme:<br>\n<table class='clr'>\n<tr>\n"; my $o = 0;
+  $list .= "<a name='$scheme'><b>$scheme</b> color scheme:</a><br>\n<table class='clr'>\n<tr>\n"; my $o = 0;
   for my $clr (sort {
     my $ac = $colors->{$a}; $ac =~ /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/;
-#    $ac = hex($1) * 256 * 256 + hex($2) * 256 + hex($3); 
     $ac = hex($1) * hex($1) + hex($2) * hex($2) + hex($3) * hex($3); 
     my $bc = $colors->{$b}; $bc =~ /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/;
-#    $bc = hex($1) * 256 * 256 + hex($2) * 256 + hex($3); 
     $bc = hex($1) * hex($1) + hex($2) * hex($2) + hex($3) * hex($3); 
     $ac <=> $bc;
     } keys %$colors)
     {
+    next if $clr =~ /^(transparent|inherit)\z/;
+    # skip these
+    next if $clr =~ /grey/;
+
     $list .= _color_entry($clr,$colors->{$clr});
     if ($o++ > $limit)
       { 
@@ -222,7 +224,7 @@ for my $scheme ('w3c', 'x11')
   }
 
 # ColorBrewer schemes:
-$list .= "<p><b><a href='http://colorbrewer.org/'>ColorBrewer</a></b> schemes:<p>\n";
+$list .= "<p><b><a name='colorbrewer' href='http://colorbrewer.org/'>ColorBrewer</a></b> schemes:<p>\n";
 for my $scheme (sort keys %$schemes)
   {
   my $colors = $schemes->{$scheme};
@@ -254,20 +256,13 @@ sub _color_entry
   # create on color entry
   my ($name, $color) = @_;
 
-  my $font_a = ''; my $font_e = '';
+  $color =~ /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/;
+  my $ac = hex($1) * hex($1) + hex($2) * hex($2) + hex($3) * hex($3);
+  my $class = ''; 
 
-  if ($name ne 'inherit')
-    {
-    $color =~ /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/;
-    my $ac = hex($1) * hex($1) + hex($2) * hex($2) + hex($3) * hex($3); 
-    if ($ac < (256*170))
-      {
-      $font_a = '<font color="white">';
-      $font_e = '</font>';
-      }
-    }
+  $class = ' class="w"' if $ac < (256*170);
 
-  "<td class='clre' style='background: $color' title='$color'>${font_a}$name&nbsp;$font_e</td>\n";
+  "<td$class style='background: $color' title='$color'>$name</td>\n";
   }
 
 sub read_file

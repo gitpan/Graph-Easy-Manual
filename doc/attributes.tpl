@@ -11,11 +11,6 @@
  <link href="http://bloodgate.com/mail.html" rev="made">
  <!-- compliance patch for microsoft browsers -->
  <!--[if lt IE 7]><script src="http://bloodgate.com/ie7/ie7-standard-p.js" type="text/javascript"></script><![endif]-->
- <style type="text/css">
-   <!-- 
-    h4 { margin-bottom: 0em; padding-left: 1em; }
-   -->
- </style>
 </head>
 <body bgcolor=white text=black>
 
@@ -69,7 +64,7 @@ attribute names, the following attribute names are also accepted:
 </p>
 
 <ul>
-  <li>arrow-style</li>
+  <li>arrow-shape, arrow-style</li>
   <li>border-color, border-style, border-width
   <li>font-size</li>
   <li>label-color, label-pos</li>
@@ -143,11 +138,58 @@ node.cities { color: red; }
 <p class="clear"></p>
 
 <p>
-It is not yet possible to have one object belong to more than one subclass.
+<b>Note:</b> It is not yet possible to have one object belong to more than one subclass.
 </p>
 
+<h4>Class selectors</h4>
+
+<p>
+If you want to specify attributes for all objects (nodes, edges and groups) of
+a specific subclass, you can use a class selector by leaving of the primary class
+name, just like you would do in CSS:
+</p>
+
+<pre class="graphtext">
+node { class: red }
+edge { class: red }
+.red { color: red; }
+
+( Red: 
+[ Red 1 ] -- red --> [ Red 2 ]
+)
+</pre>
+
+<p class="clear">
+This example is equivalent to:
+</p>
+
+<pre class="graphtext">
+node { class: red }
+edge { class: red }
+node.red { color: red; }
+edge.red { color: red; }
+
+( Red: 
+[ Red 1 ] -- red --> [ Red 2 ]
+)
+</pre>
+
+<h4 class="clear">Class selector lists</h4>
+
+<p>
+It is also possible to list class names and class selectors in a list:
+</p>
+
+<pre class="graphtext">
+node, edge, .red { class: red; color: red; }
+
+( Red: 
+[ Red 1 ] -- red --> [ Red 2 ]
+)
+</pre>
+
 <a name="labels__titles__names_and_links">
-<h3>Labels, Titles and Names</h3>
+<h3 class="clear">Labels, Titles and Names</h3>
 </a>
 
 <p>

@@ -30,6 +30,7 @@
     <a class="menuind" href="#general" title="Some generic questions and answers">General</a>
     <a class="menuind" href="#graphviz" title="How does Graph::Easy compare to Graphviz?">Graphviz?</a>
     <a class="menuind" href="#svg" title="SVG output and problems">SVG?</a>
+    <a class="menuind" href="#windows" title="Windows">Windows?</a>
     <a class="menuind" href="benchmark.html" title="Benchmarks">Benchmarks</a>
     <a class="menuind" href="errors.html" title="Error codes and explanations">Errors</a>
     <a class="menuind" href="glossary.html" title="Glossary of often used terms">Glossary</a>
@@ -302,6 +303,44 @@ overriden color from the CSS is ignored by these buggy browsers).
 
 </div>
 
+<a name="windows"></a>
+<h2>Windows</h2>
+
+<div class="text">
+
+<h3>Install under Windows</h3>
+
+<span class="q">Question:</span>
+
+<p class="ind">
+Can I install and use Graph::Easy under Windows?
+</p>
+
+<span class="a">Answer:</span>
+
+<p class="ind">
+Yes. You need two things:
+</p>
+
+<ul class="ind">
+  <li>Perl, you can get it from <a href="http://activestate.com/store/activeperl/download">Activestate</a>
+  <li>nmake, see here for how to <a href="http://johnbokma.com/perl/make-for-windows.html">get and install nmake</a>
+</ul>
+
+<p class="ind">
+After installing Perl and nmake, you can install Graph::Easy normally, just replacing "make" with "nmake" in
+the install instructions:
+</p>
+
+<pre class="ind">
+perl Makefile.PL
+nmake
+nmake test
+nmake install
+</pre>
+
+</div>
+
 <h2>Contact and Bugreports</h2>
 
 <div class="text">
@@ -317,7 +356,7 @@ If you have questions, or found an error on this page, feel free to send me an
 
 <div class="footer">
 Page created <span class="date">2005-01-11</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
-Last update: <span class="date">2006-12-17</span>
+Last update: <span class="date">2007-01-20</span>
 </div>
 
 </div> <!-- end of right cell -->

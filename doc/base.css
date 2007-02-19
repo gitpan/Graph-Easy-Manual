@@ -19,6 +19,14 @@ h2
   margin-top: 0.8em;
   margin-bottom: 0;
   }
+h4, h3 
+  {
+  color: black;
+  padding-left: 0em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.2em;
+  margin-left: 0em;
+  }
 h2.green { background: #e0f0e0; }
 h2.coral { background: #e0f0f0; }
 h2.purple { background: #f0e0f0; }
@@ -69,7 +77,6 @@ a:link
   {
   color: #000060;
   }
-h4, h3 { color: black; }
 a.top
   {
   font-size: 0.8em;

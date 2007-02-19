@@ -12,9 +12,10 @@ no_index:
     - inc
     - t
 recommends: 
-  Graph::Easy::As_svg: 0.21
+  Graph::Easy::As_svg: 0.22
 requires: 
   File::Spec: 3.01
-  Graph::Easy: 0.5
+  Graph::Easy: 0.53
   Pod::Simple: 3.02
-version: 0.36
+  perl: 5.8.1
+version: 0.37
