@@ -1,5 +1,9 @@
 Revision history for Graph::Easy::Manual:
 
+2007-03-18 v0.38 Tels 2 tests - Doc, doc, doc, document the code...
+  * remove the broken POD2HTML (see Mediawiki-POD for a working version)
+  * regen from Graph::Easy 0.54
+
 2007-02-19 v0.37 Tels 2 tests - Doc, doc, doc, document the code...
   * regen from Graph::Easy 0.53
   * add section about class selectors and class selector lists

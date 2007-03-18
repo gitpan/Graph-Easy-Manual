@@ -209,7 +209,7 @@ table.graph75 .sv, table.graph75 .sh, table.graph75 .shl {
 table.graph75 .shl { left: 0.2em; }
 table.graph75 .sv { left: -0.5em; top: 0; }
 table.graph75 .eb { max-height: 0.4em; line-height: 0.4em; }
-table.graph75 span.c { position: relative; }
+table.graph75 span.c { position: relative; top: 1.5em; }
 table.graph75 div.c { -moz-border-radius: 100%; border-radius: 100%; }
 table.graph75 div.r { -moz-border-radius: 1em; border-radius: 1em; }
 table.graph76 .edge {
@@ -629,7 +629,7 @@ table.graph82 .sv, table.graph82 .sh, table.graph82 .shl {
 table.graph82 .shl { left: 0.2em; }
 table.graph82 .sv { left: -0.5em; top: 0; }
 table.graph82 .eb { max-height: 0.4em; line-height: 0.4em; }
-table.graph82 span.c { position: relative; }
+table.graph82 span.c { position: relative; top: 1.5em; }
 table.graph82 div.c { -moz-border-radius: 100%; border-radius: 100%; }
 table.graph82 div.r { -moz-border-radius: 1em; border-radius: 1em; }
 table.graph83 .edge {
@@ -1031,6 +1031,14 @@ table.graph89 {
   margin: 0.5em;
   padding: 0.5em;
 }
+table.graph89 .group,table.graph89 .group_anon {
+  text-align: left;
+  border-style: none;
+  border-width: 1px;
+  background: #a0d0ff;
+  font-size: 0.8em;
+  padding: 0.2em;
+}
 table.graph89 .group_anon {
   background: white;
   border-style: none;
@@ -1041,7 +1049,6 @@ table.graph89 .node,table.graph89 .node_anon {
   border-style: solid;
   border-width: 1px;
   background: white;
-  font-size: 1.1em;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
@@ -1051,6 +1058,7 @@ table.graph89 .node_anon {
   background:  inherit;
   border-style: none;
 }
+table.graph89 td[class|="group"] { padding: 0.2em; }
 table.graph89 td {
   padding: 2px;
   background: inherit;
@@ -1081,6 +1089,12 @@ table.graph89 .sv, table.graph89 .sh, table.graph89 .shl {
 table.graph89 .shl { left: 0.2em; }
 table.graph89 .sv { left: -0.5em; top: 0; }
 table.graph89 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph89 .gi { border: none;}
+table.graph89 .gr { border-right-style: dashed;}
+table.graph89 .gl { border-left-style: dashed;}
+table.graph89 .gt { border-top-style: dashed;}
+table.graph89 .gb { border-bottom-style: dashed;}
+table.graph89 .ga { border-style: dashed;}
 table.graph90 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -1092,14 +1106,6 @@ table.graph90 {
   margin: 0.5em;
   padding: 0.5em;
 }
-table.graph90 .group,table.graph90 .group_anon {
-  text-align: left;
-  border-style: none;
-  border-width: 1px;
-  background: #a0d0ff;
-  font-size: 0.8em;
-  padding: 0.2em;
-}
 table.graph90 .group_anon {
   background: white;
   border-style: none;
@@ -1110,6 +1116,7 @@ table.graph90 .node,table.graph90 .node_anon {
   border-style: solid;
   border-width: 1px;
   background: white;
+  font-size: 1.1em;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
@@ -1119,7 +1126,6 @@ table.graph90 .node_anon {
   background:  inherit;
   border-style: none;
 }
-table.graph90 td[class|="group"] { padding: 0.2em; }
 table.graph90 td {
   padding: 2px;
   background: inherit;
@@ -1127,18 +1133,29 @@ table.graph90 td {
   }
 table.graph90 span.l { float: left; }
 table.graph90 span.r { float: right; }
-table.graph90 .gi { border: none;}
-table.graph90 .gr { border-right-style: dashed;}
-table.graph90 .gl { border-left-style: dashed;}
-table.graph90 .gt { border-top-style: dashed;}
-table.graph90 .gb { border-bottom-style: dashed;}
-table.graph90 .ga { border-style: dashed;}
-table.graph90 .gi { border: none;}
-table.graph90 .gr { border-right-style: dashed;}
-table.graph90 .gl { border-left-style: dashed;}
-table.graph90 .gt { border-top-style: dashed;}
-table.graph90 .gb { border-bottom-style: dashed;}
-table.graph90 .ga { border-style: dashed;}
+table.graph90 .va {
+  vertical-align: middle;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph90 .el {
+  width: 0.1em;
+  max-width: 0.1em;
+  min-width: 0.1em;
+  }
+table.graph90 .lh, table.graph90 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph90 .sv, table.graph90 .sh, table.graph90 .shl {
+  position: relative;
+  top: 0.75em;
+  left: -0.2em;
+  overflow: visible;
+  }
+table.graph90 .shl { left: 0.2em; }
+table.graph90 .sv { left: -0.5em; top: 0; }
+table.graph90 .eb { max-height: 0.4em; line-height: 0.4em; }
 table.graph91 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -1185,29 +1202,12 @@ table.graph91 td {
   }
 table.graph91 span.l { float: left; }
 table.graph91 span.r { float: right; }
-table.graph91 .va {
-  vertical-align: middle;
-  line-height: 1.5em;
-  width: 0.4em;
-  }
-table.graph91 .el {
-  width: 0.1em;
-  max-width: 0.1em;
-  min-width: 0.1em;
-  }
-table.graph91 .lh, table.graph91 .lv {
-  font-size: 0.8em;
-  padding-left: 0.4em;
-  }
-table.graph91 .sv, table.graph91 .sh, table.graph91 .shl {
-  position: relative;
-  top: 0.75em;
-  left: -0.2em;
-  overflow: visible;
-  }
-table.graph91 .shl { left: 0.2em; }
-table.graph91 .sv { left: -0.5em; top: 0; }
-table.graph91 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph91 .gi { border: none;}
+table.graph91 .gr { border-right-style: dashed;}
+table.graph91 .gl { border-left-style: dashed;}
+table.graph91 .gt { border-top-style: dashed;}
+table.graph91 .gb { border-bottom-style: dashed;}
+table.graph91 .ga { border-style: dashed;}
 table.graph91 .gi { border: none;}
 table.graph91 .gr { border-right-style: dashed;}
 table.graph91 .gl { border-left-style: dashed;}
@@ -1225,6 +1225,14 @@ table.graph92 {
   margin: 0.5em;
   padding: 0.5em;
 }
+table.graph92 .group,table.graph92 .group_anon {
+  text-align: left;
+  border-style: none;
+  border-width: 1px;
+  background: #a0d0ff;
+  font-size: 0.8em;
+  padding: 0.2em;
+}
 table.graph92 .group_anon {
   background: white;
   border-style: none;
@@ -1234,7 +1242,7 @@ table.graph92 .node,table.graph92 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: #ffd080;
+  background: white;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
@@ -1244,6 +1252,7 @@ table.graph92 .node_anon {
   background:  inherit;
   border-style: none;
 }
+table.graph92 td[class|="group"] { padding: 0.2em; }
 table.graph92 td {
   padding: 2px;
   background: inherit;
@@ -1274,6 +1283,12 @@ table.graph92 .sv, table.graph92 .sh, table.graph92 .shl {
 table.graph92 .shl { left: 0.2em; }
 table.graph92 .sv { left: -0.5em; top: 0; }
 table.graph92 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph92 .gi { border: none;}
+table.graph92 .gr { border-right-style: dashed;}
+table.graph92 .gl { border-left-style: dashed;}
+table.graph92 .gt { border-top-style: dashed;}
+table.graph92 .gb { border-bottom-style: dashed;}
+table.graph92 .ga { border-style: dashed;}
 table.graph93 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -1285,14 +1300,6 @@ table.graph93 {
   margin: 0.5em;
   padding: 0.5em;
 }
-table.graph93 .group,table.graph93 .group_anon {
-  text-align: left;
-  border-style: none;
-  border-width: 1px;
-  background: #a0d0ff;
-  font-size: 0.8em;
-  padding: 0.2em;
-}
 table.graph93 .group_anon {
   background: white;
   border-style: none;
@@ -1302,18 +1309,16 @@ table.graph93 .node,table.graph93 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffd080;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
-  white-space: normal;
 }
 table.graph93 .node_anon {
   background:  inherit;
   border-style: none;
 }
-table.graph93 td[class|="group"] { padding: 0.2em; }
 table.graph93 td {
   padding: 2px;
   background: inherit;
@@ -1344,12 +1349,82 @@ table.graph93 .sv, table.graph93 .sh, table.graph93 .shl {
 table.graph93 .shl { left: 0.2em; }
 table.graph93 .sv { left: -0.5em; top: 0; }
 table.graph93 .eb { max-height: 0.4em; line-height: 0.4em; }
-table.graph93 .gi { border: none;}
-table.graph93 .gr { border-right-style: dashed;}
-table.graph93 .gl { border-left-style: dashed;}
-table.graph93 .gt { border-top-style: dashed;}
-table.graph93 .gb { border-bottom-style: dashed;}
-table.graph93 .ga { border-style: dashed;}
+table.graph94 .edge {
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+  vertical-align: bottom;
+}
+table.graph94 {
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph94 .group,table.graph94 .group_anon {
+  text-align: left;
+  border-style: none;
+  border-width: 1px;
+  background: #a0d0ff;
+  font-size: 0.8em;
+  padding: 0.2em;
+}
+table.graph94 .group_anon {
+  background: white;
+  border-style: none;
+}
+table.graph94 .node,table.graph94 .node_anon {
+  text-align: center;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  background: white;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  white-space: normal;
+}
+table.graph94 .node_anon {
+  background:  inherit;
+  border-style: none;
+}
+table.graph94 td[class|="group"] { padding: 0.2em; }
+table.graph94 td {
+  padding: 2px;
+  background: inherit;
+  white-space: nowrap;
+  }
+table.graph94 span.l { float: left; }
+table.graph94 span.r { float: right; }
+table.graph94 .va {
+  vertical-align: middle;
+  line-height: 1.5em;
+  width: 0.4em;
+  }
+table.graph94 .el {
+  width: 0.1em;
+  max-width: 0.1em;
+  min-width: 0.1em;
+  }
+table.graph94 .lh, table.graph94 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph94 .sv, table.graph94 .sh, table.graph94 .shl {
+  position: relative;
+  top: 0.75em;
+  left: -0.2em;
+  overflow: visible;
+  }
+table.graph94 .shl { left: 0.2em; }
+table.graph94 .sv { left: -0.5em; top: 0; }
+table.graph94 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph94 .gi { border: none;}
+table.graph94 .gr { border-right-style: dashed;}
+table.graph94 .gl { border-left-style: dashed;}
+table.graph94 .gt { border-top-style: dashed;}
+table.graph94 .gb { border-bottom-style: dashed;}
+table.graph94 .ga { border-style: dashed;}
 
    -->
  </style>
@@ -1411,7 +1486,7 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
   <li><a href='att_groups.html#group_fill' title="The fill color, e.g.">fill</a>, <a href='att_groups.html#group_flow' title="The general direction in which edges will leave nodes first.">flow</a>, <a href='att_groups.html#group_font' title="A prioritized list of lower-case, unquoted values, separated by a comma.">font</a>, <a href='att_groups.html#group_fontsize' title="The size of the label text, best expressed in em (1.0em, 0.5em etc) or percent (100%, 50% etc)">fontsize</a>, <a href='att_groups.html#group_format' title="The formatting language of the label.">format</a>, 
   <li><a href='att_groups.html#group_group' title="Puts the group inside this group, nesting the two groups inside each other.">group</a>, 
   <li><a href='att_groups.html#group_id' title="A unique identifier for this object, consisting only of letters, digits, or underscores.">id</a>, 
-  <li><a href='att_groups.html#group_label' title="The text displayed as label.">label</a>, <a href='att_groups.html#group_link' title="The link part, appended onto linkbase.">link</a>, <a href='att_groups.html#group_linkbase' title="The base URL prepended to all generated links.">linkbase</a>, 
+  <li><a href='att_groups.html#group_label' title="The text displayed as label.">label</a>, <a href='att_groups.html#group_labelpos' title="The position of the group label.">labelpos</a>, <a href='att_groups.html#group_link' title="The link part, appended onto linkbase.">link</a>, <a href='att_groups.html#group_linkbase' title="The base URL prepended to all generated links.">linkbase</a>, 
   <li><a href='att_groups.html#group_nodeclass' title="The class into which all nodes of this group are put.">nodeclass</a>, 
   <li><a href='att_groups.html#group_rank' title="The rank of the group, used by the layouter to find the order and placement of group.">rank</a>, <a href='att_groups.html#group_root' title="The name of the root node, given as hint to the layouter to start the layout there.">root</a>, 
   <li><a href='att_groups.html#group_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_groups.html#group_textwrap' title="The default none makes the label text appear exactly as it was written, with <a href='syntax.html'>manual line breaks</a> applied.">textwrap</a>, <a href='att_groups.html#group_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
@@ -1618,11 +1693,11 @@ The background color, e.g. the color <b>outside</b> the shape. Do not confuse wi
 <table class="graph75" cellpadding=0 cellspacing=0>
 <!-- row 0 line 0 -->
 <tr>
- <td colspan=4 rowspan=4 class='node' style="border: none;background: #dc143c"><div class='c' style='background:#ffffff;width: 9em; height: 9em'><span class='c' style="top: 4em">Crimson</span></div></td>
+ <td colspan=4 rowspan=4 class='node' style="border: none;background: #dc143c"><div class='c' style='background:#ffffff;border:solid 1px #000000;width: 9em; height: 9em'><span class='c' style="top: 4em">Crimson</span></div></td>
 <td rowspan=4 class="edge el" style=" background: #7fffd4;"></td>
  <td colspan=2 rowspan=2 class="edge lh" style=" background: #7fffd4;border-bottom: solid 2px #000000; background: #7fffd4;">Aqua Marine</td>
  <td rowspan=2 class="edge" style=" color: #000000; background: #7fffd4;"><span class="sh">></span></td>
- <td colspan=4 rowspan=4 class='node' style="border: none;background: #ffffff"><div class='c' style='background:#ffe4dd;width: 12em; height: 3em'><span class='c' style="top: 1em">Misty Rose</span></div></td>
+ <td colspan=4 rowspan=4 class='node' style="border: none;background: #ffffff"><div class='c' style='background:#ffe4dd;border:solid 1px #000000;width: 12em; height: 3em'><span class='c' style="top: 1em">Misty Rose</span></div></td>
 </tr>
 
 <!-- row 0 line 1 -->
@@ -2568,6 +2643,94 @@ The text displayed as label. If not set, equals the name (for nodes) or no label
 
 </div>
 
+<a name="group_labelpos">
+<h4>labelpos</h4></a>
+
+<div class="entry">
+
+<p>
+The position of the group label.
+One of: <code>top</code>, <code>bottom</code>.
+<br>
+<b>Defaults to:</b> <code>top</code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">group { labelpos: bottom; }
+
+ ( My Group: [ Buxtehude ] -&gt; [ Fuchsberg ] )
+
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph89" cellpadding=0 cellspacing=0>
+<!-- row 0 line 0 -->
+<tr>
+ <td colspan=4 rowspan=4 class='group gt gl'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='group gt'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='group gt'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='group gt'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='group gt'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='group gt'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='group gt gr'>&nbsp;</td>
+</tr>
+
+<!-- row 0 line 1 -->
+<tr></tr>
+
+<!-- row 0 line 2 -->
+<tr></tr>
+
+<!-- row 0 line 3 -->
+<tr></tr>
+
+<!-- row 1 line 0 -->
+<tr>
+ <td colspan=4 rowspan=4 class='group gl'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='node'>Buxtehude</td>
+ <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
+<td rowspan=4 class="group edge el" style=" background: #a0d0ff;"></td>
+ <td colspan=2 rowspan=2 class="group edge lh" style=" background: #a0d0ff;border-bottom: solid 2px #000000; background: #a0d0ff;">&nbsp;</td>
+ <td rowspan=2 class="group edge" style=" color: #000000; background: #a0d0ff;"><span class="sh">></span></td>
+ <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='node'>Fuchsberg</td>
+ <td colspan=4 rowspan=4 class='group gr'>&nbsp;</td>
+</tr>
+
+<!-- row 1 line 1 -->
+<tr></tr>
+
+<!-- row 1 line 2 -->
+<tr>
+<td colspan=2 rowspan=2 class="group edge eb" style=" background: #a0d0ff;">&nbsp;</td>
+ <td rowspan=2 class="group edge eb" style=" background: #a0d0ff;"></td>
+</tr>
+
+<!-- row 1 line 3 -->
+<tr></tr>
+
+<!-- row 2 line 0 -->
+<tr>
+ <td colspan=4 rowspan=4 class='group gb gl'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='group gb'>My Group:</td>
+ <td colspan=4 rowspan=4 class='group gb'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='group gb'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='group gb'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='group gb'>&nbsp;</td>
+ <td colspan=4 rowspan=4 class='group gr gb'>&nbsp;</td>
+</tr>
+
+<!-- row 2 line 1 -->
+<tr></tr>
+
+<!-- row 2 line 2 -->
+<tr></tr>
+
+<!-- row 2 line 3 -->
+</table>
+</div><div class="clear"></div>
+</div>
+
 <a name="group_link">
 <h4>link</h4></a>
 
@@ -2598,7 +2761,7 @@ edge {
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph89" cellpadding=0 cellspacing=0>
+<table class="graph90" cellpadding=0 cellspacing=0>
 <!-- row 0 line 0 -->
 <tr>
  <td colspan=4 rowspan=4 class='node_anon'></td>
@@ -2677,7 +2840,7 @@ The rank of the group, used by the layouter to find the order and placement of g
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph90" cellpadding=0 cellspacing=0>
+<table class="graph91" cellpadding=0 cellspacing=0>
 <!-- row 0 line 0 -->
 <tr>
  <td colspan=4 rowspan=4 class='group gt gl'>&nbsp;</td>
@@ -2919,7 +3082,7 @@ The name of the root node, given as hint to the layouter to start the layout the
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph91" cellpadding=0 cellspacing=0>
+<table class="graph92" cellpadding=0 cellspacing=0>
 <!-- row 0 line 0 -->
 <tr>
  <td colspan=4 rowspan=4 class='group gt gl'>&nbsp;</td>
@@ -3109,7 +3272,7 @@ edge {
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph92" cellpadding=0 cellspacing=0>
+<table class="graph93" cellpadding=0 cellspacing=0>
 <tr>
   <td colspan=12 style="font-style: italic; font-weight: bold; font-size: 150%; text-align: center">Verbindung</td>
 </tr>
@@ -3160,7 +3323,7 @@ The default <code>none</code> makes the label text appear exactly as it was writ
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph93" cellpadding=0 cellspacing=0>
+<table class="graph94" cellpadding=0 cellspacing=0>
 <!-- row 0 line 0 -->
 <tr>
  <td colspan=4 rowspan=4 class='group gt gl'>&nbsp;</td>
@@ -3245,7 +3408,7 @@ The text displayed as mouse-over for nodes/edges, or as the title for the graph.
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Mon Feb 19 18:32:49 2007</span> in 0.2478s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
+Page created automatically at <span class="date">Sun Mar 18 11:55:24 2007</span> in 0.2472s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->
