@@ -56,17 +56,28 @@ applications like 'dot'.
 <img src="img/dataflow.png" alt="Data flow of Graph::Easy" title="Data flow of Graph::Easy">
 
 <p>
-There are currently three ways to create the internal data necessary for
+There are many ways to create the internal data necessary for
 <code>Graph::Easy</code> to work with it:
 </p>
 
 <ul>
   <li>Create perl code
-  <li>Write a text in the format Graph::Easy understands and use
+  <li>Write a text in the native format of Graph::Easy and use
    <a href="http://search.cpan.org/~tels/Graph-Easy/">Graph::Easy::Parser</a> to parse it
   <li>Write a text in the <a href="http://www.graphviz.org/">graphviz</a> format and use
    <a href="http://search.cpan.org/~tels/Graph-Easy/">Graph::Easy::Parser</a> to parse it
+  <li>Write a text in the <a href="http://www.aisee.com/">GDL</a> or VCG format and use
+   <a href="http://search.cpan.org/~tels/Graph-Easy/">Graph::Easy::Parser</a> to parse it
 </ul>
+
+<p>
+A very convienent way on working with graph descriptions in various text formats (and
+converting between them!) is the command-line utility C<graph-easy>. This script is
+installed as part of Graph::Easy. For details on using it, please refer to the
+<b><a href="http://search.cpan.org/~tels/Graph-Easy/bin/graph-easy" title="graph-easy manual">graph-easy manual</a></b>.
+</p>
+
+<p>&nbsp;</p>
 
 <p>
 Here is a bit of example Perl code:
@@ -185,7 +196,8 @@ Please continue with the chapter about the <a href="features.html">feature set</
 </div>
 
 <div class="footer">
-Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>. Last update: <span class="date">2006-03-10</span>
+Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
+Last update: <span class="date">2007-08-10</span>
 </div>
 
 </div> <!-- end of right cell -->

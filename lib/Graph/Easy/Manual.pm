@@ -8,7 +8,7 @@ package Graph::Easy::Manual;
 use strict;
 
 use vars qw/$VERSION/;
-$VERSION = '0.38';
+$VERSION = '0.39';
 
 1;
 __END__
@@ -47,11 +47,11 @@ The HTML-Version is currently mirrored on these two locations:
 
 =back
 
-See also: L<Graph::Easy>.
+See also: L<Graph::Easy>, and L<Mediawiki-POD>.
 
 =head1 AUTHOR
 
-Copyright (C) 2004 - 2006 by Tels L<http://bloodgate.com>
+Copyright (C) 2004 - 2007 by Tels L<http://bloodgate.com>
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as the GPL version 2 or later.

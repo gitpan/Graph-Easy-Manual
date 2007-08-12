@@ -1,11 +1,18 @@
 Revision history for Graph::Easy::Manual:
 
-2007-03-18 v0.38 Tels 2 tests - Doc, doc, doc, document the code...
-  * remove the broken POD2HTML (see Mediawiki-POD for a working version)
-  * regen from Graph::Easy 0.54
+2007-08-12 v0.39 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy v0.57
+  * fix link to color attributes
+  * add VCG/GDL support
+  * add notes about special chars \N, \G, \E, \H and \T
+  * mention graph-easy
 
-2007-02-19 v0.37 Tels 2 tests - Doc, doc, doc, document the code...
-  * regen from Graph::Easy 0.53
+2007-03-18 v0.38 Tels 2 tests
+  * remove the broken POD2HTML (see Mediawiki-POD for a working version)
+  * regen from Graph::Easy v0.54
+
+2007-02-19 v0.37 Tels 2 tests
+  * regen from Graph::Easy v0.53
   * add section about class selectors and class selector lists
   * add FAQ about install under windows
   * add note about special color "inherit" and remove it from generated tables

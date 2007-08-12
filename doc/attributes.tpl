@@ -49,8 +49,8 @@
 <div class="text">
 
 <p>
-If you haven't already done so, please read the
-<a href="syntax.html#attributes">Chapter about attribute syntax</a> first.
+If you haven't already done so, <b>please read the
+<a href="syntax.html#attributes">chapter about attribute syntax</a> first</b>.
 </p>
 
 <p>
@@ -306,7 +306,7 @@ collection so that they are laid out in the same row (or column, depending on gr
 </a>
 
 <p>
-Please see the page <a href="attr_colors.html">about colorschemes and color names</a>.
+Please see the page <a href="att_colors.html">about colorschemes and color names</a>.
 </p>
 
 <div class="footer">

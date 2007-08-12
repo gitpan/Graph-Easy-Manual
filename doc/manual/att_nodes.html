@@ -34,7 +34,6 @@ table.graph .group,table.graph .group_anon {
   padding: 0.2em;
 }
 table.graph .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph .node,table.graph .node_anon {
@@ -42,14 +41,13 @@ table.graph .node,table.graph .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph td[class|="group"] { padding: 0.2em; }
@@ -62,7 +60,7 @@ table.graph span.l { float: left; }
 table.graph span.r { float: right; }
 table.graph .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph .el {
@@ -74,15 +72,23 @@ table.graph .lh, table.graph .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph .sv, table.graph .sh, table.graph .shl {
+table.graph .sv, table.graph .sh, table.graph .shl, table.graph .sa, table.graph .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph .shl { left: 0.2em; }
-table.graph .sv { left: -0.5em; top: 0; }
-table.graph .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph .sv, table.graph .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph .shl { left: 0.3em; }
+table.graph .sv { left: -0.5em; top: -0.4em; }
+table.graph .su { left: -0.5em; top: 0.4em; }
+table.graph .sa { left: -0.3em; top: 0; }
+table.graph .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph .gi { border: none;}
 table.graph .gr { border-right-style: dashed;}
 table.graph .gl { border-left-style: dashed;}
@@ -101,7 +107,6 @@ table.graph1 {
   padding: 0.5em;
 }
 table.graph1 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph1 .node,table.graph1 .node_anon {
@@ -109,14 +114,13 @@ table.graph1 .node,table.graph1 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph1 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph1 td {
@@ -128,7 +132,7 @@ table.graph1 span.l { float: left; }
 table.graph1 span.r { float: right; }
 table.graph1 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph1 .el {
@@ -140,15 +144,23 @@ table.graph1 .lh, table.graph1 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph1 .sv, table.graph1 .sh, table.graph1 .shl {
+table.graph1 .sv, table.graph1 .sh, table.graph1 .shl, table.graph1 .sa, table.graph1 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph1 .shl { left: 0.2em; }
-table.graph1 .sv { left: -0.5em; top: 0; }
-table.graph1 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph1 .sv, table.graph1 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph1 .shl { left: 0.3em; }
+table.graph1 .sv { left: -0.5em; top: -0.4em; }
+table.graph1 .su { left: -0.5em; top: 0.4em; }
+table.graph1 .sa { left: -0.3em; top: 0; }
+table.graph1 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph2 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -161,7 +173,6 @@ table.graph2 {
   padding: 0.5em;
 }
 table.graph2 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph2 .node,table.graph2 .node_anon {
@@ -169,14 +180,13 @@ table.graph2 .node,table.graph2 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph2 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph2 td {
@@ -188,7 +198,7 @@ table.graph2 span.l { float: left; }
 table.graph2 span.r { float: right; }
 table.graph2 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph2 .el {
@@ -200,15 +210,23 @@ table.graph2 .lh, table.graph2 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph2 .sv, table.graph2 .sh, table.graph2 .shl {
+table.graph2 .sv, table.graph2 .sh, table.graph2 .shl, table.graph2 .sa, table.graph2 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph2 .shl { left: 0.2em; }
-table.graph2 .sv { left: -0.5em; top: 0; }
-table.graph2 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph2 .sv, table.graph2 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph2 .shl { left: 0.3em; }
+table.graph2 .sv { left: -0.5em; top: -0.4em; }
+table.graph2 .su { left: -0.5em; top: 0.4em; }
+table.graph2 .sa { left: -0.3em; top: 0; }
+table.graph2 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph2 span.c { position: relative; top: 1.5em; }
 table.graph2 div.c { -moz-border-radius: 100%; border-radius: 100%; }
 table.graph2 div.r { -moz-border-radius: 1em; border-radius: 1em; }
@@ -224,7 +242,6 @@ table.graph3 {
   padding: 0.5em;
 }
 table.graph3 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph3 .node,table.graph3 .node_anon {
@@ -232,14 +249,13 @@ table.graph3 .node,table.graph3 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph3 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph3 td {
@@ -251,7 +267,7 @@ table.graph3 span.l { float: left; }
 table.graph3 span.r { float: right; }
 table.graph3 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph3 .el {
@@ -263,15 +279,23 @@ table.graph3 .lh, table.graph3 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph3 .sv, table.graph3 .sh, table.graph3 .shl {
+table.graph3 .sv, table.graph3 .sh, table.graph3 .shl, table.graph3 .sa, table.graph3 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph3 .shl { left: 0.2em; }
-table.graph3 .sv { left: -0.5em; top: 0; }
-table.graph3 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph3 .sv, table.graph3 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph3 .shl { left: 0.3em; }
+table.graph3 .sv { left: -0.5em; top: -0.4em; }
+table.graph3 .su { left: -0.5em; top: 0.4em; }
+table.graph3 .sa { left: -0.3em; top: 0; }
+table.graph3 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph4 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -284,7 +308,6 @@ table.graph4 {
   padding: 0.5em;
 }
 table.graph4 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph4 .node,table.graph4 .node_anon {
@@ -292,14 +315,13 @@ table.graph4 .node,table.graph4 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph4 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph4 td {
@@ -311,7 +333,7 @@ table.graph4 span.l { float: left; }
 table.graph4 span.r { float: right; }
 table.graph4 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph4 .el {
@@ -323,15 +345,23 @@ table.graph4 .lh, table.graph4 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph4 .sv, table.graph4 .sh, table.graph4 .shl {
+table.graph4 .sv, table.graph4 .sh, table.graph4 .shl, table.graph4 .sa, table.graph4 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph4 .shl { left: 0.2em; }
-table.graph4 .sv { left: -0.5em; top: 0; }
-table.graph4 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph4 .sv, table.graph4 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph4 .shl { left: 0.3em; }
+table.graph4 .sv { left: -0.5em; top: -0.4em; }
+table.graph4 .su { left: -0.5em; top: 0.4em; }
+table.graph4 .sa { left: -0.3em; top: 0; }
+table.graph4 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph5 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -344,21 +374,19 @@ table.graph5 {
   padding: 0.5em;
 }
 table.graph5 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph5 .node,table.graph5 .node_anon {
   text-align: center;
-  border-color: black;
+  border-color: #000000;
   border-style: bold;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph5 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph5 td {
@@ -370,7 +398,7 @@ table.graph5 span.l { float: left; }
 table.graph5 span.r { float: right; }
 table.graph5 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph5 .el {
@@ -382,15 +410,23 @@ table.graph5 .lh, table.graph5 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph5 .sv, table.graph5 .sh, table.graph5 .shl {
+table.graph5 .sv, table.graph5 .sh, table.graph5 .shl, table.graph5 .sa, table.graph5 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph5 .shl { left: 0.2em; }
-table.graph5 .sv { left: -0.5em; top: 0; }
-table.graph5 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph5 .sv, table.graph5 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph5 .shl { left: 0.3em; }
+table.graph5 .sv { left: -0.5em; top: -0.4em; }
+table.graph5 .su { left: -0.5em; top: 0.4em; }
+table.graph5 .sa { left: -0.3em; top: 0; }
+table.graph5 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph6 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -403,20 +439,18 @@ table.graph6 {
   padding: 0.5em;
 }
 table.graph6 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph6 .node,table.graph6 .node_anon {
   text-align: center;
   border-style: dotted;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph6 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph6 td {
@@ -428,7 +462,7 @@ table.graph6 span.l { float: left; }
 table.graph6 span.r { float: right; }
 table.graph6 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph6 .el {
@@ -440,15 +474,23 @@ table.graph6 .lh, table.graph6 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph6 .sv, table.graph6 .sh, table.graph6 .shl {
+table.graph6 .sv, table.graph6 .sh, table.graph6 .shl, table.graph6 .sa, table.graph6 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph6 .shl { left: 0.2em; }
-table.graph6 .sv { left: -0.5em; top: 0; }
-table.graph6 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph6 .sv, table.graph6 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph6 .shl { left: 0.3em; }
+table.graph6 .sv { left: -0.5em; top: -0.4em; }
+table.graph6 .su { left: -0.5em; top: 0.4em; }
+table.graph6 .sa { left: -0.3em; top: 0; }
+table.graph6 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph7 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -461,7 +503,6 @@ table.graph7 {
   padding: 0.5em;
 }
 table.graph7 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph7 .node,table.graph7 .node_anon {
@@ -469,14 +510,13 @@ table.graph7 .node,table.graph7 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph7 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph7 td {
@@ -488,7 +528,7 @@ table.graph7 span.l { float: left; }
 table.graph7 span.r { float: right; }
 table.graph7 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph7 .el {
@@ -500,15 +540,23 @@ table.graph7 .lh, table.graph7 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph7 .sv, table.graph7 .sh, table.graph7 .shl {
+table.graph7 .sv, table.graph7 .sh, table.graph7 .shl, table.graph7 .sa, table.graph7 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph7 .shl { left: 0.2em; }
-table.graph7 .sv { left: -0.5em; top: 0; }
-table.graph7 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph7 .sv, table.graph7 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph7 .shl { left: 0.3em; }
+table.graph7 .sv { left: -0.5em; top: -0.4em; }
+table.graph7 .su { left: -0.5em; top: 0.4em; }
+table.graph7 .sa { left: -0.3em; top: 0; }
+table.graph7 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph8 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -521,7 +569,6 @@ table.graph8 {
   padding: 0.5em;
 }
 table.graph8 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph8 .node,table.graph8 .node_anon {
@@ -529,14 +576,13 @@ table.graph8 .node,table.graph8 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph8 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph8 td {
@@ -548,7 +594,7 @@ table.graph8 span.l { float: left; }
 table.graph8 span.r { float: right; }
 table.graph8 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph8 .el {
@@ -560,15 +606,23 @@ table.graph8 .lh, table.graph8 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph8 .sv, table.graph8 .sh, table.graph8 .shl {
+table.graph8 .sv, table.graph8 .sh, table.graph8 .shl, table.graph8 .sa, table.graph8 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph8 .shl { left: 0.2em; }
-table.graph8 .sv { left: -0.5em; top: 0; }
-table.graph8 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph8 .sv, table.graph8 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph8 .shl { left: 0.3em; }
+table.graph8 .sv { left: -0.5em; top: -0.4em; }
+table.graph8 .su { left: -0.5em; top: 0.4em; }
+table.graph8 .sa { left: -0.3em; top: 0; }
+table.graph8 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph9 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -581,7 +635,6 @@ table.graph9 {
   padding: 0.5em;
 }
 table.graph9 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph9 .node,table.graph9 .node_anon {
@@ -589,14 +642,13 @@ table.graph9 .node,table.graph9 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph9 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph9 td {
@@ -608,7 +660,7 @@ table.graph9 span.l { float: left; }
 table.graph9 span.r { float: right; }
 table.graph9 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph9 .el {
@@ -620,15 +672,23 @@ table.graph9 .lh, table.graph9 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph9 .sv, table.graph9 .sh, table.graph9 .shl {
+table.graph9 .sv, table.graph9 .sh, table.graph9 .shl, table.graph9 .sa, table.graph9 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph9 .shl { left: 0.2em; }
-table.graph9 .sv { left: -0.5em; top: 0; }
-table.graph9 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph9 .sv, table.graph9 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph9 .shl { left: 0.3em; }
+table.graph9 .sv { left: -0.5em; top: -0.4em; }
+table.graph9 .su { left: -0.5em; top: 0.4em; }
+table.graph9 .sa { left: -0.3em; top: 0; }
+table.graph9 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph10 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -641,7 +701,6 @@ table.graph10 {
   padding: 0.5em;
 }
 table.graph10 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph10 .node,table.graph10 .node_anon {
@@ -649,14 +708,13 @@ table.graph10 .node,table.graph10 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph10 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph10 td {
@@ -668,7 +726,7 @@ table.graph10 span.l { float: left; }
 table.graph10 span.r { float: right; }
 table.graph10 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph10 .el {
@@ -680,15 +738,23 @@ table.graph10 .lh, table.graph10 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph10 .sv, table.graph10 .sh, table.graph10 .shl {
+table.graph10 .sv, table.graph10 .sh, table.graph10 .shl, table.graph10 .sa, table.graph10 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph10 .shl { left: 0.2em; }
-table.graph10 .sv { left: -0.5em; top: 0; }
-table.graph10 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph10 .sv, table.graph10 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph10 .shl { left: 0.3em; }
+table.graph10 .sv { left: -0.5em; top: -0.4em; }
+table.graph10 .su { left: -0.5em; top: 0.4em; }
+table.graph10 .sa { left: -0.3em; top: 0; }
+table.graph10 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph10 span.c { position: relative; top: 1.5em; }
 table.graph10 div.c { -moz-border-radius: 100%; border-radius: 100%; }
 table.graph10 div.r { -moz-border-radius: 1em; border-radius: 1em; }
@@ -704,7 +770,6 @@ table.graph11 {
   padding: 0.5em;
 }
 table.graph11 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph11 .node,table.graph11 .node_anon {
@@ -712,14 +777,13 @@ table.graph11 .node,table.graph11 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph11 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph11 td {
@@ -731,7 +795,7 @@ table.graph11 span.l { float: left; }
 table.graph11 span.r { float: right; }
 table.graph11 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph11 .el {
@@ -743,15 +807,23 @@ table.graph11 .lh, table.graph11 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph11 .sv, table.graph11 .sh, table.graph11 .shl {
+table.graph11 .sv, table.graph11 .sh, table.graph11 .shl, table.graph11 .sa, table.graph11 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph11 .shl { left: 0.2em; }
-table.graph11 .sv { left: -0.5em; top: 0; }
-table.graph11 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph11 .sv, table.graph11 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph11 .shl { left: 0.3em; }
+table.graph11 .sv { left: -0.5em; top: -0.4em; }
+table.graph11 .su { left: -0.5em; top: 0.4em; }
+table.graph11 .sa { left: -0.3em; top: 0; }
+table.graph11 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph12 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -772,7 +844,6 @@ table.graph12 .group,table.graph12 .group_anon {
   padding: 0.2em;
 }
 table.graph12 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph12 .node,table.graph12 .node_anon {
@@ -780,14 +851,13 @@ table.graph12 .node,table.graph12 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph12 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph12 td[class|="group"] { padding: 0.2em; }
@@ -800,7 +870,7 @@ table.graph12 span.l { float: left; }
 table.graph12 span.r { float: right; }
 table.graph12 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph12 .el {
@@ -812,15 +882,23 @@ table.graph12 .lh, table.graph12 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph12 .sv, table.graph12 .sh, table.graph12 .shl {
+table.graph12 .sv, table.graph12 .sh, table.graph12 .shl, table.graph12 .sa, table.graph12 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph12 .shl { left: 0.2em; }
-table.graph12 .sv { left: -0.5em; top: 0; }
-table.graph12 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph12 .sv, table.graph12 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph12 .shl { left: 0.3em; }
+table.graph12 .sv { left: -0.5em; top: -0.4em; }
+table.graph12 .su { left: -0.5em; top: 0.4em; }
+table.graph12 .sa { left: -0.3em; top: 0; }
+table.graph12 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph12 .gi { border: none;}
 table.graph12 .gr { border-right-style: dashed;}
 table.graph12 .gl { border-left-style: dashed;}
@@ -847,7 +925,6 @@ table.graph13 .group,table.graph13 .group_anon {
   padding: 0.2em;
 }
 table.graph13 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph13 .node,table.graph13 .node_anon {
@@ -855,14 +932,13 @@ table.graph13 .node,table.graph13 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph13 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph13 td[class|="group"] { padding: 0.2em; }
@@ -875,7 +951,7 @@ table.graph13 span.l { float: left; }
 table.graph13 span.r { float: right; }
 table.graph13 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph13 .el {
@@ -887,15 +963,23 @@ table.graph13 .lh, table.graph13 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph13 .sv, table.graph13 .sh, table.graph13 .shl {
+table.graph13 .sv, table.graph13 .sh, table.graph13 .shl, table.graph13 .sa, table.graph13 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph13 .shl { left: 0.2em; }
-table.graph13 .sv { left: -0.5em; top: 0; }
-table.graph13 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph13 .sv, table.graph13 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph13 .shl { left: 0.3em; }
+table.graph13 .sv { left: -0.5em; top: -0.4em; }
+table.graph13 .su { left: -0.5em; top: 0.4em; }
+table.graph13 .sa { left: -0.3em; top: 0; }
+table.graph13 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph13 .gi { border: none;}
 table.graph13 .gr { border-right-style: dashed;}
 table.graph13 .gl { border-left-style: dashed;}
@@ -914,7 +998,6 @@ table.graph14 {
   padding: 0.5em;
 }
 table.graph14 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph14 .node,table.graph14 .node_anon {
@@ -922,14 +1005,13 @@ table.graph14 .node,table.graph14 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph14 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph14 td {
@@ -941,7 +1023,7 @@ table.graph14 span.l { float: left; }
 table.graph14 span.r { float: right; }
 table.graph14 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph14 .el {
@@ -953,15 +1035,23 @@ table.graph14 .lh, table.graph14 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph14 .sv, table.graph14 .sh, table.graph14 .shl {
+table.graph14 .sv, table.graph14 .sh, table.graph14 .shl, table.graph14 .sa, table.graph14 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph14 .shl { left: 0.2em; }
-table.graph14 .sv { left: -0.5em; top: 0; }
-table.graph14 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph14 .sv, table.graph14 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph14 .shl { left: 0.3em; }
+table.graph14 .sv { left: -0.5em; top: -0.4em; }
+table.graph14 .su { left: -0.5em; top: 0.4em; }
+table.graph14 .sa { left: -0.3em; top: 0; }
+table.graph14 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph15 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -982,7 +1072,6 @@ table.graph15 .group,table.graph15 .group_anon {
   padding: 0.2em;
 }
 table.graph15 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph15 .node,table.graph15 .node_anon {
@@ -990,14 +1079,13 @@ table.graph15 .node,table.graph15 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph15 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph15 td[class|="group"] { padding: 0.2em; }
@@ -1010,7 +1098,7 @@ table.graph15 span.l { float: left; }
 table.graph15 span.r { float: right; }
 table.graph15 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph15 .el {
@@ -1022,15 +1110,23 @@ table.graph15 .lh, table.graph15 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph15 .sv, table.graph15 .sh, table.graph15 .shl {
+table.graph15 .sv, table.graph15 .sh, table.graph15 .shl, table.graph15 .sa, table.graph15 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph15 .shl { left: 0.2em; }
-table.graph15 .sv { left: -0.5em; top: 0; }
-table.graph15 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph15 .sv, table.graph15 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph15 .shl { left: 0.3em; }
+table.graph15 .sv { left: -0.5em; top: -0.4em; }
+table.graph15 .su { left: -0.5em; top: 0.4em; }
+table.graph15 .sa { left: -0.3em; top: 0; }
+table.graph15 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph15 .gi { border: none;}
 table.graph15 .gr { border-right-style: dashed;}
 table.graph15 .gl { border-left-style: dashed;}
@@ -1049,7 +1145,6 @@ table.graph16 {
   padding: 0.5em;
 }
 table.graph16 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph16 .node,table.graph16 .node_anon {
@@ -1057,14 +1152,13 @@ table.graph16 .node,table.graph16 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph16 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph16 td {
@@ -1076,7 +1170,7 @@ table.graph16 span.l { float: left; }
 table.graph16 span.r { float: right; }
 table.graph16 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph16 .el {
@@ -1088,15 +1182,23 @@ table.graph16 .lh, table.graph16 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph16 .sv, table.graph16 .sh, table.graph16 .shl {
+table.graph16 .sv, table.graph16 .sh, table.graph16 .shl, table.graph16 .sa, table.graph16 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph16 .shl { left: 0.2em; }
-table.graph16 .sv { left: -0.5em; top: 0; }
-table.graph16 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph16 .sv, table.graph16 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph16 .shl { left: 0.3em; }
+table.graph16 .sv { left: -0.5em; top: -0.4em; }
+table.graph16 .su { left: -0.5em; top: 0.4em; }
+table.graph16 .sa { left: -0.3em; top: 0; }
+table.graph16 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph17 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -1109,7 +1211,6 @@ table.graph17 {
   padding: 0.5em;
 }
 table.graph17 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph17 .node,table.graph17 .node_anon {
@@ -1117,7 +1218,7 @@ table.graph17 .node,table.graph17 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   font-size: 1.1em;
   margin: 0.1em;
   padding: 0.2em;
@@ -1125,7 +1226,6 @@ table.graph17 .node,table.graph17 .node_anon {
   padding-right: 0.3em;
 }
 table.graph17 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph17 td {
@@ -1137,7 +1237,7 @@ table.graph17 span.l { float: left; }
 table.graph17 span.r { float: right; }
 table.graph17 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph17 .el {
@@ -1149,15 +1249,23 @@ table.graph17 .lh, table.graph17 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph17 .sv, table.graph17 .sh, table.graph17 .shl {
+table.graph17 .sv, table.graph17 .sh, table.graph17 .shl, table.graph17 .sa, table.graph17 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph17 .shl { left: 0.2em; }
-table.graph17 .sv { left: -0.5em; top: 0; }
-table.graph17 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph17 .sv, table.graph17 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph17 .shl { left: 0.3em; }
+table.graph17 .sv { left: -0.5em; top: -0.4em; }
+table.graph17 .su { left: -0.5em; top: 0.4em; }
+table.graph17 .sa { left: -0.3em; top: 0; }
+table.graph17 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph18 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -1170,7 +1278,6 @@ table.graph18 {
   padding: 0.5em;
 }
 table.graph18 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph18 .node,table.graph18 .node_anon {
@@ -1178,14 +1285,13 @@ table.graph18 .node,table.graph18 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph18 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph18 td {
@@ -1197,7 +1303,7 @@ table.graph18 span.l { float: left; }
 table.graph18 span.r { float: right; }
 table.graph18 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph18 .el {
@@ -1209,15 +1315,23 @@ table.graph18 .lh, table.graph18 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph18 .sv, table.graph18 .sh, table.graph18 .shl {
+table.graph18 .sv, table.graph18 .sh, table.graph18 .shl, table.graph18 .sa, table.graph18 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph18 .shl { left: 0.2em; }
-table.graph18 .sv { left: -0.5em; top: 0; }
-table.graph18 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph18 .sv, table.graph18 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph18 .shl { left: 0.3em; }
+table.graph18 .sv { left: -0.5em; top: -0.4em; }
+table.graph18 .su { left: -0.5em; top: 0.4em; }
+table.graph18 .sa { left: -0.3em; top: 0; }
+table.graph18 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph19 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -1230,7 +1344,6 @@ table.graph19 {
   padding: 0.5em;
 }
 table.graph19 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph19 .node,table.graph19 .node_anon {
@@ -1238,14 +1351,13 @@ table.graph19 .node,table.graph19 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph19 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph19 td {
@@ -1257,7 +1369,7 @@ table.graph19 span.l { float: left; }
 table.graph19 span.r { float: right; }
 table.graph19 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph19 .el {
@@ -1269,15 +1381,23 @@ table.graph19 .lh, table.graph19 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph19 .sv, table.graph19 .sh, table.graph19 .shl {
+table.graph19 .sv, table.graph19 .sh, table.graph19 .shl, table.graph19 .sa, table.graph19 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph19 .shl { left: 0.2em; }
-table.graph19 .sv { left: -0.5em; top: 0; }
-table.graph19 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph19 .sv, table.graph19 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph19 .shl { left: 0.3em; }
+table.graph19 .sv { left: -0.5em; top: -0.4em; }
+table.graph19 .su { left: -0.5em; top: 0.4em; }
+table.graph19 .sa { left: -0.3em; top: 0; }
+table.graph19 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph20 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -1290,7 +1410,6 @@ table.graph20 {
   padding: 0.5em;
 }
 table.graph20 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph20 .node,table.graph20 .node_anon {
@@ -1298,14 +1417,13 @@ table.graph20 .node,table.graph20 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph20 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph20 td {
@@ -1317,7 +1435,7 @@ table.graph20 span.l { float: left; }
 table.graph20 span.r { float: right; }
 table.graph20 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph20 .el {
@@ -1329,15 +1447,23 @@ table.graph20 .lh, table.graph20 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph20 .sv, table.graph20 .sh, table.graph20 .shl {
+table.graph20 .sv, table.graph20 .sh, table.graph20 .shl, table.graph20 .sa, table.graph20 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph20 .shl { left: 0.2em; }
-table.graph20 .sv { left: -0.5em; top: 0; }
-table.graph20 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph20 .sv, table.graph20 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph20 .shl { left: 0.3em; }
+table.graph20 .sv { left: -0.5em; top: -0.4em; }
+table.graph20 .su { left: -0.5em; top: 0.4em; }
+table.graph20 .sa { left: -0.3em; top: 0; }
+table.graph20 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph21 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -1350,7 +1476,6 @@ table.graph21 {
   padding: 0.5em;
 }
 table.graph21 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph21 .node,table.graph21 .node_anon {
@@ -1358,14 +1483,13 @@ table.graph21 .node,table.graph21 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph21 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph21 td {
@@ -1377,7 +1501,7 @@ table.graph21 span.l { float: left; }
 table.graph21 span.r { float: right; }
 table.graph21 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph21 .el {
@@ -1389,15 +1513,23 @@ table.graph21 .lh, table.graph21 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph21 .sv, table.graph21 .sh, table.graph21 .shl {
+table.graph21 .sv, table.graph21 .sh, table.graph21 .shl, table.graph21 .sa, table.graph21 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph21 .shl { left: 0.2em; }
-table.graph21 .sv { left: -0.5em; top: 0; }
-table.graph21 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph21 .sv, table.graph21 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph21 .shl { left: 0.3em; }
+table.graph21 .sv { left: -0.5em; top: -0.4em; }
+table.graph21 .su { left: -0.5em; top: 0.4em; }
+table.graph21 .sa { left: -0.3em; top: 0; }
+table.graph21 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph22 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -1410,7 +1542,6 @@ table.graph22 {
   padding: 0.5em;
 }
 table.graph22 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph22 .node,table.graph22 .node_anon {
@@ -1418,14 +1549,13 @@ table.graph22 .node,table.graph22 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph22 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph22 td {
@@ -1437,7 +1567,7 @@ table.graph22 span.l { float: left; }
 table.graph22 span.r { float: right; }
 table.graph22 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph22 .el {
@@ -1449,18 +1579,23 @@ table.graph22 .lh, table.graph22 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph22 .sv, table.graph22 .sh, table.graph22 .shl {
+table.graph22 .sv, table.graph22 .sh, table.graph22 .shl, table.graph22 .sa, table.graph22 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph22 .shl { left: 0.2em; }
-table.graph22 .sv { left: -0.5em; top: 0; }
-table.graph22 .eb { max-height: 0.4em; line-height: 0.4em; }
-table.graph22 span.c { position: relative; top: 1.5em; }
-table.graph22 div.c { -moz-border-radius: 100%; border-radius: 100%; }
-table.graph22 div.r { -moz-border-radius: 1em; border-radius: 1em; }
+table.graph22 .sv, table.graph22 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph22 .shl { left: 0.3em; }
+table.graph22 .sv { left: -0.5em; top: -0.4em; }
+table.graph22 .su { left: -0.5em; top: 0.4em; }
+table.graph22 .sa { left: -0.3em; top: 0; }
+table.graph22 .eb { max-height: 0; line-height: 0; height: 0; }
 table.graph23 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -1473,7 +1608,6 @@ table.graph23 {
   padding: 0.5em;
 }
 table.graph23 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph23 .node,table.graph23 .node_anon {
@@ -1481,14 +1615,13 @@ table.graph23 .node,table.graph23 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: #ffd080;
+  background: #ffffff;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
 table.graph23 .node_anon {
-  background:  inherit;
   border-style: none;
 }
 table.graph23 td {
@@ -1500,7 +1633,7 @@ table.graph23 span.l { float: left; }
 table.graph23 span.r { float: right; }
 table.graph23 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph23 .el {
@@ -1512,15 +1645,26 @@ table.graph23 .lh, table.graph23 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph23 .sv, table.graph23 .sh, table.graph23 .shl {
+table.graph23 .sv, table.graph23 .sh, table.graph23 .shl, table.graph23 .sa, table.graph23 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph23 .shl { left: 0.2em; }
-table.graph23 .sv { left: -0.5em; top: 0; }
-table.graph23 .eb { max-height: 0.4em; line-height: 0.4em; }
+table.graph23 .sv, table.graph23 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph23 .shl { left: 0.3em; }
+table.graph23 .sv { left: -0.5em; top: -0.4em; }
+table.graph23 .su { left: -0.5em; top: 0.4em; }
+table.graph23 .sa { left: -0.3em; top: 0; }
+table.graph23 .eb { max-height: 0; line-height: 0; height: 0; }
+table.graph23 span.c { position: relative; top: 1.5em; }
+table.graph23 div.c { -moz-border-radius: 100%; border-radius: 100%; }
+table.graph23 div.r { -moz-border-radius: 1em; border-radius: 1em; }
 table.graph24 .edge {
   font-family: monospaced, courier-new, courier, sans-serif;
   margin: 0.1em;
@@ -1532,16 +1676,7 @@ table.graph24 {
   margin: 0.5em;
   padding: 0.5em;
 }
-table.graph24 .group,table.graph24 .group_anon {
-  text-align: left;
-  border-style: none;
-  border-width: 1px;
-  background: #a0d0ff;
-  font-size: 0.8em;
-  padding: 0.2em;
-}
 table.graph24 .group_anon {
-  background: white;
   border-style: none;
 }
 table.graph24 .node,table.graph24 .node_anon {
@@ -1549,18 +1684,15 @@ table.graph24 .node,table.graph24 .node_anon {
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
-  background: white;
+  background: #ffd080;
   margin: 0.1em;
   padding: 0.2em;
   padding-left: 0.3em;
   padding-right: 0.3em;
-  white-space: normal;
 }
 table.graph24 .node_anon {
-  background:  inherit;
   border-style: none;
 }
-table.graph24 td[class|="group"] { padding: 0.2em; }
 table.graph24 td {
   padding: 2px;
   background: inherit;
@@ -1570,7 +1702,7 @@ table.graph24 span.l { float: left; }
 table.graph24 span.r { float: right; }
 table.graph24 .va {
   vertical-align: middle;
-  line-height: 1.5em;
+  line-height: 1em;
   width: 0.4em;
   }
 table.graph24 .el {
@@ -1582,21 +1714,105 @@ table.graph24 .lh, table.graph24 .lv {
   font-size: 0.8em;
   padding-left: 0.4em;
   }
-table.graph24 .sv, table.graph24 .sh, table.graph24 .shl {
+table.graph24 .sv, table.graph24 .sh, table.graph24 .shl, table.graph24 .sa, table.graph24 .su {
+  max-height: 1em;
+  line-height: 1em;
   position: relative;
-  top: 0.75em;
-  left: -0.2em;
+  top: 0.55em;
+  left: -0.3em;
   overflow: visible;
   }
-table.graph24 .shl { left: 0.2em; }
-table.graph24 .sv { left: -0.5em; top: 0; }
-table.graph24 .eb { max-height: 0.4em; line-height: 0.4em; }
-table.graph24 .gi { border: none;}
-table.graph24 .gr { border-right-style: dashed;}
-table.graph24 .gl { border-left-style: dashed;}
-table.graph24 .gt { border-top-style: dashed;}
-table.graph24 .gb { border-bottom-style: dashed;}
-table.graph24 .ga { border-style: dashed;}
+table.graph24 .sv, table.graph24 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph24 .shl { left: 0.3em; }
+table.graph24 .sv { left: -0.5em; top: -0.4em; }
+table.graph24 .su { left: -0.5em; top: 0.4em; }
+table.graph24 .sa { left: -0.3em; top: 0; }
+table.graph24 .eb { max-height: 0; line-height: 0; height: 0; }
+table.graph25 .edge {
+  font-family: monospaced, courier-new, courier, sans-serif;
+  margin: 0.1em;
+  padding: 0.2em;
+  vertical-align: bottom;
+}
+table.graph25 {
+  empty-cells: show;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+table.graph25 .group,table.graph25 .group_anon {
+  text-align: left;
+  border-style: none;
+  border-width: 1px;
+  background: #a0d0ff;
+  font-size: 0.8em;
+  padding: 0.2em;
+}
+table.graph25 .group_anon {
+  border-style: none;
+}
+table.graph25 .node,table.graph25 .node_anon {
+  text-align: center;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  background: #ffffff;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  white-space: normal;
+}
+table.graph25 .node_anon {
+  border-style: none;
+}
+table.graph25 td[class|="group"] { padding: 0.2em; }
+table.graph25 td {
+  padding: 2px;
+  background: inherit;
+  white-space: nowrap;
+  }
+table.graph25 span.l { float: left; }
+table.graph25 span.r { float: right; }
+table.graph25 .va {
+  vertical-align: middle;
+  line-height: 1em;
+  width: 0.4em;
+  }
+table.graph25 .el {
+  width: 0.1em;
+  max-width: 0.1em;
+  min-width: 0.1em;
+  }
+table.graph25 .lh, table.graph25 .lv {
+  font-size: 0.8em;
+  padding-left: 0.4em;
+  }
+table.graph25 .sv, table.graph25 .sh, table.graph25 .shl, table.graph25 .sa, table.graph25 .su {
+  max-height: 1em;
+  line-height: 1em;
+  position: relative;
+  top: 0.55em;
+  left: -0.3em;
+  overflow: visible;
+  }
+table.graph25 .sv, table.graph25 .su {
+  max-height: 0.5em;
+  line-height: 0.5em;
+  }
+table.graph25 .shl { left: 0.3em; }
+table.graph25 .sv { left: -0.5em; top: -0.4em; }
+table.graph25 .su { left: -0.5em; top: 0.4em; }
+table.graph25 .sa { left: -0.3em; top: 0; }
+table.graph25 .eb { max-height: 0; line-height: 0; height: 0; }
+table.graph25 .gi { border: none;}
+table.graph25 .gr { border-right-style: dashed;}
+table.graph25 .gl { border-left-style: dashed;}
+table.graph25 .gt { border-top-style: dashed;}
+table.graph25 .gb { border-bottom-style: dashed;}
+table.graph25 .ga { border-style: dashed;}
 
    -->
  </style>
@@ -1659,7 +1875,7 @@ It is generated automatically from the definitions in <code>Graph::Easy::Attribu
   <li><a href='att_nodes.html#node_id' title="A unique identifier for this object, consisting only of letters, digits, or underscores.">id</a>, 
   <li><a href='att_nodes.html#node_label' title="The text displayed as label.">label</a>, <a href='att_nodes.html#node_link' title="The link part, appended onto linkbase.">link</a>, <a href='att_nodes.html#node_linkbase' title="The base URL prepended to all generated links.">linkbase</a>, 
   <li><a href='att_nodes.html#node_offset' title="The offset of this node from the origin node, in columns and rows.">offset</a>, <a href='att_nodes.html#node_origin' title="The name of the node, that this node is relativ to.">origin</a>, 
-  <li><a href='att_nodes.html#node_pointstyle' title="Controls the style of a node that has a shape of 'point'.">pointstyle</a>, 
+  <li><a href='att_nodes.html#node_pointshape' title="Controls the style of a node that has a shape of 'point'.">pointshape</a>, <a href='att_nodes.html#node_pointstyle' title="Controls the style of the pointshape of a node that has a shape of 'point'.">pointstyle</a>, 
   <li><a href='att_nodes.html#node_rank' title="The rank of the node, used by the layouter to find the order and placement of nodes.">rank</a>, <a href='att_nodes.html#node_rotate' title="The rotation of the node shape, either an absolute value (like south, up, down or 123), or a relative value (like +12, -90, left, right).">rotate</a>, <a href='att_nodes.html#node_rows' title="The size of the node in rows.">rows</a>, 
   <li><a href='att_nodes.html#node_shape' title="The shape of the node.">shape</a>, <a href='att_nodes.html#node_size' title="The size of the node in columns and rows.">size</a>, 
   <li><a href='att_nodes.html#node_textstyle' title="The style of the label text.">textstyle</a>, <a href='att_nodes.html#node_textwrap' title="The default none makes the label text appear exactly as it was written, with <a href='syntax.html'>manual line breaks</a> applied.">textwrap</a>, <a href='att_nodes.html#node_title' title="The text displayed as mouse-over for nodes/edges, or as the title for the graph.">title</a>, 
@@ -1722,7 +1938,7 @@ node {align: left;}
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
 <td rowspan=4 class="group edge el" style=" background: #a0d0ff;"></td>
  <td colspan=2 rowspan=2 class="group edge lh" style=" background: #a0d0ff;border-bottom: solid 2px #000000; background: #a0d0ff;">label<br>text</td>
- <td rowspan=2 class="group edge" style=" color: #000000; background: #a0d0ff;"><span class="sh">></span></td>
+ <td rowspan=2 class="group edge eb" style=" color: #000000; background: #a0d0ff;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
  <td colspan=4 rowspan=4 class='node'>Left<br>aligned</td>
  <td colspan=4 rowspan=4 class='group gr'>&nbsp;</td>
@@ -1791,7 +2007,7 @@ Will restrict the <a href="#node_label">label</a> text to N characters. N must b
  <td colspan=4 rowspan=4 class='node' title='Bonn'>Bonn</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;" title="Acme Travels Incorporated">Acme Tr ... porated</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' title='Frankfurt (Main) / Flughafen'>Frankfu ... ughafen</td>
 </tr>
 
@@ -1869,7 +2085,7 @@ The background color, e.g. the color <b>outside</b> the shape. Do not confuse wi
  <td colspan=4 rowspan=4 class='node' style="border: none;background: #dc143c"><div class='c' style='background:#ffffff;border:solid 1px #000000;width: 9em; height: 9em'><span class='c' style="top: 4em">Crimson</span></div></td>
 <td rowspan=4 class="edge el" style=" background: #7fffd4;"></td>
  <td colspan=2 rowspan=2 class="edge lh" style=" background: #7fffd4;border-bottom: solid 2px #000000; background: #7fffd4;">Aqua Marine</td>
- <td rowspan=2 class="edge" style=" color: #000000; background: #7fffd4;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000; background: #7fffd4;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="border: none;background: #ffffff"><div class='c' style='background:#ffe4dd;border:solid 1px #000000;width: 12em; height: 3em'><span class='c' style="top: 1em">Misty Rose</span></div></td>
 </tr>
 
@@ -2046,19 +2262,19 @@ The border. Can be any combination of <a href="#node_borderstyle">borderstyle</a
  <td colspan=4 rowspan=4 class='node'>Normal</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="border: solid 4px #000000">Bold</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="border: solid 0.5em #000000">Broad</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="border: solid 1em #000000">Wide</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="border: dashed 4px #000000">Bold-Dash</td>
 </tr>
 
@@ -2109,11 +2325,11 @@ The color of the <a href="#node_border">border</a>. See the section about <a hre
  <td colspan=4 rowspan=4 class='node' style="border: solid 4px #000000">Black</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="border: solid 4px #ff0000">Red</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="border: solid 4px #008000">Green</td>
 </tr>
 
@@ -2166,11 +2382,11 @@ One of: <code>none</code>, <code>solid</code>, <code>dotted</code>, <code>dashed
  <td colspan=4 rowspan=4 class='node' style="border: dotted 1px #000000">Dotted</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="border: dashed 1px #000000">Dashed</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="border: solid 0.5em #000000">broad</td>
 </tr>
 
@@ -2237,7 +2453,7 @@ The foreground/text/label color. See the section about <a href="attributes.html#
  <td colspan=4 rowspan=4 class='node' style="color: #32cd32">Lime</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #0000ff;color: #ff0000;">label</td>
- <td rowspan=2 class="edge" style=" color: #0000ff;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #0000ff;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node'>Dark Orange</td>
 </tr>
 
@@ -2293,27 +2509,27 @@ The colorscheme to use for all color values. See the section about <a href="attr
  <td colspan=4 rowspan=4 class='node' style="background: #7fc97f">1</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: #fdc086">3</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: #ffff99">4</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: #386cb0">5</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: #f0027f">6</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: #bf5b17">7</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: #666666">8</td>
 </tr>
 
@@ -2376,7 +2592,7 @@ A free-form text field containing a comment on this object. This will be embedde
  <td colspan=4 rowspan=4 class='node'>Bonn</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node'>Berlin</td>
 </tr>
 
@@ -2435,7 +2651,7 @@ The fill color, e.g. the color inside the shape. For the graph, this is the back
  <td colspan=4 rowspan=4 class='node' style="border: none;background: #ffff00"><div class='c' style='background:#ff0000;border:solid 3px #0000ff;width: 9em; height: 9em'><span class='c' style="top: 4em">Crimson</span></div></td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">Aqua Marine</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">▶</span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">▶</span></td>
  <td colspan=4 rowspan=4 class='node'>Two</td>
 </tr>
 
@@ -2513,7 +2729,7 @@ The general direction in which edges will leave nodes first. On edges, influeces
  <td colspan=4 rowspan=4 class='node'>Bielefeld</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node'>Wolfsburg</td>
 </tr>
 
@@ -2587,7 +2803,7 @@ A prioritized list of lower-case, unquoted values, separated by a comma. Values 
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
 <td rowspan=4 class="group edge el" style=" background: #a0d0ff;"></td>
  <td colspan=2 rowspan=2 class="group edge lh" style=" background: #a0d0ff;border-bottom: solid 2px #000000;font-family: flatline; background: #a0d0ff;">FlatLine</td>
- <td rowspan=2 class="group edge" style=" color: #000000; background: #a0d0ff;"><span class="sh">></span></td>
+ <td rowspan=2 class="group edge eb" style=" color: #000000; background: #a0d0ff;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
  <td colspan=4 rowspan=4 class='node'>Normal</td>
  <td colspan=4 rowspan=4 class='group gr'>&nbsp;</td>
@@ -2684,7 +2900,7 @@ The size of the label text, best expressed in <i>em</i> (1.0em, 0.5em etc) or pe
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
 <td rowspan=4 class="group edge el" style=" background: #a0d0ff;"></td>
  <td colspan=2 rowspan=2 class="group edge lh" style=" background: #a0d0ff;border-bottom: solid 2px #000000;font-size: 0.2em; background: #a0d0ff;">Small</td>
- <td rowspan=2 class="group edge" style=" color: #000000; background: #a0d0ff;"><span class="sh">></span></td>
+ <td rowspan=2 class="group edge eb" style=" color: #000000; background: #a0d0ff;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
  <td colspan=4 rowspan=4 class='node'>Normal</td>
  <td colspan=4 rowspan=4 class='group gr'>&nbsp;</td>
@@ -2760,7 +2976,7 @@ edge { format: pod; }
  <td colspan=4 rowspan=4 class='node'>U<<b>bold and underlined</b>></td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;"><span style="text-decoration: line-through">Fähre</span></td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node'><span style="text-decoration: overline">Konstanz</span></td>
 </tr>
 
@@ -2821,7 +3037,7 @@ Puts the node into this group.<br>
  <td colspan=4 rowspan=4 class='groupgi' style="background: #a0d0ff">&nbsp;</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='group gl'>&nbsp;</td>
  <td colspan=4 rowspan=4 class='node'>B</td>
  <td colspan=4 rowspan=4 class='group gr'>&nbsp;</td>
@@ -2882,7 +3098,7 @@ A unique identifier for this object, consisting only of letters, digits, or unde
  <td colspan=4 rowspan=4 class='node'>Bonn</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node'>Berlin</td>
 </tr>
 
@@ -2948,15 +3164,15 @@ edge {
  <td colspan=4 rowspan=4 class='node_anon'></td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node'><a href='http://de.wikipedia.org/wiki/Friedrichshafen' style="text-decoration: none">Friedrichshafen</a></td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #ffa500;" title="Vrooom!"><a href='http://de.wikipedia.org/wiki/Schiff' style='color: #ffa500; text-decoration: overline;'>Schiff</a></td>
- <td rowspan=2 class="edge" style=" color: #ffa500;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #ffa500;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node'><a href='http://de.wikipedia.org/wiki/Immenstaad' style="color: #008000; text-decoration: none">Immenstaad</a></td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node'><a href='http://de.wikipedia.org/wiki/Hagnau' style="text-decoration: none">Hagnau</a></td>
 </tr>
 
@@ -3082,14 +3298,14 @@ The name of the node, that this node is relativ to. See also <a href="#node_offs
 
 </div>
 
-<a name="node_pointstyle">
-<h4>pointstyle</h4></a>
+<a name="node_pointshape">
+<h4>pointshape</h4></a>
 
 <div class="entry">
 
 <p>
 Controls the style of a node that has a <a href="#node_shape">shape</a> of 'point'.
-One of: <code>circle</code>, <code>cross</code>, <code>diamond</code>, <code>dot</code>, <code>invisible</code>, <code>square</code>, <code>star</code>.
+One of: <code>star</code>, <code>square</code>, <code>dot</code>, <code>circle</code>, <code>cross</code>, <code>diamond</code>, <code>invisible</code>, <code>x</code>.
 <br>
 <b>Defaults to:</b> <code>star</code><br>
 <b>Example graph:</b>
@@ -3097,13 +3313,15 @@ One of: <code>circle</code>, <code>cross</code>, <code>diamond</code>, <code>dot
 <pre class="graphtext">node { shape: point; }
 
  [ A ]
- -&gt; [ B ] { pointstyle: circle; }
- -&gt; [ C ] { pointstyle: cross; }
- -&gt; [ D ] { pointstyle: diamond; }
- -&gt; [ E ] { pointstyle: dot; }
- -&gt; [ F ] { pointstyle: invisible; }
- -&gt; [ G ] { pointstyle: square; }
- -&gt; [ H ] { pointstyle: star; }
+ -&gt; [ B ] { pointshape: circle; }
+ -&gt; [ C ] { pointshape: cross; }
+ -&gt; [ D ] { pointshape: diamond; }
+ -&gt; [ E ] { pointshape: dot; }
+ -&gt; [ F ] { pointshape: invisible; }
+ -&gt; [ G ] { pointshape: square; }
+ -&gt; [ H ] { pointshape: star; }
+ -&gt; [ I ] { pointshape: x; }
+ -&gt; [ ☯ ] { shape: none; }
 </pre>
 
 <div class="clear"></div><div style="margin-left: 1em;">
@@ -3114,32 +3332,40 @@ One of: <code>circle</code>, <code>cross</code>, <code>diamond</code>, <code>dot
  <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">★</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">●</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">+</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">◆</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">·</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none"></td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">■</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">★</td>
+<td rowspan=4 class="edge el"></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
+ <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">╳</td>
+<td rowspan=4 class="edge el"></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
+ <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">☯</td>
 </tr>
 
 <!-- row 0 line 1 -->
@@ -3159,6 +3385,53 @@ One of: <code>circle</code>, <code>cross</code>, <code>diamond</code>, <code>dot
  <td rowspan=2 class="edge eb"></td>
 <td colspan=2 rowspan=2 class="edge eb">&nbsp;</td>
  <td rowspan=2 class="edge eb"></td>
+<td colspan=2 rowspan=2 class="edge eb">&nbsp;</td>
+ <td rowspan=2 class="edge eb"></td>
+<td colspan=2 rowspan=2 class="edge eb">&nbsp;</td>
+ <td rowspan=2 class="edge eb"></td>
+<td colspan=2 rowspan=2 class="edge eb">&nbsp;</td>
+ <td rowspan=2 class="edge eb"></td>
+</tr>
+
+<!-- row 0 line 3 -->
+</table>
+</div><div class="clear"></div>
+</div>
+
+<a name="node_pointstyle">
+<h4>pointstyle</h4></a>
+
+<div class="entry">
+
+<p>
+Controls the style of the <a href="#node_pointshape">pointshape</a> of a node that has a <a href="#node_shape">shape</a> of 'point'. Note for backwards compatibility reasons, the shape names 'star', 'square', 'dot', 'circle', 'cross', 'diamond' and 'invisible' are also supported, but should not be used here, instead set them via <a href="#node_pointshape">pointshape</a>.
+One of: <code>closed</code>, <code>filled</code>, <code>star</code>, <code>square</code>, <code>dot</code>, <code>circle</code>, <code>cross</code>, <code>diamond</code>, <code>invisible</code>, <code>x</code>.
+<br>
+<b>Defaults to:</b> <code>filled</code><br>
+<b>Example graph:</b>
+</p>
+<pre class="graphtext">node { shape: point; pointstyle: closed; pointshape: diamond; }
+
+ [ A ] --&gt; [ B ] { pointstyle: filled; }
+</pre>
+
+<div class="clear"></div><div style="margin-left: 1em;">
+
+<table class="graph20" cellpadding=0 cellspacing=0>
+<!-- row 0 line 0 -->
+<tr>
+ <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">◇</td>
+<td rowspan=4 class="edge el"></td>
+ <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
+ <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">◆</td>
+</tr>
+
+<!-- row 0 line 1 -->
+<tr></tr>
+
+<!-- row 0 line 2 -->
+<tr>
 <td colspan=2 rowspan=2 class="edge eb">&nbsp;</td>
  <td rowspan=2 class="edge eb"></td>
 </tr>
@@ -3184,13 +3457,13 @@ The rank of the node, used by the layouter to find the order and placement of no
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph20" cellpadding=0 cellspacing=0>
+<table class="graph21" cellpadding=0 cellspacing=0>
 <!-- row 0 line 0 -->
 <tr>
  <td colspan=4 rowspan=4 class='node' style="rank: same">Bonn</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node'>Cottbus</td>
 </tr>
 
@@ -3228,7 +3501,7 @@ The rank of the node, used by the layouter to find the order and placement of no
 <!-- row 2 line 0 -->
 <tr>
  <td colspan=4 rowspan=4 class='node' style="rank: same">Berlin</td>
-<td rowspan=2 class="edge" style=" color: #000000;"><span class="shl"><</span></td>
+<td rowspan=2 class="edge eb" style=" color: #000000;"><span class="shl"><</span></td>
  <td colspan=3 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
  <td colspan=2 rowspan=2 class="edge eb" style="border-bottom: solid 2px #000000;">&nbsp;</td>
  <td colspan=2 rowspan=2 class="edge eb" style="border-left: solid 2px #000000;">&nbsp;</td>
@@ -3265,13 +3538,13 @@ The rotation of the node shape, either an absolute value (like <code>south</code
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph21" cellpadding=0 cellspacing=0>
+<table class="graph22" cellpadding=0 cellspacing=0>
 <!-- row 0 line 0 -->
 <tr>
  <td colspan=4 rowspan=4 class='node' style="rotate: 45">Bonn</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">ICE</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="rotate: -90">Berlin</td>
 </tr>
 
@@ -3307,7 +3580,7 @@ The size of the node in rows. See also <a href="#node_size">size</a>.<br>
 <div class="entry">
 
 <p>
-The shape of the node. Nodes with shape 'point' (see <a href="#node_pointstyle">pointstyle</a>) have a fixed size and do not display their label. The border of such a node is the outline of the <code>pointshape</code>, and the fill is the inside of the <code>pointshape</code>. When the <code>shape</code> is set to the value 'img', the <a href="#node_label">label</a> will be interpreted as an external image resource to display. In this case attributes like <a href="#node_color">color</a>, <a href="#node_fontsize">fontsize</a> etc. are ignored.
+The shape of the node. Nodes with shape 'point' (see <a href="#node_pointshape">pointshape</a>) have a fixed size and do not display their label. The border of such a node is the outline of the <code>pointshape</code>, and the fill is the inside of the <code>pointshape</code>. When the <code>shape</code> is set to the value 'img', the <a href="#node_label">label</a> will be interpreted as an external image resource to display. In this case attributes like <a href="#node_color">color</a>, <a href="#node_fontsize">fontsize</a> etc. are ignored.
 One of: <code>circle</code>, <code>diamond</code>, <code>edge</code>, <code>ellipse</code>, <code>hexagon</code>, <code>house</code>, <code>invisible</code>, <code>invhouse</code>, <code>invtrapezium</code>, <code>invtriangle</code>, <code>octagon</code>, <code>parallelogram</code>, <code>pentagon</code>, <code>point</code>, <code>triangle</code>, <code>trapezium</code>, <code>septagon</code>, <code>rect</code>, <code>rounded</code>, <code>none</code>, <code>img</code>.
 <br>
 <b>Defaults to:</b> <code>rect</code><br>
@@ -3325,33 +3598,33 @@ One of: <code>circle</code>, <code>diamond</code>, <code>edge</code>, <code>elli
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph22" cellpadding=0 cellspacing=0>
+<table class="graph23" cellpadding=0 cellspacing=0>
 <!-- row 0 line 0 -->
 <tr>
  <td colspan=4 rowspan=4 class='node'>Bonn</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="border: none;background: inherit"><div class='c' style='background:#ffffff;border:solid 1px #000000;width: 8em; height: 8em'><span class='c' style="top: 3.5em">Berlin</span></div></td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="border: none;background: inherit"><div class='r' style='background:#ffffff;border:solid 1px #000000;width: 12em; height: 3em'><span class='c' style="top: 1em">Regensburg</span></div></td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none">★</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 style="border: none; background: inherit;"></td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node'>Augsburg</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #000000;">&nbsp;</td>
- <td rowspan=2 class="edge" style=" color: #000000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #000000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="background: inherit; border: none"><img src='img/house.png' alt='My House' title='My House' border='0' /></td>
 </tr>
 
@@ -3422,7 +3695,7 @@ edge {
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph23" cellpadding=0 cellspacing=0>
+<table class="graph24" cellpadding=0 cellspacing=0>
 <tr>
   <td colspan=12 style="font-style: italic; font-weight: bold; font-size: 150%; text-align: center">Verbindung</td>
 </tr>
@@ -3431,7 +3704,7 @@ edge {
  <td colspan=4 rowspan=4 class='node' style="font-weight: bold; text-decoration: underline; font-size: 2em">Meersburg</td>
 <td rowspan=4 class="edge el"></td>
  <td colspan=2 rowspan=2 class="edge lh" style="border-bottom: solid 2px #ff0000;color: #ff0000; font-style: italic; font-weight: bold; text-decoration: overline; font-size: 1.2em;">Fähre</td>
- <td rowspan=2 class="edge" style=" color: #ff0000;"><span class="sh">></span></td>
+ <td rowspan=2 class="edge eb" style=" color: #ff0000;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='node' style="font-weight: bold; text-decoration: underline">Konstanz</td>
 </tr>
 
@@ -3473,7 +3746,7 @@ The default <code>none</code> makes the label text appear exactly as it was writ
 
 <div class="clear"></div><div style="margin-left: 1em;">
 
-<table class="graph24" cellpadding=0 cellspacing=0>
+<table class="graph25" cellpadding=0 cellspacing=0>
 <!-- row 0 line 0 -->
 <tr>
  <td colspan=4 rowspan=4 class='group gt gl'>&nbsp;</td>
@@ -3501,7 +3774,7 @@ The default <code>none</code> makes the label text appear exactly as it was writ
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
 <td rowspan=4 class="group edge el" style=" background: #a0d0ff;"></td>
  <td colspan=2 rowspan=2 class="group edge lh" style=" background: #a0d0ff;border-bottom: solid 2px #000000; background: #a0d0ff;">&nbsp;</td>
- <td rowspan=2 class="group edge" style=" color: #000000; background: #a0d0ff;"><span class="sh">></span></td>
+ <td rowspan=2 class="group edge eb" style=" color: #000000; background: #a0d0ff;"><span class="sh">></span></td>
  <td colspan=4 rowspan=4 class='group'>&nbsp;</td>
  <td colspan=4 rowspan=4 class='node'>Städte innerhalb der Ost-Westfahlen Region mit sehr langen Namen</td>
  <td colspan=4 rowspan=4 class='group gr'>&nbsp;</td>
@@ -3558,7 +3831,7 @@ The text displayed as mouse-over for nodes/edges, or as the title for the graph.
 </div>
 
 <div class="footer">
-Page created automatically at <span class="date">Sun Mar 18 11:55:23 2007</span> in 0.6491s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
+Page created automatically at <span class="date">Sun Aug 12 19:49:23 2007</span> in 0.6505s. Contact: <a href="http://bloodgate.com/mail.html">Tels</a>.
 </div>
 
 </div> <!-- end of right cell -->

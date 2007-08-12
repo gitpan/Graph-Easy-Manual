@@ -12,14 +12,14 @@ name		'Graph-Easy-Manual';
 # Get most of the details from the primary module
 all_from	'lib/Graph/Easy/Manual.pm';
 
-requires	'Graph::Easy'	=> 0.53,
+requires	'Graph::Easy'	=> 0.57,
 		'File::Spec'	=> 3.01,
-		'Pod::Simple'	=> 3.02,
+		'Pod::Simple'	=> 3.04,
 		'perl'		=> 5.008001;
 
 recommends	'Graph::Easy::As_svg'	=> 0.22;
 
-build_requires	'Test::More'	=> 0.42;
+build_requires	'Test::More'	=> 0.62;
 
 license		'gpl';
 
