@@ -15,40 +15,41 @@ not run its Makefile.PL or Build.PL.
 Hash: SHA1
 
 SHA1 38dd40d4fe9a8a408648f2f2c1a2a3ac76bbac72 Build.PL
-SHA1 9c2d90ce2b4ce1f018cfbb4cace5d660ca07228c CHANGES
+SHA1 379c1a3b68b2f4d6988a7e5d819fd4f8f1b558ff CHANGES
 SHA1 6d72d79fc06eb02d20d1521e1ebb55bcc9992dbe INSTALL
 SHA1 02154445bc9831e791c35050f1a018ed99030016 LICENSE
-SHA1 feaa568bf328a9b130b30eaf0934501e7b88ee36 MANIFEST
+SHA1 79e8389d0da1a4d256fb877ed00567c4a520aae3 MANIFEST
 SHA1 df991d02934633e192f211e02e8559b7f8d8ca8a MANIFEST.SKIP
-SHA1 1293f3d3000fd8b21d78f75d40de68f5da2748fb META.yml
-SHA1 aaea4e7299ff67f193a4de9061a2c278e01ffa86 Makefile.PL
+SHA1 ddd4e957932de02c5ca8d66bc17dafdc2a4b7a55 META.yml
+SHA1 b2ea49a88c575e6fa5466fe35dfc4c4b486931fa Makefile.PL
 SHA1 8c464fcda9a72df71317f6de925d663c69c6246d README
 SHA1 9062daf33789d2647ed21e853fa6fd09801a4b1d doc/README
-SHA1 fce579b0a6a964eeb7b0cebebb104e1b1c5cd468 doc/att_colors.tpl
-SHA1 c919e02563716e036284ac5b5f05d7cdf3bb945b doc/att_edges.tpl
-SHA1 5122a728495b1680f5eb840053c680dfcaa689a9 doc/att_graphs.tpl
-SHA1 c5f2bad39031f396aeb53718270ea1da0f83ab71 doc/att_groups.tpl
-SHA1 cd8be0116d845ff93fddd69ab8e05263be338a4b doc/att_nodes.tpl
-SHA1 426c75dba9890e7378efd7a8445bcaaf44603710 doc/attributes.tpl
+SHA1 28ec5469fbfdc76736e865ef34d4a5e47a7e8853 doc/att_colors.tpl
+SHA1 9440e09ce32d5f0d6c383c9d0f261a57150a5073 doc/att_edges.tpl
+SHA1 7c4f0fe0132c96c5eda6da7e035c1ebf041e620b doc/att_graphs.tpl
+SHA1 6d48f9135e4c704b4f6e4963b6991277a0cdb09e doc/att_groups.tpl
+SHA1 b7b7a6d7c1c98b1a28514f2b026ea3ee9a59205a doc/att_nodes.tpl
+SHA1 4f6a04daa3d46bac43fce15434ee6e76415b016e doc/attributes.tpl
 SHA1 87522fe43ceba3cc2f564f49b6b6603c62175336 doc/base.css
-SHA1 ea5ab70566fada01f7fddbb7541bd9b7e72146f6 doc/gen_manual
-SHA1 7514ab2fab68766d5637b360e54a15550cfcc657 doc/manual/a-star.html
-SHA1 0e833176ea88d108445d1e400c3ce8bef29d088e doc/manual/att_colors.html
-SHA1 757ff7f8125c95ca8fc3d47f6f1d168d6b49b18d doc/manual/att_edges.html
-SHA1 df418ab760ad355117ce91d751a7f53d7c2b4f9d doc/manual/att_graphs.html
-SHA1 0de6cb192fd5335d556a31d81de12b94e5581ed8 doc/manual/att_groups.html
-SHA1 c95e3bd76cc0de425f9b602002d0e11da62d1679 doc/manual/att_nodes.html
-SHA1 8d64b100e26515e2447d29405fb271d23dd1e632 doc/manual/attributes.html
+SHA1 381a4a5048ce54b95469b3a1235cf0ea70946c28 doc/gen_manual
+SHA1 55539b6aba28598923ab2bb7e66f82b5a68382ca doc/manual/a-star.html
+SHA1 6eec951ec250349a7418e52143d37b9e0d44852b doc/manual/att_colors.html
+SHA1 48434ce5f884e52a606bd6ffe2d6ee68eceb69e3 doc/manual/att_edges.html
+SHA1 0e68cc798a0000e1fd37aa655c79c2517b441c9f doc/manual/att_graphs.html
+SHA1 625ae371fb09962f42dd3ef45c1db3b801a8565d doc/manual/att_groups.html
+SHA1 c50f0689800dc9472866a2b5beddab698aaa8bfd doc/manual/att_nodes.html
+SHA1 4a9242b958055af53bb0902652c815acbb550bbf doc/manual/attributes.html
 SHA1 92f51a9561312d097779c56230d3991bf058e4e3 doc/manual/bench/serie.pl
 SHA1 55294bcd49921a0ae8c6b744b9b747bf4ce177c6 doc/manual/benchmark.html
+SHA1 8bc698be7723290a0c231018e83a5ee9aa786709 doc/manual/editor.html
 SHA1 c0b86c0133009b3297bf4e316c87141a936ee16a doc/manual/errors.html
-SHA1 f1c56402dc4b870677757b7b5e1733e527d8f32b doc/manual/faq.html
-SHA1 03eead76c3b44242fe64efc0467de703c2c17545 doc/manual/features.html
-SHA1 603a2003422757cd65dc574bd8ab269ae67f2942 doc/manual/glossary.html
-SHA1 50b77adbe08b00474f3dee32483fff87a47653a6 doc/manual/hinting.html
+SHA1 62913a0e83ae3d2e40cbfe872734929b0fe0c927 doc/manual/faq.html
+SHA1 c10ba298d2b695a7e0b98013df5bda4125e04923 doc/manual/features.html
+SHA1 e9f0f11d0a6e5b1bb06fdebc554589ecf8752950 doc/manual/glossary.html
+SHA1 aa8bb15d5f44f65a4c977080dd74c2ce809d6cbf doc/manual/hinting.html
 SHA1 d78185a1cef02a0b87034aef07f0491b2c1ca7c7 doc/manual/img/classes.png
 SHA1 1daac7b2db1efb2b8d04084b637f343f8401c718 doc/manual/img/colors.png
-SHA1 f127070c6ea6fc307d37f8eedbc92455aa81f58f doc/manual/img/dataflow.png
+SHA1 7f0a214d57a799f1a2b3b5ead4d0b8d702a5650d doc/manual/img/dataflow.png
 SHA1 d354169aa59eb10ffaedce3e481d35d8df977ab8 doc/manual/img/edge_types.png
 SHA1 1762fafab7827e95ede835026dbadfcdfc96075d doc/manual/img/example1.png
 SHA1 c6eb3deaba60121797e55be651d831f677ceabf7 doc/manual/img/flow.png
@@ -68,22 +69,22 @@ SHA1 7a01da7d00254b634ceed6077cb5cfd84fd6dc84 doc/manual/img/ports.png
 SHA1 eabd3beefc5b65b8a288afd3627f8a05fa403593 doc/manual/img/self_loop.png
 SHA1 b44a38bc6be49a1cb85b453a7e66987a21865918 doc/manual/img/sides.png
 SHA1 da2213adcf8c335be40dca7a7a1efcabe69b3b58 doc/manual/img/unicode.png
-SHA1 f4f5ca574a3d3f548de37ad3fa5e6dc315562129 doc/manual/index.html
-SHA1 33e61676d4f82acae47d45558db2117e36ae1be9 doc/manual/layouter.html
+SHA1 a1678435cd8dfe86a9fd694475b0c374388b8293 doc/manual/index.html
+SHA1 c62c6ebd8ac724379cd0ac66e36ad81cdf123d6d doc/manual/layouter.html
 SHA1 a8c7c81ccd4d243e2724878838f369d710fd854c doc/manual/manual.css
-SHA1 23534ec63dab624e9ddba316833fdd77eb8fa34b doc/manual/output.html
-SHA1 c28cd4d3cf63751b9c970fb97f910ed8d4c4884c doc/manual/overview.html
+SHA1 1177edc6c64e6945c78cc9cea76930fb07e11230 doc/manual/output.html
+SHA1 f8bf1a48c5c406449e636dd8b29f8ffd7f1daeff doc/manual/overview.html
 SHA1 73184717a0646b86a57984c85bd2485d1f73501b doc/manual/svg.html
 SHA1 aa06075227642cf2a171d5823a19cded8940daaa doc/manual/svg/bypass.svg
 SHA1 7b7ed9faceb7258b42ec398f0400dd6cae31cad5 doc/manual/svg/edges.svg
 SHA1 d7558e454f45ef39e22944a91d34440dbec19f60 doc/manual/svg/inline.svg
 SHA1 1dc23d999a973c6902c985d74788101cf1db6d4b doc/manual/svg/test.svg
-SHA1 a4c614e52b9adf6450f1025ad44d296d35c77290 doc/manual/syntax.html
+SHA1 558646204ebdd6cfb3f6733ded134c1dcf58c37c doc/manual/syntax.html
 SHA1 2c66a69dc52bb049093447b4a43590c96e75081a doc/manual/teamwork.css
-SHA1 6c39ae184ce1914372cd75ebd14a94583c9131e0 doc/manual/tutorial.html
-SHA1 be9e85ad6f7db6ec1bd7617c80f684c916733b0e doc/manual/tutorial_bypass.html
-SHA1 fe0d327443933e3e6a696b0daa243b07086096b9 doc/manual/tutorial_edges.html
-SHA1 6fc68bd63e993d0e2bee1061bda780af11702690 doc/manual/tutorial_tree.html
+SHA1 270bf3e0180b53ab0f319c2e45d78dd2466e18fe doc/manual/tutorial.html
+SHA1 bd51db56948cfbbec2998ef6c96122497bd23db9 doc/manual/tutorial_bypass.html
+SHA1 d942ad94c9325bf9d9535069e6b69bb106fe19a6 doc/manual/tutorial_edges.html
+SHA1 7af6d8f24f4ebfae68826704702694bcbb0a6e11 doc/manual/tutorial_tree.html
 SHA1 848c2075ed04f3cf5b6ff73cd4f385053b208cb6 examples/bypass_0.txt
 SHA1 fc190ff957d71398183a2217f5eb349ec3043add examples/bypass_1.txt
 SHA1 cafd613852aaa7672c938714224e77eec777eb1e examples/bypass_2.txt
@@ -91,7 +92,7 @@ SHA1 5fb3e23f9b4fc2b5a15b69073d987b21fcd02ad5 examples/bypass_3.txt
 SHA1 83190ed68719aa98f5bb8954019159b9d0b6d6ca examples/inline_0.txt
 SHA1 17131cad04d151d80d532809c2608fde8dd39235 examples/inline_1.txt
 SHA1 4c189683ebe58cbc096fc35e323a373492295f63 examples/inline_2.txt
-SHA1 807225cc04b6fe926577d3a61013c01bc6118334 examples/overview.txt
+SHA1 f300a8d999e489bec46d62d0507b66167c4f77b9 examples/overview.txt
 SHA1 603bb9de29fb8cba7f13409c546750972eff645d inc/Module/AutoInstall.pm
 SHA1 ceac99579ef3914de1936417282842c07d907a6a inc/Module/Install.pm
 SHA1 c289fbaf0a2bce39c4993dab38fc70cbb3789f57 inc/Module/Install/AutoInstall.pm
@@ -104,17 +105,17 @@ SHA1 642e5b27f4cbbbe440e5dc05c639f5fb79875fe3 inc/Module/Install/Makefile.pm
 SHA1 80d024f3eccf1c825b02b5e59de236b0af7d4bfc inc/Module/Install/Metadata.pm
 SHA1 fe6780ea5cfd67c79140699fbd4f0fe262255d57 inc/Module/Install/Win32.pm
 SHA1 51d43bffcfd7ffdecb8c8e9f97f3896c31b2e1b2 inc/Module/Install/WriteAll.pm
-SHA1 9300f970b295193bd59ce521ee37953c065ff782 lib/Graph/Easy/Manual.pm
+SHA1 f9b92ccba46d12958af6b41161ece153dab8f3bf lib/Graph/Easy/Manual.pm
 SHA1 611d672595cdc60b76bd451a967f76dfa4398a7b t/pod.t
 SHA1 dbe39efe791e5b69b760ca8438010f531664dbd5 t/pod_cov.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.2 (GNU/Linux)
 
-iQEVAwUBRr9IOHcLPEOTuEwVAQL5pAf/TwEL6kSjls+jKeWVwyQLgyoX5S+l+1Zg
-plAWyPded/c5Ceb+mXAh+8F+qDU5au78UXPStGifUb/y9MU52vIU6wRwRab4VXcy
-RuE8BuG3yXVgLx9uPfc5EBSSDBTLDzBqHm0cPiQi17dyv8mhCmvghIP4NYAVxHZn
-iuwGkcVhVqGE+QT7iDSQ3m+BVCPFc9COeWKF00KAgVwmXfLxHlCDk6mf27rixhzY
-k6V9QsZowekYbfB3HGdWAeSbCiZ4xDLpZEwQS8Sxu8wdz2jj3zRyvu4VsM/QImXU
-kS6rZ9SnDNroONMtYJruCwcJv8j+wBm+FPD/4MUR9bXYXbbOA9DcNw==
-=yCQl
+iQEVAwUBRuQpyXcLPEOTuEwVAQIbNQf+PtRWb25qymaZ6VQINdfZEkIlHmHbg26d
+shh2490stQE29r8VWhXGAJOkCQP474aNp4uawk/7zplL2Qgt6eQfjFpkfN22z9W5
+kuYwq+ozWUev7zfpAlsHnEk2lUQfk2NKOtcXheuhNBwTOF7slSxVTTNbVv/fTCXy
+kufdP6gJCxa/aT8EBVPS5+krycRo9e5aMR5VGJ64szTRZNN75345cpxhZ3CyaULF
+WHDHLUXCuEXFWBg3ihiLx89zxyPRzFIBpsq9RoVC9AsCGYOLvB3K65SIFnnceOg3
+UsSYPdlFByz+l/nnPxrWCfxt/3VM83F1GxjVkcpuwxXFpyrya2sRTg==
+=SyJE
 -----END PGP SIGNATURE-----

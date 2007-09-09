@@ -19,8 +19,9 @@ node.dotout { fill: 6; }
   
   [ Graph::Easy ] --> [ Text2 ] { class: out; label: Text; }
   [ Graph::Easy ] --> [ VCG_GDL ] { class: out; label: VCG/GDL; title: Graph Description Language }
-  [ Graph::Easy ] --> { minlen: 3; } [ Layouter ]
+  [ Graph::Easy ] --> [ GraphML ] { class: out; title: GraphML }
+  [ Graph::Easy ] --> { minlen: 3; } [ Graph::Easy's Layouter ]
 
-  [ Layouter ] -->
+  [ Graph::Easy's Layouter ] -->
   [ ASCII /\nUnicode ], [ HTML ], [ SVG ] { class: out; }
 

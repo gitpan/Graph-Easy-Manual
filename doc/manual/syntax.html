@@ -34,6 +34,7 @@
   <a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
   <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
   <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
+  <a class="menuext" href="editor.html" title="The interactive interface">Editor</a>
 </div>
 
 <div class="right">
@@ -73,28 +74,41 @@ quoting.
 </a>
 
 <p>
-Comments start with a <code>#</code> character and run til the end of the line.
-<br>
-Certain things are except from this rule, like color values like
-<code>#ff00aa</code> inside attributes, where the '#' will not start a comment.
+Comments start with a <code>#</code> character (a hatch), and
+and run til the end of the line.
 </p>
 
 <p>
 To make sure that you comments are parsed correctly
 put a space as the first character after the hatch (entire lines consisting only
 of the '#' character are ok, though). In addition, inside attributes you
-should escape the '#' character with a backslash:
+should escape the '#' character with a backslash.
+<br>
+For historical reasons, certain things are recognized even without escaping,
+like color values like <code>#ff00aa</code> inside attributes, where the unescaped '#'
+will not start a comment:
 </p>
 
 <pre>
-############################
+##############################################################
 # This is a good comment.
 
-#############################
+##############################################################
 #This is bad.
 
-node { label: \#5; }			# Note the "\"!
+node { label: \#5; }	  # Note the "\"!
+edge { color: #aabbcc; }  # the color value will be all right
 </pre>
+
+<p>
+However, to be sure that the parser does not get confused, always
+follow these two simple rules:
+</p>
+
+<ul>
+  <li>add a space after the '#' for comments
+  <li>escape '#' inside attribute values with a backslash: '\#'
+</ul>
 
 <a name="whitespace">
 <h4>Whitespace</h4>
@@ -154,7 +168,8 @@ or <code>center</code>, respectively:
 </p>
 
 <pre>
-[ Long Node Label\l left\r right\c center ] -- A\r long\n edge label --> [ B ]
+[ Long Node Label\l left\r right\c center ]
+ -- A\r long\n edge label --> [ B ]
 </pre>
 
 <pre class="graph">
@@ -395,7 +410,7 @@ these are always used <i>as-they-are</i>.
 Attributes follow immidiately the object(s) for that they apply.
 <br>
 Please note that attributes following a node in a node list apply
-to <b>all</b> nodes in the list that came to this point.
+to <b>all</b> nodes in the list that came to this point:
 </p>
 
 <pre>
@@ -422,7 +437,7 @@ node.city { background: red; }	# for all nodes with class "city"
   } ,
 [ JKL ]
   {
-    shape: circle;		# apply to DEF, GHI and JKL
+    shape: circle;		# applies to DEF, GHI and JKL
   }
 
 [ ] { fill: brown; }		# for the anonymous node only
@@ -677,10 +692,13 @@ You can group nodes together by using parantheses:
 
 <p>
 Putting nodes into a group gives the layouter the hint that these
-nodes are related and should be laid out closely together.
-The name of the group can also be ommitted. Since the group label
-defaults to the group name you will get an invisible label as
-a side-effect:
+nodes are related and must be laid out closely together.
+</p>
+
+<p>
+If the name of the group is ommitted, an anonymous group is created.
+These groups do not have a border and background, and since the group label
+defaults to the group name you will get an invisible label as a side-effect:
 </p>
 
 <pre class="graphtext">
@@ -688,13 +706,9 @@ a side-effect:
 </pre>
 
 <pre class="graph">
-+ - - - - - - - - - - - - - - - -+
-'                                '
-' +--------+     +-------------+ '
-' | Bremen | --> | Bremerhaven | '
-' +--------+     +-------------+ '
-'                                '
-+ - - - - - - - - - - - - - - - -+
++--------+     +-------------+
+| Bremen | --> | Bremerhaven |
++--------+     +-------------+
 </pre>
 
 <p class="clear">
@@ -723,8 +737,8 @@ For detailed information and examples please see the
 <h4>Classes</h4>
 
 <p>
-Each part of a graph is a (primary) class and you can set
-attributes on a per-class basis:
+Each type of object in a graph is a (primary) class and you can set
+attributes on them on a per-class basis:
 </p>
 
 <pre>
@@ -791,7 +805,7 @@ Please continue with the chapter about the <a href="attributes.html">attributes<
 
 <div class="footer">
 Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
-Last update: <span class="date">2007-01-01</span>
+Last update: <span class="date">2007-08-17</span>
 </div>
 
 </div> <!-- end of right cell -->

@@ -18,7 +18,7 @@ BEGIN
 
 my $path = shift || 'manual';
 
-use Graph::Easy 0.52;
+use Graph::Easy 0.58;
 use Graph::Easy::Parser;
 use Graph::Easy::Manual;
 
@@ -248,6 +248,10 @@ $took = sprintf("%0.4fs", time() - $start);
 $tpl =~ s/##took##/$took/g;
 
 write_file(File::Spec->catfile($path,'att_colors.html'),$tpl);
+
+# re-generate the dataflow.png picture
+
+`graph-easy --png ../examples/overview.txt manual/img/dataflow.png`;
 
 #############################################################################
 

@@ -25,20 +25,17 @@
   <a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
   <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
   <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
+  <a class="menuext" href="editor.html" title="The interactive interface">Editor</a>
 </div>
 
 <a name="top"></a>
 
 <div class="right">
 
-<h1>Graph::Easy - Manual</h1>
-
-<p></p>
-
-<div class="text">
+<h1>Graph::Easy - Manual - Introduction</h1>
 
 <!-- ########################### head graph ############################### -->
-<table class="graph" cellpadding=0 cellspacing=0>
+<table class="graph" cellpadding=0 cellspacing=0 style="float: right;">
 <tr>
  <td colspan=4 rowspan=4 class='node' style="background: #ffff00">Teamwork</td>
  <td rowspan=4 class="edge ve"></td>
@@ -54,26 +51,43 @@
 </table>
 <!-- ########################### head graph ############################### -->
 
+<div class="text">
+
+<h3>Introduction</h3>
+
 <p>
-You will learn in detail how to create a graph (or flow chart) by describing it in an
-easy-to-use and easy-to-understand language, and then convert it to the desired
-output formats like ASCII, HTML, SVG (Scalable Vector Graphics) or graphviz,
+<code>Graph::Easy</code> is a pure-Perl module that has:
+<ul>
+  <li>an easy-to-understand, compact and human readable graph description language</li>
+  <li>a grid-based layouter that enables among other things ASCII art drawings</li>
+  <li>export filters for <a href="http://graphviz.org/">Graphviz</a>,
+      <a href="http://rw4.cs.uni-sb.de/~sander/html/gsvcg1.html">VCG</a> (Visualizing Compiler Graphs),
+      <a href="http://www.aisee.com/">GDL</a> (Graph Description Language) and
+      <a href="http://graphml.graphdrawing.org/">GraphML</a></li>
+  <li>import filters for Graphviz, VCG and GDL</li>
+</ul>
+</p>
+
+<p>
+In this manual you will learn in detail how to create a graph (or flow chart) by
+describing it in the <code>Graph::Easy</code> language, and then convert it to the desired
+output formats like ASCII, HTML, SVG (Scalable Vector Graphics) or Graphviz,
 which in turn allows you to generate PNG or PDF files.
 </p>
 
 <p>
-This manual explains the algorithms and ideas behind Graph::Easy, as well as
-specific details like the syntax rules for the text format.
+Please start with the <a href="overview.html">overview</a> page. 
 </p>
 
 <h3>Download and Mirrors</h3>
 
 <p>
-You can download Graph::Easy from
+You can download <code>Graph::Easy</code> from
 <a href="http://search.cpan.org/~tels/Graph-Easy/" title="Download Graph::Easy">CPAN</a>.
 </p>
 
 <p>
+If you want to setup a mirror for the manual, please let me <a href="http://bloodgate.com/mail.html">know</a>.
 The online version of this <b>manual</b> can be found at the following sites:
 </p>
 
@@ -81,10 +95,6 @@ The online version of this <b>manual</b> can be found at the following sites:
   <li><a href="http://bloodgate.com/perl/graph/manual">bloodgate.com</a>
   <li><a href="http://search.cpan.org/~tels/Graph-Easy-Manual/doc/manual/index.html">search.cpan.org</a>
 </ul>
-
-<p>
-If you want to setup a mirror, please let me <a href="http://bloodgate.com/mail.html">know</a>.
-</p>
 
 <h3>Demos, Usage and Examples</h3>
 
@@ -100,7 +110,7 @@ it to add graphs to <a href="http://bloodgate.com/wiki/POD">POD</a>.
 </p>
 
 <p>
-The following independend sites and projects use <code>Graph::Easy</code>:
+The following sites and projects use <code>Graph::Easy</code>:
 </p>
 
 <ul>
@@ -122,7 +132,7 @@ If you have questions, feel free to send me an <a href="http://bloodgate.com/mai
 
 <div class="footer">
 Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
-Last update: <span class="date">2007-08-10</span>
+Last update: <span class="date">2007-09-09</span>
 </div>
 
 </div> <!-- end of right cell -->

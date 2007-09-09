@@ -9,6 +9,7 @@ doc/attributes.tpl
 doc/base.css
 doc/gen_manual
 doc/manual/a-star.html
+doc/manual/editor.html
 doc/manual/att_colors.html
 doc/manual/att_edges.html
 doc/manual/att_graphs.html

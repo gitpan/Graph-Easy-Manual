@@ -1,5 +1,5 @@
 #############################################################################
-# (c) by Tels 2004-2006. Manual for Graph::Easy.
+# (c) by Tels 2004-2007. Manual for Graph::Easy.
 #
 #############################################################################
 
@@ -8,7 +8,7 @@ package Graph::Easy::Manual;
 use strict;
 
 use vars qw/$VERSION/;
-$VERSION = '0.39';
+$VERSION = '0.40';
 
 1;
 __END__

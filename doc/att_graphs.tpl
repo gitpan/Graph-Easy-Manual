@@ -43,7 +43,7 @@
     <a class="menuind" href="attributes.html#color_names_and_values" title="Color names and values">Colors</a>
   <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
   <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
-
+  <a class="menuext" href="editor.html" title="The interactive interface">Editor</a>
 </div>
 
 <div class="right">

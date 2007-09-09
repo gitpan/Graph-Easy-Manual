@@ -1,6 +1,13 @@
 Revision history for Graph::Easy::Manual:
 
-2007-08-12 v0.39 Tels 2 tests - Doc, doc, doc, document the code...
+2007-09-09 v0.40 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from Graph::Easy v0.58
+  * fix garbled HTML tags in some HTML files
+  * small fixes all around
+  * add GraphML where appropriate
+  * add editor section
+
+2007-08-12 v0.39 Tels 2 tests
   * regen from Graph::Easy v0.57
   * fix link to color attributes
   * add VCG/GDL support

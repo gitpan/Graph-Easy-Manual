@@ -19,7 +19,7 @@ recommends:
   Graph::Easy::As_svg: 0.22
 requires: 
   File::Spec: 3.01
-  Graph::Easy: 0.57
+  Graph::Easy: 0.58
   Pod::Simple: 3.04
   perl: 5.8.1
-version: 0.39
+version: 0.40

@@ -31,6 +31,7 @@
   <a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
   <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
   <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
+  <a class="menuext" href="editor.html" title="The interactive interface">Editor</a>
 </div>
 
 <div class="right">
@@ -61,21 +62,13 @@ There are many ways to create the internal data necessary for
 </p>
 
 <ul>
-  <li>Create perl code
-  <li>Write a text in the native format of Graph::Easy and use
-   <a href="http://search.cpan.org/~tels/Graph-Easy/">Graph::Easy::Parser</a> to parse it
-  <li>Write a text in the <a href="http://www.graphviz.org/">graphviz</a> format and use
-   <a href="http://search.cpan.org/~tels/Graph-Easy/">Graph::Easy::Parser</a> to parse it
-  <li>Write a text in the <a href="http://www.aisee.com/">GDL</a> or VCG format and use
-   <a href="http://search.cpan.org/~tels/Graph-Easy/">Graph::Easy::Parser</a> to parse it
+  <li>Use the <a href="http://bloodgate.com/graph-easy/">interactive graph editor</a>
+  <li>Write a text in one of the formats Graph::Easy understands (Graphviz, Graph::Easy, VCG, GDL) and use
+   the command line utility <b><a href="http://search.cpan.org/~tels/Graph-Easy/bin/graph-easy"
+     title="graph-easy manual">graph-easy</a></b> to parse, convert and layout it.
+   (This script is installed as part of Graph::Easy.)
+  <li>Write Perl code (see below)
 </ul>
-
-<p>
-A very convienent way on working with graph descriptions in various text formats (and
-converting between them!) is the command-line utility C<graph-easy>. This script is
-installed as part of Graph::Easy. For details on using it, please refer to the
-<b><a href="http://search.cpan.org/~tels/Graph-Easy/bin/graph-easy" title="graph-easy manual">graph-easy manual</a></b>.
-</p>
 
 <p>&nbsp;</p>
 
@@ -128,8 +121,8 @@ to internally store and manage the graph data. Since v0.25, it no longer does so
 it stores the nodes/edges simply as Perl hashes and then accesses them directly.
 If you want to know why, please ready this <a href="benchmark.html">page</a>.
 <br>
-Note that the <code>Graph</code> module does <em>only</em> store a
-representation of the graph, but not a particular layout.
+Note that both the <code>Graph</code> and <code>Graph::Easy</code> modules do
+<em>only</em> store a representation of the graph, but not a particular layout.
 For instance the following graph (given in the Graph::Easy syntax, more on that below):
 </p>
 
@@ -197,13 +190,10 @@ Please continue with the chapter about the <a href="features.html">feature set</
 
 <div class="footer">
 Page created <span class="date">2005-08-07</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
-Last update: <span class="date">2007-08-10</span>
+Last update: <span class="date">2007-09-09</span>
 </div>
 
 </div> <!-- end of right cell -->
 
 </body>
 </html>
-
-
-

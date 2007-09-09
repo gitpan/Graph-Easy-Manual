@@ -28,10 +28,12 @@
     <a class="menuind" href="#html" title="HTML + CSS">HTML</a>
     <a class="menuind" href="svg.html" title="Scalable Vector Grafics">SVG</a>
     <a class="menuind" href="#graphviz" title="Graphviz code suitable for dot, neato etc.">Graphviz</a>
+    <a class="menuind" href="#graphml" title="GraphML code">GraphML</a>
   <a class="menuext" href="syntax.html" title="Syntax rules for the text format">Syntax</a>
   <a class="menuext" href="attributes.html" title="All possible attributes for graphs, nodes and edges">Attributes</a>
   <a class="menuext" href="faq.html" title="Frequently Asked Questions and their answers">F.A.Q.</a>
   <a class="menuext" href="tutorial.html" title="Tutorial for often used graph types and designs">Tutorial</a>
+  <a class="menuext" href="editor.html" title="The interactive interface">Editor</a>
 </div>
 
 <div class="right">
@@ -53,16 +55,24 @@ strengths and weaknesses.
 <h3>Formats</h3>
 
 <p>
-Graph::Easy can create the following output formats:
+Graph::Easy layout graphs in the following output formats:
 </p>
 
 <ul>
-  <li>txt - a dump of the graph as a textual description, parsable by Graph::Easy::Parser
-  <li><a href="#graphviz">graphviz</a> - a dump of the graph in the graphviz format. This can be feed to external programs like <i>dot</i> to generate PNG, SVG etc.
   <li><a href="#ascii">ASCII</a> - creates an ASCII art "drawing" of the graph
   <li><a href="#boxart">Box Art</a> - uses Unicode "box drawing" characters to create a textual "drawing"
   <li><a href="#html">HTML</a> - outputs HTML+CSS code (actually a big table) to render the graph in your browser
   <li><a href="svg.html">SVG</a> - creates Scalable Vector Graphics output
+</ul>
+
+<p>
+In addition, the graph can be dumped in any of the following graph description languages:
+</p>
+
+<ul>
+  <li>txt - Graph::Easy's own textual description, parsable by Graph::Easy::Parser
+  <li><a href="#graphviz">graphviz</a> - text in the Graphviz langauge. This can be feed to external programs like <i>dot</i> to generate PNG, SVG etc.
+  <li><a href="#graphml">GraphML</a> - the GraphML format as described at http://graphml.graphdrawing.org/
 </ul>
 
 <a name="ascii">
@@ -510,19 +520,30 @@ to find out how:
 </ul>
 
 <p>
-Note that unlike with the other output methods, C<Graph::Easy> has less control
+Note that unlike with the other output methods, <code>Graph::Easy</code> has less control
 over the layout when outputting graphviz code. Sometimes this improves
-graph layout, because dot et. al. are not restricted to a grid-like
+graph layout, because <code>dot</code> et. al. are not restricted to a grid-like
 layout, but certain features might be rendered quite differently
-by dot than by C<Graph::Easy>.
+by dot than by <code>Graph::Easy</code>.
 <br>
 Especially the per-node and per-edge flow and relatively placed nodes
 will likely be lost in the generated graphviz code.
 </p>
 
 <p>
-If you are familiar with graphvit code and want to improve the output
+If you are familiar with graphviz code and want to improve the output
 of <code>Graph::Easy</code>, please drop me a <a href="http://bloodgate.com/mail.html">message</a>.
+</p>
+
+<a name="graphml">
+<h3>GraphML</h3>
+</a>
+
+<p>
+<code>GraphML</code> is an XML-based text format for describing graphs.
+<br>
+More details about GraphML can be found at the <a href="http://graphml.graphdrawing.org/">GraphML</a>
+homepage.
 </p>
 
 </div><div class="text next">
@@ -533,7 +554,7 @@ Please continue with the chapter about the <a href="syntax.html">syntax</a>.
 
 <div class="footer">
 Page created <span class="date">2005-08-19</span> by <a href="http://bloodgate.com/mail.html">Tels</a>.
-Last update: <span class="date">2006-08-20</span>
+Last update: <span class="date">2007-08-17</span>
 </div>
 
 </div> <!-- end of right cell -->
