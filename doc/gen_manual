@@ -18,7 +18,7 @@ BEGIN
 
 my $path = shift || 'manual';
 
-use Graph::Easy 0.58;
+use Graph::Easy 0.62;
 use Graph::Easy::Parser;
 use Graph::Easy::Manual;
 

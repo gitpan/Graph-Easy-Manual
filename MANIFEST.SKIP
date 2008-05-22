@@ -4,5 +4,6 @@
 ^Makefile\z
 ^Makefile.(old|bak)\z
 ^gen_doc$
+Graph-Easy-Manual-
 pm_to_blib
 ^todos[\\\/]

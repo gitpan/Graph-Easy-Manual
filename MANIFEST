@@ -1,4 +1,3 @@
-Build.PL
 CHANGES
 doc/att_colors.tpl
 doc/att_edges.tpl
@@ -9,7 +8,6 @@ doc/attributes.tpl
 doc/base.css
 doc/gen_manual
 doc/manual/a-star.html
-doc/manual/editor.html
 doc/manual/att_colors.html
 doc/manual/att_edges.html
 doc/manual/att_graphs.html
@@ -18,6 +16,7 @@ doc/manual/att_nodes.html
 doc/manual/attributes.html
 doc/manual/bench/serie.pl
 doc/manual/benchmark.html
+doc/manual/editor.html
 doc/manual/errors.html
 doc/manual/faq.html
 doc/manual/features.html
@@ -74,7 +73,6 @@ inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
 inc/Module/Install/Base.pm
-inc/Module/Install/Build.pm
 inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
 inc/Module/Install/Include.pm

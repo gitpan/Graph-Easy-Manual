@@ -256,7 +256,7 @@ node { linkbase: http://bloodgate.com/perl/; autolink: name; }
 Note that <code>link</code> has precedence over <code>autolink</code>, the latter
 will not override a <code>link</code> attribute on the object itself.
 <br>
-Also, <code>linnkbase</code> is only prepended for relativ links, e.g. ones that do not
+Also, <code>linkbase</code> is only prepended for relativ links, e.g. ones that do not
 start with <code>/[a-z]{3,4}://</code>. In the following example the first node
 will not have the name autolinked, and the second node will ignore the linkbase:
 </p>

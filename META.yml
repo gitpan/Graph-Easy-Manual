@@ -1,25 +1,25 @@
---- 
-abstract: HTML manual for Graph::Easy
-author: Tels <nospam-abuse@bloodgate.com>
-build_requires: 
+---
+abstract: 'HTML manual for Graph::Easy'
+author:
+  - 'Tels <nospam-abuse@bloodgate.com>'
+build_requires:
   Test::More: 0.62
 distribution_type: module
-generated_by: Module::Install version 0.65
+generated_by: 'Module::Install version 0.71'
 license: gpl
-meta-spec: 
+meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.3.html
   version: 1.3
 name: Graph-Easy-Manual
-no_index: 
-  directory: 
+no_index:
+  directory:
     - examples
     - inc
     - t
-recommends: 
+recommends:
   Graph::Easy::As_svg: 0.22
-requires: 
+requires:
   File::Spec: 3.01
-  Graph::Easy: 0.58
+  Graph::Easy: 0.63
   Pod::Simple: 3.04
-  perl: 5.8.1
-version: 0.40
+version: 0.41

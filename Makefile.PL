@@ -1,6 +1,6 @@
 
 # We need at least Perl 5.8.1 for proper Unicode support
-require 5.8.1;
+require 5.008001;
 use strict;
 
 # Load the Module::Install bundled in ./inc/
@@ -12,10 +12,9 @@ name		'Graph-Easy-Manual';
 # Get most of the details from the primary module
 all_from	'lib/Graph/Easy/Manual.pm';
 
-requires	'Graph::Easy'	=> 0.58,
+requires	'Graph::Easy'	=> 0.63,
 		'File::Spec'	=> 3.01,
-		'Pod::Simple'	=> 3.04,
-		'perl'		=> 5.008001;
+		'Pod::Simple'	=> 3.04;
 
 recommends	'Graph::Easy::As_svg'	=> 0.22;
 

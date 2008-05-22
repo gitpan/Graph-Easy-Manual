@@ -1,6 +1,10 @@
 Revision history for Graph::Easy::Manual:
 
-2007-09-09 v0.40 Tels 2 tests - Doc, doc, doc, document the code...
+2008-05-22 v0.41 Tels 2 tests - Doc, doc, doc, document the code...
+  * regen from and require Graph::Easy v0.63
+  * remove Build.PL (bundle Module::Install v0.71)
+
+2007-09-09 v0.40 Tels 2 tests
   * regen from Graph::Easy v0.58
   * fix garbled HTML tags in some HTML files
   * small fixes all around
